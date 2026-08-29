@@ -198,16 +198,24 @@ export default function CoursesView() {
               <div className="p-6 pt-0 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <button
                   type="button"
-                  onClick={() => openTextbook(tb)}
-                  className="py-3 px-3 bg-[#000083] hover:bg-[#002EAF] active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-[#FFEB01]/30 cursor-pointer group"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    openTextbook(tb);
+                  }}
+                  className="py-3 px-3 bg-sky-600 hover:bg-sky-700 active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-sky-300 cursor-pointer group"
                 >
                   <BookOpen className="w-4 h-4 text-[#FFEB01]" />
                   <span>{t('course.open_ebook') || 'Open E-Textbook'}</span>
                 </button>
                 <button
                   type="button"
-                  onClick={() => setPdfViewingTextbook(tb)}
-                  className="py-3 px-3 bg-[#002EAF] hover:bg-[#00248A] active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-white/20 cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    setPdfViewingTextbook(tb);
+                  }}
+                  className="py-3 px-3 bg-sky-500 hover:bg-sky-600 active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-sky-200 cursor-pointer"
                 >
                   <FileText className="w-4 h-4 text-[#FFEB01]" />
                   <span>{lang === 'mr' ? 'PDF पहा (View PDF)' : lang === 'hi' ? 'PDF देखें' : 'View PDF'}</span>
