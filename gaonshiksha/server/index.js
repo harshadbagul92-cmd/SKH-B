@@ -34,7 +34,7 @@ function loadServerData() {
     certificates: [
       {
         id: 'cert-sample-1',
-        verificationCode: 'GS-KPG-2026-8419',
+        verificationCode: 'SATHI-KPG-2026-8419',
         studentName: 'विकास एकनाथ तांबडे (Vikas Tambade)',
         village: 'संवत्सर, कोपरगाव',
         courseTitle: 'संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये',
@@ -45,7 +45,7 @@ function loadServerData() {
       },
       {
         id: 'cert-sample-2',
-        verificationCode: 'GS-KPG-2026-9124',
+        verificationCode: 'SATHI-KPG-2026-9124',
         studentName: 'पूजा रमेश वाघमारे (Pooja Waghmare)',
         village: 'टाकळी, कोपरगाव',
         courseTitle: 'आधुनिक शिलाई, कपडे कटिंग व बुटीक व्यवसाय',
@@ -83,7 +83,7 @@ app.post('/api/sync', (req, res) => {
     return res.status(400).json({ error: 'Expected items array in sync payload' });
   }
 
-  console.log(`[SYNC SERVER] Received ${items.length} records from Kopargaon client.`);
+  console.log(`[SYNC SERVER] Received ${items.length} records from SATHI client.`);
 
   items.forEach(item => {
     serverDb.syncedItems.push({
@@ -113,7 +113,7 @@ app.post('/api/sync', (req, res) => {
     status: 'success',
     receivedCount: items.length,
     timestamp: new Date().toISOString(),
-    serverMessage: 'All offline progress and certificates successfully committed to Kopargaon Academy Server.'
+    serverMessage: 'All offline progress and certificates successfully committed to SATHI Server.'
   });
 });
 
@@ -172,21 +172,21 @@ app.get('/api/verify/:code', (req, res) => {
       grade: cert.grade,
       score: cert.score,
       issueDate: cert.issueDate,
-      issuingAuthority: 'Kopargaon Rural Skills Academy (ग्रामशिक्षा)'
+      issuingAuthority: 'SATHI Rural Skills Academy (साथी)'
     });
   } else {
     res.status(404).json({
       valid: false,
-      message: 'Certificate not found on Kopargaon Academy Server'
+      message: 'Certificate not found on SATHI Academy Server'
     });
   }
 });
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString(), server: 'Kopargaon-Node-Express-Sync-v1' });
+  res.json({ status: 'ok', time: new Date().toISOString(), server: 'SATHI-Node-Express-Sync-v1' });
 });
 
 app.listen(PORT, () => {
-  console.log(`GaonShiksha Kopargaon Sync Server running on http://localhost:${PORT}`);
+  console.log(`SATHI Sync Server running on http://localhost:${PORT}`);
 });

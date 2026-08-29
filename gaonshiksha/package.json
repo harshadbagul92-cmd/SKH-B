@@ -1,5 +1,5 @@
 {
-  "name": "gaonshiksha",
+  "name": "sathi",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -8,7 +8,12 @@
     "build": "vite build",
     "preview": "vite preview",
     "server": "node server/index.js",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "cap:init": "cap init SATHI com.sathi.app --web-dir dist",
+    "cap:add": "cap add android",
+    "cap:copy": "cap copy android",
+    "cap:sync": "cap sync",
+    "cap:open": "cap open android"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",
@@ -19,6 +24,9 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^6.2.1",
+    "@capacitor/core": "^8.5.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",

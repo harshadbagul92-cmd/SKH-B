@@ -9,9 +9,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icons/*.svg'],
       manifest: {
-        name: 'GaonShiksha - ग्रामीण शिक्षण मंच (Kopargaon)',
-        short_name: 'GaonShiksha',
-        description: 'Offline-First Bilingual Rural Learning & Skill Certification Platform',
+        name: 'SATHI - Rural Learning & Skill Companion (साथी)',
+        short_name: 'SATHI',
+        description: 'Offline-First Bilingual Rural Learning & Skill Certification Companion',
         theme_color: '#ea580c',
         background_color: '#fffbeb',
         display: 'standalone',

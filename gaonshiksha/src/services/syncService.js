@@ -1,4 +1,4 @@
-import { db } from '../db';
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
 export const syncService = {
   // Queue a change for background synchronization
@@ -34,13 +34,13 @@ export const syncService = {
       if (pendingItems.length === 0) {
         return {
           success: true,
-          message: 'All data is already in sync with the Kopargaon server.',
+          message: 'All data is already in sync with the server.',
           syncedCount: 0
         };
       }
 
       // Send batch to backend
-      const response = await fetch('/api/sync', {
+      const response = await fetch(`${API_BASE_URL}/api/sync`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -89,7 +89,7 @@ export const syncService = {
   async pullUpdates() {
     if (!navigator.onLine) return;
     try {
-      const coursesRes = await fetch('/api/courses');
+      const coursesRes = await fetch(`${API_BASE_URL}/api/courses`);
       if (coursesRes.ok) {
         const courses = await coursesRes.json();
         if (Array.isArray(courses) && courses.length > 0) {
@@ -97,7 +97,7 @@ export const syncService = {
         }
       }
 
-      const oppRes = await fetch('/api/opportunities');
+      const oppRes = await fetch(`${API_BASE_URL}/api/opportunities`);
       if (oppRes.ok) {
         const opps = await oppRes.json();
         if (Array.isArray(opps) && opps.length > 0) {
