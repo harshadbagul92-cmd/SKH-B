@@ -21,10 +21,10 @@ import {
 export default function TextbookReaderModal({ textbook, onClose }) {
   const { lang, t, tObj } = useApp();
 
-  const chapters = textbook?.chapters || [];
   const [selectedChapterIndex, setSelectedChapterIndex] = useState(0);
   const [fontSize, setFontSize] = useState('text-base'); // text-sm, text-base, text-lg
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showPdfViewer, setShowPdfViewer] = useState(false);
   const [bookmarkedChapters, setBookmarkedChapters] = useState([]);
   const [showToast, setShowToast] = useState('');
 
@@ -132,6 +132,23 @@ export default function TextbookReaderModal({ textbook, onClose }) {
               </button>
             </div>
 
+            {/* View Full PDF toggle button */}
+            <button
+              onClick={() => setShowPdfViewer(!showPdfViewer)}
+              className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
+                showPdfViewer
+                  ? 'bg-amber-400 text-slate-950 border-amber-300 shadow-md font-black'
+                  : 'bg-[#002EAF] text-white hover:bg-[#00248A] border-blue-400/40'
+              }`}
+            >
+              <FileText className="w-4 h-4 text-[#FFEB01]" />
+              <span>
+                {showPdfViewer
+                  ? (lang === 'mr' ? 'धडे यादी (Chapters)' : lang === 'hi' ? 'अध्याय सूची' : 'Show Chapters')
+                  : (lang === 'mr' ? 'पाठ्यपुस्तक PDF पहा' : lang === 'hi' ? 'पाठ्यपुस्तक PDF देखें' : 'View Textbook PDF')}
+              </span>
+            </button>
+
             {/* Bookmark button */}
             <button
               onClick={() => handleToggleBookmark(currentChapter?.id)}
@@ -168,10 +185,35 @@ export default function TextbookReaderModal({ textbook, onClose }) {
         {/* Reader Body Grid (Sidebar + Content Viewer) */}
         <div className="flex-1 flex overflow-hidden relative">
           
-          {/* Chapter Drawer / Table of Contents */}
-          <aside className={`w-72 sm:w-80 bg-slate-50 border-r border-slate-200 flex flex-col shrink-0 lg:static absolute inset-y-0 left-0 z-30 transition-transform duration-300 ${
-            isSidebarOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full lg:translate-x-0'
-          }`}>
+          {showPdfViewer ? (
+            <div className="flex-1 bg-slate-900 flex flex-col h-full relative">
+              <div className="bg-slate-950 px-4 py-2 text-white flex items-center justify-between text-xs border-b border-slate-800">
+                <span className="font-bold text-amber-400 flex items-center space-x-2">
+                  <FileText className="w-4 h-4 text-[#FFEB01]" />
+                  <span>{tObj(textbook.title)} - Full Textbook PDF Document</span>
+                </span>
+                <a
+                  href={textbook.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#002EAF] hover:bg-blue-600 text-white font-bold text-[11px] px-3 py-1.5 rounded-lg border border-yellow-400/40 flex items-center space-x-1"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#FFEB01]" />
+                  <span>Open PDF in New Tab</span>
+                </a>
+              </div>
+              <iframe
+                src={textbook.pdfUrl}
+                title={tObj(textbook.title)}
+                className="w-full flex-1 border-none bg-slate-950"
+              />
+            </div>
+          ) : (
+            <>
+              {/* Chapter Drawer / Table of Contents */}
+              <aside className={`w-72 sm:w-80 bg-slate-50 border-r border-slate-200 flex flex-col shrink-0 lg:static absolute inset-y-0 left-0 z-30 transition-transform duration-300 ${
+                isSidebarOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full lg:translate-x-0'
+              }`}>
             <div className="p-3.5 bg-slate-100 border-b border-slate-200 flex items-center justify-between">
               <span className="text-xs font-bold text-slate-700 flex items-center space-x-2">
                 <Layers className="w-4 h-4 text-brand-600" />
@@ -303,6 +345,8 @@ export default function TextbookReaderModal({ textbook, onClose }) {
             </div>
 
           </main>
+            </>
+          )}
         </div>
 
       </div>

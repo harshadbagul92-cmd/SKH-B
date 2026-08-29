@@ -192,17 +192,25 @@ export default function CoursesView() {
                 </div>
               </div>
 
-              {/* Card Footer: Direct "Open E-Textbook" Button */}
-              <div className="p-6 pt-0">
+              {/* Card Footer: "Open E-Textbook" and "View PDF" Action Buttons */}
+              <div className="p-6 pt-0 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <button
                   type="button"
                   onClick={() => openTextbook(tb)}
-                  className="w-full py-3.5 px-4 bg-[#0A192F] hover:bg-[#1D4ED8] active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 border border-slate-700 hover:border-brand-400 cursor-pointer group"
+                  className="py-3 px-3 bg-[#000083] hover:bg-[#002EAF] active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-[#FFEB01]/30 cursor-pointer group"
                 >
-                  <BookOpen className="w-4 h-4 text-gold-400" />
+                  <BookOpen className="w-4 h-4 text-[#FFEB01]" />
                   <span>{t('course.open_ebook') || 'Open E-Textbook'}</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-gold-400 group-hover:translate-x-1 transition-transform" />
                 </button>
+                <a
+                  href={tb.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3 px-3 bg-[#002EAF] hover:bg-[#00248A] active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-white/20 cursor-pointer"
+                >
+                  <FileText className="w-4 h-4 text-[#FFEB01]" />
+                  <span>{lang === 'mr' ? 'PDF पहा (View PDF)' : lang === 'hi' ? 'PDF देखें' : 'View PDF'}</span>
+                </a>
               </div>
 
             </div>
