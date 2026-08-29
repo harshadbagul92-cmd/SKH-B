@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import TextbookReaderModal from '../components/TextbookReaderModal';
+import PdfViewerModal from '../components/PdfViewerModal';
 import {
   BookOpen,
   CheckCircle2,
@@ -20,6 +21,7 @@ import {
 } from 'lucide-react';
 
 export default function CoursesView() {
+  const [pdfViewingTextbook, setPdfViewingTextbook] = useState(null);
   const {
     lang,
     t,
@@ -202,15 +204,14 @@ export default function CoursesView() {
                   <BookOpen className="w-4 h-4 text-[#FFEB01]" />
                   <span>{t('course.open_ebook') || 'Open E-Textbook'}</span>
                 </button>
-                <a
-                  href={tb.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() => setPdfViewingTextbook(tb)}
                   className="py-3 px-3 bg-[#002EAF] hover:bg-[#00248A] active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-white/20 cursor-pointer"
                 >
                   <FileText className="w-4 h-4 text-[#FFEB01]" />
                   <span>{lang === 'mr' ? 'PDF पहा (View PDF)' : lang === 'hi' ? 'PDF देखें' : 'View PDF'}</span>
-                </a>
+                </button>
               </div>
 
             </div>
@@ -269,6 +270,15 @@ export default function CoursesView() {
             })}
           </div>
         </div>
+      )}
+
+      {/* Modal Viewers */}
+      {selectedTextbook && (
+        <TextbookReaderModal textbook={selectedTextbook} onClose={closeTextbook} />
+      )}
+
+      {pdfViewingTextbook && (
+        <PdfViewerModal textbook={pdfViewingTextbook} onClose={() => setPdfViewingTextbook(null)} />
       )}
 
     </div>
