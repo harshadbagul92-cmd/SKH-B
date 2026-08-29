@@ -1,11 +1,12 @@
 import Dexie from 'dexie';
 
-export const db = new Dexie('GaonShikshaDB');
+export const db = new Dexie('SathiDB');
 
-db.version(1).stores({
+db.version(2).stores({
+  users: '++id, username, role',
   courses: 'id, slug, category',
   progress: 'courseId, isCompleted, updatedAt',
-  quizAttempts: '++id, courseId, passed, timestamp',
+  quizAttempts: '++id, courseId, username, passed, timestamp',
   certificates: 'id, verificationCode, courseId, studentName, issueDate, synced',
   opportunities: 'id, requiredCourseId',
   applications: '++id, oppId, studentName, timestamp, synced',

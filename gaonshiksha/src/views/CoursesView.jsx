@@ -281,7 +281,7 @@ export default function CoursesView() {
       {/* Why GaonShiksha Grid */}
       <div className="bg-slate-100/80 rounded-3xl p-6 sm:p-8 border border-slate-200/80">
         <h3 className="text-lg sm:text-xl font-black text-slate-900 mb-6 text-center">
-          {lang === 'mr' ? 'ग्रामशिक्षाची ग्रामीण वैशिष्ट्ये (Rural-First Architecture)' : 'Designed for Rural Maharashtra'}
+          {lang === 'mr' ? 'साथी (SATHI) ॲपची वैशिष्ट्ये (Rural-First Architecture)' : 'Designed for Rural India - SATHI Features'}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center sm:text-left">
           <div className="space-y-2">

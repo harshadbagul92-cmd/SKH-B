@@ -32,6 +32,26 @@ export default function Header() {
     toggleRole
   } = useApp();
 
+  const [installPrompt, setInstallPrompt] = React.useState(null);
+
+  React.useEffect(() => {
+    const handleBeforeInstall = (e) => {
+      e.preventDefault();
+      setInstallPrompt(e);
+    };
+    window.addEventListener('beforeinstallprompt', handleBeforeInstall);
+    return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
+  }, []);
+
+  const handleInstallApp = async () => {
+    if (!installPrompt) return;
+    installPrompt.prompt();
+    const choice = await installPrompt.userChoice;
+    if (choice.outcome === 'accepted') {
+      setInstallPrompt(null);
+    }
+  };
+
   return (
     <header className="bg-white border-b border-orange-100 sticky top-0 z-50 shadow-sm">
       {/* Top Banner for Sync Notification */}
@@ -64,14 +84,14 @@ export default function Header() {
             <div>
               <div className="flex items-center space-x-2">
                 <span className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
-                  {lang === 'mr' ? 'ग्रामशिक्षा' : 'GaonShiksha'}
+                  {lang === 'mr' ? 'साथी (SATHI)' : 'SATHI'}
                 </span>
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-brand-700 px-2 py-0.5 rounded-full border border-orange-200">
                   {lang === 'mr' ? 'कोपरगाव' : 'Kopargaon'}
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium hidden sm:block">
-                {lang === 'mr' ? 'ऑफलाइन ग्रामीण कौशल्य व रोजगार मंच' : 'Offline Rural Learning & Skill Academy'}
+                {lang === 'mr' ? 'ग्रामीण शिक्षण व कौशल्य मित्र' : 'Rural Learning & Skill Companion'}
               </p>
             </div>
           </div>
@@ -79,6 +99,17 @@ export default function Header() {
           {/* Controls & Tools */}
           <div className="flex items-center space-x-2 sm:space-x-3">
             
+            {/* Install PWA App Button */}
+            {installPrompt && (
+              <button
+                onClick={handleInstallApp}
+                className="flex items-center space-x-1.5 text-xs font-bold px-2.5 py-1.5 rounded-lg bg-orange-600 text-white hover:bg-orange-700 shadow transition-all animate-pulse"
+                title={lang === 'mr' ? 'ॲप फोनवर इन्स्टॉल करा' : 'Install SATHI App on device'}
+              >
+                <span>📱 {lang === 'mr' ? 'इन्स्टॉल ॲप' : 'Install App'}</span>
+              </button>
+            )}
+
             {/* Network Indicator & Judge Simulation Toggle */}
             <div className="flex items-center space-x-1">
               <button

@@ -16,14 +16,13 @@ export function AppProvider({ children }) {
   const [syncMessage, setSyncMessage] = useState('');
   
   // Navigation & User
-  const [activeView, setActiveView] = useState('courses'); // courses, course-detail, lesson, quiz, certificates, opportunities, admin
+  const [activeView, setActiveView] = useState('courses'); // login, courses, course-detail, lesson, quiz, certificates, opportunities, admin
   const [selectedCourseId, setSelectedCourseId] = useState(null);
   const [selectedLessonIndex, setSelectedLessonIndex] = useState(0);
-  const [userProfile, setUserProfile] = useState({
-    name: 'विकास एकनाथ तांबडे (Vikas Tambade)',
-    village: 'संवत्सर, तालुका कोपरगाव (Sanvatsar, Kopargaon)',
-    phone: '98220XXXXX',
-    role: 'student'
+  
+  const [userProfile, setUserProfile] = useState(() => {
+    const saved = localStorage.getItem('sathi_user');
+    return saved ? JSON.parse(saved) : null;
   });
   
   const [isPackDownloaded, setIsPackDownloaded] = useState(false);
@@ -47,18 +46,36 @@ export function AppProvider({ children }) {
       if (savedSim) {
         setSimulatedOffline(savedSim.value);
       }
+      
+      // Ensure routing to login if no user
+      if (!userProfile) {
+        setActiveView('login');
+      }
     }
     init();
 
-    const handleOnline = () => setIsOnline(true);
+    const handleOnline = () => {
+      setIsOnline(true);
+      if (!simulatedOffline) {
+        triggerSync(true); // silent auto-sync
+      }
+    };
     const handleOffline = () => setIsOnline(false);
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
 
+    // Periodic auto-sync (every 60 seconds)
+    const syncInterval = setInterval(() => {
+      if (navigator.onLine && !simulatedOffline) {
+        triggerSync(true);
+      }
+    }, 60000);
+
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
+      clearInterval(syncInterval);
     };
   }, []);
 
@@ -132,45 +149,72 @@ export function AppProvider({ children }) {
     setLang(prev => (prev === 'mr' ? 'en' : 'mr'));
   };
 
-  // Role toggle (Student vs Teacher)
-  const toggleRole = () => {
-    setUserProfile(prev => {
-      const newRole = prev.role === 'student' ? 'teacher' : 'student';
-      if (newRole === 'teacher') {
-        setActiveView('admin');
-      } else {
-        setActiveView('courses');
-      }
-      return { ...prev, role: newRole };
-    });
+  // Auth methods
+  const login = async (username, password) => {
+    const user = await db.users.where({ username }).first();
+    if (user && user.password === password) { // Plaintext for offline MVP as discussed
+      setUserProfile(user);
+      localStorage.setItem('sathi_user', JSON.stringify(user));
+      setActiveView(user.role === 'teacher' ? 'admin' : 'courses');
+      return { success: true };
+    }
+    return { success: false, message: lang === 'mr' ? 'चुकीचे युझरनेम किंवा पासवर्ड' : 'Invalid username or password' };
   };
 
-  // Manual Sync trigger
-  const triggerSync = async () => {
-    setSyncStatus('syncing');
-    setSyncMessage(lang === 'mr' ? 'कोपरगाव सर्व्हरशी संपर्क साधत आहे...' : 'Contacting Kopargaon Server...');
+  const signup = async (userData) => {
+    const existing = await db.users.where({ username: userData.username }).first();
+    if (existing) {
+      return { success: false, message: lang === 'mr' ? 'हे युझरनेम आधीच वापरले आहे' : 'Username already exists' };
+    }
     
-    // Simulate brief network delay for realism
-    await new Promise(r => setTimeout(r, 600));
+    // Save locally
+    const id = await db.users.add(userData);
+    const newUser = { ...userData, id };
+    
+    // Queue for sync
+    await syncService.enqueue('NEW_USER', newUser);
+    
+    // Auto-login
+    setUserProfile(newUser);
+    localStorage.setItem('sathi_user', JSON.stringify(newUser));
+    setActiveView(newUser.role === 'teacher' ? 'admin' : 'courses');
+    return { success: true };
+  };
 
-    const result = await syncService.syncNow(simulatedOffline);
-    if (result.success) {
-      setSyncStatus('synced');
-      setSyncMessage(
-        lang === 'mr'
-          ? `यशस्वी! ${result.syncedCount} नोंदी कोपरगाव सर्व्हरवर सिंक झाल्या.`
-          : `Success! ${result.syncedCount} records synced to Kopargaon server.`
-      );
-      await refreshData();
-    } else {
-      setSyncStatus('error');
-      setSyncMessage(result.message);
+  const logout = () => {
+    setUserProfile(null);
+    localStorage.removeItem('sathi_user');
+    setActiveView('login');
+  };
+
+  // Sync trigger
+  const triggerSync = async (silent = false) => {
+    if (syncStatus === 'syncing') return;
+    
+    if (!silent) {
+      setSyncStatus('syncing');
+      setSyncMessage(lang === 'mr' ? 'सिंक करत आहे...' : 'Syncing...');
     }
 
-    setTimeout(() => {
-      setSyncStatus('idle');
-      setSyncMessage('');
-    }, 4000);
+    const result = await syncService.syncNow(simulatedOffline);
+    if (result.success && result.syncedCount > 0) {
+      setSyncStatus('synced');
+      setSyncMessage(lang === 'mr' ? 'सिंक झाले!' : 'Synced!');
+      await refreshData();
+    } else if (!result.success && !silent) {
+      setSyncStatus('error');
+      setSyncMessage(result.message);
+    } else if (result.success && result.syncedCount === 0 && !silent) {
+      setSyncStatus('synced');
+      setSyncMessage(lang === 'mr' ? 'आधीच सिंक आहे' : 'Already in sync');
+    }
+
+    if (!silent || (result.success && result.syncedCount > 0)) {
+      setTimeout(() => {
+        setSyncStatus('idle');
+        setSyncMessage('');
+      }, 3000);
+    }
   };
 
   // Download entire course pack for offline storage
@@ -180,7 +224,7 @@ export function AppProvider({ children }) {
     // Also cache static assets in CacheStorage if available
     if ('caches' in window) {
       try {
-        const cache = await caches.open('gaonshiksha-pack-v1');
+        const cache = await caches.open('sathi-pack-v1');
         await cache.addAll(['/', '/index.html']);
       } catch (e) {
         console.log('Cache storage populated');
@@ -250,8 +294,9 @@ export function AppProvider({ children }) {
         selectedLessonIndex,
         setSelectedLessonIndex,
         userProfile,
-        setUserProfile,
-        toggleRole,
+        login,
+        signup,
+        logout,
         isPackDownloaded,
         downloadFullPack,
         allCourses,

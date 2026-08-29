@@ -59,12 +59,12 @@ export default function CertificateView() {
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(22);
       doc.setTextColor(120, 53, 15); // Dark Earth
-      doc.text('KOPARGAON RURAL SKILLS & VOCATIONAL ACADEMY', 148.5, 28, { align: 'center' });
+      doc.text('SATHI RURAL SKILLS & VOCATIONAL ACADEMY', 148.5, 28, { align: 'center' });
 
       doc.setFontSize(11);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(100, 116, 139);
-      doc.text('GramShiksha Rural Livelihood Mission | Ahmednagar District, Maharashtra', 148.5, 34, { align: 'center' });
+      doc.text('SATHI Rural Livelihood & Skill Mission | Kopargaon, Maharashtra', 148.5, 34, { align: 'center' });
 
       // Title: Certificate of Competence
       doc.setFont('helvetica', 'bold');
@@ -149,10 +149,10 @@ export default function CertificateView() {
       // QR Code representation text
       doc.setFontSize(8);
       doc.setTextColor(148, 163, 184);
-      doc.text(`Scan QR / Verify at: https://gaonshiksha.kpg.gov.in/verify/${cert.verificationCode}`, 25, 190);
+      doc.text(`Scan QR / Verify at: https://sathi-app.vercel.app/verify/${cert.verificationCode}`, 25, 190);
 
       // Save PDF
-      doc.save(`GaonShiksha_Certificate_${cert.verificationCode}.pdf`);
+      doc.save(`SATHI_Certificate_${cert.verificationCode}.pdf`);
     } catch (err) {
       console.error('PDF generation error:', err);
     } finally {
@@ -270,7 +270,7 @@ export default function CertificateView() {
                       {t('certificate.subtitle')}
                     </span>
                     <h3 className="text-base sm:text-lg font-black text-slate-900">
-                      ग्रामशिक्षा कोपरगाव ग्रामीण कौशल्य संस्था
+                      साथी (SATHI) ग्रामीण कौशल्य संस्था
                     </h3>
                   </div>
 

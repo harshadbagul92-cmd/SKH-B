@@ -41,7 +41,7 @@ export default function AdminView() {
       course: 'संगणक व डिजिटल साक्षरता',
       progress: '100%',
       quizScore: '5/5 (100%)',
-      certCode: certificatesList[0]?.verificationCode || 'GS-KPG-2026-8419',
+      certCode: certificatesList[0]?.verificationCode || 'SATHI-KPG-2026-8419',
       synced: true,
       lastActive: 'आज (Today)'
     },
@@ -52,7 +52,7 @@ export default function AdminView() {
       course: 'आधुनिक शिलाई व बुटीक व्यवसाय',
       progress: '100%',
       quizScore: '5/5 (100%)',
-      certCode: 'GS-KPG-2026-9124',
+      certCode: 'SATHI-KPG-2026-9124',
       synced: true,
       lastActive: 'काल (Yesterday)'
     },
@@ -74,7 +74,7 @@ export default function AdminView() {
       course: 'आधुनिक शिलाई व बुटीक व्यवसाय',
       progress: '100%',
       quizScore: '4/5 (80%)',
-      certCode: 'GS-KPG-2026-7831',
+      certCode: 'SATHI-KPG-2026-7831',
       synced: true,
       lastActive: 'आज (Today)'
     }
@@ -127,7 +127,7 @@ export default function AdminView() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'GaonShiksha_Kopargaon_Student_Roster.csv');
+    link.setAttribute('download', 'SATHI_Kopargaon_Student_Roster.csv');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

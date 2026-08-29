@@ -1,4 +1,4 @@
-# GaonShiksha (ग्रामशिक्षा) - Kopargaon Rural Learning & Skill Academy
+# SATHI (साथी) - Rural Learning & Skill Companion
 
 > **Offline-First • Bilingual (Marathi / English) • Verifiable Skill Certificates • Local Opportunity Board**  
 > Built for the real-world conditions of rural training institutions and schools in **Kopargaon and Ahmednagar district, Maharashtra**.
@@ -11,7 +11,7 @@ In rural Maharashtra (such as the Godavari river belt near Kopargaon, Shirdi, an
 2. **Language Barrier**: Most technical education is in English, whereas students are most comfortable in conversational Marathi (मराठी).
 3. **Missing Link to Real Livelihoods**: Students finish courses without formal proof of competence or direct connection to local employers.
 
-**GaonShiksha (ग्रामशिक्षा)** solves this with a **100% Offline-First PWA**, comprehensive **Bilingual Learning Engine**, **Auto-Generated Verifiable PDF Certificates**, and a **Local Opportunity Board** connecting graduates with regional agro-industries, solar projects, and cooperatives.
+**SATHI (साथी - companion/friend)** solves this with a **100% Offline-First PWA & Mobile App**, comprehensive **Bilingual Learning Engine**, **Auto-Generated Verifiable PDF Certificates**, and a **Local Opportunity Board** connecting graduates with regional agro-industries, solar projects, and cooperatives.
 
 ---
 
@@ -33,7 +33,7 @@ In rural Maharashtra (such as the Godavari river belt near Kopargaon, Shirdi, an
 ### 3. Dual Real-World Outcomes
 1. **Verifiable Skill Certificate**:
    - Auto-generated upon passing the 5-question course quiz with $\ge 60\%$ score.
-   - Unique verification ID (e.g., `GS-KPG-2026-8419`), student name, village, score, grade, and official Kopargaon Skill Academy Seal.
+   - Unique verification ID (e.g., `SATHI-KPG-2026-8419`), student name, village, score, grade, and official Kopargaon Skill Academy Seal.
    - 1-Click **Downloadable PDF Certificate** generated client-side via `jspdf`.
 2. **Local Opportunity Board (Kopargaon & Ahmednagar)**:
    - Seeded with 5 realistic local jobs & apprenticeships (e.g. *Godavari Biorefineries Data Entry, Saibaba Solar Apprentice, Kopargaon SHG Tailoring Unit, APMC Market Accounts Assistant*).

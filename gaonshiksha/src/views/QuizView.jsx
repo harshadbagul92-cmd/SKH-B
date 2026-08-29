@@ -90,7 +90,7 @@ export default function QuizView() {
 
       // Generate Unique Verification Code: GS-KPG-2026-XXXX
       const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-      const code = `GS-KPG-2026-${randomSuffix}`;
+      const code = `SATHI-KPG-2026-${randomSuffix}`;
       setGeneratedCertCode(code);
 
       const grade = correctCount === 5 ? 'A+ (उत्कृष्ट)' : correctCount === 4 ? 'A (प्रथम श्रेणी)' : 'B (उत्तीर्ण)';
