@@ -41,7 +41,7 @@ export default function Sidebar() {
       id: 'exams',
       label: t('nav.exams') || 'Exam Notifications',
       icon: Landmark,
-      badge: `${allGovExams?.length || 6} NEW`,
+      badge: `${allGovExams?.length || 36} NEW`,
       badgeColor: 'bg-gold-500 text-navy-950 font-black shadow-xs'
     },
     {

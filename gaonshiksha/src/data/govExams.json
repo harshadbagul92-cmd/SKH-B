@@ -1,6 +1,2096 @@
 [
   {
-    "id": "exam-state-police-01",
+    "id": "exam-upsc-cse-2026",
+    "tier": "central",
+    "category": "upsc",
+    "categoryLabel": {
+      "mr": "UPSC केंद्रीय नागरी सेवा",
+      "hi": "UPSC सिविल सेवा",
+      "en": "UPSC Civil Services"
+    },
+    "examName": {
+      "mr": "UPSC नागरी सेवा परीक्षा २०२६ (IAS, IPS, IFS, IRS)",
+      "hi": "UPSC सिविल सेवा परीक्षा २०२६ (IAS, IPS, IFS, IRS)",
+      "en": "UPSC Civil Services Examination (CSE) 2026"
+    },
+    "department": {
+      "mr": "केंद्रीय लोकसेवा आयोग (UPSC, New Delhi)",
+      "hi": "संघ लोक सेवा आयोग",
+      "en": "Union Public Service Commission (UPSC)"
+    },
+    "totalPosts": "1,056+ Posts (All India Services)",
+    "eligibility": {
+      "mr": "कोणत्याही मान्यताप्राप्त विद्यापीठाची पदवी (Graduate in any discipline).",
+      "hi": "किसी भी मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री।",
+      "en": "Bachelor's Degree in any discipline from a recognized University."
+    },
+    "ageLimit": {
+      "mr": "२१ ते ३२ वर्षे (OBC: ३५ वर्षे, SC/ST: ३७ वर्षे)",
+      "hi": "२१ से ३२ वर्ष (आरक्षित वर्ग हेतु नियमानुसार छूट)",
+      "en": "21 to 32 years (Relaxations: OBC +3 yrs, SC/ST +5 yrs)"
+    },
+    "startDate": "4 Feb 2026",
+    "endDate": "27 Feb 2026",
+    "examDate": "24 May 2026 (Prelims) | Main Cycle Active",
+    "status": "active",
+    "statusNote": "Prelims done; Main cycle active",
+    "applicationFee": {
+      "mr": "खुला/OBC प्रवर्ग: ₹१००/- | महिला/SC/ST/Divyang: मोफत",
+      "hi": "सामान्य/OBC: ₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "General/OBC: ₹100 | Female/SC/ST/PwBD: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/upsc_cse_syllabus_2026.pdf",
+    "applyUrl": "https://upsc.gov.in/",
+    "portalName": "UPSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: पूर्व परीक्षा (CSAT & GS - ४०० गुण)",
+          "hi": "चरण १: प्रारंभिक परीक्षा (GS & CSAT - ४०० अंक)",
+          "en": "Stage 1: Preliminary Exam (GS Paper I & CSAT Paper II - 400 Marks)"
+        },
+        "details": {
+          "mr": "वस्तुनिष्ठ बहुपर्यायी प्रश्न (MCQs), CSAT मध्ये ३३% पात्रता गुण आवश्यक.",
+          "hi": "वस्तुनिष्ठ प्रश्न, CSAT में ३३% अनिवार्य योग्यता अंक।",
+          "en": "Objective MCQs with negative marking. CSAT is qualifying with 33% min."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: मुख्य परीक्षा (लेखी - १७५० गुण)",
+          "hi": "चरण २: मुख्य परीक्षा (लिखित - १७५० अंक)",
+          "en": "Stage 2: Main Written Examination (9 Papers - 1750 Marks)"
+        },
+        "details": {
+          "mr": "निबंध, सामान्य अध्ययन (GS I-IV), आणि ऐच्छिक विषय (Optional).",
+          "hi": "निबंध, सामान्य अध्ययन पेपर १-४, एवं वैकल्पिक विषय।",
+          "en": "Descriptive Essay, GS I-IV papers, and 2 Optional subject papers."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा ३: मुलाखत व व्यक्तिमत्त्व चाचणी (२७५ गुण)",
+          "hi": "चरण ३: साक्षात्कार (२७५ अंक)",
+          "en": "Stage 3: Personality Test / Interview (275 Marks)"
+        },
+        "details": {
+          "mr": "UPSC बोर्डासमोर नवी दिल्ली येथे प्रत्यक्ष मुलाखत.",
+          "hi": "UPSC बोर्ड द्वारा नई दिल्ली में व्यक्तिगत साक्षात्कार।",
+          "en": "Face-to-face board interview at Dholpur House, New Delhi."
+        }
+      }
+    ],
+    "highlights": [
+      "भारतातील सर्वोच्च प्रशासकीय सेवेची सुवर्णसंधी",
+      "इन्व्हिक्टसवर GS-1 व CSAT सराव प्रश्नपत्रिका उपलब्ध",
+      "ऑफलाइन मोडमध्ये संपूर्ण मार्गदर्शक सामग्री सेव्ह करा"
+    ]
+  },
+  {
+    "id": "exam-upsc-ifos-2026",
+    "tier": "central",
+    "category": "upsc",
+    "categoryLabel": {
+      "mr": "UPSC भारतीय वन सेवा",
+      "hi": "UPSC भारतीय वन सेवा",
+      "en": "UPSC Indian Forest Service"
+    },
+    "examName": {
+      "mr": "UPSC भारतीय वन सेवा (IFoS) परीक्षा २०२६",
+      "hi": "UPSC भारतीय वन सेवा (IFoS) परीक्षा २०२६",
+      "en": "UPSC Indian Forest Service (IFoS) Examination 2026"
+    },
+    "department": {
+      "mr": "केंद्रीय लोकसेवा आयोग (UPSC, New Delhi)",
+      "hi": "संघ लोक सेवा आयोग",
+      "en": "Union Public Service Commission (UPSC)"
+    },
+    "totalPosts": "150+ Posts (All India Service)",
+    "eligibility": {
+      "mr": "विज्ञान/अभियांत्रिकी/कृषी/गणित शाखेतील पदवी (Degree with Animal Husbandry, Botany, Chemistry, Geology, Math, Physics, Zoology, Agriculture, Forestry or Engg).",
+      "hi": "विज्ञान/इंजीनियरिंग/कृषि में स्नातक डिग्री।",
+      "en": "Bachelor's degree with at least one subject: Animal Husbandry, Botany, Chemistry, Geology, Math, Physics, Statistics, Zoology, Agriculture, Forestry or Engineering."
+    },
+    "ageLimit": {
+      "mr": "२१ ते ३२ वर्षे (OBC: ३५ वर्षे, SC/ST: ३७ वर्षे)",
+      "hi": "२१ से ३२ वर्ष (आरक्षित वर्ग हेतु छूट)",
+      "en": "21 to 32 years (Relaxations: OBC +3 yrs, SC/ST +5 yrs)"
+    },
+    "startDate": "4 Feb 2026",
+    "endDate": "27 Feb 2026",
+    "examDate": "24 May 2026 (Prelims via CSE) | Main Cycle",
+    "status": "active",
+    "statusNote": "Main cycle active",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "General/OBC: ₹100 | Female/SC/ST: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/upsc_ifos_syllabus_2026.pdf",
+    "applyUrl": "https://upsc.gov.in/",
+    "portalName": "UPSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: पूर्व परीक्षा (CSE Prelims द्वारे)",
+          "hi": "चरण १: प्रारंभिक परीक्षा (CSE के माध्यम से)",
+          "en": "Stage 1: Civil Services Preliminary Examination (Screening)"
+        },
+        "details": {
+          "mr": "CSE सोबत संयुक्त पूर्व परीक्षा गुण ग्राह्य धरले जातात.",
+          "hi": "CSE के साथ संयुक्त प्रारंभिक परीक्षा।",
+          "en": "Screening test via common CSE Prelims exam."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: IFoS मुख्य परीक्षा (१४०० गुण)",
+          "hi": "चरण २: IFoS मुख्य परीक्षा (१४०० अंक)",
+          "en": "Stage 2: IFoS Written Examination (1400 Marks)"
+        },
+        "details": {
+          "mr": "General English, General Knowledge, आणि २ वैकल्पिक विज्ञान विषय.",
+          "hi": "सामान्य अंग्रेजी, सामान्य ज्ञान एवं २ विज्ञान वैकल्पिक विषय।",
+          "en": "General English (300), GK (300), and two optional subjects (800)."
+        }
+      }
+    ],
+    "highlights": [
+      "अखिल भारतीय वन संवर्धन व पर्यावरण प्रशासकीय पद",
+      "वैज्ञानिक व अभियांत्रिकी पदवीधरांसाठी सर्वोत्तम संधी"
+    ]
+  },
+  {
+    "id": "exam-upsc-ies-iss-2026",
+    "tier": "central",
+    "category": "upsc",
+    "categoryLabel": {
+      "mr": "UPSC अर्थ व सांख्यिकी सेवा",
+      "hi": "UPSC आर्थिक एवं सांख्यिकी सेवा",
+      "en": "UPSC IES / ISS"
+    },
+    "examName": {
+      "mr": "UPSC भारतीय आर्थिक सेवा व सांख्यिकी सेवा परीक्षा २०२६ (IES / ISS)",
+      "hi": "UPSC भारतीय आर्थिक सेवा एवं सांख्यिकी सेवा २०२६ (IES / ISS)",
+      "en": "UPSC Indian Economic Service & Indian Statistical Service (IES/ISS) 2026"
+    },
+    "department": {
+      "mr": "केंद्रीय लोकसेवा आयोग (UPSC, New Delhi)",
+      "hi": "संघ लोक सेवा आयोग",
+      "en": "Union Public Service Commission (UPSC)"
+    },
+    "totalPosts": "48+ Posts",
+    "eligibility": {
+      "mr": "अर्थशास्त्र (Economics) / सांख्यिकी (Statistics / Mathematical Statistics) मध्ये पदव्युत्तर / पदवी पदवीधर.",
+      "hi": "अर्थशास्त्र / सांख्यिकी में स्नातकोत्तर / स्नातक डिग्री।",
+      "en": "IES: Post-Graduate Degree in Economics/Applied Economics. ISS: Bachelor's/Master's Degree with Statistics/Mathematical Statistics."
+    },
+    "ageLimit": {
+      "mr": "२१ ते ३० वर्षे (नियमानुसार सवलत)",
+      "hi": "२१ से ३० वर्ष (नियमानुसार छूट)",
+      "en": "21 to 30 years (Standard govt age relaxations)"
+    },
+    "startDate": "11 Feb 2026",
+    "endDate": "3 Mar 2026",
+    "examDate": "19 Jun 2026",
+    "status": "active",
+    "statusNote": "Exam cycle active",
+    "applicationFee": {
+      "mr": "₹२००/- | SC/ST/महिला: मोफत",
+      "hi": "₹२००/- | SC/ST/महिला: निःशुल्क",
+      "en": "₹200 | SC/ST/Female/PwBD: Nil"
+    },
+    "syllabusPdfUrl": "/docs/exams/upsc_ies_iss_syllabus_2026.pdf",
+    "applyUrl": "https://upsc.gov.in/",
+    "portalName": "UPSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "लेखी परीक्षा (१००० गुण)",
+          "hi": "लिखित परीक्षा (१००० अंक)",
+          "en": "Written Examination (1000 Marks)"
+        },
+        "details": {
+          "mr": "General English, General Studies, आणि ६ विशिष्ट सांख्यिकी/अर्थशास्त्र पेपर्स.",
+          "hi": "सामान्य अंग्रेजी, सामान्य ज्ञान एवं सांख्यिकी/अर्थशास्त्र प्रश्नपत्र।",
+          "en": "General English, General Studies, and subject papers."
+        }
+      }
+    ],
+    "highlights": [
+      "केंद्रीय अर्थ मंत्रालय व सांख्यिकी विभागातील क्लास-१ राजपत्रित पदे"
+    ]
+  },
+  {
+    "id": "exam-upsc-ese-2026",
+    "tier": "central",
+    "category": "upsc",
+    "categoryLabel": {
+      "mr": "UPSC अभियांत्रिकी सेवा",
+      "hi": "UPSC इंजीनियरिंग सेवा",
+      "en": "UPSC ESE (Engineering)"
+    },
+    "examName": {
+      "mr": "UPSC अभियांत्रिकी सेवा परीक्षा २०२६ (Engineering Services ESE)",
+      "hi": "UPSC इंजीनियरिंग सेवा परीक्षा २०२६ (ESE)",
+      "en": "UPSC Engineering Services Examination (ESE) 2026"
+    },
+    "department": {
+      "mr": "केंद्रीय लोकसेवा आयोग (UPSC, New Delhi)",
+      "hi": "संघ लोक सेवा आयोग",
+      "en": "Union Public Service Commission (UPSC)"
+    },
+    "totalPosts": "232+ Posts (Civil, Mechanical, Electrical, E&T)",
+    "eligibility": {
+      "mr": "स्थापत्य/यांत्रिकी/विद्युत/इलेक्ट्रॉनिक्स शाखेतील अभियांत्रिकी पदवी (BE/B.Tech).",
+      "hi": "संबंधित इंजीनियरिंग शाखा में BE/B.Tech डिग्री।",
+      "en": "Degree in Engineering (BE/B.Tech) in Civil, Mechanical, Electrical, or Electronics & Telecommunication."
+    },
+    "ageLimit": {
+      "mr": "२१ ते ३० वर्षे",
+      "hi": "२१ से ३० वर्ष",
+      "en": "21 to 30 years as of 1st Jan"
+    },
+    "startDate": "26 Sep 2025",
+    "endDate": "16 Oct 2025",
+    "examDate": "8 Feb 2026 (Prelims) | Mains Complete Cycle",
+    "status": "active",
+    "statusNote": "2026 exam cycle completed / Mains active",
+    "applicationFee": {
+      "mr": "₹२००/- | SC/ST/महिला: मोफत",
+      "hi": "₹२००/- | SC/ST/महिला: निःशुल्क",
+      "en": "General/OBC: ₹200 | SC/ST/Female: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/upsc_ese_syllabus_2026.pdf",
+    "applyUrl": "https://upsc.gov.in/",
+    "portalName": "UPSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: पूर्व परीक्षा (५०० गुण)",
+          "hi": "चरण १: प्रारंभिक परीक्षा (५०० अंक)",
+          "en": "Stage 1: Preliminary Objective Exam (500 Marks)"
+        },
+        "details": {
+          "mr": "General Studies & Engineering Aptitude (200), Engineering Discipline (300).",
+          "hi": "सामान्य अध्ययन एवं इंजीनियरिंग योग्यता (२००), कोर इंजीनियरिंग (३००)।",
+          "en": "GS & Engineering Aptitude Paper I (200) + Discipline Paper II (300)."
+        }
+      }
+    ],
+    "highlights": [
+      "भारतीय रेल्वे, CPWD, CWC, MES मधील क्लास-१ कार्यकारी अभियंता पदे"
+    ]
+  },
+  {
+    "id": "exam-upsc-cds-ii-2026",
+    "tier": "central",
+    "category": "defence",
+    "categoryLabel": {
+      "mr": "UPSC संरक्षण सेवा (CDS)",
+      "hi": "UPSC रक्षा सेवा (CDS)",
+      "en": "UPSC CDS Defence"
+    },
+    "examName": {
+      "mr": "UPSC संयुक्त संरक्षण सेवा परीक्षा (II) २०२६ (CDS-II IMA, INA, AFA, OTA)",
+      "hi": "UPSC सम्मिलित रक्षा सेवा परीक्षा (II) २०२६ (CDS-II)",
+      "en": "UPSC Combined Defence Services Examination (CDS II) 2026"
+    },
+    "department": {
+      "mr": "केंद्रीय लोकसेवा आयोग (UPSC) व भारतीय सैन्यदल (Army, Navy, Air Force)",
+      "hi": "संघ लोक सेवा आयोग एवं रक्षा मंत्रालय",
+      "en": "Union Public Service Commission & Ministry of Defence"
+    },
+    "totalPosts": "459+ Posts (IMA, INA, AFA, OTA)",
+    "eligibility": {
+      "mr": "पदवी उत्तीर्ण (IMA/OTA: कोणत्याही शाखेची पदवी, INA: अभियांत्रिकी पदवी, AFA: पदवी + १२ वी भौतिकशास्त्र व गणित).",
+      "hi": "स्नातक उत्तीर्ण (IMA/OTA हेतु स्नातक, INA/AFA हेतु इंजीनियरिंग/विज्ञान)।",
+      "en": "IMA/OTA: Degree of recognized University. INA: Engineering Degree. Air Force Academy: Degree (with Physics & Maths at 10+2) or BE/B.Tech."
+    },
+    "ageLimit": {
+      "mr": "१९ ते २५ वर्षे (अविवाहित उमेदवार)",
+      "hi": "१९ से २५ वर्ष (अविवाहित)",
+      "en": "19 to 25 years (Unmarried male/female candidates)"
+    },
+    "startDate": "20 May 2026",
+    "endDate": "9 Jun 2026",
+    "examDate": "13 Sep 2026",
+    "status": "active",
+    "statusNote": "Upcoming / active cycle",
+    "applicationFee": {
+      "mr": "₹२००/- | महिला/SC/ST: मोफत",
+      "hi": "₹२००/- | महिला/SC/ST: निःशुल्क",
+      "en": "General/OBC: ₹200 | Female/SC/ST: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/upsc_cds_syllabus_2026.pdf",
+    "applyUrl": "https://upsc.gov.in/",
+    "portalName": "UPSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: लेखी परीक्षा (३०० गुण)",
+          "hi": "चरण १: लिखित परीक्षा (३०० अंक)",
+          "en": "Stage 1: Written Examination (300 Marks - English, GK, Maths)"
+        },
+        "details": {
+          "mr": "English (100), General Knowledge (100), Elementary Mathematics (100).",
+          "hi": "अंग्रेजी (१००), सामान्य ज्ञान (१००), गणित (१००)।",
+          "en": "English, General Knowledge, and Elementary Mathematics (100 marks each)."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: SSB मुलाखत चाचणी (५ दिवस)",
+          "hi": "चरण २: एसएसबी साक्षात्कार (५ दिवसीय)",
+          "en": "Stage 2: SSB Interview & Psychological Testing"
+        },
+        "details": {
+          "mr": "सर्व्हिसेस सिलेक्शन बोर्ड (SSB) द्वारे ५ दिवसीय व्यक्तिमत्त्व व नेतृत्व चाचणी.",
+          "hi": "SSB बोर्ड द्वारा व्यक्तित्व एवं नेतृत्व परीक्षण।",
+          "en": "5-day comprehensive testing: Screening, Psychology, GTO, and Conference."
+        }
+      }
+    ],
+    "highlights": [
+      "भारतीय सैन्यात थेट कमिशन अधिकारी (Lieutenant / Sub-Lieutenant / Flying Officer) पदाची संधी",
+      "अग्निवीर नंतर थेट अधिकारी संवर्गातील सर्वोच्च परीक्षा"
+    ]
+  },
+  {
+    "id": "exam-upsc-nda-ii-2026",
+    "tier": "central",
+    "category": "defence",
+    "categoryLabel": {
+      "mr": "UPSC राष्ट्रीय संरक्षण प्रबोधिनी (NDA)",
+      "hi": "UPSC राष्ट्रीय रक्षा अकादमी (NDA)",
+      "en": "UPSC NDA / NA"
+    },
+    "examName": {
+      "mr": "UPSC राष्ट्रीय संरक्षण प्रबोधिनी व नौदल अकादमी परीक्षा (II) २०२६ (NDA/NA II)",
+      "hi": "UPSC राष्ट्रीय रक्षा अकादमी परीक्षा (II) २०२६ (NDA/NA II)",
+      "en": "UPSC National Defence Academy & Naval Academy Exam (NDA/NA II) 2026"
+    },
+    "department": {
+      "mr": "केंद्रीय लोकसेवा आयोग (UPSC, New Delhi)",
+      "hi": "संघ लोक सेवा आयोग",
+      "en": "Union Public Service Commission (UPSC)"
+    },
+    "totalPosts": "404+ Posts (Army, Navy, Air Force Wings)",
+    "eligibility": {
+      "mr": "१२ वी (10+2) उत्तीर्ण किंवा १२ वी मध्ये शिकणारे (Army Wing: कोणतीही शाखा, Air Force & Navy: भौतिकशास्त्र, रसायनशास्त्र व गणित).",
+      "hi": "१२वीं उत्तीर्ण अथवा अपीयरिंग (वायुसेना/नौसेना हेतु PCM अनिवार्य)।",
+      "en": "10+2 passed or appearing. Army Wing: 12th pass in any stream. Air Force & Navy: 12th pass with Physics, Chemistry & Mathematics."
+    },
+    "ageLimit": {
+      "mr": "१६.५ ते १९.५ वर्षे (अविवाहित युवक व युवती)",
+      "hi": "१६.५ से १९.५ वर्ष (अविवाहित)",
+      "en": "16.5 to 19.5 years (Unmarried male and female candidates)"
+    },
+    "startDate": "20 May 2026",
+    "endDate": "9 Jun 2026",
+    "examDate": "13 Sep 2026",
+    "status": "active",
+    "statusNote": "Upcoming / active cycle",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "₹100 | Female/SC/ST: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/upsc_nda_syllabus_2026.pdf",
+    "applyUrl": "https://upsc.gov.in/",
+    "portalName": "UPSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: लेखी परीक्षा (९०० गुण)",
+          "hi": "चरण १: लिखित परीक्षा (९०० अंक)",
+          "en": "Stage 1: Written Examination (Mathematics 300 + GAT 600)"
+        },
+        "details": {
+          "mr": "Mathematics (३०० गुण - १२ वी दर्जा), General Ability Test (GAT - ६०० गुण).",
+          "hi": "गणित (३०० अंक), सामान्य योग्यता परीक्षण (६०० अंक)।",
+          "en": "Paper 1: Mathematics (300 Marks, 2.5 Hrs), Paper 2: GAT (600 Marks, 2.5 Hrs)."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: SSB मुलाखत चाचणी (९०० गुण)",
+          "hi": "चरण २: एसएसबी इंटरव्यू (९०० अंक)",
+          "en": "Stage 2: SSB Interview & Officer Intelligence Rating"
+        },
+        "details": {
+          "mr": "५ दिवसीय शारीरिक, मानसिक व व्यक्तिमत्त्व मूल्यमापन.",
+          "hi": "५ दिवसीय मनोवैज्ञानिक एवं शारीरिक परीक्षण।",
+          "en": "5-day comprehensive officer potential assessment."
+        }
+      }
+    ],
+    "highlights": [
+      "१२ वी नंतर लगेच सैन्य दलात अधिकारी होण्याची प्रतिष्ठित संधी",
+      "खडकवासला, पुणे येथील NDA मध्ये ४ वर्षांचे संपूर्ण विनामूल्य प्रशिक्षण व पदवी"
+    ]
+  },
+  {
+    "id": "exam-upsc-capf-2026",
+    "tier": "central",
+    "category": "defence",
+    "categoryLabel": {
+      "mr": "UPSC केंद्रीय सशस्त्र पोलीस दल",
+      "hi": "UPSC केंद्रीय सशस्त्र पुलिस बल",
+      "en": "UPSC CAPF (AC)"
+    },
+    "examName": {
+      "mr": "UPSC केंद्रीय सशस्त्र पोलीस दल सहाय्यक कमांडंट परीक्षा २०२६ (CAPF AC - BSF, CRPF, CISF, ITBP, SSB)",
+      "hi": "UPSC केंद्रीय सशस्त्र पुलिस बल सहायक कमांडेंट परीक्षा २०२६ (CAPF AC)",
+      "en": "UPSC Central Armed Police Forces (Assistant Commandants) Exam 2026"
+    },
+    "department": {
+      "mr": "केंद्रीय लोकसेवा आयोग (UPSC) व गृह मंत्रालय, भारत सरकार",
+      "hi": "संघ लोक सेवा आयोग एवं गृह मंत्रालय",
+      "en": "Union Public Service Commission & Ministry of Home Affairs"
+    },
+    "totalPosts": "506+ Posts (BSF, CRPF, CISF, ITBP, SSB)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेची पदवी (Graduate in any discipline) व विहित शारीरिक निकष.",
+      "hi": "मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री एवं शारीरिक मानक।",
+      "en": "Bachelor's Degree in any discipline from a recognized University + prescribed physical standards."
+    },
+    "ageLimit": {
+      "mr": "२० ते २५ वर्षे (OBC: २८ वर्षे, SC/ST: ३० वर्षे)",
+      "hi": "२० से २५ वर्ष (आरक्षित वर्ग को छूट)",
+      "en": "20 to 25 years (OBC: 28, SC/ST: 30)"
+    },
+    "startDate": "20 May 2026",
+    "endDate": "9 Jun 2026",
+    "examDate": "19 Jul 2026",
+    "status": "active",
+    "statusNote": "Exam completed; evaluation & interview cycle active",
+    "applicationFee": {
+      "mr": "₹२००/- | SC/ST/महिला: मोफत",
+      "hi": "₹२००/- | SC/ST/महिला: निःशुल्क",
+      "en": "₹200 | SC/ST/Female: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/upsc_capf_syllabus_2026.pdf",
+    "applyUrl": "https://upsc.gov.in/",
+    "portalName": "UPSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: लेखी परीक्षा (४५० गुण)",
+          "hi": "चरण १: लिखित परीक्षा (४५० अंक)",
+          "en": "Stage 1: Written Examination (Paper 1: 250 Marks, Paper 2: 200 Marks)"
+        },
+        "details": {
+          "mr": "Paper 1: General Ability & Intelligence (MCQ - 250), Paper 2: General Studies, Essay & Comprehension (Descriptive - 200).",
+          "hi": "पेपर १: सामान्य क्षमता (२५० अंक), पेपर २: निबंध एवं समझ (२०० अंक)।",
+          "en": "Paper 1 (MCQ, 250 Marks) and Paper 2 (Descriptive Essay/Comprehension, 200 Marks)."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: शारीरिक क्षमता व वैद्यकीय चाचणी (PET/PST)",
+          "hi": "चरण २: शारीरिक दक्षता परीक्षा (PET/PST)",
+          "en": "Stage 2: Physical Standards / Physical Efficiency Tests (PET)"
+        },
+        "details": {
+          "mr": "१०० मीटर धावणे, ८०० मीटर धावणे, लांब उडी, गोळाफेक.",
+          "hi": "१०० मी दौड़, ८०० मी दौड़, लंबी कूद, गोला फेंक।",
+          "en": "100m sprint, 800m run, Long Jump, Shot Put."
+        }
+      }
+    ],
+    "highlights": [
+      "BSF, CRPF, CISF, ITBP मध्ये थेट क्लास-१ गझेटेड अधिकारी (Assistant Commandant) पद"
+    ]
+  },
+  {
+    "id": "exam-ssc-cgl-2026",
+    "tier": "central",
+    "category": "ssc",
+    "categoryLabel": {
+      "mr": "कर्मचारी निवड आयोग (SSC)",
+      "hi": "कर्मचारी चयन आयोग (SSC)",
+      "en": "Staff Selection Commission"
+    },
+    "examName": {
+      "mr": "SSC संयुक्त पदवीधर स्तर परीक्षा २०२६ (SSC CGL 2026 - Inspector, ASO, Tax Asst)",
+      "hi": "SSC संयुक्त स्नातक स्तरीय परीक्षा २०२६ (SSC CGL 2026)",
+      "en": "SSC Combined Graduate Level Examination (SSC CGL) 2026"
+    },
+    "department": {
+      "mr": "कर्मचारी निवड आयोग (SSC, New Delhi - केंद्र सरकार)",
+      "hi": "कर्मचारी चयन आयोग, भारत सरकार",
+      "en": "Staff Selection Commission (Govt of India)"
+    },
+    "totalPosts": "17,727+ Posts (Group B & C Central Ministries)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेची पदवी (Bachelor's Degree in any stream).",
+      "hi": "किसी भी मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री।",
+      "en": "Bachelor's Degree in any discipline from a recognized University."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ३० / ३२ वर्षे (पदानुसार; OBC: +३ वर्षे, SC/ST: +५ वर्षे)",
+      "hi": "१८ से ३०/३२ वर्ष (पदानुसार नियमानुसार छूट)",
+      "en": "18 to 30/32 years depending on post (OBC +3 yrs, SC/ST +5 yrs)"
+    },
+    "startDate": "Verify official notice",
+    "endDate": "Verify official notice",
+    "examDate": "2026 Schedule (Tier-1 CBT)",
+    "status": "active",
+    "statusNote": "Check current SSC notice & schedule",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST/ESM: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "₹100 | Female/SC/ST/Ex-Servicemen: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/ssc_cgl_syllabus_2026.pdf",
+    "applyUrl": "https://ssc.gov.in/",
+    "portalName": "SSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "Tier-1: संगणक आधारित चाचणी (CBT - २०० गुण, ६० मिनिटे)",
+          "hi": "Tier-1: कंप्यूटर आधारित परीक्षा (CBT - २०० अंक)",
+          "en": "Tier-1: Computer Based Examination (200 Marks, 60 Mins)"
+        },
+        "details": {
+          "mr": "General Intelligence (50), General Awareness (50), Quantitative Aptitude (50), English Comprehension (50).",
+          "hi": "तर्कशक्ति (५०), सामान्य ज्ञान (५०), गणित (५०), अंग्रेजी (५०)।",
+          "en": "Reasoning (50), GA (50), Quantitative Aptitude (50), English (50)."
+        }
+      },
+      {
+        "name": {
+          "mr": "Tier-2: मुख्य परीक्षा (३९० गुण + DEST टायपिंग)",
+          "hi": "Tier-2: मुख्य परीक्षा (३९० अंक + टाइपिंग)",
+          "en": "Tier-2: Comprehensive Mains Exam (390 Marks + Data Entry Test)"
+        },
+        "details": {
+          "mr": "Maths, Reasoning, English, General Awareness, Computer Knowledge Module, Data Entry Speed Test.",
+          "hi": "गणित, तर्कशक्ति, अंग्रेजी, सामान्य ज्ञान, कंप्यूटर ज्ञान एवं टाइपिंग।",
+          "en": "Maths, Reasoning, English, GA, Computer Proficiency & Data Entry Speed Test."
+        }
+      }
+    ],
+    "highlights": [
+      "केंद्रीय गुप्तचर विभाग (IB), CBI, GST इन्स्पेक्टर, आयकर निरीक्षक (Income Tax) पदांची भरती",
+      "इन्व्हिक्टसवर इंग्रजी व गणित शॉर्टकट ट्रिक्स उपलब्ध"
+    ]
+  },
+  {
+    "id": "exam-ssc-chsl-2026",
+    "tier": "central",
+    "category": "ssc",
+    "categoryLabel": {
+      "mr": "कर्मचारी निवड आयोग (SSC)",
+      "hi": "कर्मचारी चयन आयोग (SSC)",
+      "en": "Staff Selection Commission"
+    },
+    "examName": {
+      "mr": "SSC संयुक्त उच्च माध्यमिक स्तर परीक्षा २०२६ (SSC CHSL 10+2 - LDC, DEO, JSA)",
+      "hi": "SSC संयुक्त उच्चतर माध्यमिक स्तर परीक्षा २०२६ (SSC CHSL 10+2)",
+      "en": "SSC Combined Higher Secondary Level (10+2) Exam 2026"
+    },
+    "department": {
+      "mr": "कर्मचारी निवड आयोग (SSC, New Delhi)",
+      "hi": "कर्मचारी चयन आयोग",
+      "en": "Staff Selection Commission (Govt of India)"
+    },
+    "totalPosts": "3,712+ Posts (LDC, JSA, DEO)",
+    "eligibility": {
+      "mr": "१२ वी (HSC / 10+2) उत्तीर्ण कोणत्याही शाखेतून.",
+      "hi": "१२वीं (10+2) किसी भी संकाय में उत्तीर्ण।",
+      "en": "12th Standard or equivalent examination from a recognized Board."
+    },
+    "ageLimit": {
+      "mr": "१८ ते २७ वर्षे (OBC: ३० वर्षे, SC/ST: ३२ वर्षे)",
+      "hi": "१८ से २७ वर्ष (आरक्षित वर्ग हेतु छूट)",
+      "en": "18 to 27 years (OBC +3 yrs, SC/ST +5 yrs)"
+    },
+    "startDate": "Verify official notice",
+    "endDate": "Verify official notice",
+    "examDate": "2026 Schedule",
+    "status": "active",
+    "statusNote": "Check current SSC notice",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "₹100 | Female/SC/ST: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/ssc_chsl_syllabus_2026.pdf",
+    "applyUrl": "https://ssc.gov.in/",
+    "portalName": "SSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "Tier-1: संगणक आधारित पूर्व परीक्षा (CBT - २०० गुण)",
+          "hi": "Tier-1: कंप्यूटर आधारित परीक्षा (CBT - २०० अंक)",
+          "en": "Tier-1: Computer Based Objective Test (200 Marks)"
+        },
+        "details": {
+          "mr": "English, General Intelligence, Quantitative Aptitude, General Awareness (प्रत्येकी ५० गुण).",
+          "hi": "अंग्रेजी, तर्कशक्ति, अंकगणित, सामान्य ज्ञान (प्रत्येक ५० अंक)।",
+          "en": "English, Reasoning, Maths, General Awareness (50 marks each, 60 mins)."
+        }
+      }
+    ],
+    "highlights": [
+      "१२ वी उत्तीर्ण विद्यार्थ्यांसाठी केंद्र सरकारच्या विविध मंत्रालयात थेट लिपिक (LDC/DEO) नोकरीची संधी"
+    ]
+  },
+  {
+    "id": "exam-ssc-mts-2026",
+    "tier": "central",
+    "category": "ssc",
+    "categoryLabel": {
+      "mr": "कर्मचारी निवड आयोग (SSC)",
+      "hi": "कर्मचारी चयन आयोग (SSC)",
+      "en": "Staff Selection Commission"
+    },
+    "examName": {
+      "mr": "SSC मल्टी टास्किंग स्टाफ व हवालदार परीक्षा २०२६ (SSC MTS & Havaldar CBIC/CBN)",
+      "hi": "SSC मल्टी टास्किंग स्टाफ एवं हवलदार परीक्षा २०२६ (SSC MTS)",
+      "en": "SSC Multi-Tasking (Non-Technical) Staff & Havaldar Exam 2026"
+    },
+    "department": {
+      "mr": "कर्मचारी निवड आयोग (SSC, New Delhi)",
+      "hi": "कर्मचारी चयन आयोग",
+      "en": "Staff Selection Commission (Govt of India)"
+    },
+    "totalPosts": "9,583+ Posts (MTS & Havaldar)",
+    "eligibility": {
+      "mr": "१० वी (SSC / Matriculation) उत्तीर्ण मान्यताप्राप्त बोर्डातून.",
+      "hi": "१०वीं (Matriculation) उत्तीर्ण।",
+      "en": "Matriculation (10th Class pass) from a recognized Board."
+    },
+    "ageLimit": {
+      "mr": "१८ ते २५ वर्षे व १८ ते २७ वर्षे (पदानुसार; सवलती नियमानुसार)",
+      "hi": "१८ से २५/२७ वर्ष",
+      "en": "18 to 25 / 27 years depending on post"
+    },
+    "startDate": "Verify official notice",
+    "endDate": "Verify official notice",
+    "examDate": "2026 Schedule (मराठी/हिंदी/इंग्रजीत उपलब्ध)",
+    "status": "active",
+    "statusNote": "Check current SSC notice",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "₹100 | Female/SC/ST: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/ssc_mts_syllabus_2026.pdf",
+    "applyUrl": "https://ssc.gov.in/",
+    "portalName": "SSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "संगणक आधारित परीक्षा (CBT - १३ प्रादेशिक भाषांमध्ये, मराठीतही उपलब्ध)",
+          "hi": "कंप्यूटर आधारित परीक्षा (CBT - १३ क्षेत्रीय भाषाओं में)",
+          "en": "Computer Based Examination (Conducted in 13 Regional Languages including Marathi & Hindi)"
+        },
+        "details": {
+          "mr": "Session 1: Numerical Ability & Reasoning (Non-negative); Session 2: General Awareness & English Language (Merit Deciding).",
+          "hi": "सत्र १: गणित एवं रीजनिंग; सत्र २: सामान्य ज्ञान एवं अंग्रेजी (मेरिट आधारित)।",
+          "en": "Session 1: Maths & Reasoning (Qualifying, no negative marking); Session 2: General Awareness & English (Merit determining)."
+        }
+      }
+    ],
+    "highlights": [
+      "१० वी उत्तीर्ण ग्रामीण तरुणांसाठी मराठी भाषेत परीक्षा देण्याची सुवर्णसंधी",
+      "केंद्रीय सीमाशुल्क, जीएसटी व आयकर कार्यालयात कायमस्वरूपी पदे"
+    ]
+  },
+  {
+    "id": "exam-ssc-gd-2026",
+    "tier": "central",
+    "category": "ssc",
+    "categoryLabel": {
+      "mr": "कर्मचारी निवड आयोग (SSC)",
+      "hi": "कर्मचारी चयन आयोग (SSC)",
+      "en": "Staff Selection Commission"
+    },
+    "examName": {
+      "mr": "SSC कॉन्स्टेबल (GD) केंद्रीय सशस्त्र पोलीस दल भरती २०२६-२७ (BSF, CISF, CRPF, SSB, ITBP, AR, SSF)",
+      "hi": "SSC जीडी कांस्टेबल भर्ती २०२६-२७ (BSF, CISF, CRPF, SSB, ITBP)",
+      "en": "SSC Constable (GD) in Central Armed Police Forces Recruitment 2026-27"
+    },
+    "department": {
+      "mr": "कर्मचारी निवड आयोग (SSC) व गृह मंत्रालय, भारत सरकार",
+      "hi": "कर्मचारी चयन आयोग एवं गृह मंत्रालय",
+      "en": "Staff Selection Commission & Ministry of Home Affairs"
+    },
+    "totalPosts": "39,481+ Posts (Massive Central Hiring)",
+    "eligibility": {
+      "mr": "१० वी (Matriculation) उत्तीर्ण व विहित शारीरिक क्षमता निकष.",
+      "hi": "१०वीं उत्तीर्ण एवं शारीरिक दक्षता मानक।",
+      "en": "Matriculation (10th Class pass) from a recognized Board + physical fitness standards."
+    },
+    "ageLimit": {
+      "mr": "१८ ते २३ वर्षे (OBC: २६ वर्षे, SC/ST: २८ वर्षे)",
+      "hi": "१८ से २३ वर्ष (आरक्षित वर्ग हेतु छूट)",
+      "en": "18 to 23 years (OBC: 26, SC/ST: 28)"
+    },
+    "startDate": "Verify official notice",
+    "endDate": "Verify official notice",
+    "examDate": "2026-27 Schedule",
+    "status": "upcoming",
+    "statusNote": "Upcoming cycle schedule",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST/ESM: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "₹100 | Female/SC/ST/ESM: Nil"
+    },
+    "syllabusPdfUrl": "/docs/exams/ssc_gd_syllabus_2026.pdf",
+    "applyUrl": "https://ssc.gov.in/",
+    "portalName": "SSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: संगणक आधारित लेखी परीक्षा (CBT - १६० गुण)",
+          "hi": "चरण १: कंप्यूटर आधारित लिखित परीक्षा (१६० अंक)",
+          "en": "Stage 1: Computer Based Examination (160 Marks, 80 Questions, 60 Mins)"
+        },
+        "details": {
+          "mr": "Intelligence & Reasoning (40), General Knowledge (40), Elementary Maths (40), English/Hindi (40).",
+          "hi": "तर्कशक्ति (४०), सामान्य ज्ञान (४०), प्राथमिक गणित (४०), हिंदी/अंग्रेजी (४०)।",
+          "en": "Reasoning (40), General Knowledge (40), Elementary Maths (40), English/Hindi (40)."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: शारीरिक क्षमता चाचणी (PET / PST)",
+          "hi": "चरण २: शारीरिक दक्षता परीक्षा (PET/PST)",
+          "en": "Stage 2: Physical Efficiency Test (PET: 5km run in 24 mins for male)"
+        },
+        "details": {
+          "mr": "पुरुष: ५ किमी २४ मिनिटांत | महिला: १.६ किमी ८.५ मिनिटांत.",
+          "hi": "पुरुष: ५ किमी २४ मिनट | महिला: १.६ किमी ८.५ मिनट।",
+          "en": "Male: 5 Km in 24 mins; Female: 1.6 Km in 8.5 mins."
+        }
+      }
+    ],
+    "highlights": [
+      "१० वी उत्तीर्णांसाठी सर्वाधिक पदसंख्या असलेली देशव्यापी सैन्य दल भरती",
+      "मराठीसह प्रादेशिक भाषेत परीक्षा देण्याची सुविधा"
+    ]
+  },
+  {
+    "id": "exam-ssc-je-2026",
+    "tier": "central",
+    "category": "ssc",
+    "categoryLabel": {
+      "mr": "कर्मचारी निवड आयोग (SSC)",
+      "hi": "कर्मचारी चयन आयोग (SSC)",
+      "en": "Staff Selection Commission"
+    },
+    "examName": {
+      "mr": "SSC कनिष्ठ अभियंता परीक्षा २०२६ (SSC JE - Civil, Electrical, Mechanical)",
+      "hi": "SSC जूनियर इंजीनियर परीक्षा २०२६ (SSC JE)",
+      "en": "SSC Junior Engineer (Civil, Mechanical & Electrical) Exam 2026"
+    },
+    "department": {
+      "mr": "कर्मचारी निवड आयोग (SSC) - CPWD, MES, CWC",
+      "hi": "कर्मचारी चयन आयोग (CPWD, MES)",
+      "en": "Staff Selection Commission (CPWD, MES, CWC, NTRO)"
+    },
+    "totalPosts": "1,765+ Posts",
+    "eligibility": {
+      "mr": "डिप्लोमा किंवा पदवी (Diploma or Degree in Civil / Electrical / Mechanical Engineering).",
+      "hi": "सिविल/मैकेनिकल/इलेक्ट्रिकल इंजीनियरिंग में डिप्लोमा अथवा डिग्री।",
+      "en": "Diploma or BE/B.Tech in Civil, Electrical, or Mechanical Engineering from a recognized institution."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ३० / ३२ वर्षे (पदानुसार)",
+      "hi": "१८ से ३०/३२ वर्ष",
+      "en": "18 to 30/32 years (Relaxations as per rules)"
+    },
+    "startDate": "Verify official notice",
+    "endDate": "Verify official notice",
+    "examDate": "2026 Schedule",
+    "status": "active",
+    "statusNote": "Check official notice",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "₹100 | Female/SC/ST: Nil"
+    },
+    "syllabusPdfUrl": "/docs/exams/ssc_je_syllabus_2026.pdf",
+    "applyUrl": "https://ssc.gov.in/",
+    "portalName": "SSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "Paper-1: संगणक आधारित चाचणी (CBT - २०० गुण, २ तास)",
+          "hi": "Paper-1: कंप्यूटर आधारित परीक्षा (२०० अंक)",
+          "en": "Paper-1: Computer Based Objective Test (200 Marks, 2 Hours)"
+        },
+        "details": {
+          "mr": "General Intelligence (50), General Awareness (50), General Engineering (100).",
+          "hi": "रीजनिंग (५०), सामान्य ज्ञान (५०), कोर इंजीनियरिंग (१००)।",
+          "en": "Reasoning (50), General Awareness (50), Core Engineering Subject (100)."
+        }
+      }
+    ],
+    "highlights": [
+      "इंजिनिअरिंग डिप्लोमा व पदवीधरांसाठी केंद्र सरकारी खात्यात कायमस्वरूपी नोकरी"
+    ]
+  },
+  {
+    "id": "exam-ssc-cpo-2026",
+    "tier": "central",
+    "category": "ssc",
+    "categoryLabel": {
+      "mr": "कर्मचारी निवड आयोग (SSC)",
+      "hi": "कर्मचारी चयन आयोग (SSC)",
+      "en": "Staff Selection Commission"
+    },
+    "examName": {
+      "mr": "SSC दिल्ली पोलीस व CAPF उपनिरीक्षक परीक्षा २०२६ (SSC CPO SI)",
+      "hi": "SSC दिल्ली पुलिस एवं CAPF सब इंस्पेक्टर परीक्षा २०२६ (SSC CPO SI)",
+      "en": "SSC Sub-Inspector in Delhi Police & Central Armed Police Forces (CPO) 2026"
+    },
+    "department": {
+      "mr": "कर्मचारी निवड आयोग (SSC) व दिल्ली पोलीस / गृह मंत्रालय",
+      "hi": "कर्मचारी चयन आयोग एवं दिल्ली पुलिस",
+      "en": "Staff Selection Commission & Delhi Police / CAPFs"
+    },
+    "totalPosts": "4,187+ Posts (Sub Inspector)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेची पदवी (Graduate in any discipline) व वाहन चालक परवाना (दिल्ली पोलीस SI साठी).",
+      "hi": "स्नातक डिग्री एवं ड्राइविंग लाइसेंस।",
+      "en": "Bachelor's Degree in any discipline + valid Driving License for LMV (Delhi Police SI)."
+    },
+    "ageLimit": {
+      "mr": "२० ते २५ वर्षे (OBC: २८ वर्षे, SC/ST: ३० वर्षे)",
+      "hi": "२० से २५ वर्ष (आरक्षित वर्ग हेतु नियमानुसार छूट)",
+      "en": "20 to 25 years (OBC: 28, SC/ST: 30)"
+    },
+    "startDate": "Verify official notice",
+    "endDate": "Verify official notice",
+    "examDate": "2026 Schedule",
+    "status": "active",
+    "statusNote": "Check official notice",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "₹100 | Female/SC/ST: Nil"
+    },
+    "syllabusPdfUrl": "/docs/exams/ssc_cpo_syllabus_2026.pdf",
+    "applyUrl": "https://ssc.gov.in/",
+    "portalName": "SSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "Paper-1: CBT परीक्षा (२०० गुण) + शारीरिक क्षमता चाचणी (PET/PST)",
+          "hi": "Paper-1: CBT परीक्षा (२०० अंक) + शारीरिक दक्षता परीक्षा (PET)",
+          "en": "Paper-1: Objective CBT (200 Marks) + Physical Endurance & Measurement Test"
+        },
+        "details": {
+          "mr": "Reasoning (50), GK (50), Quantitative Aptitude (50), English (50).",
+          "hi": "रीजनिंग (५०), सामान्य ज्ञान (५०), गणित (५०), अंग्रेजी (५०)।",
+          "en": "Reasoning (50), General Awareness (50), Maths (50), English (50)."
+        }
+      }
+    ],
+    "highlights": [
+      "दिल्ली पोलीस व केंद्रीय निमलष्करी दलात दोन स्टार (Sub Inspector) पद"
+    ]
+  },
+  {
+    "id": "exam-ssc-steno-2026",
+    "tier": "central",
+    "category": "ssc",
+    "categoryLabel": {
+      "mr": "कर्मचारी निवड आयोग (SSC)",
+      "hi": "कर्मचारी चयन आयोग (SSC)",
+      "en": "Staff Selection Commission"
+    },
+    "examName": {
+      "mr": "SSC स्टेनोग्राफर ग्रेड 'C' आणि 'D' परीक्षा २०२६",
+      "hi": "SSC स्टेनोग्राफर ग्रेड 'C' एवं 'D' परीक्षा २०२६",
+      "en": "SSC Stenographer Grade 'C' & 'D' Examination 2026"
+    },
+    "department": {
+      "mr": "कर्मचारी निवड आयोग (SSC, New Delhi)",
+      "hi": "कर्मचारी चयन आयोग",
+      "en": "Staff Selection Commission"
+    },
+    "totalPosts": "2,006+ Posts",
+    "eligibility": {
+      "mr": "१२ वी (10+2) उत्तीर्ण व लघुलेखन (Stenography Skills: Grade C 100 wpm / Grade D 80 wpm).",
+      "hi": "१२वीं उत्तीर्ण एवं आशुलिपि (स्टेनोग्राफी) कौशल।",
+      "en": "12th Standard pass + Stenography speed test (100 WPM for Grade C, 80 WPM for Grade D)."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ३० वर्षे (Grade C), १८ ते २७ वर्षे (Grade D)",
+      "hi": "१८ से ३०/२७ वर्ष",
+      "en": "18 to 30 years (Grade C), 18 to 27 years (Grade D)"
+    },
+    "startDate": "Verify official notice",
+    "endDate": "Verify official notice",
+    "examDate": "2026 Schedule",
+    "status": "active",
+    "statusNote": "Check official notice",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST: निःशुल्क",
+      "en": "₹100 | Female/SC/ST: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/ssc_steno_syllabus_2026.pdf",
+    "applyUrl": "https://ssc.gov.in/",
+    "portalName": "SSC Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "CBT लेखी परीक्षा (२०० गुण - गणित विषय नसतो)",
+          "hi": "CBT लिखित परीक्षा (२०० अंक - बिना गणित)",
+          "en": "CBT Written Test (200 Marks - No Mathematics paper)"
+        },
+        "details": {
+          "mr": "General Intelligence (50), General Awareness (50), English Language & Comprehension (100).",
+          "hi": "रीजनिंग (५०), सामान्य ज्ञान (५०), अंग्रेजी (१००)।",
+          "en": "Reasoning (50), General Awareness (50), English Comprehension (100)."
+        }
+      }
+    ],
+    "highlights": [
+      "गणित विषयात भीती वाटणाऱ्या विद्यार्थ्यांसाठी उत्तम संधी (यात गणिताचा पेपर नसतो)",
+      "केंद्रीय मंत्रालयांमध्ये खाजगी सचिव व स्टेनोग्राफर पदे"
+    ]
+  },
+  {
+    "id": "exam-rrb-ntpc-2026",
+    "tier": "central",
+    "category": "railways",
+    "categoryLabel": {
+      "mr": "रेल्वे भरती मंडळ (RRB)",
+      "hi": "रेलवे भर्ती बोर्ड (RRB)",
+      "en": "Railway Recruitment Board"
+    },
+    "examName": {
+      "mr": "RRB नॉन-टेक्निकल पॉप्युलर कॅटेगरीज परीक्षा २०२६ (RRB NTPC - Station Master, Goods Guard, Clerk)",
+      "hi": "RRB गैर-तकनीकी लोकप्रिय श्रेणियां २०२६ (RRB NTPC)",
+      "en": "RRB Non-Technical Popular Categories (NTPC Graduate & Under Graduate) 2026"
+    },
+    "department": {
+      "mr": "रेल्वे भरती नियंत्रण मंडळ (Ministry of Railways, Govt of India)",
+      "hi": "रेलवे भर्ती नियंत्रण बोर्ड, रेल मंत्रालय",
+      "en": "Railway Recruitment Control Board, Ministry of Railways"
+    },
+    "totalPosts": "11,558+ Posts (Station Master, Goods Train Manager, Sr. Clerk)",
+    "eligibility": {
+      "mr": "पदवीधर (Graduate) किंवा १२ वी उत्तीर्ण (Under Graduate Level पदानुसार).",
+      "hi": "स्नातक अथवा १२वीं उत्तीर्ण (पदानुसार)।",
+      "en": "Bachelor's Degree for Graduate level posts; 12th pass for Undergraduate level posts."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ३३ वर्षे (12th level), १८ ते ३६ वर्षे (Graduate level) - सवलत समाविष्ट",
+      "hi": "१८ से ३३/३६ वर्ष (आरक्षित वर्ग हेतु छूट)",
+      "en": "18 to 33 years (12th Level), 18 to 36 years (Graduate Level)"
+    },
+    "startDate": "Check current CEN notice",
+    "endDate": "Check current CEN notice",
+    "examDate": "2026 Schedule / CEN",
+    "status": "active",
+    "statusNote": "Check current CEN notification",
+    "applicationFee": {
+      "mr": "₹५००/- (CBT दिल्यानंतर ₹४००/- परत) | SC/ST/महिला/EBC: ₹२५०/- (पूर्ण परत)",
+      "hi": "₹५००/- (CBT उपरांत ₹४००/- रिफंड) | SC/ST/महिला: ₹२५०/- (पूर्ण रिफंड)",
+      "en": "₹500 (₹400 refunded after CBT) | SC/ST/Female/Minorities: ₹250 (Full refund after CBT)"
+    },
+    "syllabusPdfUrl": "/docs/exams/rrb_ntpc_syllabus_2026.pdf",
+    "applyUrl": "https://indianrailways.gov.in/",
+    "portalName": "Indian Railways RRB Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "CBT Stage 1: चाळणी परीक्षा (१०० गुण, ९० मिनिटे - मराठीत उपलब्ध)",
+          "hi": "CBT Stage 1: स्क्रीनिंग परीक्षा (१०० अंक)",
+          "en": "CBT Stage 1: Screening Test (100 Questions, 90 Mins in 15 Languages including Marathi)"
+        },
+        "details": {
+          "mr": "General Awareness (40), Mathematics (30), General Intelligence & Reasoning (30).",
+          "hi": "सामान्य ज्ञान (४०), गणित (३०), रीजनिंग (३०)।",
+          "en": "General Awareness (40), Mathematics (30), Reasoning (30)."
+        }
+      },
+      {
+        "name": {
+          "mr": "CBT Stage 2: मुख्य परीक्षा (१२० गुण, ९० मिनिटे)",
+          "hi": "CBT Stage 2: मुख्य परीक्षा (१२० अंक)",
+          "en": "CBT Stage 2: Main Exam (120 Questions, 90 Mins)"
+        },
+        "details": {
+          "mr": "General Awareness (50), Mathematics (35), Reasoning (35).",
+          "hi": "सामान्य ज्ञान (५०), गणित (३५), रीजनिंग (३५)।",
+          "en": "General Awareness (50), Mathematics (35), Reasoning (35)."
+        }
+      }
+    ],
+    "highlights": [
+      "मध्य रेल्वे (मुंबई, भुसावळ, पुणे, सोलापूर, नागपूर) मध्ये नियुक्तीची सुवर्णसंधी",
+      "इन्व्हिक्टसवर रेल्वे सामान्य ज्ञान व गणित सराव संच उपलब्ध"
+    ]
+  },
+  {
+    "id": "exam-rrb-group-d-2026",
+    "tier": "central",
+    "category": "railways",
+    "categoryLabel": {
+      "mr": "रेल्वे भरती मंडळ (RRB)",
+      "hi": "रेलवे भर्ती बोर्ड (RRB)",
+      "en": "Railway Recruitment Board"
+    },
+    "examName": {
+      "mr": "RRB गट-ड / लेव्हल-१ रेल्वे भरती २०२६ (RRB Group D / Level-1 Track Maintainer, Helper)",
+      "hi": "RRB समूह-घ / लेवल-१ रेलवे भर्ती २०२६ (RRB Group D)",
+      "en": "RRB Group D / Level-1 Track Maintainer & Assistant Posts 2026"
+    },
+    "department": {
+      "mr": "रेल्वे भरती नियंत्रण मंडळ (Ministry of Railways)",
+      "hi": "रेलवे भर्ती नियंत्रण बोर्ड",
+      "en": "Railway Recruitment Control Board"
+    },
+    "totalPosts": "32,000+ Posts (Track Maintainer Gr IV, Pointsman, Assistant)",
+    "eligibility": {
+      "mr": "१० वी (10th Pass) किंवा ITI (NCVT/SCVT).",
+      "hi": "१०वीं उत्तीर्ण अथवा ITI प्रमाण पत्र।",
+      "en": "10th pass or ITI from institutions recognized by NCVT/SCVT or National Apprenticeship Certificate (NAC)."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ३३ वर्षे (OBC: ३६ वर्षे, SC/ST: ३८ वर्षे)",
+      "hi": "१८ से ३३ वर्ष (आरक्षित वर्ग हेतु नियमानुसार छूट)",
+      "en": "18 to 33 years (OBC: 36, SC/ST: 38)"
+    },
+    "startDate": "Check current CEN notice",
+    "endDate": "Check current CEN notice",
+    "examDate": "2026 Schedule / CEN",
+    "status": "active",
+    "statusNote": "Check current CEN notice",
+    "applicationFee": {
+      "mr": "₹५००/- (CBT दिल्यावर ₹४००/- परत) | SC/ST/महिला: ₹२५०/- (पूर्ण परत)",
+      "hi": "₹५००/- (रिफंड उपरांत) | SC/ST/महिला: ₹२५०/-",
+      "en": "₹500 (₹400 refund) | SC/ST/Female: ₹250 (Full refund)"
+    },
+    "syllabusPdfUrl": "/docs/exams/rrb_groupd_syllabus_2026.pdf",
+    "applyUrl": "https://indianrailways.gov.in/",
+    "portalName": "Indian Railways Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "CBT संगणक परीक्षा (१०० गुण, ९० मिनिटे - मराठी भाषेत उपलब्ध)",
+          "hi": "CBT कंप्यूटर परीक्षा (१०० अंक - मराठी/हिंदी में)",
+          "en": "Computer Based Test (100 Marks, 90 Mins in Marathi & Hindi)"
+        },
+        "details": {
+          "mr": "General Science (25), Mathematics (25), General Intelligence (30), General Awareness (20).",
+          "hi": "सामान्य विज्ञान (२५), गणित (२५), रीजनिंग (३०), सामान्य ज्ञान (२०)।",
+          "en": "General Science (25), Maths (25), Reasoning (30), Current Affairs (20)."
+        }
+      },
+      {
+        "name": {
+          "mr": "शारीरिक कार्यक्षमता चाचणी (PET)",
+          "hi": "शारीरिक दक्षता परीक्षा (PET)",
+          "en": "Physical Efficiency Test (PET: 35 kg weight carry for 100m + 1000m run)"
+        },
+        "details": {
+          "mr": "पुरुष: ३५ किलो वजन १०० मीटर २ मिनिटांत + १००० मीटर ४ मि १५ सेकंदात.",
+          "hi": "पुरुष: ३५ किग्रा वजन १०० मीटर + १००० मीटर दौड़।",
+          "en": "Male: 35 kg weight carry for 100m in 2 mins + 1000m run in 4 min 15 sec."
+        }
+      }
+    ],
+    "highlights": [
+      "१० वी व ITI उत्तीर्णांसाठी कायमस्वरूपी केंद्र सरकारी रेल्वे नोकरी",
+      "मराठी भाषेत संपूर्ण परीक्षा देण्याची सुविधा"
+    ]
+  },
+  {
+    "id": "exam-rrb-je-2026",
+    "tier": "central",
+    "category": "railways",
+    "categoryLabel": {
+      "mr": "रेल्वे भरती मंडळ (RRB)",
+      "hi": "रेलवे भर्ती बोर्ड (RRB)",
+      "en": "Railway Recruitment Board"
+    },
+    "examName": {
+      "mr": "RRB कनिष्ठ अभियंता परीक्षा २०२६ (RRB JE - Civil, Mechanical, Electrical, IT)",
+      "hi": "RRB जूनियर इंजीनियर परीक्षा २०२६ (RRB JE)",
+      "en": "RRB Junior Engineer (JE, DMS, CMA) Examination 2026"
+    },
+    "department": {
+      "mr": "रेल्वे भरती नियंत्रण मंडळ (Ministry of Railways)",
+      "hi": "रेलवे भर्ती बोर्ड",
+      "en": "Railway Recruitment Control Board"
+    },
+    "totalPosts": "7,951+ Posts",
+    "eligibility": {
+      "mr": "अभियांत्रिकी पदविका (Diploma) किंवा पदवी (BE/B.Tech).",
+      "hi": "इंजीनियरिंग में डिप्लोमा अथवा डिग्री।",
+      "en": "3-Year Diploma or BE/B.Tech in Civil, Mechanical, Electrical, Electronics, or CS/IT."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ३६ वर्षे (सवलतीसह)",
+      "hi": "१८ से ३६ वर्ष",
+      "en": "18 to 36 years (Including age relaxation)"
+    },
+    "startDate": "Check current CEN notice",
+    "endDate": "Check current CEN notice",
+    "examDate": "2026 Schedule / CEN",
+    "status": "active",
+    "statusNote": "Check current CEN notice",
+    "applicationFee": {
+      "mr": "₹५००/- (₹४००/- रिफंड) | SC/ST/महिला: ₹२५०/-",
+      "hi": "₹५००/- | SC/ST/महिला: ₹२५०/-",
+      "en": "₹500 (₹400 refundable) | SC/ST/Female: ₹250"
+    },
+    "syllabusPdfUrl": "/docs/exams/rrb_je_syllabus_2026.pdf",
+    "applyUrl": "https://indianrailways.gov.in/",
+    "portalName": "Indian Railways Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "CBT-1 (१०० गुण) व CBT-2 (१५० गुण तांत्रिक विषय)",
+          "hi": "CBT-1 (१०० अंक) एवं CBT-2 (१५० अंक तकनीकी)",
+          "en": "CBT-1 (100 Marks Screening) + CBT-2 (150 Marks Core Technical)"
+        },
+        "details": {
+          "mr": "Maths, Reasoning, General Science, Core Technical Engineering Papers.",
+          "hi": "गणित, रीजनिंग, सामान्य विज्ञान एवं कोर तकनीकी इंजीनियरिंग।",
+          "en": "Maths, Reasoning, Science + Core Engineering Discipline."
+        }
+      }
+    ],
+    "highlights": [
+      "भारतीय रेल्वेमध्ये राजपत्रित समकक्ष तांत्रिक अधिकारी पद"
+    ]
+  },
+  {
+    "id": "exam-ibps-po-2026",
+    "tier": "central",
+    "category": "banking",
+    "categoryLabel": {
+      "mr": "बँकिंग भरती (IBPS)",
+      "hi": "बैंकिंग भर्ती (IBPS)",
+      "en": "Banking IBPS"
+    },
+    "examName": {
+      "mr": "IBPS प्रोबेशनरी ऑफिसर भरती परीक्षा २०२६ (IBPS PO / MT-XVI - ११ राष्ट्रीयीकृत बँका)",
+      "hi": "IBPS प्रोबेशनरी ऑफिसर भर्ती २०२६ (IBPS PO / MT-XVI)",
+      "en": "IBPS Probationary Officer / Management Trainee (PO/MT-XVI) 2026"
+    },
+    "department": {
+      "mr": "इन्स्टिट्यूट ऑफ बँकिंग कार्मिक निवड (IBPS, Mumbai - Bank of Maharashtra, PNB, BoB, Canara etc.)",
+      "hi": "बैंकिंग कार्मिक चयन संस्थान (IBPS)",
+      "en": "Institute of Banking Personnel Selection (IBPS)"
+    },
+    "totalPosts": "4,458+ Posts (Public Sector Banks)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेची पदवी (Graduate in any discipline) व संगणक साक्षरता.",
+      "hi": "किसी भी मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री।",
+      "en": "A Degree (Graduation) in any discipline from a University recognized by the Govt. of India."
+    },
+    "ageLimit": {
+      "mr": "२० ते ३० वर्षे (OBC: ३३ वर्षे, SC/ST: ३५ वर्षे)",
+      "hi": "२० से ३० वर्ष (आरक्षित वर्ग हेतु नियमानुसार छूट)",
+      "en": "20 to 30 years (OBC: 33, SC/ST: 35, PwBD: 40)"
+    },
+    "startDate": "1 Jul 2026",
+    "endDate": "21 Jul 2026",
+    "examDate": "4-5 Oct 2026 (Prelims); 29 Nov 2026 (Mains)",
+    "status": "upcoming",
+    "statusNote": "Application closed; exam upcoming (4-5 Oct 2026)",
+    "applicationFee": {
+      "mr": "₹८५०/- | SC/ST/PwBD: ₹१७५/-",
+      "hi": "₹८५०/- | SC/ST/PwBD: ₹१७५/-",
+      "en": "General/EWS/OBC: ₹850 | SC/ST/PwBD: ₹175"
+    },
+    "syllabusPdfUrl": "/docs/exams/ibps_po_syllabus_2026.pdf",
+    "applyUrl": "https://www.ibps.in/",
+    "portalName": "IBPS Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: पूर्व परीक्षा (Prelims CBT - १०० गुण, ६० मिनिटे)",
+          "hi": "चरण १: प्रारंभिक परीक्षा (Prelims - १०० अंक)",
+          "en": "Stage 1: Preliminary Online Exam (100 Marks, 60 Mins Sectional Timed)"
+        },
+        "details": {
+          "mr": "English Language (30), Quantitative Aptitude (35), Reasoning Ability (35).",
+          "hi": "अंग्रेजी (३०), गणित (३५), रीजनिंग (३५)।",
+          "en": "English (30), Quantitative Aptitude (35), Reasoning Ability (35) with 20 mins sectional timing."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: मुख्य परीक्षा (Mains CBT - २२५ गुण + निबंध/पत्रलेखन)",
+          "hi": "चरण २: मुख्य परीक्षा (Mains - २२५ अंक)",
+          "en": "Stage 2: Main Examination (200 Marks Objective + 25 Marks Descriptive Writing)"
+        },
+        "details": {
+          "mr": "Reasoning & Computer (60), General Economy & Banking (40), English (40), Data Analysis (60) + Essay/Letter (25).",
+          "hi": "रीजनिंग, बैंकिंग अवेयरनेस, अंग्रेजी, डेटा इंटरप्रिटेशन एवं निबंध।",
+          "en": "Reasoning & Computer, Banking Awareness, English, Data Interpretation + English Descriptive Writing."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा ३: बँक मुलाखत (१०० गुण)",
+          "hi": "चरण ३: बैंक साक्षात्कार (१०० अंक)",
+          "en": "Stage 3: Common Interview conducted by participating Banks"
+        },
+        "details": {
+          "mr": "प्रत्यक्ष बँक पॅनेल मुलाखत चाचणी.",
+          "hi": "बैंक पैनल द्वारा व्यक्तिगत साक्षात्कार।",
+          "en": "Personal Interview (Minimum qualifying marks 40%)."
+        }
+      }
+    ],
+    "highlights": [
+      "बँक ऑफ महाराष्ट्र, युनियन बँक, पीएनबी, बँक ऑफ बडोदामध्ये स्केल-१ क्लास-१ अधिकारी पद",
+      "इन्व्हिक्टसवर बँकिंग अवेअरनेस व डीआय सराव मॉड्यूल उपलब्ध"
+    ]
+  },
+  {
+    "id": "exam-ibps-so-2026",
+    "tier": "central",
+    "category": "banking",
+    "categoryLabel": {
+      "mr": "बँकिंग भरती (IBPS)",
+      "hi": "बैंकिंग भर्ती (IBPS)",
+      "en": "Banking IBPS"
+    },
+    "examName": {
+      "mr": "IBPS स्पेशालिस्ट ऑफिसर परीक्षा २०२६ (IBPS SO-XVI - IT, Agriculture, Law, HR, Marketing)",
+      "hi": "IBPS विशेषज्ञ अधिकारी परीक्षा २०२६ (IBPS SO-XVI)",
+      "en": "IBPS Specialist Officers (SO-XVI) Recruitment 2026"
+    },
+    "department": {
+      "mr": "इन्स्टिट्यूट ऑफ बँकिंग कार्मिक निवड (IBPS)",
+      "hi": "बैंकिंग कार्मिक चयन संस्थान (IBPS)",
+      "en": "Institute of Banking Personnel Selection"
+    },
+    "totalPosts": "1,890+ Posts (Scale-I Specialist Officers)",
+    "eligibility": {
+      "mr": "व्यावसायिक पदवी (IT Officer: BE/B.Tech/MCA, Agri Officer: B.Sc Agri, Law: LLB, HR: MBA/MSW, Rajbhasha: Post Grad in Hindi/English).",
+      "hi": "संबंधित विषय में व्यावसायिक डिग्री (IT/Agri/Law/HR)।",
+      "en": "Relevant Professional Degree: B.Tech/MCA for IT; B.Sc (Agri) for AFO; LLB for Law Officer; MBA/PGDM for HR/Marketing."
+    },
+    "ageLimit": {
+      "mr": "२० ते ३० वर्षे (नियमानुसार सवलत)",
+      "hi": "२० से ३० वर्ष",
+      "en": "20 to 30 years (Standard relaxations)"
+    },
+    "startDate": "1 Jul 2026",
+    "endDate": "21 Jul 2026",
+    "examDate": "29 Aug 2026 (Prelims); 1 Nov 2026 (Mains)",
+    "status": "active",
+    "statusNote": "Prelims around now / Mains cycle",
+    "applicationFee": {
+      "mr": "₹८५०/- | SC/ST/PwBD: ₹१७५/-",
+      "hi": "₹८५०/- | SC/ST/PwBD: ₹१७५/-",
+      "en": "General/OBC: ₹850 | SC/ST/PwBD: ₹175"
+    },
+    "syllabusPdfUrl": "/docs/exams/ibps_so_syllabus_2026.pdf",
+    "applyUrl": "https://www.ibps.in/",
+    "portalName": "IBPS Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "Prelims व Mains (व्यावसायिक ज्ञान - Professional Knowledge ६० गुण)",
+          "hi": "प्रारंभिक एवं मुख्य परीक्षा (प्रोफेशनल नॉलेज ६० अंक)",
+          "en": "Prelims CBT + Mains Examination (Core Professional Subject Knowledge 60 Marks)"
+        },
+        "details": {
+          "mr": "विशेष विषयाचे ६० प्रश्न व प्रत्यक्ष बँक मुलाखत.",
+          "hi": "संबंधित तकनीकी विषय के प्रश्न एवं साक्षात्कार।",
+          "en": "Core subject technical paper + Interview."
+        }
+      }
+    ],
+    "highlights": [
+      "आयटी, विधी, कृषी व विपणन तज्ज्ञांसाठी राष्ट्रीय बँकांत थेट अधिकारी पद"
+    ]
+  },
+  {
+    "id": "exam-ibps-clerk-2026",
+    "tier": "central",
+    "category": "banking",
+    "categoryLabel": {
+      "mr": "बँकिंग भरती (IBPS)",
+      "hi": "बैंकिंग भर्ती (IBPS)",
+      "en": "Banking IBPS"
+    },
+    "examName": {
+      "mr": "IBPS लिपिक / ग्राहक सेवा सहाय्यक भरती परीक्षा २०२६ (IBPS CSA / Clerk-XVI)",
+      "hi": "IBPS क्लर्क भर्ती परीक्षा २०२६ (IBPS Clerk-XVI)",
+      "en": "IBPS Customer Service Associate / Clerk (CSA/Clerk-XVI) 2026"
+    },
+    "department": {
+      "mr": "इन्स्टिट्यूट ऑफ बँकिंग कार्मिक निवड (IBPS, Mumbai)",
+      "hi": "बैंकिंग कार्मिक चयन संस्थान (IBPS)",
+      "en": "Institute of Banking Personnel Selection"
+    },
+    "totalPosts": "6,128+ Posts (State-wise Vacancies)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेची पदवी (Degree in any discipline) व स्थानिक भाषेचे ज्ञान (मराठी).",
+      "hi": "किसी भी संकाय में स्नातक डिग्री एवं क्षेत्रीय भाषा का ज्ञान।",
+      "en": "Degree (Graduation) in any discipline + proficiency in the local language of the State (Marathi for Maharashtra)."
+    },
+    "ageLimit": {
+      "mr": "२० ते २८ वर्षे (OBC: ३१ वर्षे, SC/ST: ३३ वर्षे)",
+      "hi": "२० से २८ वर्ष (आरक्षित वर्ग हेतु छूट)",
+      "en": "20 to 28 years (OBC: 31, SC/ST: 33)"
+    },
+    "startDate": "1 Aug 2026",
+    "endDate": "21 Aug 2026",
+    "examDate": "10-11 Oct 2026 (Prelims); 27 Dec 2026 (Mains)",
+    "status": "upcoming",
+    "statusNote": "Application closed; exam upcoming (10-11 Oct 2026)",
+    "applicationFee": {
+      "mr": "₹८५०/- | SC/ST/PwBD: ₹१७५/-",
+      "hi": "₹८५०/- | SC/ST/PwBD: ₹१७५/-",
+      "en": "General/OBC: ₹850 | SC/ST/PwBD: ₹175"
+    },
+    "syllabusPdfUrl": "/docs/exams/ibps_clerk_syllabus_2026.pdf",
+    "applyUrl": "https://www.ibps.in/",
+    "portalName": "IBPS Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: पूर्व परीक्षा (Prelims - १०० गुण, मराठीत उपलब्ध)",
+          "hi": "चरण १: प्रारंभिक परीक्षा (Prelims - १०० अंक)",
+          "en": "Stage 1: Preliminary Exam (100 Marks, 60 Mins in 13 Regional Languages)"
+        },
+        "details": {
+          "mr": "English (30), Numerical Ability (35), Reasoning (35).",
+          "hi": "अंग्रेजी (३०), गणित (३५), रीजनिंग (३५)।",
+          "en": "English (30), Maths (35), Reasoning (35) with 20 mins sectional timings."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: मुख्य परीक्षा (Mains - २०० गुण, यात कोणतीही मुलाखत नसते)",
+          "hi": "चरण २: मुख्य परीक्षा (Mains - २०० अंक, कोई इंटरव्यू नहीं)",
+          "en": "Stage 2: Main Examination (200 Marks, 190 Questions, 160 Mins - NO INTERVIEW)"
+        },
+        "details": {
+          "mr": "General/Financial Awareness (50), General English (40), Reasoning & Computer (60), Quantitative Aptitude (50).",
+          "hi": "वित्तीय जागरूकता (५०), अंग्रेजी (४०), रीजनिंग (६०), गणित (५०)।",
+          "en": "Financial Awareness, English, Reasoning & Computer, Quantitative Aptitude. Direct Selection on Mains score."
+        }
+      }
+    ],
+    "highlights": [
+      "कोणतीही मुलाखत (Interview) नाही — केवळ मुख्य परीक्षेतील गुणांवर थेट १००% नियुक्ती",
+      "स्थानिक महाराष्ट्रातील राष्ट्रीयीकृत बँकेच्या शाखेत कायमस्वरूपी नोकरी"
+    ]
+  },
+  {
+    "id": "exam-ibps-rrb-2026",
+    "tier": "central",
+    "category": "banking",
+    "categoryLabel": {
+      "mr": "बँकिंग भरती (IBPS)",
+      "hi": "बैंकिंग भर्ती (IBPS)",
+      "en": "Banking IBPS"
+    },
+    "examName": {
+      "mr": "IBPS प्रादेशिक ग्रामीण बँक भरती परीक्षा २०२६ (IBPS RRB XV - Officers Scale I, II, III & Office Assistants)",
+      "hi": "IBPS ग्रामीण बैंक भर्ती २०२६ (IBPS RRB XV)",
+      "en": "IBPS Regional Rural Banks (RRBs CRP XV - Officers & Office Assistant) 2026"
+    },
+    "department": {
+      "mr": "इन्स्टिट्यूट ऑफ बँकिंग कार्मिक निवड व महाराष्ट्र ग्रामीण बँक / विदर्भ कोकण ग्रामीण बँक",
+      "hi": "बैंकिंग कार्मिक चयन संस्थान एवं ग्रामीण बैंक",
+      "en": "Institute of Banking Personnel Selection & Regional Rural Banks"
+    },
+    "totalPosts": "10,313+ Posts (Gramin Banks across India)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेची पदवी (Degree in any discipline) व स्थानिक भाषेवर प्रभुत्व.",
+      "hi": "स्नातक डिग्री एवं स्थानीय भाषा में प्रवीणता।",
+      "en": "Bachelor's Degree in any discipline + proficiency in local language (Marathi for Maharashtra Gramin Bank)."
+    },
+    "ageLimit": {
+      "mr": "१८ ते २८ वर्षे (Clerk), १८ ते ३० वर्षे (Officer Scale 1)",
+      "hi": "१८ से २८/३० वर्ष",
+      "en": "18 to 28 years (Clerk), 18 to 30 years (Officer Scale-I)"
+    },
+    "startDate": "Cycle-specific",
+    "endDate": "Cycle-specific",
+    "examDate": "2026 Schedule",
+    "status": "active",
+    "statusNote": "Check current CRP notice",
+    "applicationFee": {
+      "mr": "₹८५०/- | SC/ST/PwBD: ₹१७५/-",
+      "hi": "₹८५०/- | SC/ST/PwBD: ₹१७५/-",
+      "en": "General/OBC: ₹850 | SC/ST/PwBD: ₹175"
+    },
+    "syllabusPdfUrl": "/docs/exams/ibps_rrb_syllabus_2026.pdf",
+    "applyUrl": "https://www.ibps.in/",
+    "portalName": "IBPS Official Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "पूर्व परीक्षा (८० गुण - फक्त गणित व बुद्धिमत्ता, इंग्रजी नसते)",
+          "hi": "प्रारंभिक परीक्षा (८० अंक - केवल गणित एवं रीजनिंग)",
+          "en": "Preliminary Exam (80 Marks, 45 Mins - ONLY Reasoning & Numerical Ability, NO ENGLISH)"
+        },
+        "details": {
+          "mr": "Reasoning (40), Quantitative Aptitude (40).",
+          "hi": "रीजनिंग (४०), गणित (४०)।",
+          "en": "Reasoning (40), Quantitative Aptitude (40). Conducted in Marathi/Hindi."
+        }
+      }
+    ],
+    "highlights": [
+      "ग्रामीण भागातील पदवीधरांसाठी सर्वोत्तम संधी — पूर्व परीक्षेत इंग्रजी विषय नसतो!",
+      "महाराष्ट्र ग्रामीण बँक व विदर्भ कोकण ग्रामीण बँकेत गृह जिल्ह्यात नोकरी"
+    ]
+  },
+  {
+    "id": "exam-sbi-po-2026",
+    "tier": "central",
+    "category": "banking",
+    "categoryLabel": {
+      "mr": "स्टेट बँक ऑफ इंडिया (SBI)",
+      "hi": "भारतीय स्टेट बैंक (SBI)",
+      "en": "State Bank of India"
+    },
+    "examName": {
+      "mr": "भारतीय स्टेट बँक प्रोबेशनरी ऑफिसर भरती परीक्षा २०२६ (SBI PO 2026)",
+      "hi": "भारतीय स्टेट बैंक प्रोबेशनरी ऑफिसर भर्ती २०२६ (SBI PO 2026)",
+      "en": "SBI Probationary Officer (SBI PO) Recruitment 2026"
+    },
+    "department": {
+      "mr": "स्टेट बँक ऑफ इंडिया (SBI Central Recruitment Board, Mumbai)",
+      "hi": "भारतीय स्टेट बैंक",
+      "en": "State Bank of India (SBI)"
+    },
+    "totalPosts": "2,000+ Posts (Probationary Officers)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेतील पदवी (Graduation in any discipline).",
+      "hi": "किसी भी मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री।",
+      "en": "Graduation in any discipline from a recognized University."
+    },
+    "ageLimit": {
+      "mr": "२१ ते ३० वर्षे (OBC: ३३ वर्षे, SC/ST: ३५ वर्षे)",
+      "hi": "२१ से ३० वर्ष (आरक्षित वर्ग को नियमानुसार छूट)",
+      "en": "21 to 30 years (OBC: 33, SC/ST: 35)"
+    },
+    "startDate": "Notification-specific",
+    "endDate": "Notification-specific",
+    "examDate": "Notification-specific",
+    "status": "active",
+    "statusNote": "Check SBI Careers portal",
+    "applicationFee": {
+      "mr": "₹७५०/- | SC/ST/PwBD: मोफत",
+      "hi": "₹७५०/- | SC/ST/PwBD: निःशुल्क",
+      "en": "General/EWS/OBC: ₹750 | SC/ST/PwBD: Nil"
+    },
+    "syllabusPdfUrl": "/docs/exams/sbi_po_syllabus_2026.pdf",
+    "applyUrl": "https://sbi.co.in/web/careers",
+    "portalName": "SBI Careers Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "Phase-I (Prelims), Phase-II (Mains + Descriptive), Phase-III (Psychometric + Group Exercise & Interview)",
+          "hi": "Phase-I (प्रारंभिक), Phase-II (मुख्य), Phase-III (साक्षात्कार एवं ग्रुप एक्सरसाइज)",
+          "en": "Phase-I Prelims + Phase-II Mains + Phase-III Psychometric, Group Discussion (20) & Interview (30)"
+        },
+        "details": {
+          "mr": "भारतातील बँकिंग क्षेत्रातील सर्वात प्रतिष्ठित निवड प्रक्रिया.",
+          "hi": "देश की प्रमुख बैंकिंग चयन प्रक्रिया।",
+          "en": "Premier banking recruitment with fast-track executive promotions."
+        }
+      }
+    ],
+    "highlights": [
+      "भारतातील सर्वात मोठी सरकारी बँक; उच्च वेतनमान व जलद पदोन्नती",
+      "इन्व्हिक्टसवर SBI PO मागील वर्षांच्या प्रश्नपत्रिकांचे विश्लेषण उपलब्ध"
+    ]
+  },
+  {
+    "id": "exam-sbi-clerk-2026",
+    "tier": "central",
+    "category": "banking",
+    "categoryLabel": {
+      "mr": "स्टेट बँक ऑफ इंडिया (SBI)",
+      "hi": "भारतीय स्टेट बैंक (SBI)",
+      "en": "State Bank of India"
+    },
+    "examName": {
+      "mr": "भारतीय स्टेट बँक कनिष्ठ सहकारी भरती २०२६ (SBI Junior Associates / Clerk 2026)",
+      "hi": "भारतीय स्टेट बैंक जूनियर एसोसिएट भर्ती २०२६ (SBI Clerk 2026)",
+      "en": "SBI Junior Associates (Customer Support & Sales / Clerk) 2026"
+    },
+    "department": {
+      "mr": "स्टेट बँक ऑफ इंडिया (SBI)",
+      "hi": "भारतीय स्टेट बैंक",
+      "en": "State Bank of India (SBI)"
+    },
+    "totalPosts": "8,283+ Posts (State-wise)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेची पदवी (Graduation in any discipline) व स्थानिक भाषा (मराठी).",
+      "hi": "स्नातक डिग्री एवं स्थानीय भाषा का ज्ञान।",
+      "en": "Graduation in any discipline from a recognized University."
+    },
+    "ageLimit": {
+      "mr": "२० ते २८ वर्षे (सवलती नियमानुसार)",
+      "hi": "२० से २८ वर्ष",
+      "en": "20 to 28 years (Standard govt relaxations)"
+    },
+    "startDate": "Notification-specific",
+    "endDate": "Notification-specific",
+    "examDate": "Notification-specific",
+    "status": "active",
+    "statusNote": "Check SBI Careers portal",
+    "applicationFee": {
+      "mr": "₹७५०/- | SC/ST/PwBD: मोफत",
+      "hi": "₹७५०/- | SC/ST/PwBD: निःशुल्क",
+      "en": "General/OBC: ₹750 | SC/ST/PwBD: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/sbi_clerk_syllabus_2026.pdf",
+    "applyUrl": "https://sbi.co.in/web/careers",
+    "portalName": "SBI Careers Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "Prelims व Mains परीक्षा (मुलाखत नसते)",
+          "hi": "प्रारंभिक एवं मुख्य परीक्षा (बिना इंटरव्यू)",
+          "en": "Phase-I Preliminary Exam (100 Marks) + Phase-II Main Exam (200 Marks) - NO INTERVIEW"
+        },
+        "details": {
+          "mr": "केवळ मुख्य परीक्षेतील गुणांवर गुणवत्ता यादी तयार केली जाते.",
+          "hi": "मुख्य परीक्षा के अंकों के आधार पर अंतिम चयन।",
+          "en": "Merit list based on Mains score + Local Language Test (LPT)."
+        }
+      }
+    ],
+    "highlights": [
+      "मुलाखतीशिवाय (No Interview) थेट देशातील सर्वात मोठ्या बँकेत नोकरी"
+    ]
+  },
+  {
+    "id": "exam-india-post-gds-2026",
+    "tier": "central",
+    "category": "revenue",
+    "categoryLabel": {
+      "mr": "भारतीय डाक विभाग",
+      "hi": "भारतीय डाक विभाग",
+      "en": "Department of Posts"
+    },
+    "examName": {
+      "mr": "भारतीय डाक विभाग ग्रामीण डाक सेवक भरती २०२६ (India Post GDS - BPM, ABPM, Dak Sevak)",
+      "hi": "भारतीय डाक विभाग ग्रामीण डाक सेवक भर्ती २०२६ (India Post GDS)",
+      "en": "India Post Gramin Dak Sevak (GDS - BPM, ABPM, Dak Sevak) Recruitment 2026"
+    },
+    "department": {
+      "mr": "टपाल विभाग, दळणवळण मंत्रालय, भारत सरकार (Department of Posts)",
+      "hi": "डाक विभाग, संचार मंत्रालय, भारत सरकार",
+      "en": "Department of Posts, Ministry of Communications, Govt of India"
+    },
+    "totalPosts": "44,228+ Posts (Pan India Circles)",
+    "eligibility": {
+      "mr": "१० वी (SSC) उत्तीर्ण (गणित व इंग्रजी विषयांसह) + संगणक ज्ञान + सायकल चालवण्याचे ज्ञान.",
+      "hi": "१०वीं उत्तीर्ण (गणित एवं अंग्रेजी अनिवार्य) + कंप्यूटर ज्ञान।",
+      "en": "Secondary School Examination pass certificate of 10th standard with Mathematics and English as compulsory/elective subjects + Computer Knowledge."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ४० वर्षे (OBC: ४३ वर्षे, SC/ST: ४५ वर्षे)",
+      "hi": "१८ से ४० वर्ष (आरक्षित वर्ग हेतु नियमानुसार छूट)",
+      "en": "18 to 40 years (OBC: 43, SC/ST: 45, PwD: 50)"
+    },
+    "startDate": "Cycle-specific",
+    "endDate": "Cycle-specific",
+    "examDate": "Selection / Merit process (No Written Exam)",
+    "status": "active",
+    "statusNote": "Check official GDS portal notice",
+    "applicationFee": {
+      "mr": "₹१००/- | महिला/SC/ST/PwD: मोफत",
+      "hi": "₹१००/- | महिला/SC/ST/PwD: निःशुल्क",
+      "en": "₹100 | Female/SC/ST/PwD/Trans-woman: Exempted"
+    },
+    "syllabusPdfUrl": "/docs/exams/india_post_gds_syllabus_2026.pdf",
+    "applyUrl": "https://www.indiapost.gov.in/",
+    "portalName": "India Post GDS Online Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "१० वी च्या गुणांवर थेट गुणवत्ता यादी (कोणतीही लेखी परीक्षा किंवा मुलाखत नाही)",
+          "hi": "१०वीं के अंकों पर सीधी मेरिट सूची (बिना परीक्षा/साक्षात्कार)",
+          "en": "Direct Merit List Generation based on 10th Standard Marks (No Written Exam or Interview)"
+        },
+        "details": {
+          "mr": "१० वी मधील टक्केवारीच्या आधारे स्वयंचलित गुणवत्ता यादी तयार होते.",
+          "hi": "१०वीं के प्रतिशत के आधार पर स्वचालित चयन प्रणाली।",
+          "en": "System-generated merit list based on 10th board percentage."
+        }
+      }
+    ],
+    "highlights": [
+      "कोणतीही लेखी परीक्षा नाही (No Exam) — १० वी च्या गुणांवर थेट सरकारी नोकरी",
+      "स्वतःच्या गावाजवळ किंवा तालुक्यातील पोस्ट ऑफिसमध्ये काम करण्याची संधी"
+    ]
+  },
+  {
+    "id": "exam-mpsc-rajyaseva-2026",
+    "tier": "state",
+    "category": "mpsc",
+    "categoryLabel": {
+      "mr": "MPSC राज्यसेवा",
+      "hi": "MPSC राज्यसेवा",
+      "en": "MPSC Civil Services"
+    },
+    "examName": {
+      "mr": "MPSC महाराष्ट्र नागरी सेवा राजपत्रित संयुक्त परीक्षा २०२६ (MPSC Civil Services Group A & B)",
+      "hi": "MPSC महाराष्ट्र सिविल सेवा राजपत्रित संयुक्त परीक्षा २०२६",
+      "en": "MPSC Maharashtra Civil Services Gazetted Joint Examination (Group A & B) 2026"
+    },
+    "department": {
+      "mr": "महाराष्ट्र लोकसेवा आयोग (MPSC, Mumbai)",
+      "hi": "महाराष्ट्र लोक सेवा आयोग",
+      "en": "Maharashtra Public Service Commission (MPSC)"
+    },
+    "totalPosts": "524+ Posts (Deputy Collector, DSP/ACP, Tehsildar, BDO, RTO)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेतील पदवी (Graduation in any discipline) किंवा पदवीच्या अंतिम वर्षातील विद्यार्थी.",
+      "hi": "किसी भी मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री।",
+      "en": "Bachelor's Degree in any discipline from a recognized University or appearing in final year."
+    },
+    "ageLimit": {
+      "mr": "१९ ते ३८ वर्षे (मागास प्रवर्ग: ४३ वर्षे)",
+      "hi": "१९ से ३८ वर्ष (आरक्षित वर्ग: ४३ वर्ष)",
+      "en": "19 to 38 years (Reserved category: 43 years)"
+    },
+    "startDate": "Check individual advertisement",
+    "endDate": "Check individual advertisement",
+    "examDate": "As per 2026 tentative schedule",
+    "status": "active",
+    "statusNote": "Check latest advertisement on MPSC portal",
+    "applicationFee": {
+      "mr": "खुला: ₹३९४/- | मागास प्रवर्ग: ₹२९४/-",
+      "hi": "सामान्य: ₹३९४/- | आरक्षित: ₹२९४/-",
+      "en": "General: ₹394 | Reserved: ₹294"
+    },
+    "syllabusPdfUrl": "/docs/exams/mpsc_rajyaseva_syllabus_2026.pdf",
+    "applyUrl": "https://mpsconline.gov.in/",
+    "portalName": "MPSC Online Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "टप्पा १: पूर्व परीक्षा (४०० गुण, वस्तुनिष्ठ बहुपर्यायी)",
+          "hi": "चरण १: प्रारंभिक परीक्षा (४०० अंक)",
+          "en": "Stage 1: Preliminary Exam (GS Paper 1: 200 Marks + CSAT Paper 2: 200 Marks Qualifying 33%)"
+        },
+        "details": {
+          "mr": "सामान्य अध्ययन (२०० गुण) आणि CSAT (२०० गुण - ३३% पात्रता गुण).",
+          "hi": "सामान्य अध्ययन (२००) एवं CSAT (२०० - ३३% अनिवार्य)।",
+          "en": "Paper 1 (GS - 200 Marks) & Paper 2 (CSAT - 200 Marks with 33% qualifying)."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा २: मुख्य परीक्षा (वर्णनात्मक पद्धत - १७५० गुण)",
+          "hi": "चरण २: मुख्य परीक्षा (वर्णनात्मक - १७५० अंक)",
+          "en": "Stage 2: Main Written Examination (Descriptive Pattern - 1750 Marks)"
+        },
+        "details": {
+          "mr": "मराठी व इंग्रजी भाषा पेपर्स, निबंध, GS-1 ते GS-4, आणि १ ऐच्छिक विषय (२ पेपर्स).",
+          "hi": "भाषा प्रश्नपत्र, निबंध, GS १-४ एवं वैकल्पिक विषय।",
+          "en": "Language papers, Essay, GS I-IV, and Optional subject papers (UPSC Descriptive pattern)."
+        }
+      },
+      {
+        "name": {
+          "mr": "टप्पा ३: मुलाखत चाचणी (२७५ गुण)",
+          "hi": "चरण ३: साक्षात्कार (२७५ अंक)",
+          "en": "Stage 3: Personality Test & Interview (275 Marks)"
+        },
+        "details": {
+          "mr": "MPSC आयोगाच्या पॅनेलसमोर मुंबई येथे मुलाखत.",
+          "hi": "MPSC आयोग द्वारा मुंबई में साक्षात्कार।",
+          "en": "Personal Interview at MPSC Office, Mumbai."
+        }
+      }
+    ],
+    "highlights": [
+      "महाराष्ट्रातील सर्वोच्च प्रशासकीय पद (उपजिल्हाधिकारी, डीवायएसपी, तहसीलदार)",
+      "इन्व्हिक्टसवर संपूर्ण मराठीतून अभ्यासक्रम व संदर्भांचा मोफत संच उपलब्ध"
+    ]
+  },
+  {
+    "id": "exam-mpsc-group-b-2026",
+    "tier": "state",
+    "category": "mpsc",
+    "categoryLabel": {
+      "mr": "MPSC संयुक्त गट-ब",
+      "hi": "MPSC समूह-ब",
+      "en": "MPSC Group B"
+    },
+    "examName": {
+      "mr": "MPSC महाराष्ट्र अराजपत्रित गट-ब संयुक्त परीक्षा २०२६ (PSI, STI, ASO, दुय्यम निबंधक)",
+      "hi": "MPSC अराजपत्रित समूह-ब संयुक्त परीक्षा २०२६ (PSI, STI, ASO)",
+      "en": "MPSC Non-Gazetted Group B Combined Examination 2026 (PSI, STI, ASO, Sub-Registrar)"
+    },
+    "department": {
+      "mr": "महाराष्ट्र लोकसेवा आयोग (MPSC, Mumbai)",
+      "hi": "महाराष्ट्र लोक सेवा आयोग",
+      "en": "Maharashtra Public Service Commission"
+    },
+    "totalPosts": "3,410+ Posts (PSI, STI, ASO)",
+    "eligibility": {
+      "mr": "कोणत्याही शाखेची पदवी (Bachelor's Degree) व PSI पदासाठी शारीरिक निकष.",
+      "hi": "स्नातक डिग्री एवं PSI पद हेतु शारीरिक मानक।",
+      "en": "Bachelor's Degree in any discipline from a recognized University."
+    },
+    "ageLimit": {
+      "mr": "१९ ते ३८ वर्षे (मागास प्रवर्ग: ४३ वर्षे, PSI: ३१/३४ वर्षे)",
+      "hi": "१९ से ३८ वर्ष (आरक्षित वर्ग: ४३ वर्ष)",
+      "en": "19 to 38 years (Reserved: 43 years, PSI: 31/34 years)"
+    },
+    "startDate": "Check individual advertisement",
+    "endDate": "Check individual advertisement",
+    "examDate": "As per final notice",
+    "status": "active",
+    "statusNote": "Check latest notice on MPSC portal",
+    "applicationFee": {
+      "mr": "खुला: ₹३९४/- | मागास: ₹२९४/-",
+      "hi": "सामान्य: ₹३९४/- | आरक्षित: ₹२९४/-",
+      "en": "General: ₹394 | Reserved: ₹294"
+    },
+    "syllabusPdfUrl": "/docs/exams/mpsc_groupb_syllabus_2026.pdf",
+    "applyUrl": "https://mpsconline.gov.in/",
+    "portalName": "MPSC Online Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "संयुक्त पूर्व परीक्षा (१०० गुण) + मुख्य परीक्षा (४०० गुण)",
+          "hi": "संयुक्त प्रारंभिक परीक्षा (१०० अंक) + मुख्य परीक्षा (४०० अंक)",
+          "en": "Combined Prelims (100 Marks, 100 MCQs, 60 Mins) + Mains Exam (400 Marks)"
+        },
+        "details": {
+          "mr": "इतिहास, भूगोल, अर्थशास्त्र, राज्यशास्त्र, सामान्य विज्ञान, चालू घडामोडी, अंकगणित व बुद्धिमत्ता.",
+          "hi": "इतिहास, भूगोल, अर्थशास्त्र, राजनीति, विज्ञान, करंट अफेयर्स एवं गणित।",
+          "en": "GS, History, Geography, Polity, Economics, Science, Current Affairs & Aptitude."
+        }
+      }
+    ],
+    "highlights": [
+      "पोलीस उपनिरीक्षक (PSI), राज्य कर निरीक्षक (STI) व सहाय्यक कक्ष अधिकारी (ASO) पदांसाठी लोकप्रिय परीक्षा"
+    ]
+  },
+  {
+    "id": "exam-mpsc-group-c-2026",
+    "tier": "state",
+    "category": "mpsc",
+    "categoryLabel": {
+      "mr": "MPSC संयुक्त गट-क",
+      "hi": "MPSC समूह-क",
+      "en": "MPSC Group C"
+    },
+    "examName": {
+      "mr": "MPSC महाराष्ट्र अराजपत्रित गट-क संयुक्त परीक्षा २०२६ (लिपिक टंकलेखक, कर सहाय्यक, उत्पादन शुल्क दुय्यम निरीक्षक)",
+      "hi": "MPSC अराजपत्रित समूह-क संयुक्त परीक्षा २०२६ (क्लर्क टाइपिस्ट, टैक्स असिस्टेंट)",
+      "en": "MPSC Non-Gazetted Group C Combined Examination 2026 (Clerk Typist, Tax Assistant, Excise SI)"
+    },
+    "department": {
+      "mr": "महाराष्ट्र लोकसेवा आयोग (MPSC, Mumbai)",
+      "hi": "महाराष्ट्र लोक सेवा आयोग",
+      "en": "Maharashtra Public Service Commission"
+    },
+    "totalPosts": "7,510+ Posts (Clerk Typist, Tax Assistant, Excise SI, Industry Inspector)",
+    "eligibility": {
+      "mr": "पदवी उत्तीर्ण + लिपिक पदासाठी मराठी ३० श.प्र.मि. किंवा इंग्रजी ४० श.प्र.मि. टंकलेखन प्रमाणपत्र.",
+      "hi": "स्नातक डिग्री + टाइपिंग प्रमाण पत्र।",
+      "en": "Degree + GCC-TBC Typing Certificate (Marathi 30 WPM or English 40 WPM for Clerk/Tax Asst)."
+    },
+    "ageLimit": {
+      "mr": "१९ ते ३८ वर्षे (मागास प्रवर्ग: ४३ वर्षे)",
+      "hi": "१९ से ३८ वर्ष",
+      "en": "19 to 38 years (Reserved: 43 years)"
+    },
+    "startDate": "Check individual advertisement",
+    "endDate": "Check individual advertisement",
+    "examDate": "As per final notice (Revised scheme 20 May 2026)",
+    "status": "active",
+    "statusNote": "Revised examination scheme published 20 May 2026",
+    "applicationFee": {
+      "mr": "खुला: ₹३९४/- | मागास: ₹२९४/-",
+      "hi": "सामान्य: ₹३९४/- | आरक्षित: ₹२९४/-",
+      "en": "General: ₹394 | Reserved: ₹294"
+    },
+    "syllabusPdfUrl": "/docs/exams/mpsc_groupc_syllabus_2026.pdf",
+    "applyUrl": "https://mpsconline.gov.in/",
+    "portalName": "MPSC Online Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "संयुक्त पूर्व परीक्षा (१०० गुण) + स्वतंत्र मुख्य परीक्षा (२०० गुण) + टायपिंग कौशल्य चाचणी",
+          "hi": "संयुक्त प्रारंभिक (१००) + मुख्य परीक्षा (२००) + टाइपिंग टेस्ट",
+          "en": "Combined Prelims (100 Marks) + Mains Paper (200 Marks) + Typing Skill Test"
+        },
+        "details": {
+          "mr": "सामान्य ज्ञान, चालू घडामोडी, मराठी व इंग्रजी व्याकरण, अंकगणित व बुद्धिमत्ता चाचणी.",
+          "hi": "सामान्य ज्ञान, मराठी/अंग्रेजी व्याकरण, गणित एवं रीजनिंग।",
+          "en": "GS, Marathi/English Grammar, Quantitative Aptitude & Reasoning."
+        }
+      }
+    ],
+    "highlights": [
+      "महाराष्ट्रातील सर्व शासकीय कार्यालयांमध्ये लिपिक व कर सहाय्यक पदांवर सर्वाधिक भरती",
+      "सुधारित अभ्यासक्रम २० मे २०२६ नुसार तयार करण्यात आलेला इन्व्हिक्टस सराव संच"
+    ]
+  },
+  {
+    "id": "exam-mpsc-engineering-2026",
+    "tier": "state",
+    "category": "mpsc",
+    "categoryLabel": {
+      "mr": "MPSC अभियांत्रिकी",
+      "hi": "MPSC इंजीनियरिंग",
+      "en": "MPSC Engineering (MES)"
+    },
+    "examName": {
+      "mr": "MPSC महाराष्ट्र अभियांत्रिकी सेवा परीक्षा २०२६ (MES - जलसंपदा, सार्वजनिक बांधकाम व जि.प. विभाग)",
+      "hi": "MPSC महाराष्ट्र इंजीनियरिंग सेवा परीक्षा २०२६ (MES)",
+      "en": "MPSC Maharashtra Engineering Services (MES Civil, Electrical, Mechanical) 2026"
+    },
+    "department": {
+      "mr": "महाराष्ट्र लोकसेवा आयोग व सार्वजनिक बांधकाम / जलसंपदा विभाग",
+      "hi": "महाराष्ट्र लोक सेवा आयोग (PWD, WRD)",
+      "en": "Maharashtra Public Service Commission (PWD, Water Resources, ZP)"
+    },
+    "totalPosts": "640+ Posts (Assistant Executive Engineer & Assistant Engineer Gr-A/B)",
+    "eligibility": {
+      "mr": "स्थापत्य / विद्युत / यांत्रिकी अभियांत्रिकी पदवी (BE / B.Tech).",
+      "hi": "सिविल/इलेक्ट्रिकल/मैकेनिकल में BE/B.Tech डिग्री।",
+      "en": "Degree in Engineering (BE/B.Tech) in Civil, Electrical, or Mechanical Engineering."
+    },
+    "ageLimit": {
+      "mr": "१९ ते ३८ वर्षे (मागास: ४३ वर्षे)",
+      "hi": "१९ से ३८ वर्ष",
+      "en": "19 to 38 years (Reserved: 43 years)"
+    },
+    "startDate": "Individual advertisement",
+    "endDate": "Individual advertisement",
+    "examDate": "As notified",
+    "status": "active",
+    "statusNote": "Check latest notice on MPSC portal",
+    "applicationFee": {
+      "mr": "खुला: ₹३९४/- | मागास: ₹२९४/-",
+      "hi": "सामान्य: ₹३९४/- | आरक्षित: ₹२९४/-",
+      "en": "General: ₹394 | Reserved: ₹294"
+    },
+    "syllabusPdfUrl": "/docs/exams/mpsc_mes_syllabus_2026.pdf",
+    "applyUrl": "https://mpsconline.gov.in/",
+    "portalName": "MPSC Online Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "पूर्व परीक्षा (१०० गुण) + मुख्य परीक्षा (४०० गुण) + मुलाखत (५० गुण)",
+          "hi": "प्रारंभिक (१००) + मुख्य (४००) + साक्षात्कार (५०)",
+          "en": "Prelims (100 Marks) + Core Technical Mains (400 Marks) + Interview (50 Marks)"
+        },
+        "details": {
+          "mr": "तांत्रिक विषय, स्ट्रक्चरल डिझाईन, हायड्रोलिक्स, पर्यावरण व बांधकाम व्यवस्थापन.",
+          "hi": "कोर इंजीनियरिंग विषय एवं तकनीकी साक्षात्कार।",
+          "en": "Core Civil/Mech/Elec engineering discipline papers."
+        }
+      }
+    ],
+    "highlights": [
+      "महाराष्ट्र शासनाच्या सार्वजनिक बांधकाम (PWD) व पाटबंधारे खात्यात सहाय्यक अभियंता (वर्ग-१ व वर्ग-२) पद"
+    ]
+  },
+  {
+    "id": "exam-mpsc-agriculture-2026",
+    "tier": "state",
+    "category": "mpsc",
+    "categoryLabel": {
+      "mr": "MPSC कृषी सेवा",
+      "hi": "MPSC कृषि सेवा",
+      "en": "MPSC Agriculture"
+    },
+    "examName": {
+      "mr": "MPSC महाराष्ट्र कृषी सेवा परीक्षा २०२६ (कृषी उपसंचालक, तालुका कृषी अधिकारी, मंडळ कृषी अधिकारी)",
+      "hi": "MPSC महाराष्ट्र कृषि सेवा परीक्षा २०२६ (तालुका कृषि अधिकारी)",
+      "en": "MPSC Maharashtra Agriculture Services Examination 2026"
+    },
+    "department": {
+      "mr": "महाराष्ट्र लोकसेवा आयोग व कृषी विभाग, महाराष्ट्र शासन",
+      "hi": "महाराष्ट्र लोक सेवा आयोग एवं कृषि विभाग",
+      "en": "Maharashtra Public Service Commission & Dept of Agriculture"
+    },
+    "totalPosts": "258+ Posts (Taluka Agriculture Officer, Agri Officer Gr-A/B)",
+    "eligibility": {
+      "mr": "B.Sc (कृषी) / B.Tech (कृषी अभियांत्रिकी) / उद्यानविद्या / वनशास्त्र किंवा समकक्ष पदवी.",
+      "hi": "B.Sc (Agriculture) / B.Tech (Agri Engg) अथवा समकक्ष डिग्री।",
+      "en": "B.Sc (Agriculture) / B.Tech (Agri Engg) / Horticulture / Forestry or equivalent Degree from Agri University."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ३८ वर्षे (मागास: ४३ वर्षे)",
+      "hi": "१८ से ३८ वर्ष",
+      "en": "18 to 38 years (Reserved: 43 years)"
+    },
+    "startDate": "Individual advertisement",
+    "endDate": "Individual advertisement",
+    "examDate": "As notified",
+    "status": "active",
+    "statusNote": "Check latest notice on MPSC portal",
+    "applicationFee": {
+      "mr": "खुला: ₹३९४/- | मागास: ₹२९४/-",
+      "hi": "सामान्य: ₹३९४/- | आरक्षित: ₹२९४/-",
+      "en": "General: ₹394 | Reserved: ₹294"
+    },
+    "syllabusPdfUrl": "/docs/exams/mpsc_agri_syllabus_2026.pdf",
+    "applyUrl": "https://mpsconline.gov.in/",
+    "portalName": "MPSC Online Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "संयुक्त पूर्व परीक्षा + मुख्य परीक्षा (कृषी विज्ञान ४०० गुण) + मुलाखत (५० गुण)",
+          "hi": "प्रारंभिक + मुख्य परीक्षा (कृषि विज्ञान ४०० अंक) + साक्षात्कार",
+          "en": "Gazetted Prelims + Agriculture Science Mains (400 Marks) + Interview (50 Marks)"
+        },
+        "details": {
+          "mr": "Agronomy, Soil Science, Horticulture, Plant Pathology, Entomology, Agri Extension & Economics.",
+          "hi": "शस्य विज्ञान, मृदा विज्ञान, कीट विज्ञान, कृषि अर्थशास्त्र।",
+          "en": "Agronomy, Soil Science, Horticulture, Agri Economics & Extension."
+        }
+      }
+    ],
+    "highlights": [
+      "कृषी पदवीधरांसाठी थेट शासकीय तालुका कृषी अधिकारी (TAO) व वर्ग-१ कृषी प्रशासक बनण्याची संधी"
+    ]
+  },
+  {
+    "id": "exam-mpsc-animal-husbandry-2026",
+    "tier": "state",
+    "category": "mpsc",
+    "categoryLabel": {
+      "mr": "MPSC पशुसंवर्धन",
+      "hi": "MPSC पशुपालन सेवा",
+      "en": "MPSC Animal Husbandry"
+    },
+    "examName": {
+      "mr": "MPSC महाराष्ट्र पशुसंवर्धन सेवा परीक्षा २०२६ (पशुधन विकास अधिकारी LDO - वर्ग १ व २)",
+      "hi": "MPSC महाराष्ट्र पशुधन विकास अधिकारी परीक्षा २०२६ (LDO)",
+      "en": "MPSC Livestock Development Officer & Animal Husbandry Services 2026"
+    },
+    "department": {
+      "mr": "महाराष्ट्र लोकसेवा आयोग व पशुसंवर्धन व दुग्धव्यवसाय विकास विभाग",
+      "hi": "महाराष्ट्र लोक सेवा आयोग एवं पशुपालन विभाग",
+      "en": "MPSC & Department of Animal Husbandry, Govt of Maharashtra"
+    },
+    "totalPosts": "212+ Posts (Livestock Development Officer LDO)",
+    "eligibility": {
+      "mr": "B.V.Sc & A.H (पशुवैद्यकीय व पशुसंवर्धन पदवी) + महाराष्ट्र व्हेटर्नरी कौन्सिल नोंदणी.",
+      "hi": "B.V.Sc & A.H डिग्री एवं पशु चिकित्सा परिषद पंजीकरण।",
+      "en": "Degree in Veterinary Science and Animal Husbandry (B.V.Sc & A.H) + MSVC registration."
+    },
+    "ageLimit": {
+      "mr": "१८ ते ३८ वर्षे (मागास: ४३ वर्षे)",
+      "hi": "१८ से ३८ वर्ष",
+      "en": "18 to 38 years (Reserved: 43 years)"
+    },
+    "startDate": "Individual advertisement",
+    "endDate": "Individual advertisement",
+    "examDate": "As notified",
+    "status": "active",
+    "statusNote": "Check latest notice on MPSC portal",
+    "applicationFee": {
+      "mr": "खुला: ₹३९४/- | मागास: ₹२९४/-",
+      "hi": "सामान्य: ₹३९४/- | आरक्षित: ₹२९४/-",
+      "en": "General: ₹394 | Reserved: ₹294"
+    },
+    "syllabusPdfUrl": "/docs/exams/mpsc_ldo_syllabus_2026.pdf",
+    "applyUrl": "https://mpsconline.gov.in/",
+    "portalName": "MPSC Online Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "चाळणी परीक्षा (२०० गुण) व मुलाखत (५० गुण)",
+          "hi": "स्क्रीनिंग परीक्षा (२०० अंक) एवं साक्षात्कार (५० अंक)",
+          "en": "Screening Test (200 Marks) + Interview (50 Marks)"
+        },
+        "details": {
+          "mr": "Veterinary Anatomy, Physiology, Pathology, Medicine, Surgery & Gynaecology, Animal Breeding.",
+          "hi": "पशु चिकित्सा विज्ञान एवं पशु पोषण।",
+          "en": "Core Veterinary Science, Animal Nutrition & Clinical subjects."
+        }
+      }
+    ],
+    "highlights": [
+      "ग्रामीण भागातील पशुवैद्यकीय दवाखान्यांमध्ये वर्ग-१ / वर्ग-२ अधिकारी पद"
+    ]
+  },
+  {
+    "id": "exam-mpsc-jmfc-2026",
+    "tier": "state",
+    "category": "mpsc",
+    "categoryLabel": {
+      "mr": "MPSC न्यायव्यवस्था (JMFC)",
+      "hi": "MPSC न्यायिक सेवा (JMFC)",
+      "en": "Civil Judge / JMFC"
+    },
+    "examName": {
+      "mr": "दिवाणी न्यायाधीश कनिष्ठ स्तर व प्रथम वर्ग न्यायदंडाधिकारी परीक्षा २०२६ (Civil Judge Jr Division & JMFC)",
+      "hi": "सिविल जज जूनियर डिवीजन एवं प्रथम श्रेणी न्यायिक मजिस्ट्रेट परीक्षा २०२६ (JMFC)",
+      "en": "Civil Judge Junior Division & Judicial Magistrate First Class (CJJD & JMFC) 2026"
+    },
+    "department": {
+      "mr": "महाराष्ट्र लोकसेवा आयोग व मुंबई उच्च न्यायालय (High Court of Bombay)",
+      "hi": "महाराष्ट्र लोक सेवा आयोग एवं बॉम्बे उच्च न्यायालय",
+      "en": "MPSC & High Court of Judicature at Bombay"
+    },
+    "totalPosts": "114+ Posts (Judicial Officers)",
+    "eligibility": {
+      "mr": "विधी पदवी (LL.B / LL.M) + बार कौन्सिल नोंदणी / वकिलीचा विहित अनुभव.",
+      "hi": "विधि स्नातक (LL.B) एवं बार काउंसिल में अधिवक्ता के रूप में पंजीकरण।",
+      "en": "Degree in Law (LL.B) with minimum prescribed marks + Bar Council Enrollment as Advocate or Fresh Law Graduate conditions."
+    },
+    "ageLimit": {
+      "mr": "२१ ते ३५ वर्षे (वकिलांसाठी ३५, नवपदवीधरांसाठी २५/२८ वर्षे, मागास: ४० वर्षे)",
+      "hi": "२१ से ३५/४० वर्ष",
+      "en": "21 to 35 years for advocates (Relaxable up to 40 for SC/ST/OBC)"
+    },
+    "startDate": "Check advertisement",
+    "endDate": "Check advertisement",
+    "examDate": "As notified (Scheme published 30 Apr 2026)",
+    "status": "active",
+    "statusNote": "Revised judicial examination scheme published 30 Apr 2026",
+    "applicationFee": {
+      "mr": "खुला: ₹३९४/- | मागास: ₹२९४/-",
+      "hi": "सामान्य: ₹३९४/- | आरक्षित: ₹२९४/-",
+      "en": "General: ₹394 | Reserved: ₹294"
+    },
+    "syllabusPdfUrl": "/docs/exams/mpsc_jmfc_syllabus_2026.pdf",
+    "applyUrl": "https://mpsconline.gov.in/",
+    "portalName": "MPSC Online Portal",
+    "stages": [
+      {
+        "name": {
+          "mr": "पूर्व परीक्षा (१०० गुण) + मुख्य परीक्षा (२ पेपर्स - २०० गुण) + मुलाखत (५० गुण)",
+          "hi": "प्रारंभिक (१००) + मुख्य (२००) + साक्षात्कार (५०)",
+          "en": "Preliminary Exam (100 Marks) + Main Written Exam (2 Papers - 200 Marks) + Viva-Voce (50 Marks)"
+        },
+        "details": {
+          "mr": "IPC, CrPC, CPC, पुरावा कायदा, कराराचा कायदा, घटनेची तत्त्वे, कौटुंबिक कायदे व स्थानिक कायदे.",
+          "hi": "भारतीय दंड संहिता, सिविल प्रक्रिया संहिता, साक्ष्य अधिनियम एवं संविधान।",
+          "en": "IPC, CrPC, CPC, Evidence Act, Contract Act, Constitution, Transfer of Property, Specific Relief Act."
+        }
+      }
+    ],
+    "highlights": [
+      "जिल्हा व सत्र न्यायालयांमध्ये थेट प्रथम श्रेणी न्यायदंडाधिकारी (न्यायाधीश) पदाची सर्वोच्च प्रतिष्ठा",
+      "सुधारित परीक्षा पद्धती ३० एप्रिल २०२६ नुसार अद्ययावत"
+    ]
+  },
+  {
+    "id": "exam-state-police-2026",
     "tier": "state",
     "category": "police",
     "categoryLabel": {
@@ -9,37 +2099,39 @@
       "en": "Maharashtra Police Recruitment"
     },
     "examName": {
-      "mr": "महाराष्ट्र राज्य पोलीस शिपाई व पोलीस चालक भरती २०२६",
-      "hi": "महाराष्ट्र राज्य पुलिस कांस्टेबल एवं चालक भर्ती २०२६",
-      "en": "Maharashtra Police Constable & Driver Recruitment 2026"
+      "mr": "महाराष्ट्र राज्य पोलीस शिपाई, चालक व राज्य राखीव पोलीस बल भरती २०२६",
+      "hi": "महाराष्ट्र राज्य पुलिस कांस्टेबल, चालक एवं SRPF भर्ती २०२६",
+      "en": "Maharashtra Police Constable, Driver & SRPF Recruitment 2026"
     },
     "department": {
       "mr": "गृह विभाग, महाराष्ट्र शासन (Maharashtra Police)",
       "hi": "गृह विभाग, महाराष्ट्र शासन",
       "en": "Home Department, Govt of Maharashtra"
     },
-    "totalPosts": "17,471 Posts (पदे)",
+    "totalPosts": "17,471+ Posts (Constable, Driver, Bandman, SRPF)",
     "eligibility": {
-      "mr": "१२ वी (HSC) उत्तीर्ण किंवा समकक्ष, शारीरिक पात्रता आणि हलके वाहन चालक परवाना (चालक पदासाठी).",
-      "hi": "१२वीं (HSC) उत्तीर्ण, शारीरिक दक्षता एवं वैध ड्राइविंग लाइसेंस (चालक पद हेतु)।",
+      "mr": "१२ वी (HSC / 10+2) उत्तीर्ण किंवा समकक्ष + विहित शारीरिक पात्रता निकष + हलके वाहन चालक परवाना (चालक पदासाठी).",
+      "hi": "१२वीं (HSC) उत्तीर्ण, शारीरिक मानक एवं चालक पद हेतु वैध ड्राइविंग लाइसेंस।",
       "en": "10+2 (HSC) passed from recognized board, physical fitness standards, and valid LMV license for drivers."
     },
     "ageLimit": {
-      "mr": "१८ ते २८ वर्षे (मागासवर्गीय उमेदवारांसाठी ५ वर्षे व खेळाडूंसाठी नियमानुसार सूट)",
+      "mr": "१८ ते २८ वर्षे (मागास प्रवर्ग: ३३ वर्षे, खेळाडू/प्रकल्पग्रस्त: सवलत)",
       "hi": "१८ से २८ वर्ष (आरक्षित वर्ग हेतु ५ वर्ष की छूट)",
-      "en": "18 to 28 years (Relaxations: OBC/SC/ST +5 years, Ex-Servicemen as per govt norms)"
+      "en": "18 to 28 years (Relaxations: OBC/SC/ST up to 33 years)"
     },
-    "startDate": "१ सप्टेंबर २०२६",
-    "endDate": "३० सप्टेंबर २०२६",
+    "startDate": "Recruitment-specific",
+    "endDate": "Recruitment-specific",
+    "examDate": "Recruitment-specific Schedule",
     "status": "active",
+    "statusNote": "Check official recruitment page & physical schedule",
     "applicationFee": {
-      "mr": "खुला प्रवर्ग: ₹४५०/- | मागास प्रवर्ग: ₹३५०/-",
+      "mr": "खुला: ₹४५०/- | मागास प्रवर्ग: ₹३५०/-",
       "hi": "सामान्य: ₹४५०/- | आरक्षित: ₹३५०/-",
       "en": "General: ₹450 | Reserved: ₹350"
     },
     "syllabusPdfUrl": "/docs/exams/police_bharti_syllabus_2026.pdf",
-    "applyUrl": "https://policerecruitment2024.mahait.org",
-    "portalName": "MahaIT Police Portal",
+    "applyUrl": "https://www.mahapolice.gov.in/",
+    "portalName": "Maharashtra Police Portal",
     "stages": [
       {
         "name": {
@@ -73,429 +2165,248 @@
     ]
   },
   {
-    "id": "exam-state-mpsc-01",
+    "id": "exam-mahatet-2026",
     "tier": "state",
-    "category": "mpsc",
+    "category": "state",
     "categoryLabel": {
-      "mr": "MPSC राज्यसेवा व संयुक्त गट ब/क",
-      "hi": "MPSC राज्यसेवा एवं संयुक्त समूह ब/क",
-      "en": "MPSC Civil Services & Group B/C"
+      "mr": "महाराष्ट्र शिक्षक पात्रता",
+      "hi": "महाराष्ट्र शिक्षक पात्रता",
+      "en": "MahaTET Education"
     },
     "examName": {
-      "mr": "MPSC महाराष्ट्र अराजपत्रित गट-ब व गट-क संयुक्त पूर्व परीक्षा २०२६",
-      "hi": "MPSC महाराष्ट्र अराजपत्रित समूह-ब एवं समूह-क संयुक्त परीक्षा २०२६",
-      "en": "MPSC Maharashtra Non-Gazetted Group B & C Combined Prelims 2026"
+      "mr": "महाराष्ट्र शिक्षक पात्रता परीक्षा २०२६ (MahaTET Paper I & Paper II)",
+      "hi": "महाराष्ट्र शिक्षक पात्रता परीक्षा २०२६ (MahaTET)",
+      "en": "Maharashtra Teacher Eligibility Test (MahaTET) 2026"
     },
     "department": {
-      "mr": "महाराष्ट्र लोकसेवा आयोग (MPSC - Mumbai)",
-      "hi": "महाराष्ट्र लोक सेवा आयोग",
-      "en": "Maharashtra Public Service Commission"
+      "mr": "महाराष्ट्र राज्य परीक्षा परिषद (MSCE, Pune)",
+      "hi": "महाराष्ट्र राज्य परीक्षा परिषद, पुणे",
+      "en": "Maharashtra State Council of Examination (MSCE Pune)"
     },
-    "totalPosts": "8,169 Posts (PSI, STI, ASO, Tax Asst, Clerk Typist)",
+    "totalPosts": "Statewide Teacher Eligibility Certification (इ. १ ली ते ८ वी शिक्षक)",
     "eligibility": {
-      "mr": "कोणत्याही शाखेची पदवी (Graduation), आणि लिपिक पदासाठी मराठी ३० श.प्र.मि. / इंग्रजी ४० श.प्र.मि. टायपिंग.",
-      "hi": "मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री एवं टाइपिंग प्रमाण पत्र।",
-      "en": "Bachelor's Degree in any discipline from a recognized University; Typing Cert (Marathi 30 WPM / English 40 WPM) for Clerk Typist."
+      "mr": "D.El.Ed / D.Ed / B.Ed + TET पात्रता निकष (Paper 1: इ. १ ली ते ५ वी, Paper 2: इ. ६ वी ते ८ वी).",
+      "hi": "D.El.Ed / B.Ed उत्तीर्ण अथवा अपीयरिंग।",
+      "en": "D.El.Ed / B.Ed with requisite educational qualifications (Paper 1 for Primary Class 1-5, Paper 2 for Upper Primary Class 6-8)."
     },
     "ageLimit": {
-      "mr": "१९ ते ३८ वर्षे (मागास प्रवर्गासाठी ४३ वर्षांपर्यंत)",
-      "hi": "१९ से ३८ वर्ष (आरक्षित वर्ग हेतु ४३ वर्ष तक)",
-      "en": "19 to 38 years (Up to 43 years for Reserved Categories)"
+      "mr": "किमान १८ वर्षे (कमाल वयोमर्यादा बंधनकारक नाही)",
+      "hi": "न्यूनतम १८ वर्ष (कोई अधिकतम सीमा नहीं)",
+      "en": "Minimum 18 years (No upper age limit for TET eligibility)"
     },
-    "startDate": "१० सप्टेंबर २०२६",
-    "endDate": "०५ ऑक्टोबर २०२६",
-    "status": "upcoming",
+    "startDate": "Check official 2026 notice",
+    "endDate": "Check official 2026 notice",
+    "examDate": "Check official 2026 notice",
+    "status": "active",
+    "statusNote": "Check official MSCE Pune 2026 notice",
     "applicationFee": {
-      "mr": "अराखीव: ₹३९४/- | मागासवर्गीय/अनाथ/दिव्यांग: ₹२९४/-",
-      "hi": "सामान्य: ₹३९४/- | आरक्षित: ₹२९४/-",
-      "en": "General: ₹394 | Reserved/EWS: ₹294"
+      "mr": "एका पेपरसाठी: खुला ₹५००/- | मागास ₹२५०/- (दोन्ही पेपर्स: ₹८००/- / ₹४००/-)",
+      "hi": "एक पेपर: ₹५००/- | दोनों पेपर्स: ₹८००/-",
+      "en": "Single Paper: General ₹500 / Reserved ₹250; Both Papers: ₹800 / ₹400"
     },
-    "syllabusPdfUrl": "/docs/exams/mpsc_combined_syllabus_2026.pdf",
-    "applyUrl": "https://mpsconline.gov.in",
-    "portalName": "MPSC Online Official Portal",
+    "syllabusPdfUrl": "/docs/exams/mahatet_syllabus_2026.pdf",
+    "applyUrl": "https://mahatet.in/",
+    "portalName": "MSCE MahaTET Portal",
     "stages": [
       {
         "name": {
-          "mr": "संयुक्त पूर्व परीक्षा (१०० गुण - बहुपर्यायी Objective)",
-          "hi": "संयुक्त प्रारंभिक परीक्षा (१०० अंक - Objective)",
-          "en": "Combined Prelims Exam (100 Marks - MCQ)"
+          "mr": "Paper 1 (इ. १ ली ते ५ वी - १५० गुण) व Paper 2 (इ. ६ वी ते ८ वी - १५० गुण)",
+          "hi": "Paper 1 (कक्षा १-५ - १५० अंक) एवं Paper 2 (कक्षा ६-८ - १५० अंक)",
+          "en": "Paper 1 & Paper 2: 150 MCQs, 150 Marks, 150 Mins each (Pass mark: 60% General, 55% Reserved)"
         },
         "details": {
-          "mr": "इतिहास, भूगोल, राज्यघटना, अर्थव्यवस्था, सामान्य विज्ञान, चालू घडामोडी आणि अंकगणित-बुद्धिमत्ता.",
-          "hi": "इतिहास, भूगोल, राजव्यवस्था, अर्थव्यवस्था, सामान्य विज्ञान एवं गणित।",
-          "en": "Indian Polity, History, Geography, Economy, General Science, Current Affairs & Aptitude."
-        }
-      },
-      {
-        "name": {
-          "mr": "मुख्य परीक्षा (पेपर १: भाषा व पेपर २: सामान्य अध्ययन)",
-          "hi": "मुख्य परीक्षा (भाषा एवं सामान्य अध्ययन)",
-          "en": "Mains Exam (Paper 1: Language & Paper 2: General Studies)"
-        },
-        "details": {
-          "mr": "मराठी व इंग्रजी भाषा क्षमता आणि सविस्तर सामान्य अध्ययन.",
-          "hi": "मराठी व अंग्रेजी भाषा क्षमता तथा सामान्य अध्ययन।",
-          "en": "Advanced Marathi & English proficiency and specialized General Studies."
+          "mr": "बालमानसशास्त्र व अध्यापनशास्त्र (३०), भाषा १ (३०), भाषा २ (३०), गणित (३०), परिसर अभ्यास / विज्ञान-समाजशास्त्र (६०).",
+          "hi": "बाल मनोविज्ञान, भाषा १, भाषा २, गणित एवं पर्यावरण अध्ययन।",
+          "en": "Child Development & Pedagogy, Language I, Language II, Mathematics, Environmental Studies / Social Science."
         }
       }
     ],
     "highlights": [
-      "पोलीस उपनिरीक्षक (PSI), विक्रीकर निरीक्षक (STI) व मंत्रालय सहाय्यक (ASO) पदांसाठी परीक्षा",
-      "इन्व्हिक्टसवर दररोज चालू घडामोडींच्या मोफत नोट्स",
-      "मागील वर्षांच्या प्रश्नपत्रिकांचे विश्लेषण"
+      "महाराष्ट्रातील जिल्हा परिषद, नगरपालिका व अनुदानित शाळांमध्ये शिक्षक होण्यासाठी १००% अनिवार्य प्रमाणपत्र"
     ]
   },
   {
-    "id": "exam-state-talathi-01",
+    "id": "exam-state-zp-2026",
     "tier": "state",
-    "category": "revenue",
+    "category": "state",
     "categoryLabel": {
-      "mr": "तलाठी व महसूल विभाग",
-      "hi": "पटवारी / तलाठी भर्ती",
-      "en": "Talathi & Revenue Department"
+      "mr": "जिल्हा परिषद सरळसेवा",
+      "hi": "जिला परिषद सीधी भर्ती",
+      "en": "Zilla Parishad Recruitment"
     },
     "examName": {
-      "mr": "महाराष्ट्र तलाठी (वर्ग-३) व महसूल सहाय्यक भरती २०२६",
-      "hi": "महाराष्ट्र तलाठी (पटवारी) एवं राजस्व सहायक परीक्षा २०२६",
-      "en": "Maharashtra Talathi (Revenue Officer Gr-3) Examination 2026"
+      "mr": "महाराष्ट्र जिल्हा परिषद सरळसेवा महाभरती २०२६ (ग्रामसेवक, आरोग्य सेवक, कनिष्ठ अभियंता, विस्तार अधिकारी)",
+      "hi": "महाराष्ट्र जिला परिषद सीधी भर्ती २०२६ (ग्रामसेवक, स्वास्थ्य सेवक, कनिष्ठ अभियंता)",
+      "en": "Maharashtra Zilla Parishad District Cadre Recruitment 2026 (Gramsevak, Arogya Sevak, JE, Extension Officer)"
     },
     "department": {
-      "mr": "महसूल व वन विभाग, महाराष्ट्र शासन",
-      "hi": "राजस्व एवं वन विभाग, महाराष्ट्र",
-      "en": "Revenue and Forest Department, Govt of Maharashtra"
+      "mr": "ग्रामविकास विभाग, महाराष्ट्र शासन व सर्व ३४ जिल्हा परिषदा",
+      "hi": "ग्रामीण विकास विभाग, महाराष्ट्र शासन",
+      "en": "Rural Development Department, Govt of Maharashtra & All District ZPs"
     },
-    "totalPosts": "4,644 Posts",
+    "totalPosts": "19,460+ Posts across 34 District ZPs",
     "eligibility": {
-      "mr": "कोणत्याही शाखेतील पदवीधर (Any Graduate) आणि MS-CIT / संगणक प्रमाणपत्र (२ वर्षांत सादर करता येते).",
-      "hi": "किसी भी संकाय में स्नातक डिग्री एवं कंप्यूटर ज्ञान प्रमाण पत्र।",
-      "en": "Any Graduate degree with basic computer proficiency (MS-CIT/equivalent submit-able within 2 years)."
+      "mr": "ग्रामसेवक: १२ वी (६०% गुणांसह) किंवा कृषी पदविका (Diploma in Agri); आरोग्य सेवक: १० वी उत्तीर्ण (विज्ञान); कनिष्ठ अभियंता: सिव्हिल डिप्लोमा/पदवी.",
+      "hi": "ग्रामसेवक: १२वीं (६०%) अथवा कृषि डिप्लोमा; स्वास्थ्य सेवक: १०वीं (विज्ञान); JE: डिप्लोमा।",
+      "en": "Gramsevak: 12th pass (min 60%) or Diploma in Agriculture; Arogya Sevak: 10th pass with Science; Junior Engineer: Diploma/Degree in Civil/Elec/Mech."
     },
     "ageLimit": {
-      "mr": "१९ ते ३८ वर्षे (खुला प्रवर्ग) / ४३ वर्षे (आरक्षित प्रवर्ग)",
-      "hi": "१९ से ३८ वर्ष (सामान्य) / ४३ वर्ष (आरक्षित)",
-      "en": "19 to 38 years (General) / 43 years (Reserved Categories)"
+      "mr": "१८ ते ३८ वर्षे (मागास प्रवर्ग: ४३ वर्षे)",
+      "hi": "१८ से ३८ वर्ष (आरक्षित वर्ग: ४३ वर्ष)",
+      "en": "18 to 38 years (Reserved category: 43 years)"
     },
-    "startDate": "१५ ऑगस्ट २०२६",
-    "endDate": "१० सप्टेंबर २०२६",
-    "status": "closing_soon",
-    "applicationFee": {
-      "mr": "खुला प्रवर्ग: ₹१०००/- | मागास प्रवर्ग: ₹९००/-",
-      "hi": "सामान्य: ₹१०००/- | आरक्षित: ₹९००/-",
-      "en": "General: ₹1000 | Reserved/EWS: ₹900"
-    },
-    "syllabusPdfUrl": "/docs/exams/talathi_syllabus_2026.pdf",
-    "applyUrl": "https://mahabhumi.gov.in",
-    "portalName": "MahaBhumi Portal",
-    "stages": [
-      {
-        "name": {
-          "mr": "एकच ऑनलाइन संगणकीय परीक्षा (TCS/IBPS पॅटर्न - २०० गुण)",
-          "hi": "ऑनलाइन कंप्यूटर आधारित परीक्षा (२०० अंक)",
-          "en": "Single Online CBT Exam (TCS/IBPS Pattern - 200 Marks / 100 Questions)"
-        },
-        "details": {
-          "mr": "मराठी (२५ प्रश्न - ५० गुण), इंग्रजी (२५ प्रश्न - ५० गुण), सामान्य ज्ञान (२५ प्रश्न - ५० गुण), बौद्धिक चाचणी व अंकगणित (२५ प्रश्न - ५० गुण).",
-          "hi": "मराठी (२५), अंग्रेजी (२५), सामान्य ज्ञान (२५), गणित-रीजनिंग (२५)।",
-          "en": "Marathi (25 Qs/50 M), English (25 Qs/50 M), General Knowledge (25 Qs/50 M), Reasoning & Math (25 Qs/50 M)."
-        }
-      }
-    ],
-    "highlights": [
-      "तहसील व ग्रामीण मंडल पातळीवर प्रतिष्ठित प्रशासकीय पद",
-      "कोणतीही मुलाखत नाही (थेट गुणवत्तेवर निवड)",
-      "७/१२ उतारे, फेरफार व शेतजमीन नियमांवरील संदर्भ साहित्य उपलब्ध"
-    ]
-  },
-  {
-    "id": "exam-central-ssc-01",
-    "tier": "central",
-    "category": "ssc",
-    "categoryLabel": {
-      "mr": "SSC कर्मचारी निवड आयोग",
-      "hi": "कर्मचारी चयन आयोग (SSC)",
-      "en": "Staff Selection Commission (SSC)"
-    },
-    "examName": {
-      "mr": "SSC संयुक्त पदवीधर स्तर (CGL) व उच्च माध्यमिक (CHSL) परीक्षा २०२६",
-      "hi": "SSC संयुक्त स्नातक स्तर (CGL) एवं 10+2 (CHSL) परीक्षा २०२६",
-      "en": "SSC Combined Graduate Level (CGL) & Higher Secondary (CHSL) 2026"
-    },
-    "department": {
-      "mr": "Staff Selection Commission, भारत सरकार (New Delhi)",
-      "hi": "कर्मचारी चयन आयोग, भारत सरकार",
-      "en": "Staff Selection Commission, Govt of India"
-    },
-    "totalPosts": "17,727 Vacancies (Central Govt Ministries)",
-    "eligibility": {
-      "mr": "CGL साठी कोणत्याही शाखेची पदवी; CHSL साठी १२ वी (10+2) उत्तीर्ण.",
-      "hi": "CGL हेतु स्नातक डिग्री; CHSL हेतु १२वीं कक्षा उत्तीर्ण।",
-      "en": "Bachelor's Degree for CGL posts; 10+2 Higher Secondary for CHSL posts."
-    },
-    "ageLimit": {
-      "mr": "१८ ते ३० वर्षे / ३२ वर्षे (पदानुसार नियमानुसार वयमर्यादेत सूट)",
-      "hi": "१८ से ३० वर्ष (पदानुसार नियमानुसार छूट)",
-      "en": "18 to 30/32 years (Relaxations: OBC 3 yrs, SC/ST 5 yrs, PwD 10 yrs)"
-    },
-    "startDate": "२० ऑगस्ट २०२६",
-    "endDate": "२४ सप्टेंबर २०२६",
+    "startDate": "Recruitment-specific",
+    "endDate": "Recruitment-specific",
+    "examDate": "District-specific schedules (IBPS / TCS Pattern)",
     "status": "active",
+    "statusNote": "Check respective district recruitment notices",
     "applicationFee": {
-      "mr": "₹१००/- (महिला, SC, ST, दिव्यांगांसाठी पूर्णपणे मोफत/शून्य फी)",
-      "hi": "₹१००/- (महिला, SC, ST, दिव्यांगों हेतु निःशुल्क)",
-      "en": "₹100 (Women, SC, ST, PwD, and ESM candidates are completely EXEMPT from fee)"
+      "mr": "खुला: ₹१,०००/- | मागास प्रवर्ग: ₹९००/-",
+      "hi": "सामान्य: ₹१,०००/- | आरक्षित: ₹९००/-",
+      "en": "General: ₹1000 | Reserved: ₹900"
     },
-    "syllabusPdfUrl": "/docs/exams/ssc_cgl_chsl_syllabus_2026.pdf",
-    "applyUrl": "https://ssc.gov.in",
-    "portalName": "SSC Official One-Time Registration (OTR)",
+    "syllabusPdfUrl": "/docs/exams/zp_bharti_syllabus_2026.pdf",
+    "applyUrl": "https://rdd.maharashtra.gov.in/",
+    "portalName": "Maha RDD Portal",
     "stages": [
       {
         "name": {
-          "mr": "Tier-1 Computer Based Examination (२०० गुण - बहुपर्यायी)",
-          "hi": "Tier-1 कंप्यूटर आधारित परीक्षा (२०० अंक)",
-          "en": "Tier-1 Computer Based Exam (200 Marks / 100 Questions / 60 Mins)"
+          "mr": "संगणक आधारित ऑनलाइन परीक्षा (CBT - २०० गुण, १०० प्रश्न, १२० मिनिटे)",
+          "hi": "कंप्यूटर आधारित ऑनलाइन परीक्षा (CBT - २०० अंक)",
+          "en": "Computer Based Online Examination (200 Marks, 100 Questions, 120 Mins - IBPS/TCS Pattern)"
         },
         "details": {
-          "mr": "General Intelligence & Reasoning (50 M), General Awareness (50 M), Quantitative Aptitude (50 M), English Comprehension (50 M).",
-          "hi": "तार्किक क्षमता (50), सामान्य ज्ञान (50), गणित (50), अंग्रेजी (50)।",
-          "en": "Reasoning (25 Q/50 M), GK (25 Q/50 M), Math (25 Q/50 M), English (25 Q/50 M). 13 regional languages supported!"
-        }
-      },
-      {
-        "name": {
-          "mr": "Tier-2 मुख्य परीक्षा व संगणक / डेटा एंट्री चाचणी",
-          "hi": "Tier-2 मुख्य परीक्षा एवं टाइपिंग टेस्ट",
-          "en": "Tier-2 Main Exam & Computer Skill / DEST Test"
-        },
-        "details": {
-          "mr": "Mathematical Abilities, Reasoning, English, General Awareness आणि Computer Knowledge Module.",
-          "hi": "गणित, रीजनिंग, अंग्रेजी, सामान्य ज्ञान एवं कंप्यूटर ज्ञान मॉड्यूल।",
-          "en": "Paper 1 (Math, Reasoning, English, GA, Computer Knowledge) + Data Entry Speed Test (DEST)."
+          "mr": "मराठी (३०), इंग्रजी (३०), सामान्य ज्ञान (३०), बुद्धिमत्ता व गणित (३०), तांत्रिक ज्ञान (८० गुण - कृषी/आरोग्य/अभियांत्रिकी).",
+          "hi": "मराठी, अंग्रेजी, सामान्य ज्ञान, रीजनिंग एवं तकनीकी विषय।",
+          "en": "Marathi (30), English (30), GK (30), Reasoning/Maths (30), Core Technical/Agri/Health knowledge (80 Marks)."
         }
       }
     ],
     "highlights": [
-      "केंद्रीय मंत्रालय, आयकर (Income Tax), कस्टम्स, ED, CBI मध्ये अधिकारी पदांची संधी",
-      "मराठी व हिंदी भाषेतही परीक्षा देण्याची सुविधा",
-      "महिला उमेदवारांसाठी मोफत अर्ज"
+      "स्वतःच्या जिल्ह्यात ग्रामसेवक, आरोग्य सेवक व कनिष्ठ अभियंता म्हणून काम करण्याची संधी",
+      "इन्व्हिक्टसवर तांत्रिक कृषी घटक व IBPS पॅटर्न मॉक टेस्ट उपलब्ध"
     ]
   },
   {
-    "id": "exam-central-railways-01",
-    "tier": "central",
-    "category": "railways",
+    "id": "exam-state-health-2026",
+    "tier": "state",
+    "category": "state",
     "categoryLabel": {
-      "mr": "RRB भारतीय रेल्वे भरती",
-      "hi": "रेलवे भर्ती बोर्ड (RRB)",
-      "en": "Railway Recruitment Board (RRB)"
+      "mr": "आरोग्य सेवा विभाग",
+      "hi": "स्वास्थ्य सेवा विभाग",
+      "en": "Public Health Recruitment"
     },
     "examName": {
-      "mr": "RRB NTPC, ALP (लोको पायलट) व तंत्रज्ञ (Technician) भरती २०२६",
-      "hi": "RRB NTPC, सहायक लोको पायलट (ALP) एवं तकनीशियन भर्ती २०२६",
-      "en": "RRB NTPC, Assistant Loco Pilot (ALP) & Technicians 2026"
+      "mr": "महाराष्ट्र सार्वजनिक आरोग्य विभाग गट-क व गट-ड भरती २०२६ (आरोग्य सेवक, औषध निर्माण अधिकारी, प्रयोगशाळा वैज्ञानिक अधिकारी)",
+      "hi": "महाराष्ट्र सार्वजनिक स्वास्थ्य विभाग भर्ती २०२६ (Group C & D)",
+      "en": "Maharashtra Public Health Department Group C & D Recruitment 2026 (Nurse, Pharmacist, Lab Tech, Health Worker)"
     },
     "department": {
-      "mr": "रेल्वे मंत्रालय, भारत सरकार (Ministry of Railways)",
-      "hi": "रेल मंत्रालय, भारत सरकार",
-      "en": "Ministry of Railways, Govt of India"
+      "mr": "सार्वजनिक आरोग्य विभाग, महाराष्ट्र शासन (Arogya Vibhag)",
+      "hi": "सार्वजनिक स्वास्थ्य विभाग, महाराष्ट्र शासन",
+      "en": "Public Health Department, Govt of Maharashtra"
     },
-    "totalPosts": "28,500+ Posts (Central & Western Railway Zones)",
+    "totalPosts": "10,949+ Posts (Group C & D Medical & Para-medical Staff)",
     "eligibility": {
-      "mr": "ALP व Technician साठी १० वी + ITI / डिप्लोमा / डिग्री; NTPC साठी १२ वी किंवा पदवीधर.",
-      "hi": "१०वीं + ITI / डिप्लोमा (ALP/Tech हेतु) या १२वीं / स्नातक (NTPC हेतु)।",
-      "en": "10th + ITI / Diploma / Engineering for ALP & Tech; 10+2 or Graduation for NTPC Graduate posts."
+      "mr": "औषध निर्माण अधिकारी: D.Pharm/B.Pharm; प्रयोगशाळा तंत्रज्ञ: B.Sc+DMLT; अधिपरिचारिका: GNM/B.Sc Nursing; आरोग्य सेवक: १० वी (विज्ञान).",
+      "hi": "पद अनुसार: D.Pharm/B.Pharm, B.Sc+DMLT, GNM/B.Sc Nursing, अथवा १०वीं विज्ञान।",
+      "en": "Post-specific: D.Pharm/B.Pharm for Pharmacist, B.Sc+DMLT for Lab Tech, GNM/B.Sc Nursing for Staff Nurse, 10th pass for Health Assistant."
     },
     "ageLimit": {
-      "mr": "१८ ते ३३ वर्षे (मागासवर्गीय उमेदवारांना नियमानुसार ३ ते ५ वर्षे सूट)",
-      "hi": "१८ से ३३ वर्ष (आरक्षित वर्ग को ३ से ५ वर्ष की छूट)",
-      "en": "18 to 33 years (OBC: 3 yrs, SC/ST: 5 yrs relaxation)"
+      "mr": "१८ ते ३८ वर्षे (मागास प्रवर्ग: ४३ वर्षे)",
+      "hi": "१८ से ३८ वर्ष",
+      "en": "18 to 38 years (Reserved: 43 years)"
     },
-    "startDate": "२५ ऑगस्ट २०२६",
-    "endDate": "२८ सप्टेंबर २०२६",
+    "startDate": "Recruitment-specific",
+    "endDate": "Recruitment-specific",
+    "examDate": "Recruitment-specific",
     "status": "active",
+    "statusNote": "Check official Arogya Vibhag notice",
     "applicationFee": {
-      "mr": "खुला/ओबीसी: ₹५००/- (CBT-1 दिल्यानंतर ₹४००/- परत मिळतात) | आरक्षित: ₹२५०/- (पूर्ण परत मिळतात)",
-      "hi": "सामान्य: ₹५००/- (₹४०० रिफंडेबल) | आरक्षित: ₹२५०/- (पूर्ण रिफंडेबल)",
-      "en": "General/OBC: ₹500 (₹400 refunded after CBT-1) | SC/ST/Female: ₹250 (Full fee refunded after CBT-1)"
+      "mr": "खुला: ₹१,०००/- | मागास: ₹९००/-",
+      "hi": "सामान्य: ₹१,०००/- | आरक्षित: ₹९००/-",
+      "en": "General: ₹1000 | Reserved: ₹900"
     },
-    "syllabusPdfUrl": "/docs/exams/rrb_railways_syllabus_2026.pdf",
-    "applyUrl": "https://www.rrbapply.gov.in",
-    "portalName": "Indian Railways Online Recruitment Portal",
+    "syllabusPdfUrl": "/docs/exams/arogya_vibhag_syllabus_2026.pdf",
+    "applyUrl": "https://arogya.maharashtra.gov.in/",
+    "portalName": "Arogya Vibhag Maharashtra",
     "stages": [
       {
         "name": {
-          "mr": "CBT-1 पहिली संगणकीय परीक्षा (१०० गुण / ९० मिनिटे)",
-          "hi": "CBT-1 प्रथम कंप्यूटर आधारित परीक्षा (१०० अंक)",
-          "en": "CBT-1 Screening Exam (100 Questions / 90 Mins)"
+          "mr": "ऑनलाइन संगणक परीक्षा (CBT - २०० गुण, १०० प्रश्न)",
+          "hi": "ऑनलाइन कंप्यूटर परीक्षा (CBT - २०० अंक)",
+          "en": "Online Computer Based Examination (200 Marks, 100 Questions - 80 Technical Marks)"
         },
         "details": {
-          "mr": "सामान्य विज्ञान (३०), गणित (२५), सामान्य बुद्धिमत्ता व तर्क (२५), सामान्य ज्ञान व चालू घडामोडी (२०).",
-          "hi": "सामान्य विज्ञान (३०), गणित (२५), रीजनिंग (२५), सामान्य ज्ञान (२०)।",
-          "en": "General Science (30), Mathematics (25), Reasoning (25), General Awareness (20)."
-        }
-      },
-      {
-        "name": {
-          "mr": "CBT-2 मुख्य परीक्षा व ट्रेड टेस्ट / सायको चाचणी (CBAT)",
-          "hi": "CBT-2 मुख्य परीक्षा एवं ट्रेड टेस्ट / CBAT",
-          "en": "CBT-2 Main Exam & Trade Test / Computer-Based Aptitude Test"
-        },
-        "details": {
-          "mr": "तांत्रिक ज्ञान, मूलभूत विज्ञान व अभियांत्रिकी (Basic Science & Engineering) आणि व्यावसायिक ट्रेड टेस्ट.",
-          "hi": "तकनीकी ज्ञान, इंजीनियरिंग ड्राइंग एवं संबंधित ट्रेड टेस्ट।",
-          "en": "Part A (Basic Science & Engineering, Math, Reasoning) + Part B (Qualifying Trade Syllabus)."
+          "mr": "मराठी (१५ प्रश्न), इंग्रजी (१५ प्रश्न), सामान्य ज्ञान (१५ प्रश्न), बुद्धिमत्ता (१५ प्रश्न) व तांत्रिक विषय (४० प्रश्न - ८० गुण).",
+          "hi": "मराठी (१५), अंग्रेजी (१५), सामान्य ज्ञान (१५), रीजनिंग (१५) एवं तकनीकी विषय (४०)।",
+          "en": "General sections + 40 core technical/paramedical questions (80 marks)."
         }
       }
     ],
     "highlights": [
-      "मध्य रेल्वे (CR) आणि पश्चिम रेल्वे (WR) विभागात आकर्षक वेतन व भत्ते",
-      "मराठी, हिंदी व इंग्रजीसह १५ प्रादेशिक भाषांमध्ये परीक्षा",
-      "पहिली परीक्षा दिल्यावर परीक्षा फी बँक खात्यात थेट परत मिळते"
+      "जिल्हा शासकीय रुग्णालय, उपजिल्हा रुग्णालय व प्राथमिक आरोग्य केंद्रात (PHC) कायमस्वरूपी वैद्यकीय सेवा"
     ]
   },
   {
-    "id": "exam-central-banking-01",
-    "tier": "central",
-    "category": "banking",
+    "id": "exam-state-municipal-2026",
+    "tier": "state",
+    "category": "state",
     "categoryLabel": {
-      "mr": "IBPS व SBI बँक भरती",
-      "hi": "IBPS एवं SBI बैंकिंग भर्ती",
-      "en": "Banking Exams (IBPS & SBI)"
+      "mr": "महानगरपालिका भरती",
+      "hi": "नगर निगम भर्ती",
+      "en": "Municipal Corporation"
     },
     "examName": {
-      "mr": "IBPS / SBI प्रोबेशनरी ऑफिसर (PO) व लिपिक (Clerk) भरती २०२६",
-      "hi": "IBPS / SBI प्रोबेशनरी ऑफिसर (PO) एवं क्लर्क भर्ती २०२६",
-      "en": "IBPS & SBI Probationary Officer (PO) and Junior Associate (Clerk) 2026"
+      "mr": "महाराष्ट्र महानगरपालिका व नगरपरिषद भरती २०२६ (BMC, PMC, PCMC, NMMC, छत्रपती संभाजीनगर मनपा)",
+      "hi": "महाराष्ट्र नगर निगम भर्ती २०२६ (BMC, PMC, PCMC)",
+      "en": "Maharashtra Municipal Corporations Recruitment 2026 (BMC, PMC, PCMC, NMMC, KDMC)"
     },
     "department": {
-      "mr": "Institute of Banking Personnel Selection (IBPS) & State Bank of India",
-      "hi": "बैंकिंग कार्मिक चयन संस्थान एवं भारतीय स्टेट बैंक",
-      "en": "Institute of Banking Personnel Selection & SBI"
+      "mr": "नगरविकास विभाग, महाराष्ट्र शासन व संबंधित महानगरपालिका",
+      "hi": "नगर विकास विभाग, महाराष्ट्र शासन",
+      "en": "Urban Development Department & Respective Municipal Corporations"
     },
-    "totalPosts": "14,200+ Bank Vacancies (Nationalized Banks)",
+    "totalPosts": "8,500+ Posts (Civil Engineer, Clerk, Fireman, Inspector)",
     "eligibility": {
-      "mr": "कोणत्याही शाखेतील पदवीधर (Any Recognized Degree) आणि स्थानिक भाषेचे ज्ञान (मराठी/हिंदी).",
-      "hi": "किसी भी विषय में स्नातक डिग्री एवं स्थानीय भाषा का ज्ञान।",
-      "en": "Graduation in any discipline from a recognized University, with proficiency in the local state language."
+      "mr": "पदानुसार: १० वी / १२ वी / ITI / अभियांत्रिकी पदविका किंवा पदवी.",
+      "hi": "पदानुसार: १०वीं/१२वीं/ITI/डिप्लोमा अथवा स्नातक।",
+      "en": "Post-specific: 10th/12th/ITI/Diploma or Degree in Engineering/Commerce/Arts."
     },
     "ageLimit": {
-      "mr": "२० ते २८ वर्षे (लिपिक) / २० ते ३० वर्षे (PO) (मागास प्रवर्गासाठी नियमानुसार सूट)",
-      "hi": "२० से २८ वर्ष (क्लर्क) / २० से ३० वर्ष (PO)",
-      "en": "20 to 28 yrs (Clerk) / 20 to 30 yrs (PO) (OBC +3 yrs, SC/ST +5 yrs)"
+      "mr": "१८ ते ३८ वर्षे (मागास प्रवर्ग: ४३ वर्षे)",
+      "hi": "१८ से ३८ वर्ष",
+      "en": "18 to 38 years (Reserved: 43 years)"
     },
-    "startDate": "०१ सप्टेंबर २०२६",
-    "endDate": "२५ सप्टेंबर २०२६",
-    "status": "upcoming",
+    "startDate": "Recruitment-specific",
+    "endDate": "Recruitment-specific",
+    "examDate": "Recruitment-specific Schedule",
+    "status": "active",
+    "statusNote": "Check respective municipal corporation recruitment notice",
     "applicationFee": {
-      "mr": "खुला/ओबीसी: ₹८५०/- | SC/ST/दिव्यांग: ₹१७५/-",
-      "hi": "सामान्य: ₹८५०/- | आरक्षित: ₹१७५/-",
-      "en": "General/OBC: ₹850 | SC/ST/PwD: ₹175"
+      "mr": "खुला: ₹१,०००/- | मागास: ₹९००/-",
+      "hi": "सामान्य: ₹१,०००/- | आरक्षित: ₹९००/-",
+      "en": "General: ₹1000 | Reserved: ₹900"
     },
-    "syllabusPdfUrl": "/docs/exams/ibps_bank_syllabus_2026.pdf",
-    "applyUrl": "https://ibps.in",
-    "portalName": "IBPS Central Application Portal",
+    "syllabusPdfUrl": "/docs/exams/municipal_recruitment_syllabus_2026.pdf",
+    "applyUrl": "https://urban.maharashtra.gov.in/",
+    "portalName": "Maha Urban Portal",
     "stages": [
       {
         "name": {
-          "mr": "Prelims पूर्व परीक्षा (१०० गुण - ६० मिनिटे)",
-          "hi": "प्रारंभिक परीक्षा (१०० अंक - ६० मिनट)",
-          "en": "Preliminary Examination (100 Questions / 100 Marks / 60 Mins)"
+          "mr": "ऑनलाइन संगणक परीक्षा (CBT - १०० प्रश्न, २०० गुण)",
+          "hi": "ऑनलाइन परीक्षा (CBT - २०० अंक)",
+          "en": "Online Computer Based Examination (200 Marks)"
         },
         "details": {
-          "mr": "English Language (30 Qs / 20 mins), Quantitative Aptitude (35 Qs / 20 mins), Reasoning Ability (35 Qs / 20 mins).",
-          "hi": "अंग्रेजी (30), संख्यात्मक अभियोग्यता (35), रीजनिंग (35)।",
-          "en": "English (30 Marks), Quantitative Aptitude (35 Marks), Reasoning (35 Marks) with sectional timing."
-        }
-      },
-      {
-        "name": {
-          "mr": "Mains मुख्य परीक्षा (२०० गुण) व मुलाखत (PO पदासाठी)",
-          "hi": "मुख्य परीक्षा (२०० अंक) एवं साक्षात्कार (PO हेतु)",
-          "en": "Mains Examination (200 Marks) & Personal Interview (for PO)"
-        },
-        "details": {
-          "mr": "General/Financial Awareness, Reasoning & Computer Aptitude, Data Analysis, English Language.",
-          "hi": "वित्तीय एवं बैंकिंग ज्ञान, डाटा एनालिसिस, रीजनिंग एवं अंग्रेजी।",
-          "en": "In-depth Reasoning, Banking Awareness, Financial Current Affairs, and Data Interpretation."
+          "mr": "मराठी, इंग्रजी, सामान्य ज्ञान, बुद्धिमत्ता चाचणी व संबंधित तांत्रिक घटक.",
+          "hi": "मराठी, अंग्रेजी, सामान्य ज्ञान, रीजनिंग एवं संबंधित तकनीकी विषय।",
+          "en": "Language, GK, Reasoning, and specialized Municipal administration/engineering topics."
         }
       }
     ],
     "highlights": [
-      "बँक ऑफ महाराष्ट्र, SBI, PNB, बँक ऑफ बडोदा मध्ये थेट सरकारी नोकरी",
-      "नियमित वेतनवाढ, वैद्यकीय भत्ते व पेन्शन योजना",
-      "बँकिंग क्षेत्रातील जलद पदोन्नती संधी"
-    ]
-  },
-  {
-    "id": "exam-central-defence-01",
-    "tier": "central",
-    "category": "defence",
-    "categoryLabel": {
-      "mr": "भारतीय संरक्षण दल (NDA/CDS/Agniveer)",
-      "hi": "भारतीय रक्षा बल (NDA / CDS / अग्निवीर)",
-      "en": "Indian Armed Forces (NDA / CDS / Agniveer)"
-    },
-    "examName": {
-      "mr": "UPSC राष्ट्रीय संरक्षण प्रबोधिनी (NDA & NA) व संरक्षण सेवा (CDS) २०२६",
-      "hi": "UPSC राष्ट्रीय रक्षा अकादमी (NDA) एवं संयुक्त रक्षा सेवा (CDS) २०२६",
-      "en": "UPSC National Defence Academy (NDA) & Combined Defence Services (CDS) 2026"
-    },
-    "department": {
-      "mr": "संरक्षण मंत्रालय, भारत सरकार (Ministry of Defence)",
-      "hi": "रक्षा मंत्रालय, भारत सरकार",
-      "en": "Ministry of Defence & UPSC"
-    },
-    "totalPosts": "1,050 Commissioned Officer Cadet Seats",
-    "eligibility": {
-      "mr": "NDA साठी १२ वी (भौतिकशास्त्र व गणितासह हवाई/नौदल; कोणत्याही शाखेसह भूदल); CDS साठी पदवीधर.",
-      "hi": "NDA हेतु १२वीं (PCM); CDS हेतु मान्यता प्राप्त स्नातक डिग्री।",
-      "en": "10+2 (with Physics & Math for Navy/Airforce; Any stream for Army) for NDA; Graduation for CDS."
-    },
-    "ageLimit": {
-      "mr": "१६.५ ते १९.५ वर्षे (NDA) / १९ ते २४ वर्षे (CDS)",
-      "hi": "१६.५ से १९.५ वर्ष (NDA) / १९ से २४ वर्ष (CDS)",
-      "en": "16.5 to 19.5 years for NDA; 19 to 24 years for CDS (Unmarried male/female candidates)"
-    },
-    "startDate": "१० सप्टेंबर २०२६",
-    "endDate": "०८ ऑक्टोबर २०२६",
-    "status": "upcoming",
-    "applicationFee": {
-      "mr": "₹१००/- (महिला, SC, ST उमेदवारांसाठी पूर्णपणे मोफत)",
-      "hi": "₹१००/- (महिला, SC, ST हेतु निःशुल्क)",
-      "en": "₹100 (Female, SC, and ST candidates are fully exempt from fee)"
-    },
-    "syllabusPdfUrl": "/docs/exams/defence_nda_cds_syllabus_2026.pdf",
-    "applyUrl": "https://upsconline.nic.in",
-    "portalName": "UPSC Official Examination Portal",
-    "stages": [
-      {
-        "name": {
-          "mr": "लेखी परीक्षा (Mathematics ३०० गुण + GAT ६०० गुण = एकूण ९०० गुण)",
-          "hi": "लिखित परीक्षा (गणित ३०० अंक + GAT ६०० अंक = ९०० अंक)",
-          "en": "Written Exam (Math 300 Marks + General Ability Test 600 Marks)"
-        },
-        "details": {
-          "mr": "गणित (Algebra, Trig, Calculus) आणि General Ability (English, Physics, Chemistry, History, Geography, Current Events).",
-          "hi": "गणित, भौतिकी, रसायन, इतिहास, भूगोल एवं अंग्रेजी।",
-          "en": "Math (120 Qs) + General Ability Test (English 200 M + General Knowledge 400 M)."
-        }
-      },
-      {
-        "name": {
-          "mr": "SSB मुलाखत व शारीरिक/वैद्यकीय चाचणी (५ दिवस - ९०० गुण)",
-          "hi": "SSB साक्षात्कार एवं व्यक्तित्व परीक्षण (५ दिवसीय)",
-          "en": "Services Selection Board (SSB Interview - 5 Days Psychological & Physical Battery)"
-        },
-        "details": {
-          "mr": "स्क्रीनिंग चाचणी, मानसशास्त्रीय चाचणी (TAT/WAT), गट कार्य (GTO) आणि वैयक्तिक मुलाखत.",
-          "hi": "मनोवैज्ञानिक परीक्षण, सामूहिक कार्य (GTO) एवं साक्षात्कार।",
-          "en": "Screening, Psychological Tests, Group Obstacle Tasks (GTO), and Officer Intelligence Rating."
-        }
-      }
-    ],
-    "highlights": [
-      "भारतीय सैन्यदल (Army), नौदल (Navy) व हवाई दल (Air Force) मध्ये लेफ्टनंट/कमिशन अधिकारी बनण्याचा मान",
-      "खडकवासला, पुणे (NDA) येथे जागतिक दर्जाचे मोफत प्रशिक्षण",
-      "देशसेवेसह सर्वोच्च सन्मान व प्रतिष्ठा"
+      "मुंबई (BMC), पुणे (PMC), पिंपरी चिंचवड (PCMC) व नागपूर महानगरपालिकेत आकर्षक वेतनावरील पदे"
     ]
   }
 ]

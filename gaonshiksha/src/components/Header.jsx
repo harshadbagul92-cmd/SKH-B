@@ -48,7 +48,7 @@ export default function Header() {
 
   const navItems = [
     { id: 'courses', label: t('nav.courses') || 'Courses & E-Books', icon: BookOpen },
-    { id: 'exams', label: t('nav.exams') || 'Exam Notifications', icon: Landmark, badge: `${allGovExams?.length || 6}` },
+    { id: 'exams', label: t('nav.exams') || 'Exam Notifications', icon: Landmark, badge: `${allGovExams?.length || 36}` },
     { id: 'certificates', label: t('nav.certificates') || 'Certificates', icon: Award },
     { id: 'opportunities', label: t('nav.opportunities') || 'Career / Job Hub', icon: Briefcase },
     { id: 'profile', label: t('nav.profile') || 'My Profile', icon: User }

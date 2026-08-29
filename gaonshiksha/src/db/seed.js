@@ -24,11 +24,8 @@ export async function initializeLocalDB() {
     }
     console.log('Seeded & synced Class 10th E-Textbooks into Dexie IndexedDB');
 
-    const examsCount = await db.govExams.count();
-    if (examsCount === 0) {
-      await db.govExams.bulkPut(govExamsData);
-      console.log('Seeded initial government exams into Dexie IndexedDB');
-    }
+    // Always keep government exams up to date with full 2026 notifications database
+    await db.govExams.bulkPut(govExamsData);
 
     const oppCount = await db.opportunities.count();
     if (oppCount === 0) {

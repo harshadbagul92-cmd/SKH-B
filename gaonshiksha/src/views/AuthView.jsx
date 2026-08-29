@@ -15,7 +15,8 @@ import {
   Sparkles,
   Globe,
   CheckCircle2,
-  BookOpen
+  BookOpen,
+  Zap
 } from 'lucide-react';
 
 export default function AuthView() {
@@ -42,35 +43,84 @@ export default function AuthView() {
     if (errorMsg) setErrorMsg('');
   };
 
+  const handleRoleChange = (newRole) => {
+    setRole(newRole);
+    if (errorMsg) setErrorMsg('');
+    if (newRole === 'mentor') {
+      setFormData(prev => ({
+        ...prev,
+        name: prev.name === 'Vikas Tambade' ? 'Dr. S. K. Bagul' : prev.name,
+        email: prev.email === 'vikas.student@gmail.com' ? 'mentor.bagul@invictus.edu' : prev.email
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        name: prev.name === 'Dr. S. K. Bagul' ? 'Vikas Tambade' : prev.name,
+        email: prev.email === 'mentor.bagul@invictus.edu' ? 'vikas.student@gmail.com' : prev.email
+      }));
+    }
+  };
+
+  const handleQuickFill = (targetRole) => {
+    if (targetRole === 'student') {
+      setRole('student');
+      setFormData({
+        name: 'Vikas Tambade',
+        email: 'vikas.student@gmail.com',
+        password: 'password123',
+        mobile: '9822012345',
+        city: 'Kopargaon',
+        grade: '10th'
+      });
+    } else {
+      setRole('mentor');
+      setFormData({
+        name: 'Dr. S. K. Bagul',
+        email: 'mentor.bagul@invictus.edu',
+        password: 'password123',
+        mobile: '9876543210',
+        city: 'Pune',
+        grade: 'Mentor'
+      });
+    }
+    if (errorMsg) setErrorMsg('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg('');
     setLoading(true);
 
     try {
-      if (mode === 'signin') {
-        if (!formData.email || !formData.password) {
-          setErrorMsg('Please provide your Gmail ID and Password.');
-          setLoading(false);
-          return;
-        }
-      } else {
-        if (!formData.name || !formData.email || !formData.password) {
-          setErrorMsg('Please complete all mandatory fields.');
-          setLoading(false);
-          return;
-        }
+      const email = formData.email.trim();
+      const password = formData.password.trim();
+
+      if (!email) {
+        setErrorMsg('Please enter your Gmail / Email ID.');
+        setLoading(false);
+        return;
       }
 
-      await login({
-        name: formData.name,
-        email: formData.email,
+      if (mode === 'signup' && !formData.name.trim()) {
+        setErrorMsg('Please enter your full name.');
+        setLoading(false);
+        return;
+      }
+
+      const res = await login({
+        name: formData.name || (email.includes('@') ? email.split('@')[0] : 'Scholar'),
+        email: email,
+        password: password || 'password123',
         mobile: formData.mobile,
         city: formData.city,
         grade: formData.grade,
         role: role,
         category: role === 'mentor' ? 'mentor' : 'general'
       });
+
+      if (!res || !res.success) {
+        setErrorMsg(res?.message || 'Authentication error. Please check your credentials.');
+      }
     } catch (err) {
       console.error('Auth error:', err);
       setErrorMsg('Authentication error. Please try again.');
@@ -195,10 +245,10 @@ export default function AuthView() {
             </div>
 
             {/* Role Selector (Segmented Pill Toggle) */}
-            <div className="bg-slate-100 p-1.5 rounded-2xl flex items-center mb-6 border border-slate-300">
+            <div className="bg-slate-100 p-1.5 rounded-2xl flex items-center mb-4 border border-slate-300">
               <button
                 type="button"
-                onClick={() => setRole('student')}
+                onClick={() => handleRoleChange('student')}
                 className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all flex items-center justify-center space-x-1.5 cursor-pointer ${
                   role === 'student'
                     ? 'bg-[#0A192F] text-white shadow-md'
@@ -210,7 +260,7 @@ export default function AuthView() {
               </button>
               <button
                 type="button"
-                onClick={() => setRole('mentor')}
+                onClick={() => handleRoleChange('mentor')}
                 className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all flex items-center justify-center space-x-1.5 cursor-pointer ${
                   role === 'mentor'
                     ? 'bg-[#0A192F] text-white shadow-md'
@@ -219,6 +269,26 @@ export default function AuthView() {
               >
                 <Users className="w-4 h-4 text-gold-400" />
                 <span>{t('auth.role_mentor') || 'Mentor'}</span>
+              </button>
+            </div>
+
+            {/* Quick Demo Fill Buttons */}
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <button
+                type="button"
+                onClick={() => handleQuickFill('student')}
+                className="text-[11px] font-bold text-brand-800 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-2.5 py-1 rounded-lg transition-colors cursor-pointer flex items-center space-x-1"
+              >
+                <Zap className="w-3 h-3 text-gold-500" />
+                <span>Demo Student (Vikas)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleQuickFill('mentor')}
+                className="text-[11px] font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-300 px-2.5 py-1 rounded-lg transition-colors cursor-pointer flex items-center space-x-1"
+              >
+                <Zap className="w-3 h-3 text-gold-500" />
+                <span>Demo Mentor (Dr. Bagul)</span>
               </button>
             </div>
 
@@ -341,7 +411,7 @@ export default function AuthView() {
                 >
                   <span>
                     {loading
-                      ? 'Please wait...'
+                      ? 'Signing in...'
                       : mode === 'signin'
                       ? role === 'student' ? t('auth.submit_signin_student') : t('auth.submit_signin_mentor')
                       : role === 'student' ? t('auth.submit_signup_student') : t('auth.submit_signup_mentor')}
@@ -360,7 +430,10 @@ export default function AuthView() {
 
               <button
                 type="button"
-                onClick={() => setMode(mode === 'signin' ? 'signup' : 'signin')}
+                onClick={() => {
+                  setMode(mode === 'signin' ? 'signup' : 'signin');
+                  setErrorMsg('');
+                }}
                 className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#0F172A] font-black text-xs border border-slate-300 transition-all text-center flex items-center justify-center space-x-1.5 cursor-pointer"
               >
                 <span>
