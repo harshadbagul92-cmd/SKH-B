@@ -10,6 +10,7 @@ import QuizView from './views/QuizView';
 import CertificateView from './views/CertificateView';
 import OpportunitiesView from './views/OpportunitiesView';
 import AdminView from './views/AdminView';
+import ProfileView from './views/ProfileView';
 import {
   BookOpen,
   Award,
@@ -17,7 +18,8 @@ import {
   GraduationCap,
   ShieldCheck,
   Zap,
-  Globe
+  Globe,
+  User
 } from 'lucide-react';
 
 function MainAppContent() {
@@ -54,6 +56,8 @@ function MainAppContent() {
         return <CertificateView />;
       case 'opportunities':
         return <OpportunitiesView />;
+      case 'profile':
+        return <ProfileView />;
       case 'admin':
         return <AdminView />;
       default:
@@ -149,6 +153,16 @@ function MainAppContent() {
           >
             <Briefcase className="w-5 h-5 mb-0.5" />
             <span>{t('nav.opportunities')}</span>
+          </button>
+
+          <button
+            onClick={() => setActiveView('profile')}
+            className={`flex flex-col items-center py-1 px-3 rounded-xl text-[10px] font-bold ${
+              activeView === 'profile' ? 'text-brand-600' : 'text-slate-500'
+            }`}
+          >
+            <User className="w-5 h-5 mb-0.5" />
+            <span>{t('profile.title') || 'Profile'}</span>
           </button>
         </div>
       )}

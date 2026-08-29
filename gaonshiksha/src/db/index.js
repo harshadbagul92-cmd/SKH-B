@@ -11,7 +11,7 @@ db.version(1).stores({
   applications: '++id, oppId, studentName, timestamp, synced',
   syncQueue: '++id, type, status, createdAt',
   settings: 'key',
-  users: 'email, mobile, name, password, grade, city, role, createdAt'
+  users: 'email, mobile, name, password, grade, city, role, category, targetGoal, country, state, pincode, preferences, lastSyncedAt, createdAt'
 });
 
 export default db;

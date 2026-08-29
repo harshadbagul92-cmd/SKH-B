@@ -372,14 +372,80 @@ export function AppProvider({ children }) {
     await refreshData();
   };
 
+  const updateUserProfile = async (updatedFields) => {
+    try {
+      const baseUser = currentUser || {
+        name: 'विकास एकनाथ तांबडे (Vikas Tambade)',
+        email: 'vikas@invictus.edu',
+        mobile: '9822012345',
+        grade: '12th',
+        city: 'संवत्सर, कोपरगाव (Kopargaon)',
+        role: 'student',
+        createdAt: new Date().toISOString()
+      };
+
+      const updatedUser = {
+        ...baseUser,
+        ...updatedFields,
+        updatedAt: new Date().toISOString()
+      };
+
+      // Save to IndexedDB
+      await db.users.put(updatedUser);
+
+      // Save to localStorage session
+      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(updatedUser));
+      setCurrentUser(updatedUser);
+
+      // Queue for offline sync
+      await syncService.enqueue('USER_PROFILE_UPDATE', updatedUser);
+
+      // Update pending sync count
+      const count = await syncService.getPendingCount();
+      setPendingSyncCount(count);
+
+      // Background sync if online
+      if (isOnline && !simulatedOffline) {
+        syncService.syncNow(simulatedOffline).then(async (res) => {
+          if (res.success) {
+            const freshCount = await syncService.getPendingCount();
+            setPendingSyncCount(freshCount);
+          }
+        });
+      }
+
+      return { success: true, user: updatedUser };
+    } catch (err) {
+      console.error('Failed to update user profile:', err);
+      return { success: false, message: err.message };
+    }
+  };
+
   const effectiveOnline = isOnline && !simulatedOffline;
 
   const userProfile = currentUser || {
     name: 'विकास एकनाथ तांबडे (Vikas Tambade)',
-    city: 'संवत्सर, कोपरगाव (Kopargaon)',
-    mobile: '98220XXXXX',
+    email: 'vikas@invictus.edu',
+    mobile: '9822012345',
     grade: '12th',
-    role: 'student'
+    city: 'संवत्सर, कोपरगाव (Kopargaon)',
+    state: 'Maharashtra',
+    country: 'India',
+    pincode: '423601',
+    category: 'vocational',
+    targetGoal: 'Practical Skill Certification & Local Employment',
+    role: 'student',
+    preferences: {
+      notifications: true,
+      audioNarration: true,
+      jobAlerts: true,
+      specialAssistance: false,
+      assistanceDetails: '',
+      preferredJobRoles: 'Digital Assistant, Technician'
+    },
+    dailyGoal: 5,
+    streakCount: 5,
+    lastSyncedAt: new Date().toISOString()
   };
 
   return (
@@ -412,6 +478,7 @@ export function AppProvider({ children }) {
         selectedLessonIndex,
         setSelectedLessonIndex,
         userProfile,
+        updateUserProfile,
         toggleRole,
         isPackDownloaded,
         downloadFullPack,

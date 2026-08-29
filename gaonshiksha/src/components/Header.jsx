@@ -209,17 +209,26 @@ export default function Header() {
               </span>
             </button>
 
-            {/* User Info & Logout Button */}
+            {/* User Info & Profile Button / Logout */}
             {currentUser && (
               <div className="flex items-center space-x-1.5 pl-1 border-l border-slate-200">
-                <div className="hidden lg:flex flex-col text-right">
-                  <span className="text-xs font-bold text-slate-800 truncate max-w-[120px]">
-                    {currentUser.name}
-                  </span>
-                  <span className="text-[10px] text-slate-500 truncate max-w-[120px]">
-                    {currentUser.city || currentUser.village || 'Student'}
-                  </span>
-                </div>
+                <button
+                  onClick={() => setActiveView('profile')}
+                  className="flex items-center space-x-2 text-right p-1 rounded-lg hover:bg-orange-50 transition-colors"
+                  title="My Profile"
+                >
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-brand-600 to-amber-500 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                    {currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 'U'}
+                  </div>
+                  <div className="hidden lg:flex flex-col text-right">
+                    <span className="text-xs font-bold text-slate-800 truncate max-w-[120px]">
+                      {currentUser.name}
+                    </span>
+                    <span className="text-[10px] text-slate-500 truncate max-w-[120px]">
+                      {currentUser.city || currentUser.village || 'Student'}
+                    </span>
+                  </div>
+                </button>
                 <button
                   onClick={logout}
                   title={t('app.logout')}
@@ -270,6 +279,18 @@ export default function Header() {
             >
               <Briefcase className="w-4 h-4" />
               <span>{t('nav.opportunities')}</span>
+            </button>
+
+            <button
+              onClick={() => setActiveView('profile')}
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+                activeView === 'profile'
+                  ? 'bg-brand-600 text-white shadow-sm'
+                  : 'text-slate-600 hover:bg-slate-100'
+              }`}
+            >
+              <User className="w-4 h-4" />
+              <span>{t('profile.title') || 'My Profile'}</span>
             </button>
           </nav>
         )}

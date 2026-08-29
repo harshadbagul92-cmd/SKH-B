@@ -104,6 +104,18 @@ app.post('/api/sync', (req, res) => {
         ...item.payload,
         syncedAt: new Date().toISOString()
       });
+    } else if (item.type === 'USER_PROFILE_UPDATE' && item.payload) {
+      if (!serverDb.userProfiles) serverDb.userProfiles = [];
+      const idx = serverDb.userProfiles.findIndex(u => u.email === item.payload.email);
+      const updatedProfile = {
+        ...item.payload,
+        syncedAt: new Date().toISOString()
+      };
+      if (idx >= 0) {
+        serverDb.userProfiles[idx] = updatedProfile;
+      } else {
+        serverDb.userProfiles.push(updatedProfile);
+      }
     }
   });
 

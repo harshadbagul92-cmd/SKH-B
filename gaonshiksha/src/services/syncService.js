@@ -1,3 +1,5 @@
+import { db } from '../db';
+
 const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
 export const syncService = {
@@ -58,13 +60,18 @@ export const syncService = {
       const itemIds = pendingItems.map(item => item.id);
       await db.syncQueue.where('id').anyOf(itemIds).delete();
 
-      // Mark certificates & applications as synced
+      // Mark certificates, applications & user profile as synced
+      const nowIso = new Date().toISOString();
       for (const item of pendingItems) {
         if (item.type === 'CERTIFICATE_ISSUED') {
           await db.certificates.update(item.payload.id, { synced: true });
         } else if (item.type === 'JOB_APPLICATION') {
           if (item.payload.appId) {
             await db.applications.update(item.payload.appId, { synced: true });
+          }
+        } else if (item.type === 'USER_PROFILE_UPDATE') {
+          if (item.payload?.email) {
+            await db.users.update(item.payload.email, { lastSyncedAt: nowIso });
           }
         }
       }
