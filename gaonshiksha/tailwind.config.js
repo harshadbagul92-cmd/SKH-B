@@ -7,30 +7,43 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c', // Saffron
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+        navy: {
+          900: '#0F172A',
+          950: '#0A192F', // Deep Navy Brand Base
+          800: '#1E293B',
+          700: '#334155'
         },
-        rural: {
-          green: '#059669',
-          greenDark: '#065f46',
-          earth: '#78350f',
-          cream: '#fffdf7',
-          sun: '#d97706',
-          soil: '#451a03'
+        brand: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb', // Royal Academic Blue
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#0A192F'
+        },
+        gold: {
+          400: '#fde047',
+          500: '#facc15', // Energetic Yellow
+          600: '#eab308', // Warm Gold
+          700: '#ca8a04'
+        },
+        teal: {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e'
         }
       },
       fontFamily: {
         sans: [
           'Noto Sans Devanagari',
+          'Inter',
           'Mangal',
           'Segoe UI',
           'Roboto',

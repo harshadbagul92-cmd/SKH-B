@@ -34,7 +34,7 @@ function loadServerData() {
     certificates: [
       {
         id: 'cert-sample-1',
-        verificationCode: 'SATHI-KPG-2026-8419',
+        verificationCode: 'IL-KPG-2026-8419',
         studentName: 'विकास एकनाथ तांबडे (Vikas Tambade)',
         village: 'संवत्सर, कोपरगाव',
         courseTitle: 'संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये',
@@ -45,7 +45,7 @@ function loadServerData() {
       },
       {
         id: 'cert-sample-2',
-        verificationCode: 'SATHI-KPG-2026-9124',
+        verificationCode: 'IL-KPG-2026-9124',
         studentName: 'पूजा रमेश वाघमारे (Pooja Waghmare)',
         village: 'टाकळी, कोपरगाव',
         courseTitle: 'आधुनिक शिलाई, कपडे कटिंग व बुटीक व्यवसाय',
@@ -60,7 +60,7 @@ function loadServerData() {
         appId: 'app-sample-1',
         studentName: 'विकास एकनाथ तांबडे (Vikas Tambade)',
         village: 'संवत्सर, कोपरगाव',
-        phone: '98220XXXXX',
+        phone: '9822012345',
         oppTitle: 'डेटा एंट्री ऑपरेटर व महा ई-सेवा सहाय्यक',
         organization: 'गोदावरी बायोरिफायनरीज् व सेतू सुविधा केंद्र, कोपरगाव',
         notes: 'मी संगणक कोर्स पूर्ण केला आहे.',
@@ -83,7 +83,7 @@ app.post('/api/sync', (req, res) => {
     return res.status(400).json({ error: 'Expected items array in sync payload' });
   }
 
-  console.log(`[SYNC SERVER] Received ${items.length} records from SATHI client.`);
+  console.log(`[SYNC SERVER] Received ${items.length} records from Invictus Learning client.`);
 
   items.forEach(item => {
     serverDb.syncedItems.push({
@@ -125,7 +125,7 @@ app.post('/api/sync', (req, res) => {
     status: 'success',
     receivedCount: items.length,
     timestamp: new Date().toISOString(),
-    serverMessage: 'All offline progress and certificates successfully committed to SATHI Server.'
+    serverMessage: 'All offline progress, certificates, and exam data committed to Invictus Learning Server.'
   });
 });
 
@@ -139,7 +139,27 @@ app.get('/api/courses', (req, res) => {
   res.json([]);
 });
 
-// 3. Opportunities Endpoint
+// 3. Textbooks Endpoint
+app.get('/api/textbooks', (req, res) => {
+  const tbPath = path.join(__dirname, '../src/data/textbooks.json');
+  if (fs.existsSync(tbPath)) {
+    const textbooks = JSON.parse(fs.readFileSync(tbPath, 'utf8'));
+    return res.json(textbooks);
+  }
+  res.json([]);
+});
+
+// 4. Government Exams Endpoint
+app.get('/api/exams', (req, res) => {
+  const examsPath = path.join(__dirname, '../src/data/govExams.json');
+  if (fs.existsSync(examsPath)) {
+    const exams = JSON.parse(fs.readFileSync(examsPath, 'utf8'));
+    return res.json(exams);
+  }
+  res.json([]);
+});
+
+// 5. Opportunities Endpoint
 app.get('/api/opportunities', (req, res) => {
   const oppPath = path.join(__dirname, '../src/data/opportunities.json');
   if (fs.existsSync(oppPath)) {
@@ -149,18 +169,18 @@ app.get('/api/opportunities', (req, res) => {
   res.json([]);
 });
 
-// 4. Admin Analytics Stats
+// 6. Admin Analytics Stats
 app.get('/api/admin/stats', (req, res) => {
   res.json({
     totalStudents: 48,
     syncedBatches: serverDb.syncedItems.length,
     certificatesIssued: serverDb.certificates.length,
     applicationsReceived: serverDb.applications.length,
-    activeRegion: 'Kopargaon & Ahmednagar Rural Division'
+    activeRegion: 'Invictus Academic Division'
   });
 });
 
-// 5. Admin Submissions & Roster
+// 7. Admin Submissions & Roster
 app.get('/api/admin/submissions', (req, res) => {
   res.json({
     certificates: serverDb.certificates,
@@ -169,7 +189,7 @@ app.get('/api/admin/submissions', (req, res) => {
   });
 });
 
-// 6. Public Certificate Verification Endpoint
+// 8. Public Certificate Verification Endpoint
 app.get('/api/verify/:code', (req, res) => {
   const code = req.params.code.trim().toUpperCase();
   const cert = serverDb.certificates.find(c => c.verificationCode?.toUpperCase() === code);
@@ -184,21 +204,21 @@ app.get('/api/verify/:code', (req, res) => {
       grade: cert.grade,
       score: cert.score,
       issueDate: cert.issueDate,
-      issuingAuthority: 'SATHI Rural Skills Academy (साथी)'
+      issuingAuthority: 'Invictus Learning Academy (इन्व्हिक्टस)'
     });
   } else {
     res.status(404).json({
       valid: false,
-      message: 'Certificate not found on SATHI Academy Server'
+      message: 'Certificate not found on Invictus Learning Server'
     });
   }
 });
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString(), server: 'SATHI-Node-Express-Sync-v1' });
+  res.json({ status: 'ok', time: new Date().toISOString(), server: 'Invictus-Learning-Sync-Server-v2' });
 });
 
 app.listen(PORT, () => {
-  console.log(`SATHI Sync Server running on http://localhost:${PORT}`);
+  console.log(`Invictus Learning Sync Server running on http://localhost:${PORT}`);
 });

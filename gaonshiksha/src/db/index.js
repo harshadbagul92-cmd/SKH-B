@@ -2,8 +2,10 @@ import Dexie from 'dexie';
 
 export const db = new Dexie('InvictusLearningDB');
 
-db.version(1).stores({
+db.version(2).stores({
   courses: 'id, slug, category',
+  textbooks: 'id, subject, standard',
+  govExams: 'id, tier, category, status',
   progress: 'courseId, isCompleted, updatedAt',
   quizAttempts: '++id, courseId, passed, timestamp',
   certificates: 'id, verificationCode, courseId, studentName, issueDate, synced',

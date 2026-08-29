@@ -1,0 +1,226 @@
+[
+  {
+    "id": "tb-marathi-10",
+    "subject": "marathi",
+    "standard": "10th",
+    "title": {
+      "mr": "मराठी (Kumarbharati / कुमारभारती)",
+      "hi": "मराठी (कुमारभारती - कक्षा १०वीं)",
+      "en": "Marathi (Kumarbharati - Class 10)"
+    },
+    "description": {
+      "mr": "इयत्ता १० वी मराठी पाठ्यपुस्तक - संतकाव्य, गद्यपाठ, व्याकरण, शब्दसंग्रह आणि उपयोजित लेखन.",
+      "hi": "कक्षा १०वीं मराठी पाठ्यपुस्तक - संत साहित्य, गद्य पाठ, व्याकरण एवं लेखन कौशल।",
+      "en": "Class 10 Marathi Textbook - Classical Saint Poetry, Prose, Grammar & Creative Composition."
+    },
+    "coverColor": "from-navy-950 via-blue-900 to-indigo-950",
+    "badge": "महाराष्ट्र राज्य मंडळ (SSC Board)",
+    "pdfUrl": "/docs/textbooks/marathi_class10.pdf",
+    "totalChapters": 6,
+    "chapters": [
+      {
+        "id": "mar-ch1",
+        "chapterNumber": 1,
+        "title": {
+          "mr": "१. जय जय महाराष्ट्र माझा (राज्यगीत - राजा बढे)",
+          "hi": "१. जय जय महाराष्ट्र माझा (राज्यगीत)",
+          "en": "Chapter 1: Jai Jai Maharashtra Maza (State Anthem)"
+        },
+        "summary": {
+          "mr": "या गीतातून महाराष्ट्राची संस्कृती, सह्याद्रीची भव्यता, संतांची शिकवण आणि स्वाभिमानी इतिहासाचे गुणगान केले आहे.",
+          "hi": "इस गीत में महाराष्ट्र की समृद्ध संस्कृति, सह्याद्री की गरिमा और संतों के आदर्शों का सुंदर वर्णन है।",
+          "en": "An uplifting anthem celebrating Maharashtra's rich history, the Sahyadri mountains, and cultural resilience."
+        },
+        "content": {
+          "mr": "### जय जय महाराष्ट्र माझा, गर्जा महाराष्ट्र माझा!\n\n**कवि परिचय**: राजा बढे (१९१२-१९७७) - सुप्रसिद्ध कवी, नाटककार व गीतकार.\n\n#### मुख्य विचार व भावार्थ:\n१. **सह्याद्रीचा सिंह गर्जतो**: महाराष्ट्रातील पराक्रमी वारसा आणि शिवरायांच्या स्वराज्याची प्रेरणा.\n२. **गोदावरी, कृष्णा, भीमा, कोयना**: महाराष्ट्राच्या भूमीला सुजलाम सुफलाम करणाऱ्या नद्यांचा सन्मान.\n३. **स्वाभिमान आणि एकात्मता**: कोणत्याही संकटात न झुकणारा कणखर महाराष्ट्र धर्म.\n\n#### महत्त्वाचे व्याकरण व स्वाध्याय:\n- **समानार्थी शब्द**: पर्वत = शैल / अचल, गर्जना = सिंहनाद, नदी = सरिता.\n- **वाक्प्रचार**: 'कंबर कसणे' = दृढनिश्चय करून सिद्ध होणे.\n- **रसविचार**: वीर रस व राष्ट्रभक्ती पर काव्य.",
+          "en": "### Jai Jai Maharashtra Maza - Chapter Notes & Analysis\n\n**Poet**: Raja Badhe (1912–1977) - Renowned poet and lyricist.\n\n#### Core Themes:\n1. **Valor of Sahyadri**: Symbolizes courage, self-respect, and Chhatrapati Shivaji Maharaj's vision of Swarajya.\n2. **Rivers of Abundance**: Godavari, Krishna, Bhima, and Koyna sustaining the fertile lands of Maharashtra.\n3. **Grammar & Vocabulary Focus**: Understanding Veera Rasa, patriotic meter, and compound nouns (Samas)."
+        },
+        "keyPoints": [
+          "महाराष्ट्राचे अधिकृत राज्यगीत म्हणून मान्यता",
+          "सह्याद्री आणि अरबी समुद्राचे भौगोलिक व सांस्कृतिक महत्त्व",
+          "काव्यसौंदर्य व रसास्वाद"
+        ]
+      },
+      {
+        "id": "mar-ch2",
+        "chapterNumber": 2,
+        "title": {
+          "mr": "२. बोलतो मराठी (डॉ. नीलिमा गुंडी)",
+          "hi": "२. बोलतो मराठी (डॉ. नीलिमा गुंडी)",
+          "en": "Chapter 2: Bolto Marathi (Linguistic Nuances)"
+        },
+        "summary": {
+          "mr": "मराठी भाषेतील विविध शब्दप्रयोग, वाक्प्रचार, म्हणी आणि भाषेचे सौंदर्य या पाठात स्पष्ट केले आहे.",
+          "hi": "मराठी भाषा के मुहावरे, शब्द-सामर्थ्य एवं भाषा के सौन्दर्य का विवेचन।",
+          "en": "Exploration of linguistic expressions, idioms, and expressive richness in modern Marathi."
+        },
+        "content": {
+          "mr": "### मराठी भाषेचे समृद्ध सौंदर्य\n\nभाषेत प्रत्येक शब्दाला संदर्भानुसार वेगवेगळे अर्थ प्राप्त होतात. चुकीच्या व्याकरणाने किंवा विरामचिन्हांच्या अभावाने अर्थाचा अनर्थ होऊ शकतो.\n\n#### मुख्य मुद्दे:\n- **वाक्प्रचारांचे योग्य उपयोजन**: 'डोळे उघडणे' (सत्य समजणे) विरुद्ध 'डोळे झाक करणे' (दुर्लक्ष करणे).\n- **शब्दांची उत्पत्ती**: शब्द कुठून आले आणि त्यांचा इतिहास काय हे जाणून घेतल्याने भाषेची गोडी वाढते.\n- **विनोद निर्मिती**: भाषेत अनेकदा श्लेष आणि शब्दांच्या द्वयर्थातून निखळ विनोद निर्माण होतो.",
+          "en": "### Linguistic Richness of Marathi\n\nLanguage evolves with everyday speech and cultural context. Precise vocabulary and proper punctuation preserve intended meaning without ambiguity."
+        },
+        "keyPoints": [
+          "विरामचिन्हांचे महत्त्व आणि त्यांचे प्रकार",
+          "मराठी म्हणी व त्यांचे व्यवहारातील अर्थ",
+          "शुद्धलेखनाचे ५ मूलभूत नियम"
+        ]
+      },
+      {
+        "id": "mar-ch3",
+        "chapterNumber": 3,
+        "title": {
+          "mr": "३. आजी: कुटुंबाचं आगळ (महेंद्र कदम)",
+          "hi": "३. आजी: कुटुंबाचं आगळ (महेंद्र कदम)",
+          "en": "Chapter 3: Aaji: Kutumbach Aagal (Rural Family Heritage)"
+        },
+        "summary": {
+          "mr": "ग्रामीण भागातील एकत्र कुटुंब पद्धती, आजीचे प्रेमळ व शिस्तबद्ध नेतृत्व आणि गावचे जुने खेळ यांचे जिवंत चित्रण.",
+          "hi": "ग्रामीण संयुक्त परिवार व्यवस्था, दादी का अनुशासन एवं पारंपरिक जीवन शैली।",
+          "en": "A poignant portrait of traditional rural joint family culture, maternal leadership, and rustic childhood games."
+        },
+        "content": {
+          "mr": "### ग्रामीण कुटुंबव्यवस्था आणि आजीचे व्यक्तिमत्त्व\n\n'आगळ' म्हणजे घराचे मजबूत लाकडी सुरक्षा कवच. आजी ही संपूर्ण कुटुंबाची सुरक्षिततेची आगळ होती.\n\n#### पाठातील ठळक पैलू:\n- **गावरान जीवनशैली**: पहाटेची कामे, विहिरीचे पाणी, शेतातील ताजी भाजी आणि एकत्र भोजनाची परंपरा.\n- **पारंपरिक खेळ**: गोट्या, भोवरे, विटी-दांडू, सुरपारंब्या आणि चिंचोके.\n- **संस्कार व मूल्ये**: अन्नाची नासाडी न करणे, वडिलधाऱ्यांचा आदर आणि कष्टाची सवय.",
+          "en": "### Rural Family Structure & Traditional Values\n\nThe metaphor of 'Aagal' (wooden door bar) portrays the grandmother as the sturdy protector of family unity and moral discipline."
+        },
+        "keyPoints": [
+          "एकत्र कुटुंब पद्धतीचे फायदे व सामाजिक सुरक्षितता",
+          "ग्रामीण खेळांमधील शारीरिक व बौद्धिक कौशल्ये",
+          "आत्मचरित्रात्मक लेखन शैलीचा अभ्यास"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tb-hindi-10",
+    "subject": "hindi",
+    "standard": "10th",
+    "title": {
+      "mr": "हिंदी (Lokbharati / लोकभारती)",
+      "hi": "हिंदी (लोकभारती - कक्षा १०वीं)",
+      "en": "Hindi (Lokbharati - Class 10)"
+    },
+    "description": {
+      "mr": "राष्ट्रभाषा हिंदी साहित्य, कबीर व तुलसीदास यांचे दोहे, आधुनिक गद्य, पत्रलेखन व निबंध कौशल्ये.",
+      "hi": "कबीर-तुलसीदास के दोहे, प्रेरणादायी गद्य, व्याकरण, संक्षेपण एवं निबंध लेखन।",
+      "en": "Hindi Literature, Classical Doha Poetry, Contemporary Prose, and Official Hindi Composition."
+    },
+    "coverColor": "from-navy-900 via-blue-950 to-slate-900",
+    "badge": "Class 10 Board Hindi",
+    "pdfUrl": "/docs/textbooks/hindi_class10.pdf",
+    "totalChapters": 5,
+    "chapters": [
+      {
+        "id": "hin-ch1",
+        "chapterNumber": 1,
+        "title": {
+          "mr": "१. भारत महिमा (जयशंकर प्रसाद)",
+          "hi": "१. भारत महिमा (जयशंकर प्रसाद)",
+          "en": "Chapter 1: Bharat Mahima (Jaishankar Prasad)"
+        },
+        "summary": {
+          "mr": "प्राचीन भारताचे ज्ञान, संस्कृती, दानशूरता आणि विश्वकल्याणकारी परंपरेचे ओजस्वी वर्णन.",
+          "hi": "प्राचीन भारत के गौरवशाली ज्ञान, त्याग, करुणा एवं वैश्विक शांति के संदेश का सुंदर चित्रण।",
+          "en": "A classical patriotic Hindi poem highlighting ancient India's cultural heritage, wisdom, and benevolence."
+        },
+        "content": {
+          "mr": "### भारत महिमा - मुख्य विचार:\nभारतात ज्ञानाची पहिली पहाट उगवली. आपण संपूर्ण जगाला ज्ञानाचा आणि करुणेचा प्रकाश दिला. अशोक आणि बुद्धांच्या शिकवणीतून जगाला शांतीचा मार्ग दाखवला.\n\n#### व्याकरण व भाषाभ्यास:\n- **संधी व प्रकार**: स्वरसंधी, व्यंजनसंधी, विसर्गसंधी.\n- **काल परिवर्तन**: वर्तमान, भूत व भविष्यकाळ.",
+          "en": "### Bharat Mahima - Literary Appreciation\n**Poet**: Jaishankar Prasad\nCelebrates India's spiritual wisdom, timeless hospitality, and pioneering knowledge in astronomy, medicine, and mathematics."
+        },
+        "keyPoints": [
+          "भारतीय संस्कृतीतील 'अतिथि देवो भव' आणि दातृत्वाची परंपरा",
+          "समानार्थी व विरुद्धार्थी शब्द संग्रह",
+          "मुहावरे व वाक्य प्रयोग"
+        ]
+      },
+      {
+        "id": "hin-ch2",
+        "chapterNumber": 2,
+        "title": {
+          "mr": "२. लक्ष्मी (गुरूवचन सिंह)",
+          "hi": "२. लक्ष्मी (गुरूवचन सिंह)",
+          "en": "Chapter 2: Lakshmi (Guruvachan Singh)"
+        },
+        "summary": {
+          "mr": "मुक्या प्राण्यांप्रती प्रेम, वृद्धापकाळात पाळीव जनावरांची काळजी आणि मानवी संवेदनांचा सुंदर धडा.",
+          "hi": "पशु-प्रेम, वृद्ध पशुओं की देखभाल एवं मानवीय संवेदनाओं का संवेदनशील चित्रण।",
+          "en": "A poignant short story highlighting compassion towards domestic animals and ethical family duties."
+        },
+        "content": {
+          "mr": "### मुक्या जनावरांप्रती संवेदनशीलता\n\nलक्ष्मी ही एक म्हातारी गाय आहे. दूध देणे बंद केल्यावर तिला कसायाला विकण्याऐवजी तिचे म्हातारपण सुखाचे करण्याचे नैतिक कर्तव्य लेखकाने मांडले आहे.\n\n#### भाषाभ्यास:\n- **प्रत्यय व उपसर्ग**\n- **अनेकार्थी शब्द**",
+          "en": "### Compassion for Aging Livestock\nExplores ethical responsibilities and compassionate treatment towards domestic animals beyond mere utility."
+        },
+        "keyPoints": [
+          "ग्रामीण अर्थव्यवस्थेत पशुपालनाचे महत्त्व",
+          "दयाभाव आणि नैतिक कर्तव्य",
+          "कहानी लेखन कौशल्य"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tb-english-10",
+    "subject": "english",
+    "standard": "10th",
+    "title": {
+      "mr": "इंग्रजी (MyEnglishBook / माय इंग्लिश बुक)",
+      "hi": "अंग्रेजी (MyEnglishBook - कक्षा १०वीं)",
+      "en": "English (MyEnglishBook - Class 10)"
+    },
+    "description": {
+      "mr": "इंग्रजी भाषा कौशल्ये, कथा, कविता, व्याकरण, संभाषण आणि व्यावसायिक पत्रलेखन.",
+      "hi": "अंग्रेजी भाषा कौशल, व्याकरण, गद्य-पद्य, संवाद एवं पत्र लेखन।",
+      "en": "English Literature, Functional Grammar, Vocabulary Expansion, and Formal Communication."
+    },
+    "coverColor": "from-slate-900 via-navy-950 to-blue-950",
+    "badge": "NCERT / SSC Standard",
+    "pdfUrl": "/docs/textbooks/english_class10.pdf",
+    "totalChapters": 5,
+    "chapters": [
+      {
+        "id": "eng-ch1",
+        "chapterNumber": 1,
+        "title": {
+          "mr": "१. A Teenager's Prayer (J. Morse)",
+          "hi": "१. A Teenager's Prayer (J. Morse)",
+          "en": "Unit 1: A Teenager's Prayer (J. Morse)"
+        },
+        "summary": {
+          "mr": "पौगंडावस्थेतील निर्णयक्षमता, नैतिक मूल्ये आणि यशाच्या मार्गावरील मार्गदर्शनासाठी केलेली सकारात्मक प्रार्थना.",
+          "hi": "किशोरावस्था में सही निर्णय लेने और सकारात्मक जीवन पथ चुनने हेतु प्रेरक प्रार्थना।",
+          "en": "A touching poem reflecting adolescent aspirations, ethical decision-making, and perseverance."
+        },
+        "content": {
+          "mr": "### मुख्य विचार व काव्यानंद:\n- **Each day brings new beginnings**: दररोज नव्या संधी मिळतात. योग्य निर्णय घेणे ही जीवनाची गुरुकिल्ली आहे.\n- **Figures of Speech**: Apostrophe (कवि परमेश्वराला थेट संबोधतो), Alliteration (नादानुप्रास).\n- **Rhyme Scheme**: a-b-c-b.\n\n#### ग्रामर पॉईंट्स:\n- Modal Auxiliaries (can, could, may, might, must).\n- Infinitives, Gerunds & Participles.",
+          "en": "### Unit 1: A Teenager's Prayer - Analysis\n\n**Theme**: Self-guidance, resisting negative influences, and embracing daily learning opportunities.\n\n#### Poetic Devices & Grammar:\n- **Rhyme Scheme**: `abcb`\n- **Figures of Speech**: Apostrophe, Metaphor, Alliteration\n- **Language Study**: Identifying active vs. passive voice, direct-indirect narration transitions."
+        },
+        "keyPoints": [
+          "Poetic appreciation structure (Title, Poet, Theme, Rhyme Scheme)",
+          "Vocabulary: Success, Decisions, Temptations, Guidance",
+          "Writing skill: Personal response and diary entry"
+        ]
+      },
+      {
+        "id": "eng-ch2",
+        "chapterNumber": 2,
+        "title": {
+          "mr": "२. An Encounter of Special Kind (Tapan Mukherjee)",
+          "hi": "२. An Encounter of Special Kind (Tapan Mukherjee)",
+          "en": "Unit 2: An Encounter of Special Kind (Tapan Mukherjee)"
+        },
+        "summary": {
+          "mr": "एका जखमी लहान माकडाच्या बाळाला वाचवणारी आणि प्राणिमात्र व मानवातील मूक संवादाची हृदयस्पर्शी कथा.",
+          "hi": "एक घायल बंदर के बच्चे को बचाने और मानव-पशु के भावनात्मक संवाद की मर्मस्पर्शी कहानी।",
+          "en": "An inspiring narrative about rescuing a baby langur and exploring universal inter-species compassion."
+        },
+        "content": {
+          "mr": "### मानवी करुणा आणि निसर्गाचे संतुलन\n\nलेखकाने एका आक्रमक नर लंगूरपासून लहान बाळाचे प्राण वाचवले. आई लंगूरचे कृतज्ञतायुक्त डोळे दाखवतात की मुक्या प्राण्यांनाही प्रेमाची भाषा समजते.\n\n#### भाषाभ्यास:\n- **Compound Words**: courtyard, afternoon, heartbeat, custom-made.\n- **Degrees of Comparison**: Positive, Comparative, Superlative.",
+          "en": "### Compassion and First Aid in Wildlife Encounters\n\nThe protagonist demonstrates presence of mind by fending off an aggressive male langur and administering vital first aid to the baby."
+        },
+        "keyPoints": [
+          "First aid procedures for injured domestic & wild animals",
+          "Vocabulary: Agony, Menacing, Resolutely, Inter-species trust",
+          "Summary writing & Title framing practice"
+        ]
+      }
+    ]
+  }
+]

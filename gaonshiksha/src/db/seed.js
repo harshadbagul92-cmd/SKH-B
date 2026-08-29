@@ -1,6 +1,8 @@
 import { db } from './index';
 import coursesData from '../data/courses.json';
 import opportunitiesData from '../data/opportunities.json';
+import textbooksData from '../data/textbooks.json';
+import govExamsData from '../data/govExams.json';
 
 export async function initializeLocalDB() {
   try {
@@ -8,6 +10,18 @@ export async function initializeLocalDB() {
     if (coursesCount === 0) {
       await db.courses.bulkPut(coursesData);
       console.log('Seeded initial courses into Dexie IndexedDB');
+    }
+
+    const textbooksCount = await db.textbooks.count();
+    if (textbooksCount === 0) {
+      await db.textbooks.bulkPut(textbooksData);
+      console.log('Seeded initial textbooks into Dexie IndexedDB');
+    }
+
+    const examsCount = await db.govExams.count();
+    if (examsCount === 0) {
+      await db.govExams.bulkPut(govExamsData);
+      console.log('Seeded initial government exams into Dexie IndexedDB');
     }
 
     const oppCount = await db.opportunities.count();
@@ -25,9 +39,10 @@ export async function initializeLocalDB() {
           email: 'vikas@invictus.edu',
           password: 'password123',
           mobile: '9822012345',
-          grade: '12th',
-          city: 'संवत्सर, कोपरगाव (Kopargaon)',
+          grade: '10th',
+          city: 'कोपरगाव, अहिल्यानगर (Kopargaon)',
           role: 'student',
+          targetGoal: 'police',
           createdAt: new Date().toISOString()
         },
         {
@@ -38,6 +53,7 @@ export async function initializeLocalDB() {
           grade: 'graduate',
           city: 'पुणे (Pune)',
           role: 'student',
+          targetGoal: 'mpsc',
           createdAt: new Date().toISOString()
         }
       ]);

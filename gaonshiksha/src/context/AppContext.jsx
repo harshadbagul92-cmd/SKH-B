@@ -17,7 +17,7 @@ export function AppProvider({ children }) {
     return localStorage.getItem(LANG_STORAGE_KEY) || 'mr';
   });
 
-  // Session Language Selected flag (Always starts false on app load to show Language Selection Screen first)
+  // Session Language Selected flag
   const [hasSelectedSessionLang, setHasSelectedSessionLang] = useState(false);
 
   // Authentication persistence state
@@ -36,11 +36,20 @@ export function AppProvider({ children }) {
   const [syncStatus, setSyncStatus] = useState('idle'); // idle, syncing, synced, error
   const [syncMessage, setSyncMessage] = useState('');
   
-  // Navigation & View State
-  const [activeView, setActiveView] = useState('courses'); // courses, course-detail, lesson, quiz, certificates, opportunities, admin
+  // Navigation & View State: courses, exams, lesson, quiz, certificates, opportunities, profile, admin
+  const [activeView, setActiveView] = useState('courses');
   const [selectedCourseId, setSelectedCourseId] = useState(null);
   const [selectedLessonIndex, setSelectedLessonIndex] = useState(0);
   
+  // E-Textbook State
+  const [allTextbooks, setAllTextbooks] = useState([]);
+  const [selectedTextbook, setSelectedTextbook] = useState(null);
+  const [activeSubjectFilter, setActiveSubjectFilter] = useState('all');
+
+  // Government Exams State
+  const [allGovExams, setAllGovExams] = useState([]);
+  const [selectedGovExam, setSelectedGovExam] = useState(null);
+
   const [isPackDownloaded, setIsPackDownloaded] = useState(false);
   const [allCourses, setAllCourses] = useState([]);
   const [userProgressMap, setUserProgressMap] = useState({});
@@ -98,111 +107,164 @@ export function AppProvider({ children }) {
   const refreshData = async () => {
     try {
       const courses = await db.courses.toArray();
-      setAllCourses(courses);
+      setAllCourses(courses || []);
 
-      const progressRecords = await db.progress.toArray();
+      const textbooks = await db.textbooks.toArray();
+      setAllTextbooks(textbooks || []);
+
+      const exams = await db.govExams.toArray();
+      setAllGovExams(exams || []);
+
+      const progressArr = await db.progress.toArray();
       const pMap = {};
-      progressRecords.forEach(p => {
+      progressArr.forEach((p) => {
         pMap[p.courseId] = p;
       });
       setUserProgressMap(pMap);
 
       const certs = await db.certificates.toArray();
-      setCertificatesList(certs);
+      setCertificatesList(certs || []);
 
       const apps = await db.applications.toArray();
-      setApplicationsList(apps);
+      setApplicationsList(apps || []);
 
-      const count = await syncService.getPendingCount();
-      setPendingSyncCount(count);
+      // If user is logged in, refresh latest user profile from DB
+      if (currentUser?.email) {
+        const latestUser = await db.users.get(currentUser.email);
+        if (latestUser) {
+          setCurrentUser(latestUser);
+          localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(latestUser));
+        }
+      }
     } catch (err) {
       console.error('Error refreshing local data:', err);
     }
   };
 
-  // Translation helper function
-  const t = (path, replacements = {}) => {
-    let dict = mrTranslations;
-    if (lang === 'hi') dict = hiTranslations;
-    else if (lang === 'en') dict = enTranslations;
+  // Translation helpers
+  const translations = lang === 'en' ? enTranslations : lang === 'hi' ? hiTranslations : mrTranslations;
 
-    const keys = path.split('.');
-    let value = dict;
-    for (const key of keys) {
-      if (value && value[key] !== undefined) {
-        value = value[key];
+  const t = (keyPath, params = {}) => {
+    const keys = keyPath.split('.');
+    let val = translations;
+    for (const k of keys) {
+      if (val && typeof val === 'object' && k in val) {
+        val = val[k];
       } else {
-        // Fallback to English or Marathi if key is missing
-        let fallbackDict = enTranslations;
-        let fbVal = fallbackDict;
-        for (const k of keys) {
-          if (fbVal && fbVal[k] !== undefined) {
-            fbVal = fbVal[k];
+        // Fallback to English
+        let fallback = enTranslations;
+        for (const fk of keys) {
+          if (fallback && typeof fallback === 'object' && fk in fallback) {
+            fallback = fallback[fk];
           } else {
-            fbVal = null;
-            break;
+            return keyPath;
           }
         }
-        if (fbVal) {
-          value = fbVal;
-          break;
-        }
-        return path;
+        val = fallback;
+        break;
       }
     }
-    if (typeof value === 'string') {
-      let text = value;
-      Object.keys(replacements).forEach(r => {
-        text = text.replace(new RegExp(`{{${r}}}`, 'g'), replacements[r]);
+
+    if (typeof val === 'string') {
+      let str = val;
+      Object.keys(params).forEach((paramKey) => {
+        str = str.replace(new RegExp(`{{${paramKey}}}`, 'g'), params[paramKey]);
       });
-      return text;
+      return str;
     }
-    return value;
+    return val || keyPath;
   };
 
-  // Multilingual Object field accessor helper (e.g. title: { en: '..', mr: '..', hi: '..' })
-  const tObj = (obj) => {
-    if (!obj) return '';
-    if (typeof obj === 'string') return obj;
-    if (typeof obj === 'object') {
-      if (obj[lang]) return obj[lang];
-      if (lang === 'hi') return obj.hi || obj.mr || obj.en || '';
-      if (lang === 'mr') return obj.mr || obj.hi || obj.en || '';
-      return obj.en || obj.mr || obj.hi || '';
-    }
-    return '';
+  const tObj = (multilangObj) => {
+    if (!multilangObj) return '';
+    if (typeof multilangObj === 'string') return multilangObj;
+    return multilangObj[lang] || multilangObj['mr'] || multilangObj['en'] || Object.values(multilangObj)[0] || '';
   };
 
-  // Confirm language selection on initial screen
-  const confirmLanguageSelection = (selectedLang) => {
-    if (selectedLang) {
-      setLang(selectedLang);
-      localStorage.setItem(LANG_STORAGE_KEY, selectedLang);
-    }
-    setHasSelectedSessionLang(true);
+  // Offline Simulator Toggle
+  const toggleOfflineSimulation = async () => {
+    const nextVal = !simulatedOffline;
+    setSimulatedOffline(nextVal);
+    await db.settings.put({ key: 'simulatedOffline', value: nextVal });
+    setIsOnline(!nextVal && navigator.onLine);
   };
 
-  // Signup method
-  const signup = async (studentData) => {
+  // Manual Trigger Sync
+  const triggerSync = async () => {
+    if (!isOnline || simulatedOffline) {
+      setSyncStatus('error');
+      setSyncMessage(
+        lang === 'mr'
+          ? 'इंटरनेट बंद आहे. इंटरनेट सुरू झाल्यावर माहिती सिंक होईल.'
+          : lang === 'hi'
+          ? 'इंटरनेट बंद है। कनेक्ट होने पर डेटा सिंक होगा।'
+          : 'Network offline. Will automatically sync when connection returns.'
+      );
+      setTimeout(() => setSyncMessage(''), 4000);
+      return;
+    }
+
+    setSyncStatus('syncing');
+    setSyncMessage(
+      lang === 'mr'
+        ? 'सर्व्हरशी माहिती सिंक होत आहे...'
+        : lang === 'hi'
+        ? 'सर्वर से डेटा सिंक हो रहा है...'
+        : 'Syncing local progress with central server...'
+    );
+
     try {
+      const res = await syncService.syncAll();
+      await refreshData();
+      setSyncStatus('synced');
+      setSyncMessage(res.serverMessage || (
+        lang === 'mr' ? 'सर्व माहिती यशस्वीरित्या सिंक झाली!' : lang === 'hi' ? 'डेटा सफलतापूर्वक सिंक हुआ!' : 'All records synced successfully!'
+      ));
+      setTimeout(() => {
+        setSyncStatus('idle');
+        setSyncMessage('');
+      }, 4000);
+    } catch (err) {
+      setSyncStatus('error');
+      setSyncMessage(
+        lang === 'mr' ? 'सिंक करताना अडचण आली.' : lang === 'hi' ? 'सिंक में त्रुटि हुई।' : 'Sync encountered an error.'
+      );
+      setTimeout(() => {
+        setSyncStatus('idle');
+        setSyncMessage('');
+      }, 4000);
+    }
+  };
+
+  // Authentication Handlers
+  const signup = async (userData) => {
+    try {
+      const existing = await db.users.get(userData.email);
+      if (existing) {
+        return { success: false, message: t('auth.validation.email_exists') };
+      }
+
       const newUser = {
-        name: studentData.name.trim(),
-        email: studentData.email.trim().toLowerCase(),
-        password: studentData.password,
-        mobile: studentData.mobile.trim(),
-        grade: studentData.grade,
-        city: studentData.city.trim(),
+        name: userData.name.trim(),
+        email: userData.email.trim().toLowerCase(),
+        password: userData.password,
+        mobile: userData.mobile.replace(/\D/g, ''),
+        grade: userData.grade || '10th',
+        city: userData.city.trim(),
         role: 'student',
+        targetGoal: 'police',
         createdAt: new Date().toISOString()
       };
 
-      // Save to IndexedDB
       await db.users.put(newUser);
+      
+      // Auto queue user profile for sync
+      await syncService.queueUserProfileUpdate(newUser);
 
-      // Save to localStorage session
-      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newUser));
+      // Auto login
       setCurrentUser(newUser);
-
+      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newUser));
+      setActiveView('courses');
       return { success: true, user: newUser };
     } catch (err) {
       console.error('Signup error:', err);
@@ -210,242 +272,182 @@ export function AppProvider({ children }) {
     }
   };
 
-  // Login method
   const login = async (identifier, password) => {
     try {
       const cleanId = identifier.trim().toLowerCase();
+      const allUsers = await db.users.toArray();
       
-      // Search in Dexie users
-      let user = await db.users
-        .filter(u => u.email.toLowerCase() === cleanId || u.mobile === cleanId)
-        .first();
+      const user = allUsers.find(
+        (u) => (u.email.toLowerCase() === cleanId || u.mobile === cleanId.replace(/\D/g, '')) && u.password === password
+      );
 
-      if (!user && (cleanId === 'vikas@invictus.edu' || cleanId === '9822012345')) {
-        // Fallback for default demo user
-        user = {
-          name: 'विकास एकनाथ तांबडे (Vikas Tambade)',
-          email: 'vikas@invictus.edu',
-          password: 'password123',
-          mobile: '9822012345',
-          grade: '12th',
-          city: 'संवत्सर, कोपरगाव (Kopargaon)',
-          role: 'student',
-          createdAt: new Date().toISOString()
-        };
-        await db.users.put(user);
+      if (!user) {
+        return { success: false, message: t('auth.validation.invalid_credentials') };
       }
 
-      if (user && user.password === password) {
-        localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));
-        setCurrentUser(user);
-        return { success: true, user };
-      }
-
-      return { success: false, message: 'Invalid credentials' };
+      setCurrentUser(user);
+      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));
+      setActiveView(user.role === 'teacher' ? 'admin' : 'courses');
+      return { success: true, user };
     } catch (err) {
       console.error('Login error:', err);
       return { success: false, message: err.message };
     }
   };
 
-  // Logout method
   const logout = () => {
-    localStorage.removeItem(AUTH_STORAGE_KEY);
     setCurrentUser(null);
-    setHasSelectedSessionLang(false);
+    localStorage.removeItem(AUTH_STORAGE_KEY);
     setActiveView('courses');
   };
 
-  // Network simulation toggle
-  const toggleOfflineSimulation = async () => {
-    const nextState = !simulatedOffline;
-    setSimulatedOffline(nextState);
-    await db.settings.put({ key: 'simulatedOffline', value: nextState });
+  const updateUserProfile = async (updatedData) => {
+    if (!currentUser) return false;
+    try {
+      const merged = { ...currentUser, ...updatedData };
+      await db.users.put(merged);
+      setCurrentUser(merged);
+      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(merged));
+      await syncService.queueUserProfileUpdate(merged);
+      return true;
+    } catch (e) {
+      console.error('Error updating profile:', e);
+      return false;
+    }
   };
 
-  // Language cycle helper
-  const cycleLanguage = () => {
-    setLang(prev => {
-      if (prev === 'en') return 'hi';
-      if (prev === 'hi') return 'mr';
-      return 'en';
-    });
-  };
-
-  // Role toggle (Student vs Teacher)
   const toggleRole = () => {
     if (!currentUser) return;
     const newRole = currentUser.role === 'student' ? 'teacher' : 'student';
-    const updated = { ...currentUser, role: newRole };
-    setCurrentUser(updated);
-    localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(updated));
-    if (newRole === 'teacher') {
-      setActiveView('admin');
-    } else {
-      setActiveView('courses');
-    }
+    updateUserProfile({ role: newRole });
+    setActiveView(newRole === 'teacher' ? 'admin' : 'courses');
   };
 
-  // Manual Sync trigger
-  const triggerSync = async () => {
-    setSyncStatus('syncing');
-    setSyncMessage(
-      lang === 'mr'
-        ? 'सर्व्हरशी संपर्क साधत आहे...'
-        : lang === 'hi'
-        ? 'सर्वर से संपर्क हो रहा है...'
-        : 'Contacting Invictus Sync Server...'
-    );
-    
-    await new Promise(r => setTimeout(r, 600));
-
-    const result = await syncService.syncNow(simulatedOffline);
-    if (result.success) {
-      setSyncStatus('synced');
-      setSyncMessage(
-        lang === 'mr'
-          ? `यशस्वी! ${result.syncedCount} नोंदी सर्व्हरवर सिंक झाल्या.`
-          : lang === 'hi'
-          ? `सफल! ${result.syncedCount} रिकॉर्ड सर्वर पर सिंक हुए।`
-          : `Success! ${result.syncedCount} records synced to server.`
-      );
-      await refreshData();
-    } else {
-      setSyncStatus('error');
-      setSyncMessage(result.message);
-    }
-
-    setTimeout(() => {
-      setSyncStatus('idle');
-      setSyncMessage('');
-    }, 4000);
-  };
-
-  // Download entire course pack for offline storage
+  // Complete offline download simulation
   const downloadFullPack = async () => {
-    setIsPackDownloaded(true);
     await db.settings.put({ key: 'fullPackDownloaded', value: true });
-    if ('caches' in window) {
-      try {
-        const cache = await caches.open('invictus-pack-v1');
-        await cache.addAll(['/', '/index.html']);
-      } catch (e) {
-        console.log('Cache storage populated');
-      }
-    }
-    await refreshData();
+    setIsPackDownloaded(true);
   };
 
-  // Mark a lesson as completed
+  // E-Textbook Actions
+  const openTextbook = (textbook) => {
+    setSelectedTextbook(textbook);
+  };
+
+  const closeTextbook = () => {
+    setSelectedTextbook(null);
+  };
+
+  // Record Lesson Completion
   const markLessonComplete = async (courseId, lessonId) => {
-    let currentProgress = await db.progress.get(courseId);
-    if (!currentProgress) {
-      currentProgress = {
+    try {
+      const current = userProgressMap[courseId] || {
         courseId,
-        completedLessonIds: [lessonId],
-        lastActiveLessonId: lessonId,
+        completedLessonIds: [],
         isCompleted: false,
         updatedAt: new Date().toISOString()
       };
-    } else {
-      const existing = new Set(currentProgress.completedLessonIds || []);
-      existing.add(lessonId);
-      currentProgress.completedLessonIds = Array.from(existing);
-      currentProgress.lastActiveLessonId = lessonId;
-      currentProgress.updatedAt = new Date().toISOString();
-    }
 
-    const course = allCourses.find(c => c.id === courseId);
-    if (course && currentProgress.completedLessonIds.length >= course.lessons.length) {
-      currentProgress.isCompleted = true;
-    }
+      const setIds = new Set(current.completedLessonIds || []);
+      setIds.add(lessonId);
+      const updatedList = Array.from(setIds);
 
-    await db.progress.put(currentProgress);
-    await syncService.enqueue('PROGRESS_UPDATE', {
-      studentName: currentUser ? currentUser.name : 'Student',
-      courseId,
-      lessonId,
-      completedLessons: currentProgress.completedLessonIds,
-      timestamp: new Date().toISOString()
-    });
+      const course = allCourses.find((c) => c.id === courseId);
+      const isFinished = course && course.lessons && updatedList.length >= course.lessons.length;
 
-    await refreshData();
-  };
-
-  const updateUserProfile = async (updatedFields) => {
-    try {
-      const baseUser = currentUser || {
-        name: 'विकास एकनाथ तांबडे (Vikas Tambade)',
-        email: 'vikas@invictus.edu',
-        mobile: '9822012345',
-        grade: '12th',
-        city: 'संवत्सर, कोपरगाव (Kopargaon)',
-        role: 'student',
-        createdAt: new Date().toISOString()
-      };
-
-      const updatedUser = {
-        ...baseUser,
-        ...updatedFields,
+      const newProgress = {
+        ...current,
+        courseId,
+        completedLessonIds: updatedList,
+        isCompleted: isFinished,
         updatedAt: new Date().toISOString()
       };
 
-      // Save to IndexedDB
-      await db.users.put(updatedUser);
-
-      // Save to localStorage session
-      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(updatedUser));
-      setCurrentUser(updatedUser);
-
-      // Queue for offline sync
-      await syncService.enqueue('USER_PROFILE_UPDATE', updatedUser);
-
-      // Update pending sync count
-      const count = await syncService.getPendingCount();
-      setPendingSyncCount(count);
-
-      // Background sync if online
-      if (isOnline && !simulatedOffline) {
-        syncService.syncNow(simulatedOffline).then(async (res) => {
-          if (res.success) {
-            const freshCount = await syncService.getPendingCount();
-            setPendingSyncCount(freshCount);
-          }
-        });
-      }
-
-      return { success: true, user: updatedUser };
-    } catch (err) {
-      console.error('Failed to update user profile:', err);
-      return { success: false, message: err.message };
+      await db.progress.put(newProgress);
+      await refreshData();
+      return true;
+    } catch (e) {
+      console.error('Error marking lesson complete:', e);
+      return false;
     }
   };
 
-  const effectiveOnline = isOnline && !simulatedOffline;
+  // Record Quiz Result & Certificate
+  const recordQuizResult = async (courseId, score, totalQuestions, passed, grade = 'A') => {
+    try {
+      const course = allCourses.find((c) => c.id === courseId);
+      const courseTitle = course ? tObj(course.title) : 'Vocational Course';
 
-  const userProfile = currentUser || {
-    name: 'विकास एकनाथ तांबडे (Vikas Tambade)',
-    email: 'vikas@invictus.edu',
-    mobile: '9822012345',
-    grade: '12th',
-    city: 'संवत्सर, कोपरगाव (Kopargaon)',
-    state: 'Maharashtra',
-    country: 'India',
-    pincode: '423601',
-    category: 'vocational',
-    targetGoal: 'Practical Skill Certification & Local Employment',
-    role: 'student',
-    preferences: {
-      notifications: true,
-      audioNarration: true,
-      jobAlerts: true,
-      specialAssistance: false,
-      assistanceDetails: '',
-      preferredJobRoles: 'Digital Assistant, Technician'
-    },
-    dailyGoal: 5,
-    streakCount: 5,
-    lastSyncedAt: new Date().toISOString()
+      await db.quizAttempts.add({
+        courseId,
+        score,
+        totalQuestions,
+        passed,
+        timestamp: new Date().toISOString()
+      });
+
+      if (passed) {
+        const studentName = currentUser?.name || 'Vikas Tambade';
+        const village = currentUser?.city || 'Kopargaon';
+        const randNum = Math.floor(1000 + Math.random() * 9000);
+        const verificationCode = `IL-${village.substring(0, 3).toUpperCase()}-2026-${randNum}`;
+
+        const cert = {
+          id: `cert-${Date.now()}`,
+          verificationCode,
+          courseId,
+          studentName,
+          village,
+          courseTitle,
+          score: `${score}/${totalQuestions} (${Math.round((score / totalQuestions) * 100)}%)`,
+          grade: `${grade} (उत्कृष्ट)`,
+          issueDate: new Date().toLocaleDateString('mr-IN', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          }),
+          synced: false
+        };
+
+        await db.certificates.put(cert);
+        await syncService.queueCertificate(cert);
+        await refreshData();
+        return cert;
+      }
+      return null;
+    } catch (e) {
+      console.error('Error recording quiz result:', e);
+      return null;
+    }
+  };
+
+  // Apply to opportunity
+  const applyToOpportunity = async (opportunity, phone, notes) => {
+    try {
+      const studentName = currentUser?.name || 'Student';
+      const village = currentUser?.city || 'Kopargaon';
+
+      const appRecord = {
+        appId: `app-${Date.now()}`,
+        oppId: opportunity.id,
+        oppTitle: tObj(opportunity.title),
+        organization: tObj(opportunity.organization),
+        studentName,
+        village,
+        phone: phone || currentUser?.mobile || '',
+        notes: notes || '',
+        synced: false,
+        timestamp: new Date().toISOString()
+      };
+
+      await db.applications.add(appRecord);
+      await syncService.queueApplication(appRecord);
+      await refreshData();
+      return true;
+    } catch (e) {
+      console.error('Error applying to job:', e);
+      return false;
+    }
   };
 
   return (
@@ -453,18 +455,18 @@ export function AppProvider({ children }) {
       value={{
         lang,
         setLang,
-        cycleLanguage,
-        t,
-        tObj,
         hasSelectedSessionLang,
         setHasSelectedSessionLang,
-        confirmLanguageSelection,
+        t,
+        tObj,
         currentUser,
-        login,
+        userProfile: currentUser,
         signup,
+        login,
         logout,
-        isOnline: effectiveOnline,
-        realNetworkOnline: isOnline,
+        updateUserProfile,
+        toggleRole,
+        isOnline: isOnline && !simulatedOffline,
         simulatedOffline,
         toggleOfflineSimulation,
         pendingSyncCount,
@@ -477,17 +479,25 @@ export function AppProvider({ children }) {
         setSelectedCourseId,
         selectedLessonIndex,
         setSelectedLessonIndex,
-        userProfile,
-        updateUserProfile,
-        toggleRole,
-        isPackDownloaded,
-        downloadFullPack,
         allCourses,
+        allTextbooks,
+        allGovExams,
+        selectedTextbook,
+        openTextbook,
+        closeTextbook,
+        activeSubjectFilter,
+        setActiveSubjectFilter,
+        selectedGovExam,
+        setSelectedGovExam,
         userProgressMap,
         certificatesList,
         applicationsList,
-        refreshData,
-        markLessonComplete
+        isPackDownloaded,
+        downloadFullPack,
+        markLessonComplete,
+        recordQuizResult,
+        applyToOpportunity,
+        refreshData
       }}
     >
       {children}

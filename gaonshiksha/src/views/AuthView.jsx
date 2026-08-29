@@ -1,510 +1,394 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import {
-  GraduationCap,
+  Shield,
+  ShieldCheck,
   User,
+  Users,
   Mail,
   Lock,
-  Phone,
-  BookOpen,
-  MapPin,
   Eye,
   EyeOff,
+  Phone,
+  MapPin,
   ArrowRight,
   Sparkles,
-  CheckCircle2,
-  AlertCircle,
   Globe,
-  Zap,
-  ArrowLeft
+  CheckCircle2,
+  BookOpen
 } from 'lucide-react';
 
 export default function AuthView() {
-  const { lang, t, setLang, signup, login, setHasSelectedSessionLang } = useApp();
+  const { lang, setLang, t, login, userProfile } = useApp();
 
-  const [activeTab, setActiveTab] = useState('signup'); // 'login' or 'signup'
+  const [mode, setMode] = useState('signin'); // 'signin' | 'signup'
+  const [role, setRole] = useState('student'); // 'student' | 'mentor'
   const [showPassword, setShowPassword] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: userProfile?.name || 'Vikas Tambade',
+    email: userProfile?.email || 'vikas.student@gmail.com',
+    password: 'password123',
+    mobile: userProfile?.mobile || '9876543210',
+    city: userProfile?.city || 'Kopargaon',
+    grade: '10th'
+  });
+
   const [errorMsg, setErrorMsg] = useState('');
-  const [successMsg, setSuccessMsg] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  // Signup form state
-  const [signupForm, setSignupForm] = useState({
-    name: '',
-    email: '',
-    password: '',
-    mobile: '',
-    grade: '',
-    city: ''
-  });
-
-  // Login form state
-  const [loginForm, setLoginForm] = useState({
-    identifier: '', // email or mobile
-    password: ''
-  });
-
-  const educationOptions = [
-    { value: '10th', label: t('auth.education_levels.10th') },
-    { value: '12th', label: t('auth.education_levels.12th') },
-    { value: 'iti', label: t('auth.education_levels.iti') },
-    { value: 'diploma', label: t('auth.education_levels.diploma') },
-    { value: 'graduate', label: t('auth.education_levels.graduate') },
-    { value: 'postgraduate', label: t('auth.education_levels.postgraduate') },
-    { value: 'other', label: t('auth.education_levels.other') }
-  ];
-
-  const handleSignupChange = (e) => {
-    setSignupForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleInputChange = (field, val) => {
+    setFormData(prev => ({ ...prev, [field]: val }));
     if (errorMsg) setErrorMsg('');
   };
 
-  const handleLoginChange = (e) => {
-    setLoginForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
-    if (errorMsg) setErrorMsg('');
-  };
-
-  const validateSignup = () => {
-    if (!signupForm.name.trim()) {
-      setErrorMsg(t('auth.validation.name_required'));
-      return false;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!signupForm.email.trim() || !emailRegex.test(signupForm.email)) {
-      setErrorMsg(t('auth.validation.email_invalid'));
-      return false;
-    }
-    if (!signupForm.password || signupForm.password.length < 6) {
-      setErrorMsg(t('auth.validation.password_short'));
-      return false;
-    }
-    const cleanedMobile = signupForm.mobile.replace(/\D/g, '');
-    if (!cleanedMobile || cleanedMobile.length < 10) {
-      setErrorMsg(t('auth.validation.mobile_invalid'));
-      return false;
-    }
-    if (!signupForm.grade) {
-      setErrorMsg(t('auth.validation.education_required'));
-      return false;
-    }
-    if (!signupForm.city.trim()) {
-      setErrorMsg(t('auth.validation.city_required'));
-      return false;
-    }
-    return true;
-  };
-
-  const validateLogin = () => {
-    if (!loginForm.identifier.trim()) {
-      setErrorMsg(t('auth.validation.identifier_required'));
-      return false;
-    }
-    if (!loginForm.password) {
-      setErrorMsg(t('auth.validation.password_short'));
-      return false;
-    }
-    return true;
-  };
-
-  const handleSignupSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateSignup()) return;
+    setErrorMsg('');
+    setLoading(true);
 
     try {
-      const result = await signup(signupForm);
-      if (result.success) {
-        setSuccessMsg(
-          lang === 'mr'
-            ? 'नोंदणी यशस्वी! डॅशबोर्डवर नेले जात आहे...'
-            : lang === 'hi'
-            ? 'पंजीकरण सफल! डैशबोर्ड पर भेजा जा रहा है...'
-            : 'Registration successful! Redirecting to dashboard...'
-        );
+      if (mode === 'signin') {
+        if (!formData.email || !formData.password) {
+          setErrorMsg('Please provide your Gmail ID and Password.');
+          setLoading(false);
+          return;
+        }
       } else {
-        setErrorMsg(result.message || 'Signup failed');
+        if (!formData.name || !formData.email || !formData.password) {
+          setErrorMsg('Please complete all mandatory fields.');
+          setLoading(false);
+          return;
+        }
       }
+
+      await login({
+        name: formData.name,
+        email: formData.email,
+        mobile: formData.mobile,
+        city: formData.city,
+        grade: formData.grade,
+        role: role,
+        category: role === 'mentor' ? 'mentor' : 'general'
+      });
     } catch (err) {
-      setErrorMsg(err.message || 'Error occurred during signup');
+      console.error('Auth error:', err);
+      setErrorMsg('Authentication error. Please try again.');
+    } finally {
+      setLoading(false);
     }
-  };
-
-  const handleLoginSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateLogin()) return;
-
-    try {
-      const result = await login(loginForm.identifier, loginForm.password);
-      if (result.success) {
-        setSuccessMsg(
-          lang === 'mr'
-            ? 'लॉगिन यशस्वी! डॅशबोर्ड उघडत आहे...'
-            : lang === 'hi'
-            ? 'लॉगिन सफल! डैशबोर्ड खुल रहा है...'
-            : 'Login successful! Opening dashboard...'
-        );
-      } else {
-        setErrorMsg(t('auth.validation.invalid_credentials'));
-      }
-    } catch (err) {
-      setErrorMsg(t('auth.validation.invalid_credentials'));
-    }
-  };
-
-  const handleDemoLogin = async () => {
-    const demoIdentifier = 'vikas@invictus.edu';
-    const demoPassword = 'password123';
-    await login(demoIdentifier, demoPassword);
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-4 sm:p-6 relative overflow-hidden text-slate-100">
-      {/* Background Decorative Ambient Glows */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-[#0A192F] text-slate-100 flex flex-col justify-between selection:bg-gold-500 selection:text-navy-950 font-sans">
+      
+      {/* 1. Top Navigation Bar (Deep Navy with Crisp High Contrast) */}
+      <header className="w-full bg-[#0A192F] border-b border-slate-700/80 sticky top-0 z-40 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-md">
+        
+        {/* Left: Shield Logo & Branding */}
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-md border border-brand-400">
+            <Shield className="w-6 h-6 text-gold-400 fill-gold-400/20" />
+          </div>
+          <div>
+            <div className="flex items-center space-x-2">
+              <span className="font-black text-lg sm:text-xl tracking-tight text-white">
+                INVICTUS
+              </span>
+              <span className="text-[10px] uppercase font-black bg-gold-500 text-navy-950 px-2 py-0.5 rounded-full font-mono">
+                Learning
+              </span>
+            </div>
+            <p className="text-[11px] text-slate-300 font-semibold hidden sm:block">
+              Bridging Talent with Real-World Challenges
+            </p>
+          </div>
+        </div>
 
-      {/* Top Navigation Bar: Back to Language Select & Language Toggle */}
-      <div className="max-w-xl w-full flex items-center justify-between mb-4 z-10">
-        <button
-          onClick={() => setHasSelectedSessionLang(false)}
-          className="flex items-center space-x-1.5 text-xs text-slate-400 hover:text-white bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-800 transition-colors"
-        >
-          <ArrowLeft className="w-3.5 h-3.5" />
-          <span>{lang === 'mr' ? 'भाषा बदला' : lang === 'hi' ? 'भाषा बदलें' : 'Change Language'}</span>
-        </button>
+        {/* Center/Right: Navigation Links & Controls */}
+        <div className="flex items-center space-x-2 sm:space-x-6">
+          <nav className="hidden md:flex items-center space-x-5 text-xs font-bold text-slate-200">
+            <a
+              href="#home"
+              onClick={(e) => { e.preventDefault(); }}
+              className="hover:text-gold-400 transition-colors"
+            >
+              {t('nav.home') || 'Home'}
+            </a>
+            <a
+              href="#problems"
+              onClick={(e) => { e.preventDefault(); }}
+              className="hover:text-gold-400 transition-colors"
+            >
+              {t('nav.problem_statements') || 'Problem Statements'}
+            </a>
+          </nav>
 
-        <div className="flex items-center space-x-1 bg-slate-900/80 p-1 rounded-xl border border-slate-800 text-xs">
-          {['en', 'hi', 'mr'].map((l) => (
+          {/* Language Switcher */}
+          <div className="flex items-center bg-slate-900 border border-slate-600 rounded-xl p-1 text-xs font-bold">
             <button
-              key={l}
-              onClick={() => setLang(l)}
-              className={`px-2.5 py-1 rounded-lg font-bold transition-colors ${
-                lang === l
-                  ? 'bg-brand-600 text-white'
-                  : 'text-slate-400 hover:text-slate-200'
+              type="button"
+              onClick={() => setLang('mr')}
+              className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                lang === 'mr' ? 'bg-gold-500 text-navy-950 font-black' : 'text-slate-200 hover:text-white'
               }`}
             >
-              {l === 'en' ? 'EN' : l === 'hi' ? 'हिंदी' : 'मराठी'}
+              मराठी
             </button>
-          ))}
-        </div>
-      </div>
+            <button
+              type="button"
+              onClick={() => setLang('hi')}
+              className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                lang === 'hi' ? 'bg-gold-500 text-navy-950 font-black' : 'text-slate-200 hover:text-white'
+              }`}
+            >
+              हिंदी
+            </button>
+            <button
+              type="button"
+              onClick={() => setLang('en')}
+              className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                lang === 'en' ? 'bg-gold-500 text-navy-950 font-black' : 'text-slate-200 hover:text-white'
+              }`}
+            >
+              EN
+            </button>
+          </div>
 
-      {/* Main Authentication Card */}
-      <div className="max-w-xl w-full bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-3xl shadow-2xl p-6 sm:p-8 relative z-10">
+          {/* Top-Right Toggle Button */}
+          <button
+            type="button"
+            onClick={() => setMode(mode === 'signin' ? 'signup' : 'signin')}
+            className="text-xs font-black bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-xl transition-all shadow-md flex items-center space-x-1.5 cursor-pointer border border-brand-400"
+          >
+            <span>
+              {mode === 'signin'
+                ? (lang === 'mr' ? 'नोंदणी (Register)' : lang === 'hi' ? 'रजिस्टर' : 'Register')
+                : (lang === 'mr' ? 'साइन इन (Sign In)' : lang === 'hi' ? 'साइन इन' : 'Sign In')}
+            </span>
+          </button>
+        </div>
+      </header>
+
+      {/* 2. Main Centered Authentication Area */}
+      <main className="flex-1 flex items-center justify-center px-4 py-8 sm:py-12 relative">
         
-        {/* Brand Banner */}
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center space-x-2.5 bg-gradient-to-r from-brand-600 to-amber-500 p-2.5 rounded-2xl shadow-lg mb-3">
-            <GraduationCap className="w-7 h-7 text-white" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-            Invictus Learning
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-medium mt-1">
-            {activeTab === 'signup' ? t('auth.signup_subtitle') : t('auth.login_subtitle')}
-          </p>
-        </div>
+        {/* Subtle Ambient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Tab Switcher (Signup vs Login) */}
-        <div className="grid grid-cols-2 gap-2 bg-slate-950 p-1.5 rounded-2xl border border-slate-800 mb-6">
-          <button
-            type="button"
-            onClick={() => {
-              setActiveTab('signup');
-              setErrorMsg('');
-              setSuccessMsg('');
-            }}
-            className={`py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
-              activeTab === 'signup'
-                ? 'bg-brand-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            {t('auth.signup_tab')}
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setActiveTab('login');
-              setErrorMsg('');
-              setSuccessMsg('');
-            }}
-            className={`py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
-              activeTab === 'login'
-                ? 'bg-brand-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            {t('auth.login_tab')}
-          </button>
-        </div>
-
-        {/* Error / Success Notifications */}
-        {errorMsg && (
-          <div className="mb-5 flex items-start space-x-2.5 bg-rose-500/15 border border-rose-500/30 text-rose-300 p-3.5 rounded-2xl text-xs font-semibold animate-shake">
-            <AlertCircle className="w-4 h-4 shrink-0 text-rose-400 mt-0.5" />
-            <span>{errorMsg}</span>
-          </div>
-        )}
-
-        {successMsg && (
-          <div className="mb-5 flex items-center space-x-2.5 bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 p-3.5 rounded-2xl text-xs font-semibold">
-            <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
-            <span>{successMsg}</span>
-          </div>
-        )}
-
-        {/* SIGNUP FORM */}
-        {activeTab === 'signup' && (
-          <form onSubmit={handleSignupSubmit} className="space-y-4">
+        <div className="w-full max-w-md relative z-10 space-y-4 animate-fadeIn">
+          
+          {/* Centered White Card Container (High Contrast for Educational Clarity) */}
+          <div className="bg-white text-slate-900 rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-300">
             
-            {/* 1. Full Name */}
-            <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                {t('auth.full_name_label')} <span className="text-rose-400">*</span>
-              </label>
-              <div className="relative">
-                <User className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
-                <input
-                  type="text"
-                  name="name"
-                  value={signupForm.name}
-                  onChange={handleSignupChange}
-                  placeholder={t('auth.full_name_placeholder')}
-                  className="w-full bg-slate-950 border border-slate-700/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl pl-10 pr-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 transition-colors"
-                />
+            {/* Header: Shield Badge + Title */}
+            <div className="text-center space-y-2 mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-brand-600 text-white flex items-center justify-center shadow-lg mx-auto border-2 border-brand-400">
+                <Shield className="w-8 h-8 text-gold-400 fill-gold-400/20" />
               </div>
+              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-[#0A192F]">
+                INVICTUS
+              </h1>
+              <p className="text-xs sm:text-sm font-bold text-slate-600">
+                {mode === 'signin' ? t('auth.title_signin') : t('auth.title_signup')}
+              </p>
             </div>
 
-            {/* 2. Email Address */}
-            <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                {t('auth.email_label')} <span className="text-rose-400">*</span>
-              </label>
-              <div className="relative">
-                <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
-                <input
-                  type="email"
-                  name="email"
-                  value={signupForm.email}
-                  onChange={handleSignupChange}
-                  placeholder={t('auth.email_placeholder')}
-                  className="w-full bg-slate-950 border border-slate-700/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl pl-10 pr-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* 3. Password */}
-            <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                {t('auth.password_label')} <span className="text-rose-400">*</span>
-              </label>
-              <div className="relative">
-                <Lock className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  name="password"
-                  value={signupForm.password}
-                  onChange={handleSignupChange}
-                  placeholder={t('auth.password_placeholder')}
-                  className="w-full bg-slate-950 border border-slate-700/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl pl-10 pr-10 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 transition-colors"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-3 text-slate-500 hover:text-slate-300"
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
-            </div>
-
-            {/* 4. Mobile Number */}
-            <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                {t('auth.mobile_label')} <span className="text-rose-400">*</span>
-              </label>
-              <div className="relative">
-                <Phone className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
-                <input
-                  type="tel"
-                  name="mobile"
-                  maxLength={10}
-                  value={signupForm.mobile}
-                  onChange={handleSignupChange}
-                  placeholder={t('auth.mobile_placeholder')}
-                  className="w-full bg-slate-950 border border-slate-700/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl pl-10 pr-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* 5. Education Level / Grade */}
-            <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                {t('auth.education_label')} <span className="text-rose-400">*</span>
-              </label>
-              <div className="relative">
-                <BookOpen className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5 pointer-events-none" />
-                <select
-                  name="grade"
-                  value={signupForm.grade}
-                  onChange={handleSignupChange}
-                  className="w-full bg-slate-950 border border-slate-700/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl pl-10 pr-3.5 py-2.5 text-xs sm:text-sm text-white transition-colors"
-                >
-                  <option value="" className="bg-slate-900 text-slate-400">
-                    {t('auth.education_select_prompt')}
-                  </option>
-                  {educationOptions.map((opt) => (
-                    <option key={opt.value} value={opt.value} className="bg-slate-900 text-white">
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* 6. City / Village Name */}
-            <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                {t('auth.city_label')} <span className="text-rose-400">*</span>
-              </label>
-              <div className="relative">
-                <MapPin className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
-                <input
-                  type="text"
-                  name="city"
-                  value={signupForm.city}
-                  onChange={handleSignupChange}
-                  placeholder={t('auth.city_placeholder')}
-                  className="w-full bg-slate-950 border border-slate-700/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl pl-10 pr-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-brand-600 via-orange-500 to-amber-500 hover:from-brand-500 hover:to-amber-400 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center space-x-2 mt-4 active:scale-98 cursor-pointer"
-            >
-              <span>{t('auth.signup_btn')}</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </form>
-        )}
-
-        {/* LOGIN FORM */}
-        {activeTab === 'login' && (
-          <form onSubmit={handleLoginSubmit} className="space-y-4">
-            
-            {/* Identifier (Email or Mobile) */}
-            <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                {t('auth.login_identifier_label')} <span className="text-rose-400">*</span>
-              </label>
-              <div className="relative">
-                <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
-                <input
-                  type="text"
-                  name="identifier"
-                  value={loginForm.identifier}
-                  onChange={handleLoginChange}
-                  placeholder={t('auth.login_identifier_placeholder')}
-                  className="w-full bg-slate-950 border border-slate-700/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl pl-10 pr-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* Password */}
-            <div>
-              <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                {t('auth.password_label')} <span className="text-rose-400">*</span>
-              </label>
-              <div className="relative">
-                <Lock className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  name="password"
-                  value={loginForm.password}
-                  onChange={handleLoginChange}
-                  placeholder={t('auth.password_placeholder')}
-                  className="w-full bg-slate-950 border border-slate-700/80 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl pl-10 pr-10 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 transition-colors"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-3 text-slate-500 hover:text-slate-300"
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-brand-600 via-orange-500 to-amber-500 hover:from-brand-500 hover:to-amber-400 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center space-x-2 mt-4 active:scale-98 cursor-pointer"
-            >
-              <span>{t('auth.login_btn')}</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </form>
-        )}
-
-        {/* Divider */}
-        <div className="relative my-6 text-center">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-slate-800" />
-          </div>
-          <span className="relative bg-slate-900 px-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-            {t('auth.or_divider')}
-          </span>
-        </div>
-
-        {/* Quick Demo Test Student Button */}
-        <button
-          type="button"
-          onClick={handleDemoLogin}
-          className="w-full bg-slate-800 hover:bg-slate-750 text-slate-200 border border-slate-700 hover:border-slate-600 font-bold py-3 px-4 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center space-x-2 cursor-pointer shadow"
-        >
-          <Zap className="w-4 h-4 text-amber-400" />
-          <span>{t('auth.demo_student_btn')}</span>
-        </button>
-
-        {/* Switch Tab Link Footer */}
-        <div className="mt-5 text-center text-xs text-slate-400">
-          {activeTab === 'signup' ? (
-            <p>
-              {t('auth.already_have_account')}{' '}
+            {/* Role Selector (Segmented Pill Toggle) */}
+            <div className="bg-slate-100 p-1.5 rounded-2xl flex items-center mb-6 border border-slate-300">
               <button
                 type="button"
-                onClick={() => {
-                  setActiveTab('login');
-                  setErrorMsg('');
-                  setSuccessMsg('');
-                }}
-                className="text-brand-400 font-bold hover:underline cursor-pointer"
+                onClick={() => setRole('student')}
+                className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all flex items-center justify-center space-x-1.5 cursor-pointer ${
+                  role === 'student'
+                    ? 'bg-[#0A192F] text-white shadow-md'
+                    : 'text-slate-800 hover:text-black font-bold'
+                }`}
               >
-                {t('auth.switch_to_login')}
+                <User className="w-4 h-4 text-gold-400" />
+                <span>{t('auth.role_student') || 'Student'}</span>
               </button>
-            </p>
-          ) : (
-            <p>
-              {t('auth.dont_have_account')}{' '}
               <button
                 type="button"
-                onClick={() => {
-                  setActiveTab('signup');
-                  setErrorMsg('');
-                  setSuccessMsg('');
-                }}
-                className="text-brand-400 font-bold hover:underline cursor-pointer"
+                onClick={() => setRole('mentor')}
+                className={`flex-1 py-2.5 rounded-xl text-xs font-black transition-all flex items-center justify-center space-x-1.5 cursor-pointer ${
+                  role === 'mentor'
+                    ? 'bg-[#0A192F] text-white shadow-md'
+                    : 'text-slate-800 hover:text-black font-bold'
+                }`}
               >
-                {t('auth.switch_to_signup')}
+                <Users className="w-4 h-4 text-gold-400" />
+                <span>{t('auth.role_mentor') || 'Mentor'}</span>
               </button>
-            </p>
-          )}
-        </div>
+            </div>
 
-      </div>
+            {/* Error Message Alert */}
+            {errorMsg && (
+              <div className="mb-4 p-3 rounded-xl bg-rose-50 border border-rose-300 text-rose-800 text-xs font-bold animate-fadeIn">
+                {errorMsg}
+              </div>
+            )}
+
+            {/* Form with High Contrast Inputs */}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              
+              {/* If Sign Up: Full Name */}
+              {mode === 'signup' && (
+                <div>
+                  <label className="block text-[11px] font-black uppercase tracking-wider text-[#0F172A] mb-1">
+                    {t('auth.fullname_label')}
+                  </label>
+                  <div className="relative">
+                    <User className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      required
+                      placeholder={t('auth.fullname_placeholder')}
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className="w-full bg-white border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {/* Student / Mentor Gmail ID */}
+              <div>
+                <label className="block text-[11px] font-black uppercase tracking-wider text-[#0F172A] mb-1">
+                  {role === 'student' ? t('auth.gmail_student_label') : t('auth.gmail_mentor_label')}
+                </label>
+                <div className="relative">
+                  <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="email"
+                    required
+                    placeholder={t('auth.gmail_placeholder')}
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className="w-full bg-white border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Password */}
+              <div>
+                <label className="block text-[11px] font-black uppercase tracking-wider text-[#0F172A] mb-1">
+                  {t('auth.password_label')}
+                </label>
+                <div className="relative">
+                  <Lock className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    placeholder={t('auth.password_placeholder')}
+                    value={formData.password}
+                    onChange={(e) => handleInputChange('password', e.target.value)}
+                    className="w-full bg-white border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-10 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="p-1 text-slate-500 hover:text-slate-800 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
+                </div>
+              </div>
+
+              {/* If Sign Up: Mobile & City */}
+              {mode === 'signup' && (
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-[11px] font-black uppercase tracking-wider text-[#0F172A] mb-1">
+                      {t('auth.mobile_label')}
+                    </label>
+                    <div className="relative">
+                      <Phone className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="tel"
+                        placeholder="Mobile"
+                        value={formData.mobile}
+                        onChange={(e) => handleInputChange('mobile', e.target.value)}
+                        className="w-full bg-white border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-blue-100 rounded-xl pl-8 pr-2.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-black uppercase tracking-wider text-[#0F172A] mb-1">
+                      {t('auth.city_label')}
+                    </label>
+                    <div className="relative">
+                      <MapPin className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="text"
+                        placeholder="City"
+                        value={formData.city}
+                        onChange={(e) => handleInputChange('city', e.target.value)}
+                        className="w-full bg-white border border-slate-300 focus:border-brand-600 focus:ring-2 focus:ring-blue-100 rounded-xl pl-8 pr-2.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Primary Action Button (Deep Navy with Gold Arrow) */}
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-3.5 px-4 bg-[#0A192F] hover:bg-[#1D4ED8] active:scale-[0.99] text-white font-black text-sm rounded-xl transition-all shadow-lg flex items-center justify-center space-x-2 border border-slate-700 hover:border-brand-400 cursor-pointer"
+                >
+                  <span>
+                    {loading
+                      ? 'Please wait...'
+                      : mode === 'signin'
+                      ? role === 'student' ? t('auth.submit_signin_student') : t('auth.submit_signin_mentor')
+                      : role === 'student' ? t('auth.submit_signup_student') : t('auth.submit_signup_mentor')}
+                  </span>
+                  {!loading && <ArrowRight className="w-4 h-4 text-gold-400" />}
+                </button>
+              </div>
+
+            </form>
+
+            {/* 3. Bottom Footer Switcher Container */}
+            <div className="mt-6 pt-5 border-t border-slate-200 text-center space-y-2">
+              <p className="text-xs text-slate-600 font-semibold">
+                {mode === 'signin' ? t('auth.no_account_yet') : t('auth.already_have_account')}
+              </p>
+
+              <button
+                type="button"
+                onClick={() => setMode(mode === 'signin' ? 'signup' : 'signin')}
+                className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#0F172A] font-black text-xs border border-slate-300 transition-all text-center flex items-center justify-center space-x-1.5 cursor-pointer"
+              >
+                <span>
+                  {mode === 'signin'
+                    ? t('auth.toggle_signup_btn')
+                    : t('auth.toggle_signin_btn')}
+                </span>
+              </button>
+            </div>
+
+          </div>
+
+          {/* Offline Notice Badge */}
+          <div className="text-center">
+            <span className="inline-flex items-center space-x-1.5 text-xs text-slate-300 font-semibold bg-slate-900 border border-slate-700 px-3.5 py-1.5 rounded-full shadow-sm">
+              <CheckCircle2 className="w-4 h-4 text-gold-400" />
+              <span>{t('auth.offline_notice')}</span>
+            </span>
+          </div>
+
+        </div>
+      </main>
+
+      {/* Footer Branding */}
+      <footer className="w-full py-3 px-4 text-center text-xs text-slate-400 font-medium border-t border-slate-800">
+        Invictus Learning Academy © 2026 • Offline-First Digital Curriculum & Exam Hub
+      </footer>
+
     </div>
   );
 }

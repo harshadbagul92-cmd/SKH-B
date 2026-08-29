@@ -59,21 +59,19 @@ export default function OpportunitiesView() {
   };
 
   const isAlreadyApplied = (oppId) => {
-    return applicationsList.some(a => a.oppId === oppId) || justAppliedId === oppId;
+    return (
+      justAppliedId === oppId ||
+      applicationsList.some(a => a.oppId === oppId)
+    );
   };
 
   const handleOpenApplyModal = (opp) => {
     setSelectedOppForApply(opp);
     setApplyForm({
       name: userProfile?.name || '',
-      village: userProfile?.city || userProfile?.village || '',
+      village: userProfile?.city || userProfile?.village || 'Maharashtra',
       phone: userProfile?.mobile || userProfile?.phone || '',
-      notes:
-        lang === 'mr'
-          ? 'मी हा अभ्यासक्रम पूर्ण केला असून काम करण्यास उत्सुक आहे.'
-          : lang === 'hi'
-          ? 'मैंने यह कौशल पाठ्यक्रम पूरा कर लिया है और कार्य करने के लिए उत्सुक हूँ।'
-          : 'I have completed this skill course and eager to join.'
+      notes: ''
     });
   };
 
@@ -81,7 +79,8 @@ export default function OpportunitiesView() {
     e.preventDefault();
     if (!selectedOppForApply) return;
 
-    const newApp = {
+    const applicationRecord = {
+      appId: `app-${Date.now()}`,
       oppId: selectedOppForApply.id,
       oppTitle: tObj(selectedOppForApply.title),
       organization: tObj(selectedOppForApply.organization),
@@ -89,17 +88,12 @@ export default function OpportunitiesView() {
       village: applyForm.village,
       phone: applyForm.phone,
       notes: applyForm.notes,
-      timestamp: new Date().toISOString(),
-      synced: false
+      synced: false,
+      timestamp: new Date().toISOString()
     };
 
-    const savedId = await db.applications.add(newApp);
-
-    // Queue for backend sync
-    await syncService.enqueue('JOB_APPLICATION', {
-      appId: savedId,
-      ...newApp
-    });
+    await db.applications.add(applicationRecord);
+    await syncService.enqueue('JOB_APPLICATION', applicationRecord);
 
     setJustAppliedId(selectedOppForApply.id);
     setSelectedOppForApply(null);
@@ -107,24 +101,29 @@ export default function OpportunitiesView() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 space-y-6">
       
-      {/* Header */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
-        <div className="absolute right-0 top-0 w-80 h-80 bg-brand-600/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative z-10 max-w-3xl space-y-3">
-          <div className="inline-flex items-center space-x-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-orange-300 border border-white/10">
-            <Briefcase className="w-3.5 h-3.5" />
-            <span>Invictus Career & Opportunity Portal</span>
+      {/* Header Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
+        <div>
+          <div className="flex items-center space-x-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-700 bg-blue-50 border border-blue-200 px-2.5 py-0.5 rounded-full">
+              Career & Apprenticeship Placement
+            </span>
           </div>
-
-          <h1 className="text-2xl sm:text-4xl font-black tracking-tight">
-            {t('opportunity.title')}
+          <h1 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+            Local Career & Job Opportunities
           </h1>
-
-          <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-            {t('opportunity.subtitle')}
+          <p className="text-xs text-slate-500 font-medium mt-0.5">
+            Verified local apprenticeships, center jobs, and technical openings.
           </p>
+        </div>
+
+        <div className="flex items-center space-x-2">
+          <span className="text-xs font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-xl flex items-center space-x-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-gold-600" />
+            <span>Verified Local Openings</span>
+          </span>
         </div>
       </div>
 
@@ -137,31 +136,31 @@ export default function OpportunitiesView() {
           return (
             <div
               key={opp.id}
-              className={`bg-white rounded-3xl border transition-all flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md ${
-                unlocked ? 'border-slate-200/90' : 'border-slate-200/60 opacity-90'
+              className={`bg-white rounded-2xl border transition-all flex flex-col justify-between overflow-hidden shadow-xs hover:shadow-md ${
+                unlocked ? 'border-slate-200 hover:border-brand-300' : 'border-slate-200/60 opacity-90'
               }`}
             >
               <div>
                 {/* Card Header */}
-                <div className="p-6 border-b border-slate-100 space-y-3">
+                <div className="p-5 border-b border-slate-100 space-y-2.5 bg-slate-50/60">
                   <div className="flex items-start justify-between gap-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-brand-700 border border-orange-200 px-2.5 py-1 rounded-full">
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-brand-700 border border-blue-200 px-2.5 py-0.5 rounded-md font-mono">
                       {opp.type}
                     </span>
                     {unlocked ? (
-                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full flex items-center">
-                        <CheckCircle2 className="w-3 h-3 mr-1" />
-                        {t('opportunity.unlocked')}
+                      <span className="text-[10px] font-bold text-navy-950 bg-gold-500 px-2.5 py-0.5 rounded-full flex items-center">
+                        <CheckCircle2 className="w-3 h-3 mr-1 text-navy-950" />
+                        <span>Unlocked</span>
                       </span>
                     ) : (
-                      <span className="text-[10px] font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full flex items-center">
+                      <span className="text-[10px] font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded-full flex items-center">
                         <Lock className="w-3 h-3 mr-1" />
-                        {lang === 'mr' ? 'कोर्स पूर्ण करा' : lang === 'hi' ? 'कोर्स पूरा करें' : 'Course Required'}
+                        <span>Course Required</span>
                       </span>
                     )}
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-black text-slate-900 leading-snug">
+                  <h3 className="text-sm sm:text-base font-black text-slate-900 leading-snug">
                     {tObj(opp.title)}
                   </h3>
 
@@ -172,7 +171,7 @@ export default function OpportunitiesView() {
                 </div>
 
                 {/* Card Details */}
-                <div className="p-6 space-y-3 text-xs text-slate-700">
+                <div className="p-5 space-y-3 text-xs text-slate-700">
                   <p className="line-clamp-2 text-slate-600 leading-relaxed">
                     {tObj(opp.description)}
                   </p>
@@ -180,16 +179,16 @@ export default function OpportunitiesView() {
                   <div className="space-y-2 pt-2 border-t border-slate-100">
                     <div className="flex items-center justify-between">
                       <span className="text-slate-500 flex items-center space-x-1">
-                        <IndianRupee className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>{t('opportunity.stipend')}:</span>
+                        <IndianRupee className="w-3.5 h-3.5 text-brand-600" />
+                        <span>Stipend / Salary:</span>
                       </span>
                       <span className="font-bold text-slate-900">{opp.stipend}</span>
                     </div>
 
                     <div className="flex items-center justify-between">
                       <span className="text-slate-500 flex items-center space-x-1">
-                        <MapPin className="w-3.5 h-3.5 text-brand-600" />
-                        <span>{t('opportunity.location')}:</span>
+                        <MapPin className="w-3.5 h-3.5 text-gold-600" />
+                        <span>Location:</span>
                       </span>
                       <span className="font-bold text-slate-900 line-clamp-1">{tObj(opp.location)}</span>
                     </div>
@@ -197,7 +196,7 @@ export default function OpportunitiesView() {
                     <div className="flex items-center justify-between">
                       <span className="text-slate-500 flex items-center space-x-1">
                         <Users className="w-3.5 h-3.5 text-blue-600" />
-                        <span>{t('opportunity.openings')}:</span>
+                        <span>Openings:</span>
                       </span>
                       <span className="font-bold text-slate-900">{opp.openings}</span>
                     </div>
@@ -206,19 +205,19 @@ export default function OpportunitiesView() {
               </div>
 
               {/* Card Footer Action */}
-              <div className="p-6 pt-0">
+              <div className="p-5 pt-0">
                 {applied ? (
-                  <div className="w-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold text-xs py-3 px-4 rounded-xl flex items-center justify-center space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    <span>{t('opportunity.applied')}</span>
+                  <div className="w-full bg-blue-50 border border-blue-200 text-brand-900 font-bold text-xs py-2.5 px-4 rounded-xl flex items-center justify-center space-x-2">
+                    <CheckCircle2 className="w-4 h-4 text-brand-600" />
+                    <span>Applied Successfully</span>
                   </div>
                 ) : unlocked ? (
                   <button
                     onClick={() => handleOpenApplyModal(opp)}
-                    className="w-full bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-500 hover:to-amber-500 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-md transition-transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer"
+                    className="w-full bg-[#0A192F] hover:bg-brand-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-xs transition-transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer border border-slate-700"
                   >
-                    <span>{t('opportunity.apply_now')}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span>Apply Directly</span>
+                    <ArrowRight className="w-4 h-4 text-gold-400" />
                   </button>
                 ) : (
                   <button
@@ -226,10 +225,10 @@ export default function OpportunitiesView() {
                       setSelectedCourseId(opp.requiredCourseId);
                       setActiveView('lesson');
                     }}
-                    className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs py-3 px-4 rounded-xl border border-slate-200 flex items-center justify-center space-x-1.5 transition-colors cursor-pointer"
+                    className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs py-2.5 px-4 rounded-xl transition-colors flex items-center justify-center space-x-2 cursor-pointer"
                   >
-                    <Lock className="w-3.5 h-3.5 text-slate-400" />
-                    <span>{t('opportunity.locked_hint')}</span>
+                    <Lock className="w-3.5 h-3.5 text-slate-500" />
+                    <span>Complete Course to Unlock</span>
                   </button>
                 )}
               </div>
@@ -238,105 +237,102 @@ export default function OpportunitiesView() {
         })}
       </div>
 
-      {/* Apply Modal */}
+      {/* Direct Application Modal */}
       {selectedOppForApply && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-200 space-y-4 relative">
-            <button
-              onClick={() => setSelectedOppForApply(null)}
-              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="space-y-1">
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-brand-700 px-2.5 py-0.5 rounded-full">
-                {lang === 'mr' ? 'ऑफलाइन अर्ज प्रक्रिया' : lang === 'hi' ? 'ऑफलाइन आवेदन प्रक्रिया' : 'Offline Application'}
-              </span>
-              <h3 className="text-lg font-black text-slate-900 pt-1">
-                {tObj(selectedOppForApply.title)}
-              </h3>
-              <p className="text-xs text-slate-500">
-                {tObj(selectedOppForApply.organization)}
-              </p>
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
+          <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+            
+            <div className="bg-[#0A192F] text-white p-5 flex items-start justify-between">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-gold-500 text-navy-950 px-2 py-0.5 rounded font-mono">
+                  Job Application
+                </span>
+                <h3 className="text-base font-black mt-2 leading-snug">
+                  {tObj(selectedOppForApply.title)}
+                </h3>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  {tObj(selectedOppForApply.organization)}
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedOppForApply(null)}
+                className="p-1 rounded-lg text-slate-400 hover:text-white"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
-            <form onSubmit={handleSubmitApplication} className="space-y-3.5 pt-2">
+            <form onSubmit={handleSubmitApplication} className="p-6 space-y-4 text-xs">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  {lang === 'mr' ? 'विद्यार्थ्याचे नाव' : lang === 'hi' ? 'छात्र का नाम' : 'Student Name'}
+                <label className="block font-bold text-slate-700 mb-1">
+                  Full Name
                 </label>
                 <input
                   type="text"
                   required
                   value={applyForm.name}
-                  onChange={e => setApplyForm({ ...applyForm, name: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:border-brand-500 focus:bg-white"
+                  onChange={(e) => setApplyForm({ ...applyForm, name: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:border-brand-500"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    {lang === 'mr' ? 'गाव / शहर' : lang === 'hi' ? 'गाँव / शहर' : 'City / Village'}
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={applyForm.village}
-                    onChange={e => setApplyForm({ ...applyForm, village: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:border-brand-500 focus:bg-white"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    {lang === 'mr' ? 'मोबाईल नंबर' : lang === 'hi' ? 'मोबाइल नंबर' : 'Phone'}
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={applyForm.phone}
-                    onChange={e => setApplyForm({ ...applyForm, phone: e.target.value })}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:border-brand-500 focus:bg-white"
-                  />
-                </div>
+              <div>
+                <label className="block font-bold text-slate-700 mb-1">
+                  Village / City
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={applyForm.village}
+                  onChange={(e) => setApplyForm({ ...applyForm, village: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:border-brand-500"
+                />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  {lang === 'mr' ? 'अतिरिक्त माहिती / संदेश' : lang === 'hi' ? 'अतिरिक्त संदेश' : 'Candidate Note'}
+                <label className="block font-bold text-slate-700 mb-1">
+                  Mobile Number
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={applyForm.phone}
+                  onChange={(e) => setApplyForm({ ...applyForm, phone: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:border-brand-500"
+                />
+              </div>
+
+              <div>
+                <label className="block font-bold text-slate-700 mb-1">
+                  Cover Note / Message (Optional)
                 </label>
                 <textarea
                   rows={2}
                   value={applyForm.notes}
-                  onChange={e => setApplyForm({ ...applyForm, notes: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:border-brand-500 focus:bg-white"
+                  onChange={(e) => setApplyForm({ ...applyForm, notes: e.target.value })}
+                  placeholder="I have completed my certification..."
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:border-brand-500"
                 />
               </div>
 
-              <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-800 flex items-start space-x-2">
-                <ShieldCheck className="w-4 h-4 shrink-0 text-amber-600 mt-0.5" />
-                <span>{t('opportunity.applied_queued')}</span>
-              </div>
-
-              <div className="flex items-center justify-end space-x-3 pt-2">
+              <div className="pt-2 flex items-center justify-end space-x-2">
                 <button
                   type="button"
                   onClick={() => setSelectedOppForApply(null)}
-                  className="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100"
+                  className="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 cursor-pointer"
                 >
-                  {lang === 'mr' ? 'रद्द करा' : lang === 'hi' ? 'रद्द करें' : 'Cancel'}
+                  Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex items-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-md cursor-pointer"
+                  className="flex items-center space-x-1.5 bg-[#0A192F] hover:bg-brand-700 text-white font-bold px-5 py-2.5 rounded-xl shadow cursor-pointer border border-slate-700"
                 >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>{lang === 'mr' ? 'अर्ज सबमिट करा' : lang === 'hi' ? 'आवेदन जमा करें' : 'Submit Application'}</span>
+                  <Send className="w-3.5 h-3.5 text-gold-400" />
+                  <span>Submit Application</span>
                 </button>
               </div>
             </form>
+
           </div>
         </div>
       )}
