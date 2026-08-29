@@ -1,7 +1,12 @@
 {
+  "brand": {
+    "name": "Invictus Learning",
+    "tagline": "Empowering Rural & Regional Youth with Practical Skills",
+    "tagline_short": "Skill Certification & Career Academy"
+  },
   "app": {
-    "name": "GaonShiksha",
-    "subtitle": "Kopargaon Rural Skills & Livelihood Academy",
+    "name": "Invictus Learning",
+    "subtitle": "Vocational Skills & Employment Academy",
     "offline_badge": "Offline Mode (No Internet)",
     "online_badge": "Online Mode (Connected)",
     "offline_banner": "You are 100% offline. All lessons, quizzes, practice, and certificates work completely without internet!",
@@ -11,7 +16,69 @@
     "sync_pending": "Pending Sync: {{count}}",
     "simulate_offline": "Network Simulator",
     "role_student": "Student View",
-    "role_teacher": "Teacher / Admin View"
+    "role_teacher": "Teacher / Admin View",
+    "change_language": "Change Language",
+    "logout": "Logout",
+    "welcome_user": "Welcome, {{name}}!"
+  },
+  "lang_select": {
+    "title": "Select Your Preferred Language",
+    "subtitle": "Choose the language you are most comfortable learning in. You can change this anytime.",
+    "select_prompt": "Please choose one of the 3 languages below:",
+    "continue_btn": "Continue to Invictus Learning",
+    "current_preview": "Selected: {{lang}}",
+    "english_desc": "Global & Technical Communication",
+    "hindi_desc": "राष्ट्रभाषा एवं डिजिटल कौशल शिक्षा",
+    "marathi_desc": "मातृभाषेत शिका आणि पुढे व्हा"
+  },
+  "auth": {
+    "login_tab": "Student Login",
+    "signup_tab": "Student Sign Up",
+    "welcome_back": "Welcome Back to Invictus Learning",
+    "login_subtitle": "Enter your credentials to continue your offline-enabled skill journey.",
+    "create_account": "Create Your Student Profile",
+    "signup_subtitle": "Register once to access certified vocational courses and local job opportunities.",
+    "full_name_label": "Full Name",
+    "full_name_placeholder": "e.g., Rajesh Sharma / Priya Patil",
+    "email_label": "Email Address",
+    "email_placeholder": "e.g., student@invictus.edu or name@gmail.com",
+    "password_label": "Password",
+    "password_placeholder": "Minimum 6 characters",
+    "mobile_label": "Mobile Number",
+    "mobile_placeholder": "10-digit mobile number (e.g. 9876543210)",
+    "education_label": "Education Level / Grade",
+    "education_select_prompt": "-- Select Your Education Qualification --",
+    "city_label": "City / Village Name",
+    "city_placeholder": "e.g. Kopargaon, Shirdi, Pune, Nashik",
+    "login_identifier_label": "Email or Mobile Number",
+    "login_identifier_placeholder": "Enter registered email or 10-digit mobile",
+    "login_btn": "Log In to My Dashboard",
+    "signup_btn": "Complete Registration & Start Learning",
+    "already_have_account": "Already registered with Invictus?",
+    "dont_have_account": "New student at Invictus Learning?",
+    "switch_to_login": "Log in here",
+    "switch_to_signup": "Register for free now",
+    "demo_student_btn": "⚡ Quick Demo Login (Instant Test Account)",
+    "or_divider": "OR",
+    "validation": {
+      "name_required": "Please enter your full name.",
+      "email_invalid": "Please enter a valid email address.",
+      "password_short": "Password must be at least 6 characters long.",
+      "mobile_invalid": "Please enter a valid 10-digit mobile number.",
+      "education_required": "Please select your education level / grade.",
+      "city_required": "Please enter your city or village name.",
+      "identifier_required": "Please enter your email or mobile number.",
+      "invalid_credentials": "User not found or incorrect credentials. Please check or register."
+    },
+    "education_levels": {
+      "10th": "10th Standard / Matriculation (१० वी उत्तीर्ण)",
+      "12th": "12th Standard / Higher Secondary (१२ वी उत्तीर्ण)",
+      "iti": "ITI / Vocational Trade Certificate",
+      "diploma": "Polytechnic Diploma",
+      "graduate": "Undergraduate Degree (BA, BCom, BSc, BE, etc.)",
+      "postgraduate": "Postgraduate / Master's Degree",
+      "other": "Other / Self-Taught"
+    }
   },
   "nav": {
     "courses": "Courses",
@@ -21,8 +88,8 @@
     "admin": "Teacher Portal"
   },
   "home": {
-    "hero_title": "Rural Vocational & Digital Skills for Kopargaon Youth",
-    "hero_desc": "No need to worry about power outages or spotty internet. Download once, learn anywhere for free, earn accredited skill certificates, and unlock local job opportunities!",
+    "hero_title": "Vocational & Digital Skills for Ambitious Youth",
+    "hero_desc": "No need to worry about power cuts or spotty internet. Download once, learn anywhere for free, earn accredited skill certificates, and unlock local career opportunities!",
     "download_pack": "Download Full Offline Course Pack",
     "pack_downloaded": "All courses cached offline on this device!",
     "stats_students": "Students Enrolled",
@@ -30,13 +97,13 @@
     "stats_completed": "Lessons Completed",
     "stats_certificates": "Certificates Earned",
     "features_offline_title": "100% Offline-First",
-    "features_offline_desc": "Keep studying even in remote villages with zero mobile signal.",
-    "features_lang_title": "Marathi & English Bilingual",
-    "features_lang_desc": "Authentic conversational Marathi alongside English terminology.",
+    "features_offline_desc": "Keep studying even in remote locations with zero mobile signal.",
+    "features_lang_title": "Trilingual Support",
+    "features_lang_desc": "Learn comfortably in English, Hindi (हिंदी), or Marathi (मराठी).",
     "features_cert_title": "Verifiable Certificate",
     "features_cert_desc": "Instant tamper-proof PDF certificate with unique QR code verification ID.",
-    "features_jobs_title": "Direct Local Opportunities",
-    "features_jobs_desc": "Connect with local agro-industries, solar projects, self-help groups, and retail shops."
+    "features_jobs_title": "Direct Career Opportunities",
+    "features_jobs_desc": "Connect with local industries, solar projects, enterprises, and retail hubs."
   },
   "course": {
     "title": "Available Skill Courses",
@@ -62,7 +129,7 @@
     "mark_completed": "Mark as Completed",
     "completed_tag": "Lesson Completed ✓",
     "key_takeaways": "Key Takeaways",
-    "practical_tip": "Practical Rural Tip"
+    "practical_tip": "Practical Field Tip"
   },
   "quiz": {
     "title": "Course Certification Quiz",
@@ -78,7 +145,7 @@
   },
   "certificate": {
     "title": "Certificate of Vocational Competence",
-    "subtitle": "Kopargaon Rural Skills & Technology Development Academy",
+    "subtitle": "Invictus Learning • Skill & Technology Development Academy",
     "awarded_to": "This certificate is proudly presented to",
     "completion_text": "for successfully mastering the curriculum and passing the assessment in:",
     "verification_id": "Verification ID",
@@ -86,11 +153,11 @@
     "grade": "Grade Awarded",
     "download_pdf": "Download Official PDF",
     "share": "Share Certificate",
-    "seal_text": "Official Verified Institute Seal"
+    "seal_text": "Official Verified Academy Seal"
   },
   "opportunity": {
-    "title": "Local Job & Apprenticeship Opportunities (Kopargaon & Ahmednagar)",
-    "subtitle": "Direct opportunities unlocked for certified graduates",
+    "title": "Job & Apprenticeship Opportunities",
+    "subtitle": "Direct career opportunities unlocked for certified Invictus graduates",
     "locked_hint": "Complete the required course to unlock this application",
     "unlocked": "Eligible to Apply ✓",
     "apply_now": "Mark Interest / Apply",
@@ -102,13 +169,13 @@
   },
   "admin": {
     "title": "Teacher & Institute Management Portal",
-    "subtitle": "Kopargaon Training Centre - Student Roster & Offline Sync Reports",
+    "subtitle": "Invictus Learning Training Centre - Student Roster & Offline Sync Reports",
     "total_students": "Total Students",
     "total_completions": "Completed Courses",
     "pending_syncs": "Pending Offline Syncs",
     "roster_title": "Student Roster & Progress",
     "name": "Name",
-    "village": "Village / Taluka",
+    "village": "City / Village",
     "course": "Enrolled Course",
     "progress": "Progress",
     "quiz_score": "Score",

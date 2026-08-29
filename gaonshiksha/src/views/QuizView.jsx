@@ -19,6 +19,7 @@ export default function QuizView() {
   const {
     lang,
     t,
+    tObj,
     allCourses,
     selectedCourseId,
     setActiveView,
@@ -88,42 +89,36 @@ export default function QuizView() {
         console.log('Confetti triggered');
       }
 
-      // Generate Unique Verification Code: GS-KPG-2026-XXXX
-      const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-      const code = `GS-KPG-2026-${randomSuffix}`;
-      setGeneratedCertCode(code);
+      // Generate Verifiable Certificate
+      const randomCode = Math.floor(1000 + Math.random() * 9000);
+      const certCode = `IL-CERT-${new Date().getFullYear()}-${randomCode}`;
+      setGeneratedCertCode(certCode);
 
-      const grade = correctCount === 5 ? 'A+ (उत्कृष्ट)' : correctCount === 4 ? 'A (प्रथम श्रेणी)' : 'B (उत्तीर्ण)';
+      const existingCert = await db.certificates.where('courseId').equals(course.id).first();
+      if (!existingCert) {
+        const certRecord = {
+          id: `cert-${Date.now()}`,
+          verificationCode: certCode,
+          courseId: course.id,
+          courseTitle: tObj(course.title),
+          studentName: userProfile.name,
+          village: userProfile.city || userProfile.village || 'Maharashtra',
+          score: `${correctCount}/${questions.length} (${Math.round((correctCount / questions.length) * 100)}%)`,
+          grade: correctCount === 5 ? 'A+ (उत्कृष्ट / Outstanding)' : correctCount === 4 ? 'A (विशेष योग्यता / Distinction)' : 'B+ (उत्तीर्ण / Passed)',
+          issueDate: new Date().toLocaleDateString(lang === 'mr' ? 'mr-IN' : lang === 'hi' ? 'hi-IN' : 'en-IN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          }),
+          synced: false,
+          createdAt: new Date().toISOString()
+        };
 
-      const certRecord = {
-        id: `cert-${course.id}-${Date.now()}`,
-        verificationCode: code,
-        courseId: course.id,
-        courseTitle: course.title,
-        studentName: userProfile.name,
-        village: userProfile.village,
-        score: `${correctCount}/${questions.length} (${(correctCount/questions.length)*100}%)`,
-        grade,
-        issueDate: new Date().toLocaleDateString(lang === 'mr' ? 'mr-IN' : 'en-IN', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        }),
-        synced: false
-      };
+        await db.certificates.put(certRecord);
 
-      await db.certificates.put(certRecord);
-
-      // Queue for backend sync
-      await syncService.enqueue('CERTIFICATE_ISSUED', certRecord);
-      await syncService.enqueue('QUIZ_RESULT', {
-        courseId: course.id,
-        score: correctCount,
-        studentName: userProfile.name,
-        passed: true,
-        verificationCode: code,
-        timestamp: new Date().toISOString()
-      });
+        // Queue certificate for offline sync
+        await syncService.enqueue('CERTIFICATE_ISSUED', certRecord);
+      }
 
       await refreshData();
     }
@@ -137,66 +132,59 @@ export default function QuizView() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const allAnswered = questions.every(q => selectedAnswers[q.id] !== undefined);
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-6">
+    <div className="max-w-3xl mx-auto px-4 py-6 sm:px-6 space-y-6">
       
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+      {/* Back Button */}
+      <div className="flex items-center justify-between">
         <button
-          onClick={() => setActiveView('courses')}
-          className="flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-slate-600 hover:text-brand-600 transition-colors"
+          onClick={() => setActiveView('lesson')}
+          className="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-bold text-slate-600 hover:text-brand-600 bg-white px-3 py-2 rounded-xl border border-slate-200 shadow-sm transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>{t('course.back_to_courses')}</span>
+          <span>{lang === 'mr' ? 'धड्याकडे परत जा' : lang === 'hi' ? 'पाठ पर वापस जाएं' : 'Back to Lesson'}</span>
         </button>
 
-        <div className="flex items-center space-x-2">
-          <span className="text-xs font-bold text-slate-700 bg-orange-100 px-3 py-1 rounded-full">
-            {course.title[lang] || course.title.mr}
-          </span>
+        <div className="text-xs font-bold text-slate-500">
+          <span>{tObj(course.title)}</span>
         </div>
       </div>
 
-      {/* Quiz Introduction / Result Banner */}
-      {!submitted ? (
-        <div className="bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-3xl p-6 sm:p-8 shadow-md space-y-2">
-          <div className="flex items-center space-x-2 text-orange-200 text-xs font-bold uppercase tracking-wider">
-            <Award className="w-4 h-4" />
-            <span>{t('quiz.title')}</span>
-          </div>
-          <h1 className="text-xl sm:text-3xl font-black">
-            {course.title[lang] || course.title.mr} - {lang === 'mr' ? 'अंतिम चाचणी' : 'Final Assessment'}
-          </h1>
-          <p className="text-xs sm:text-sm text-orange-100 font-medium">
-            {t('quiz.instruction')}
-          </p>
+      {/* Quiz Header Card */}
+      <div className="bg-gradient-to-r from-brand-700 via-orange-600 to-amber-600 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
+        <div className="inline-flex items-center space-x-2 bg-white/20 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-white/20">
+          <Award className="w-4 h-4 text-amber-300" />
+          <span>{t('quiz.title')}</span>
         </div>
-      ) : (
+        <h1 className="text-2xl sm:text-3xl font-black tracking-tight mb-2">
+          {tObj(course.title)}
+        </h1>
+        <p className="text-xs sm:text-sm text-orange-100 font-medium leading-relaxed">
+          {t('quiz.instruction')}
+        </p>
+      </div>
+
+      {/* Result Card (if submitted) */}
+      {submitted && (
         <div
-          className={`rounded-3xl p-6 sm:p-8 text-white shadow-xl space-y-4 ${
+          className={`rounded-3xl p-6 sm:p-8 text-white shadow-xl transition-all animate-fadeIn ${
             passed
-              ? 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700'
-              : 'bg-gradient-to-r from-rose-600 to-amber-600'
+              ? 'bg-gradient-to-r from-emerald-600 to-teal-700'
+              : 'bg-gradient-to-r from-rose-600 to-red-700'
           }`}
         >
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-emerald-200">
-                <Sparkles className="w-4 h-4" />
-                <span>{passed ? (lang === 'mr' ? 'उत्तीर्ण!' : 'PASSED!') : (lang === 'mr' ? 'पुनः प्रयत्न' : 'TRY AGAIN')}</span>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-center sm:text-left">
+              <div className="inline-flex items-center space-x-2 bg-white/20 px-3 py-1 rounded-full text-xs font-bold">
+                {passed ? <CheckCircle2 className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
+                <span>{passed ? t('quiz.passed') : t('quiz.failed')}</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-black">
-                {passed ? t('quiz.passed') : t('quiz.failed')}
-              </h2>
-              <p className="text-sm font-semibold opacity-90">
-                {t('quiz.score')}: <span className="text-xl font-black underline">{score} / {questions.length}</span> ({Math.round((score / questions.length) * 100)}%)
-              </p>
+              <div className="text-3xl sm:text-4xl font-black">
+                {t('quiz.score')}: {score} / {questions.length} ({Math.round((score / questions.length) * 100)}%)
+              </div>
               {passed && generatedCertCode && (
-                <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold tracking-wider">
-                  <ShieldCheck className="w-4 h-4 text-emerald-300" />
-                  <span>{t('certificate.verification_id')}: {generatedCertCode}</span>
+                <div className="text-xs font-mono bg-black/20 px-3 py-1.5 rounded-xl border border-white/20 inline-block">
+                  {t('certificate.verification_id')}: {generatedCertCode}
                 </div>
               )}
             </div>
@@ -205,7 +193,7 @@ export default function QuizView() {
               {passed ? (
                 <button
                   onClick={() => setActiveView('certificates')}
-                  className="flex items-center space-x-2 bg-white text-emerald-800 font-black text-sm px-6 py-3.5 rounded-2xl shadow-lg hover:bg-emerald-50 transition-transform active:scale-95"
+                  className="flex items-center space-x-2 bg-white text-emerald-800 font-black text-sm px-6 py-3.5 rounded-2xl shadow-lg hover:bg-emerald-50 transition-transform active:scale-95 cursor-pointer"
                 >
                   <Award className="w-5 h-5 text-emerald-600" />
                   <span>{t('quiz.claim_cert')}</span>
@@ -213,7 +201,7 @@ export default function QuizView() {
               ) : (
                 <button
                   onClick={handleRetry}
-                  className="flex items-center space-x-2 bg-white text-rose-800 font-black text-sm px-5 py-3 rounded-2xl shadow hover:bg-rose-50 transition-transform active:scale-95"
+                  className="flex items-center space-x-2 bg-white text-rose-800 font-black text-sm px-5 py-3 rounded-2xl shadow hover:bg-rose-50 transition-transform active:scale-95 cursor-pointer"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>{t('quiz.retry')}</span>
@@ -248,7 +236,7 @@ export default function QuizView() {
                     {qIndex + 1}
                   </span>
                   <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
-                    {q.question[lang] || q.question.mr}
+                    {tObj(q.question)}
                   </h3>
                 </div>
 
@@ -257,12 +245,12 @@ export default function QuizView() {
                     {isCorrect ? (
                       <span className="flex items-center text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
                         <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
-                        {lang === 'mr' ? 'बरोबर' : 'Correct'}
+                        {lang === 'mr' ? 'बरोबर' : lang === 'hi' ? 'सही' : 'Correct'}
                       </span>
                     ) : (
                       <span className="flex items-center text-xs font-bold text-rose-700 bg-rose-100 px-2.5 py-1 rounded-full">
                         <XCircle className="w-3.5 h-3.5 mr-1" />
-                        {lang === 'mr' ? 'चूक' : 'Incorrect'}
+                        {lang === 'mr' ? 'चूक' : lang === 'hi' ? 'गलत' : 'Incorrect'}
                       </span>
                     )}
                   </div>
@@ -270,55 +258,54 @@ export default function QuizView() {
               </div>
 
               {/* Options */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {(q.options[lang] || q.options.mr).map((opt, oIdx) => {
-                  const isChosen = selectedOption === oIdx;
-                  const isRightAnswer = q.correctIndex === oIdx;
-
-                  let btnStyle = 'bg-slate-50 border-slate-200 text-slate-800 hover:bg-orange-50/60';
-                  if (submitted) {
-                    if (isRightAnswer) {
-                      btnStyle = 'bg-emerald-100 border-emerald-400 text-emerald-950 font-bold ring-1 ring-emerald-400';
-                    } else if (isChosen && !isRightAnswer) {
-                      btnStyle = 'bg-rose-100 border-rose-400 text-rose-950 line-through';
-                    } else {
-                      btnStyle = 'bg-slate-50 border-slate-200 text-slate-400 opacity-60';
-                    }
-                  } else if (isChosen) {
-                    btnStyle = 'bg-orange-100 border-brand-500 text-brand-950 font-bold ring-2 ring-orange-300';
-                  }
+              <div className="space-y-2.5 ml-0 sm:ml-10">
+                {q.options.map((opt, optIndex) => {
+                  const isThisSelected = selectedOption === optIndex;
+                  const isThisTheCorrectAnswer = submitted && optIndex === q.correctIndex;
+                  const isThisWrongSelected = submitted && isThisSelected && !isCorrect;
 
                   return (
                     <button
-                      key={oIdx}
-                      onClick={() => handleSelectOption(q.id, oIdx)}
+                      key={optIndex}
+                      type="button"
                       disabled={submitted}
-                      className={`p-3.5 rounded-2xl border text-left text-xs sm:text-sm transition-all flex items-center justify-between ${btnStyle}`}
+                      onClick={() => handleSelectOption(q.id, optIndex)}
+                      className={`w-full text-left p-3.5 rounded-2xl text-xs sm:text-sm font-medium border transition-all flex items-center justify-between ${
+                        isThisTheCorrectAnswer
+                          ? 'bg-emerald-100 border-emerald-400 text-emerald-900 font-bold'
+                          : isThisWrongSelected
+                          ? 'bg-rose-100 border-rose-400 text-rose-900 line-through'
+                          : isThisSelected
+                          ? 'bg-orange-50 border-brand-500 text-brand-900 font-bold ring-2 ring-brand-500/20'
+                          : 'bg-slate-50/70 hover:bg-slate-100 border-slate-200 text-slate-700'
+                      }`}
                     >
-                      <span className="flex items-center space-x-2">
-                        <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center text-[10px] shrink-0 font-bold">
-                          {String.fromCharCode(65 + oIdx)}
-                        </span>
-                        <span>{opt}</span>
-                      </span>
-                      {submitted && isRightAnswer && (
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 ml-1" />
+                      <div className="flex items-center space-x-3">
+                        <div
+                          className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border shrink-0 ${
+                            isThisSelected
+                              ? 'bg-brand-600 text-white border-brand-600'
+                              : 'border-slate-300 text-slate-500 bg-white'
+                          }`}
+                        >
+                          {String.fromCharCode(65 + optIndex)}
+                        </div>
+                        <span>{tObj(opt)}</span>
+                      </div>
+
+                      {submitted && isThisTheCorrectAnswer && (
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                       )}
                     </button>
                   );
                 })}
               </div>
 
-              {/* Detailed Explanation */}
-              {submitted && (
-                <div className="mt-4 pt-3 border-t border-slate-200/80 text-xs text-slate-700 bg-white/80 p-3 rounded-2xl">
-                  <span className="font-bold text-slate-900 flex items-center space-x-1 mb-1">
-                    <HelpCircle className="w-3.5 h-3.5 text-brand-600" />
-                    <span>{t('quiz.explanation')}:</span>
-                  </span>
-                  <p className="leading-relaxed">
-                    {q.explanation[lang] || q.explanation.mr}
-                  </p>
+              {/* Explanation (after submission) */}
+              {submitted && q.explanation && (
+                <div className="mt-4 pt-3 border-t border-slate-200/80 text-xs text-slate-600 bg-white/80 p-3 rounded-xl ml-0 sm:ml-10">
+                  <span className="font-bold text-slate-800">{t('quiz.explanation')}: </span>
+                  <span>{tObj(q.explanation)}</span>
                 </div>
               )}
             </div>
@@ -326,20 +313,23 @@ export default function QuizView() {
         })}
       </div>
 
-      {/* Action Footer */}
+      {/* Submit Button */}
       {!submitted && (
-        <div className="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 shadow-sm sticky bottom-4 z-10">
-          <div className="text-xs text-slate-600 font-semibold">
-            {Object.keys(selectedAnswers).length} / {questions.length} {lang === 'mr' ? 'उत्तरे निवडली' : 'answered'}
+        <div className="sticky bottom-4 z-30 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-200 shadow-xl flex items-center justify-between">
+          <div className="text-xs text-slate-500 font-medium">
+            <span>
+              {Object.keys(selectedAnswers).length} / {questions.length}{' '}
+              {lang === 'mr' ? 'प्रश्नांची उत्तरे दिली' : lang === 'hi' ? 'प्रश्नों के उत्तर दिए' : 'questions answered'}
+            </span>
           </div>
 
           <button
             onClick={handleSubmitQuiz}
-            disabled={!allAnswered}
-            className={`flex items-center space-x-2 font-black text-xs sm:text-sm px-6 py-3 rounded-xl shadow-md transition-all ${
-              allAnswered
-                ? 'bg-brand-600 hover:bg-brand-700 text-white active:scale-95'
-                : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+            disabled={Object.keys(selectedAnswers).length < questions.length}
+            className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white shadow-lg transition-transform active:scale-95 ${
+              Object.keys(selectedAnswers).length === questions.length
+                ? 'bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-500 hover:to-amber-500 cursor-pointer'
+                : 'bg-slate-300 cursor-not-allowed text-slate-500'
             }`}
           >
             <span>{t('quiz.submit')}</span>

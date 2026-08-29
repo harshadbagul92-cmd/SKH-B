@@ -3,12 +3,12 @@ import { Volume2, VolumeX, Play, Pause, RotateCcw } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export default function AudioNarration({ script }) {
-  const { lang } = useApp();
+  const { lang, tObj } = useApp();
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [speechSupported, setSpeechSupported] = useState(true);
 
-  const textToRead = typeof script === 'object' ? script[lang] || script.mr : script;
+  const textToRead = tObj(script);
 
   useEffect(() => {
     if (!('speechSynthesis' in window)) {
@@ -51,14 +51,18 @@ export default function AudioNarration({ script }) {
       if ('speechSynthesis' in window && textToRead) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(textToRead);
-        utterance.lang = lang === 'mr' ? 'mr-IN' : 'en-IN';
+        utterance.lang = lang === 'mr' ? 'mr-IN' : lang === 'hi' ? 'hi-IN' : 'en-IN';
         utterance.rate = 0.95;
         
         // Find best matching voice if available
         const voices = window.speechSynthesis.getVoices();
-        const marathiVoice = voices.find(v => v.lang.includes('mr') || v.lang.includes('hi'));
-        if (marathiVoice && lang === 'mr') {
-          utterance.voice = marathiVoice;
+        const regionalVoice = voices.find(v => {
+          if (lang === 'mr') return v.lang.includes('mr') || v.lang.includes('hi');
+          if (lang === 'hi') return v.lang.includes('hi');
+          return v.lang.includes('en');
+        });
+        if (regionalVoice) {
+          utterance.voice = regionalVoice;
         }
 
         utterance.onend = () => {
@@ -107,16 +111,28 @@ export default function AudioNarration({ script }) {
             <div className="flex items-center space-x-1.5">
               <Volume2 className="w-4 h-4 text-brand-600" />
               <span className="text-sm font-bold text-slate-800">
-                {lang === 'mr' ? 'धड्याचे ऑडिओ कथन (मराठी आवाज)' : 'Audio Narration (Bilingual Voice)'}
+                {lang === 'mr'
+                  ? 'धड्याचे ऑडिओ कथन (मराठी आवाज)'
+                  : lang === 'hi'
+                  ? 'पाठ का ऑडियो कथन (हिंदी आवाज)'
+                  : 'Audio Narration (Spoken Voice)'}
               </span>
               <span className="text-[10px] font-semibold bg-orange-100 text-brand-700 px-2 py-0.5 rounded-full">
-                {lang === 'mr' ? 'ऑफलाइन उपलब्ध' : 'Offline Mode'}
+                {lang === 'mr' ? 'ऑफलाइन उपलब्ध' : lang === 'hi' ? 'ऑफलाइन उपलब्ध' : 'Offline Mode'}
               </span>
             </div>
             <p className="text-xs text-slate-600 mt-0.5 line-clamp-1">
               {isPlaying
-                ? (lang === 'mr' ? 'ऑडिओ चालू आहे...' : 'Playing narration...')
-                : (lang === 'mr' ? 'वाचण्याऐवजी संपूर्ण धडा ऐका' : 'Listen to this lesson via synthetic speech')}
+                ? lang === 'mr'
+                  ? 'ऑडिओ चालू आहे...'
+                  : lang === 'hi'
+                  ? 'ऑडियो चल रहा है...'
+                  : 'Playing narration...'
+                : lang === 'mr'
+                ? 'वाचण्याऐवजी संपूर्ण धडा ऐका'
+                : lang === 'hi'
+                ? 'पढ़ने के बजाय पूरा पाठ सुनें'
+                : 'Listen to this lesson via synthetic speech'}
             </p>
           </div>
         </div>
@@ -133,7 +149,7 @@ export default function AudioNarration({ script }) {
           <button
             onClick={handleReset}
             className="p-1.5 text-slate-500 hover:text-slate-800 rounded-lg hover:bg-orange-100 transition-colors"
-            title="पुन्हा सुरुवातीपासून ऐका"
+            title="पुन्हा सुरुवातीपासून ऐका / Restart"
           >
             <RotateCcw className="w-4 h-4" />
           </button>

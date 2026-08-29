@@ -19,6 +19,7 @@ export default function CoursesView() {
   const {
     lang,
     t,
+    tObj,
     allCourses,
     userProgressMap,
     certificatesList,
@@ -26,7 +27,9 @@ export default function CoursesView() {
     setSelectedCourseId,
     setSelectedLessonIndex,
     isPackDownloaded,
-    downloadFullPack
+    downloadFullPack,
+    currentUser,
+    userProfile
   } = useApp();
 
   const handleSelectCourse = (courseId) => {
@@ -62,7 +65,15 @@ export default function CoursesView() {
           
           <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold tracking-wide text-orange-100 border border-white/20">
             <MapPin className="w-3.5 h-3.5 text-amber-300" />
-            <span>{lang === 'mr' ? 'कोपरगाव व अहमदनगर ग्रामीण भाग' : 'Kopargaon & Ahmednagar Rural Division'}</span>
+            <span>
+              {currentUser?.city
+                ? `${currentUser.city} • ${userProfile?.grade || 'Student'}`
+                : lang === 'mr'
+                ? 'स्थानिक कौशल्य व करिअर मंच'
+                : lang === 'hi'
+                ? 'व्यावहारिक कौशल एवं करियर मंच'
+                : 'Vocational Skills & Career Academy'}
+            </span>
           </div>
 
           <h1 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
@@ -77,7 +88,7 @@ export default function CoursesView() {
             {!isPackDownloaded ? (
               <button
                 onClick={downloadFullPack}
-                className="flex items-center space-x-2 bg-white hover:bg-orange-50 text-brand-700 font-black text-sm px-5 py-3 rounded-xl shadow-lg transition-transform active:scale-95"
+                className="flex items-center space-x-2 bg-white hover:bg-orange-50 text-brand-700 font-black text-sm px-5 py-3 rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer"
               >
                 <Download className="w-4 h-4 text-brand-600" />
                 <span>{t('home.download_pack')}</span>
@@ -91,16 +102,22 @@ export default function CoursesView() {
 
             <button
               onClick={() => setActiveView('opportunities')}
-              className="flex items-center space-x-2 bg-black/20 hover:bg-black/30 backdrop-blur-md text-white font-bold text-sm px-5 py-3 rounded-xl border border-white/30 transition-colors"
+              className="flex items-center space-x-2 bg-black/20 hover:bg-black/30 backdrop-blur-md text-white font-bold text-sm px-5 py-3 rounded-xl border border-white/30 transition-colors cursor-pointer"
             >
-              <span>{lang === 'mr' ? 'स्थानिक रोजगार संधी पहा' : 'View Local Job Board'}</span>
+              <span>
+                {lang === 'mr'
+                  ? 'स्थानिक रोजगार संधी पहा'
+                  : lang === 'hi'
+                  ? 'स्थानीय रोजगार अवसर देखें'
+                  : 'View Local Opportunities'}
+              </span>
               <ArrowRight className="w-4 h-4 ml-1" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Quick Metrics Bar */}
+      {/* Metrics Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center space-x-3.5">
           <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-brand-600 shrink-0">
@@ -123,7 +140,7 @@ export default function CoursesView() {
         </div>
 
         <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm flex items-center space-x-3.5">
-          <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
             <Award className="w-6 h-6" />
           </div>
           <div>
@@ -137,9 +154,9 @@ export default function CoursesView() {
             <Zap className="w-6 h-6" />
           </div>
           <div>
-            <div className="text-2xl font-black text-slate-900">१००%</div>
+            <div className="text-2xl font-black text-slate-900">100%</div>
             <div className="text-xs text-slate-500 font-semibold">
-              {lang === 'mr' ? 'ऑफलाइन कार्यक्षमता' : 'Offline Ready'}
+              {lang === 'mr' ? 'ऑफलाइन कार्यक्षमता' : lang === 'hi' ? 'ऑफलाइन क्षमता' : 'Offline Ready'}
             </div>
           </div>
         </div>
@@ -154,8 +171,10 @@ export default function CoursesView() {
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 font-medium">
               {lang === 'mr'
-                ? 'गावात रोजगारासाठी लागणारी व्यावहारिक कौशल्ये शिका आणि प्रमाणपत्र मिळवा'
-                : 'Master practical vocational skills tailored for rural employment'}
+                ? 'व्यावहारिक कौशल्ये शिका, परीक्षा द्या आणि प्रमाणित व्हा'
+                : lang === 'hi'
+                ? 'व्यावहारिक कौशल सीखें, क्विज़ दें और प्रमाणित हों'
+                : 'Master practical vocational skills tailored for employment'}
             </p>
           </div>
         </div>
@@ -187,21 +206,24 @@ export default function CoursesView() {
                     </div>
 
                     <h3 className="text-xl font-black mt-4 leading-snug">
-                      {course.title[lang] || course.title.mr}
+                      {tObj(course.title)}
                     </h3>
                   </div>
 
                   {/* Card Body */}
                   <div className="p-6 space-y-4">
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                      {course.description[lang] || course.description.mr}
+                      {tObj(course.description)}
                     </p>
 
                     {/* Progress Bar */}
                     <div className="space-y-1.5 pt-2">
                       <div className="flex justify-between text-xs font-bold text-slate-700">
                         <span>{t('course.progress')}</span>
-                        <span>{percent}% ({completedCount}/{totalCourseLessons} {lang === 'mr' ? 'धडे' : 'lessons'})</span>
+                        <span>
+                          {percent}% ({completedCount}/{totalCourseLessons}{' '}
+                          {lang === 'mr' ? 'धडे' : lang === 'hi' ? 'पाठ' : 'lessons'})
+                        </span>
                       </div>
                       <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200">
                         <div
@@ -229,7 +251,7 @@ export default function CoursesView() {
                                 </div>
                               )}
                               <span className={isDone ? 'line-through text-slate-400' : 'font-medium'}>
-                                {lesson.title[lang] || lesson.title.mr}
+                                {tObj(lesson.title)}
                               </span>
                             </span>
                           </div>
@@ -243,13 +265,13 @@ export default function CoursesView() {
                 <div className="p-6 pt-0 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     onClick={() => handleSelectCourse(course.id)}
-                    className="w-full sm:flex-1 flex items-center justify-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-md transition-transform active:scale-95"
+                    className="w-full sm:flex-1 flex items-center justify-center space-x-2 bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-md transition-transform active:scale-95 cursor-pointer"
                   >
                     <span>
                       {completedCount === 0
                         ? t('course.start_course')
                         : isFinished
-                        ? (lang === 'mr' ? 'पुन्हा उजळणी करा' : 'Review Course')
+                        ? lang === 'mr' ? 'पुन्हा उजळणी करा' : lang === 'hi' ? 'पुनरावलोकन करें' : 'Review Course'
                         : t('course.continue_course')}
                     </span>
                     <ArrowRight className="w-4 h-4" />
@@ -261,11 +283,7 @@ export default function CoursesView() {
                         setSelectedCourseId(course.id);
                         setActiveView('quiz');
                       }}
-                      className={`w-full sm:w-auto flex items-center justify-center space-x-1.5 text-sm font-bold py-3 px-4 rounded-xl border transition-colors ${
-                        hasCert
-                          ? 'bg-emerald-50 text-emerald-700 border-emerald-300 hover:bg-emerald-100'
-                          : 'bg-amber-500 hover:bg-amber-600 text-white shadow'
-                      }`}
+                      className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-md transition-transform active:scale-95 cursor-pointer"
                     >
                       <Award className="w-4 h-4" />
                       <span>{hasCert ? t('course.certificate_unlocked') : t('course.quiz_ready')}</span>
@@ -278,42 +296,45 @@ export default function CoursesView() {
         </div>
       </div>
 
-      {/* Why GaonShiksha Grid */}
-      <div className="bg-slate-100/80 rounded-3xl p-6 sm:p-8 border border-slate-200/80">
-        <h3 className="text-lg sm:text-xl font-black text-slate-900 mb-6 text-center">
-          {lang === 'mr' ? 'ग्रामशिक्षाची ग्रामीण वैशिष्ट्ये (Rural-First Architecture)' : 'Designed for Rural Maharashtra'}
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center sm:text-left">
-          <div className="space-y-2">
-            <div className="w-10 h-10 rounded-xl bg-orange-200 text-brand-700 flex items-center justify-center font-black">
-              1
+      {/* Why Invictus Learning Grid */}
+      <div className="bg-slate-900 rounded-3xl p-6 sm:p-10 text-white space-y-6 shadow-xl">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center space-x-2 bg-brand-600/30 text-brand-300 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-brand-500/30">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Invictus Learning Highlights</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black">
+            {lang === 'mr'
+              ? 'स्थानिक व ग्रामीण विद्यार्थ्यांसाठी सर्वोत्तम मंच'
+              : lang === 'hi'
+              ? 'व्यावहारिक शिक्षा एवं कौशल विकास मंच'
+              : 'Built for Seamless Offline Learning & Career Growth'}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          <div className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center">
+              <Zap className="w-5 h-5" />
             </div>
-            <h4 className="font-bold text-slate-900 text-sm">{t('home.features_offline_title')}</h4>
-            <p className="text-xs text-slate-600">{t('home.features_offline_desc')}</p>
+            <h3 className="font-bold text-base">{t('home.features_offline_title')}</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">{t('home.features_offline_desc')}</p>
           </div>
 
-          <div className="space-y-2">
-            <div className="w-10 h-10 rounded-xl bg-amber-200 text-amber-700 flex items-center justify-center font-black">
-              2
+          <div className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+              <Award className="w-5 h-5" />
             </div>
-            <h4 className="font-bold text-slate-900 text-sm">{t('home.features_lang_title')}</h4>
-            <p className="text-xs text-slate-600">{t('home.features_lang_desc')}</p>
+            <h3 className="font-bold text-base">{t('home.features_cert_title')}</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">{t('home.features_cert_desc')}</p>
           </div>
 
-          <div className="space-y-2">
-            <div className="w-10 h-10 rounded-xl bg-emerald-200 text-emerald-700 flex items-center justify-center font-black">
-              3
+          <div className="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80 space-y-2">
+            <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center">
+              <ShieldCheck className="w-5 h-5" />
             </div>
-            <h4 className="font-bold text-slate-900 text-sm">{t('home.features_cert_title')}</h4>
-            <p className="text-xs text-slate-600">{t('home.features_cert_desc')}</p>
-          </div>
-
-          <div className="space-y-2">
-            <div className="w-10 h-10 rounded-xl bg-blue-200 text-blue-700 flex items-center justify-center font-black">
-              4
-            </div>
-            <h4 className="font-bold text-slate-900 text-sm">{t('home.features_jobs_title')}</h4>
-            <p className="text-xs text-slate-600">{t('home.features_jobs_desc')}</p>
+            <h3 className="font-bold text-base">{t('home.features_jobs_title')}</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">{t('home.features_jobs_desc')}</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import Dexie from 'dexie';
 
-export const db = new Dexie('GaonShikshaDB');
+export const db = new Dexie('InvictusLearningDB');
 
 db.version(1).stores({
   courses: 'id, slug, category',
@@ -10,7 +10,8 @@ db.version(1).stores({
   opportunities: 'id, requiredCourseId',
   applications: '++id, oppId, studentName, timestamp, synced',
   syncQueue: '++id, type, status, createdAt',
-  settings: 'key'
+  settings: 'key',
+  users: 'email, mobile, name, password, grade, city, role, createdAt'
 });
 
 export default db;

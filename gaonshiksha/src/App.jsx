@@ -1,5 +1,7 @@
 import React from 'react';
 import { AppProvider, useApp } from './context/AppContext';
+import LanguageSelectView from './views/LanguageSelectView';
+import AuthView from './views/AuthView';
 import Header from './components/Header';
 import OfflineBanner from './components/OfflineBanner';
 import CoursesView from './views/CoursesView';
@@ -13,15 +15,33 @@ import {
   Award,
   Briefcase,
   GraduationCap,
-  Heart,
   ShieldCheck,
   Zap,
   Globe
 } from 'lucide-react';
 
 function MainAppContent() {
-  const { activeView, setActiveView, lang, t, userProfile } = useApp();
+  const {
+    hasSelectedSessionLang,
+    currentUser,
+    activeView,
+    setActiveView,
+    lang,
+    t,
+    userProfile
+  } = useApp();
 
+  // 1. Initial Entry Point: Language Selection Screen
+  if (!hasSelectedSessionLang) {
+    return <LanguageSelectView />;
+  }
+
+  // 2. Auth Flow: If not logged in, show Multilingual Login & Signup Page
+  if (!currentUser) {
+    return <AuthView />;
+  }
+
+  // 3. Authenticated Dashboard Workflow
   const renderActiveView = () => {
     switch (activeView) {
       case 'courses':
@@ -59,14 +79,18 @@ function MainAppContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-black">
-              ग
+              IL
             </div>
             <div>
-              <div className="text-white font-bold text-sm">ग्रामशिक्षा (GaonShiksha) • कोपरगाव</div>
+              <div className="text-white font-bold text-sm">
+                Invictus Learning • {t('app.subtitle')}
+              </div>
               <p className="text-[11px] text-slate-500">
                 {lang === 'mr'
-                  ? 'अहमदनगर जिल्हा ग्रामीण तंत्रज्ञान व कौशल्य विकास प्रकल्प'
-                  : 'Ahmednagar District Rural Skill & Livelihood Initiative'}
+                  ? 'व्यावहारिक कौशल्य, डिजिटल साक्षरता व करिअर सक्षमीकरण मंच'
+                  : lang === 'hi'
+                  ? 'व्यावहारिक कौशल, डिजिटल साक्षरता एवं रोजगार सशक्तिकरण मंच'
+                  : 'Practical Vocational Skills, Digital Literacy & Career Empowerment'}
               </p>
             </div>
           </div>
@@ -78,7 +102,7 @@ function MainAppContent() {
             </span>
             <span className="flex items-center space-x-1">
               <Globe className="w-3.5 h-3.5 text-emerald-400" />
-              <span>१००% मराठी / English Bilingual</span>
+              <span>Trilingual (EN / HI / MR)</span>
             </span>
             <span className="flex items-center space-x-1">
               <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
@@ -87,13 +111,13 @@ function MainAppContent() {
           </div>
 
           <div className="text-slate-500 text-[11px]">
-            Designed for low-bandwidth rural conditions.
+            Designed for seamless offline-enabled learning.
           </div>
         </div>
       </footer>
 
       {/* Mobile Bottom Navigation Bar */}
-      {userProfile.role === 'student' && (
+      {userProfile && userProfile.role === 'student' && (
         <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-2 py-1.5 flex items-center justify-around shadow-lg">
           <button
             onClick={() => setActiveView('courses')}

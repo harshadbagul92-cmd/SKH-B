@@ -16,19 +16,31 @@ export async function initializeLocalDB() {
       console.log('Seeded initial opportunities into Dexie IndexedDB');
     }
 
-    // Default Profile
-    const profileSetting = await db.settings.get('userProfile');
-    if (!profileSetting) {
-      await db.settings.put({
-        key: 'userProfile',
-        value: {
+    // Default Demo Users
+    const userCount = await db.users.count();
+    if (userCount === 0) {
+      await db.users.bulkPut([
+        {
           name: 'विकास एकनाथ तांबडे (Vikas Tambade)',
-          village: 'संवत्सर, तालुका कोपरगाव (Sanvatsar, Kopargaon)',
-          phone: '98220XXXXX',
-          preferredLang: 'mr',
-          role: 'student'
+          email: 'vikas@invictus.edu',
+          password: 'password123',
+          mobile: '9822012345',
+          grade: '12th',
+          city: 'संवत्सर, कोपरगाव (Kopargaon)',
+          role: 'student',
+          createdAt: new Date().toISOString()
+        },
+        {
+          name: 'प्रिया राजेश पाटिल (Priya Patil)',
+          email: 'priya@invictus.edu',
+          password: 'password123',
+          mobile: '9876543210',
+          grade: 'graduate',
+          city: 'पुणे (Pune)',
+          role: 'student',
+          createdAt: new Date().toISOString()
         }
-      });
+      ]);
     }
 
     // Default Network Simulation Setting (online by default)
