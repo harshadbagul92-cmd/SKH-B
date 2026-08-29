@@ -12,11 +12,17 @@ export async function initializeLocalDB() {
       console.log('Seeded initial courses into Dexie IndexedDB');
     }
 
-    const textbooksCount = await db.textbooks.count();
-    if (textbooksCount === 0) {
-      await db.textbooks.bulkPut(textbooksData);
-      console.log('Seeded initial textbooks into Dexie IndexedDB');
+    // Strictly seed & update Class 10th E-Textbooks
+    await db.textbooks.bulkPut(textbooksData);
+    // Remove any legacy non-10th textbook entries
+    const valid10thIds = textbooksData.map(tb => tb.id);
+    const allLocalTb = await db.textbooks.toArray();
+    for (const tb of allLocalTb) {
+      if (!valid10thIds.includes(tb.id)) {
+        await db.textbooks.delete(tb.id);
+      }
     }
+    console.log('Seeded & synced Class 10th E-Textbooks into Dexie IndexedDB');
 
     const examsCount = await db.govExams.count();
     if (examsCount === 0) {
