@@ -1,0 +1,176 @@
+{
+  "testId": "class10-trilingual-mock-2026",
+  "title": {
+    "mr": "इयत्ता १० वी त्रिभाषिक सराव परीक्षा (मराठी, हिंदी, इंग्रजी)",
+    "hi": "कक्षा १०वीं त्रिभाषी अभ्यास परीक्षा (मराठी, हिंदी, अंग्रेजी)",
+    "en": "Class 10 — Trilingual Mock Test (Marathi, Hindi, English)"
+  },
+  "standard": "10th",
+  "durationMinutes": 15,
+  "totalMarks": 10,
+  "passingMarks": 4,
+  "description": {
+    "mr": "महाराष्ट्र राज्य माध्यमिक शिक्षण मंडळाच्या पाठ्यपुस्तकांवर आधारित अधिकृत १० बहुपर्यायी प्रश्न (MCQs). १ च प्रयत्न अनुज्ञेय.",
+    "hi": "महाराष्ट्र राज्य माध्यमिक शिक्षा बोर्ड के आधिकारिक पाठ्यक्रम पर आधारित १० बहुविकल्पीय प्रश्न। केवल एक प्रयास मान्य।",
+    "en": "Official 10 MCQs based on Maharashtra SSC Board Kumarbharati curriculum. Strictly 1 attempt allowed."
+  },
+  "sections": [
+    {
+      "id": "sec-marathi",
+      "name": { "mr": "भाग १ — मराठी (प्रश्न १–३)", "hi": "भाग १ — मराठी", "en": "Part 1 — Marathi" },
+      "topic": "२. बोलतो मराठी... (डॉ. नीलिमा गुंडी)"
+    },
+    {
+      "id": "sec-hindi",
+      "name": { "mr": "भाग २ — हिंदी (प्रश्न ४–६)", "hi": "भाग २ — हिंदी", "en": "Part 2 — Hindi" },
+      "topic": "३. नाम चर्चा (नरेंद्र कोहली)"
+    },
+    {
+      "id": "sec-english",
+      "name": { "mr": "भाग ३ — English (प्रश्न ७–१०)", "hi": "भाग ३ — English", "en": "Part 3 — English" },
+      "topic": "2.2 The Three Questions (Leo Tolstoy)"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "sectionId": "sec-marathi",
+      "language": "mr",
+      "question": "लेखिकेच्या मते मराठीत 'मारणे' या क्रियापदाचा खालीलपैकी कोणता अर्थ कधीच येत नाही?",
+      "options": [
+        { "key": "A", "text": "गप्पा मारणे" },
+        { "key": "B", "text": "मार देणे" },
+        { "key": "C", "text": "उड्या मारणे" },
+        { "key": "D", "text": "थापा मारणे" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "मराठीत 'मारणे' हे क्रियापद अनेक संदर्भात (गप्पा मारणे, उड्या मारणे, थापा मारणे) वापरले जाते, परंतु 'मार देणे' हा अर्थ त्यात कुठेही येत नाही."
+    },
+    {
+      "id": 2,
+      "sectionId": "sec-marathi",
+      "language": "mr",
+      "question": "'कंठस्नान घालणे' या वाक्प्रचाराचा खरा अर्थ काय आहे?",
+      "options": [
+        { "key": "A", "text": "गळ्याखालून अंघोळ घालणे" },
+        { "key": "B", "text": "मारून टाकणे / ठार करणे" },
+        { "key": "C", "text": "गोड बोलणे" },
+        { "key": "D", "text": "आनंद व्यक्त करणे" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "'कंठस्नान घालणे' हा वाक्प्रचार युद्ध किंवा शौर्याच्या संदर्भात 'ठार करणे / मारून टाकणे' या अर्थाने वापरला जातो."
+    },
+    {
+      "id": 3,
+      "sectionId": "sec-marathi",
+      "language": "mr",
+      "question": "शब्दांची व्युत्पत्ती शोधल्याने काय फायदा होतो, असे लेखिका सांगते?",
+      "options": [
+        { "key": "A", "text": "परीक्षेत गुण जास्त मिळतात" },
+        { "key": "B", "text": "शब्दांचे खरे मूळ व नवी माहिती कळते" },
+        { "key": "C", "text": "भाषा बोलणे बंद होते" },
+        { "key": "D", "text": "शब्द विसरायला होतात" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "व्युत्पत्ती कोशामुळे शब्दांचे मूळ रूप आणि भाषेतील सूक्ष्म अर्थसौंदर्य समजून घेण्यास मदत होते."
+    },
+    {
+      "id": 4,
+      "sectionId": "sec-hindi",
+      "language": "hi",
+      "question": "लेखक ने कश्मीरी सज्जन की बेटी के लिए 'रोज़लीना' नाम का हिंदी पर्याय क्या सुझाया था?",
+      "options": [
+        { "key": "A", "text": "कमला" },
+        { "key": "B", "text": "गुलाबो" },
+        { "key": "C", "text": "सुंदरी" },
+        { "key": "D", "text": "प्रियदर्शिनी" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "लेखक ने कश्मीरी गुलाब की सुंदरता को ध्यान में रखकर 'रोज़लीना' के लिए हिंदी पर्याय 'गुलाबो' सुझाया था।"
+    },
+    {
+      "id": 5,
+      "sectionId": "sec-hindi",
+      "language": "hi",
+      "question": "पंजाबी पड़ोसी के बेटे के शोर मचाने के गुण को ध्यान में रखकर लेखक ने कौन-सा नाम सुझाया?",
+      "options": [
+        { "key": "A", "text": "निकुंज" },
+        { "key": "B", "text": "वेल्कम" },
+        { "key": "C", "text": "कोलाहल" },
+        { "key": "D", "text": "शोरमचावन" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "पड़ोसी ने रामखेलावन जैसा देसवा नाम माँगा था, इसलिए लेखक ने शोर मचाने के आधार पर 'शोरमचावन' नाम सुझाया।"
+    },
+    {
+      "id": 6,
+      "sectionId": "sec-hindi",
+      "language": "hi",
+      "question": "लेखक ने किस प्रसिद्ध साहित्यकार के गीत का हवाला देकर 'दुर्ललित' शब्द का उल्लेख किया?",
+      "options": [
+        { "key": "A", "text": "महादेवी वर्मा" },
+        { "key": "B", "text": "जयशंकर 'प्रसाद'" },
+        { "key": "C", "text": "सूर्यकांत त्रिपाठी 'निराला'" },
+        { "key": "D", "text": "भीष्म साहनी" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "जयशंकर प्रसाद के गीत 'उठ-उठ री लघु-लघु लोल लहर' में प्यार और हठीले बचपन के लिए 'दुर्ललित' शब्द आया है।"
+    },
+    {
+      "id": 7,
+      "sectionId": "sec-english",
+      "language": "en",
+      "question": "What were the three questions the king wanted answered?",
+      "options": [
+        { "key": "A", "text": "How to win wars, gain wealth, and find happiness" },
+        { "key": "B", "text": "The right time for action, the most necessary people, and the most important thing to do" },
+        { "key": "C", "text": "How to choose ministers, build an army, and rule wisely" },
+        { "key": "D", "text": "How to find peace, love, and prosperity" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The king believed he would never fail if he knew: 1. The right time to begin everything, 2. The right people to listen to, and 3. The most important thing to do."
+    },
+    {
+      "id": 8,
+      "sectionId": "sec-english",
+      "language": "en",
+      "question": "Why did the king go to the hermit disguised in simple clothes?",
+      "options": [
+        { "key": "A", "text": "Because the hermit only spoke to common folk" },
+        { "key": "B", "text": "Because the king was in danger" },
+        { "key": "C", "text": "Because he wanted to test the hermit" },
+        { "key": "D", "text": "Because it was a royal tradition" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The hermit lived in a forest and received only common people, so the king dressed in simple attire and left his bodyguards behind."
+    },
+    {
+      "id": 9,
+      "sectionId": "sec-english",
+      "language": "en",
+      "question": "According to the hermit, who is the 'most necessary person'?",
+      "options": [
+        { "key": "A", "text": "The king's councillor" },
+        { "key": "B", "text": "The person you are with right now" },
+        { "key": "C", "text": "The wisest man in the kingdom" },
+        { "key": "D", "text": "One's own family member" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The hermit revealed that the most necessary person is the one with whom you are at the present moment, because no one knows if you will ever deal with anyone else."
+    },
+    {
+      "id": 10,
+      "sectionId": "sec-english",
+      "language": "en",
+      "question": "Why did the wounded man initially want to kill the king?",
+      "options": [
+        { "key": "A", "text": "He wanted the king's throne" },
+        { "key": "B", "text": "He was an enemy seeking revenge because the king had executed his brother and seized his property" },
+        { "key": "C", "text": "He was ordered by an enemy kingdom" },
+        { "key": "D", "text": "He was insane" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "The wounded man swore revenge because the king had previously executed his brother and confiscated his estate."
+    }
+  ]
+}

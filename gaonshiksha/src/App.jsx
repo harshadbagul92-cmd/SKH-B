@@ -7,6 +7,7 @@ import Header from './components/Header';
 import OfflineBanner from './components/OfflineBanner';
 import CoursesView from './views/CoursesView';
 import ExamNotificationsView from './views/ExamNotificationsView';
+import OnlineTestView from './views/OnlineTestView';
 import LessonView from './views/LessonView';
 import QuizView from './views/QuizView';
 import CertificateView from './views/CertificateView';
@@ -48,6 +49,8 @@ function MainAppContent() {
     switch (activeView) {
       case 'courses':
         return <CoursesView />;
+      case 'test':
+        return <OnlineTestView />;
       case 'exams':
         return <ExamNotificationsView />;
       case 'lesson':

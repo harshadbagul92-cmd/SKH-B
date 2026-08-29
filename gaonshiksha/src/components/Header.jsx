@@ -10,6 +10,7 @@ import {
   LogOut,
   ChevronDown,
   BookOpen,
+  FileQuestion,
   Landmark,
   Award,
   Briefcase,
@@ -48,6 +49,7 @@ export default function Header() {
 
   const navItems = [
     { id: 'courses', label: t('nav.courses') || 'Courses & E-Books', icon: BookOpen },
+    { id: 'test', label: lang === 'mr' ? 'ऑनलाइन परीक्षा' : lang === 'hi' ? 'ऑनलाइन परीक्षा' : 'Online Test', icon: FileQuestion, badge: 'NEW' },
     { id: 'exams', label: t('nav.exams') || 'Exam Notifications', icon: Landmark, badge: `${allGovExams?.length || 36}` },
     { id: 'certificates', label: t('nav.certificates') || 'Certificates', icon: Award },
     { id: 'opportunities', label: t('nav.opportunities') || 'Career / Job Hub', icon: Briefcase },

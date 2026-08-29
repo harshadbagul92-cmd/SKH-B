@@ -3,6 +3,7 @@ import { useApp } from '../context/AppContext';
 import {
   Shield,
   BookOpen,
+  FileQuestion,
   Landmark,
   Award,
   Briefcase,
@@ -36,6 +37,13 @@ export default function Sidebar() {
       label: t('nav.courses') || 'Courses & E-Books',
       icon: BookOpen,
       badge: null
+    },
+    {
+      id: 'test',
+      label: lang === 'mr' ? 'ऑनलाइन परीक्षा (Mock Test)' : lang === 'hi' ? 'ऑनलाइन परीक्षा (Mock Test)' : 'Online Test (Class 10)',
+      icon: FileQuestion,
+      badge: '1 ATTEMPT',
+      badgeColor: 'bg-rose-600 text-white font-black shadow-xs'
     },
     {
       id: 'exams',
