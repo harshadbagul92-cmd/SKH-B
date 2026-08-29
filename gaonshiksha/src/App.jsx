@@ -11,6 +11,7 @@ import CertificateView from './views/CertificateView';
 import OpportunitiesView from './views/OpportunitiesView';
 import AdminView from './views/AdminView';
 import ProfileView from './views/ProfileView';
+import ChatbotWidget from './components/ChatbotWidget';
 import {
   BookOpen,
   Award,
@@ -77,6 +78,9 @@ function MainAppContent() {
       <main className="flex-1 py-4 sm:py-6">
         {renderActiveView()}
       </main>
+
+      {/* Floating AI Chatbot Assistant Widget at Side of UI */}
+      <ChatbotWidget />
 
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs mt-12 hidden sm:block">
