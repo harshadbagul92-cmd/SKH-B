@@ -208,18 +208,18 @@ export default function CoursesView() {
                   <BookOpen className="w-4 h-4 text-[#FFEB01]" />
                   <span>{t('course.open_ebook') || 'Open E-Textbook'}</span>
                 </button>
-                <button
-                  type="button"
+                <a
+                  href={tb.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => {
                     e.stopPropagation();
-                    e.preventDefault();
-                    setPdfViewingTextbook(tb);
                   }}
-                  className="py-3 px-3 bg-sky-500 hover:bg-sky-600 active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-sky-200 cursor-pointer"
+                  className="py-3 px-3 bg-sky-500 hover:bg-sky-600 active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-sky-200 cursor-pointer no-underline"
                 >
                   <FileText className="w-4 h-4 text-[#FFEB01]" />
                   <span>{lang === 'mr' ? 'PDF पहा (View PDF)' : lang === 'hi' ? 'PDF देखें' : 'View PDF'}</span>
-                </button>
+                </a>
               </div>
 
             </div>

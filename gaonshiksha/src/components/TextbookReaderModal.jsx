@@ -132,22 +132,18 @@ export default function TextbookReaderModal({ textbook, onClose }) {
               </button>
             </div>
 
-            {/* View Full PDF toggle button */}
-            <button
-              onClick={() => setShowPdfViewer(!showPdfViewer)}
-              className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
-                showPdfViewer
-                  ? 'bg-amber-400 text-slate-950 border-amber-300 shadow-md font-black'
-                  : 'bg-[#002EAF] text-white hover:bg-[#00248A] border-blue-400/40'
-              }`}
+            {/* View Full PDF link button (Opens in new tab) */}
+            <a
+              href={textbook.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer border bg-sky-500 hover:bg-sky-600 text-white border-sky-300/40 shadow-sm no-underline"
             >
               <FileText className="w-4 h-4 text-[#FFEB01]" />
               <span>
-                {showPdfViewer
-                  ? (lang === 'mr' ? 'धडे यादी (Chapters)' : lang === 'hi' ? 'अध्याय सूची' : 'Show Chapters')
-                  : (lang === 'mr' ? 'पाठ्यपुस्तक PDF पहा' : lang === 'hi' ? 'पाठ्यपुस्तक PDF देखें' : 'View Textbook PDF')}
+                {lang === 'mr' ? 'पाठ्यपुस्तक PDF पहा' : lang === 'hi' ? 'पाठ्यपुस्तक PDF देखें' : 'View Textbook PDF'}
               </span>
-            </button>
+            </a>
 
             {/* Bookmark button */}
             <button
