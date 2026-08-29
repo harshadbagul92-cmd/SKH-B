@@ -125,7 +125,7 @@ export default function CoursesView() {
               onClick={() => setActiveSubjectFilter(subj.id)}
               className={`px-4 py-2 rounded-xl text-xs font-black whitespace-nowrap transition-all border cursor-pointer ${
                 isActive
-                  ? 'bg-[#0A192F] text-white border-[#0A192F] shadow-sm ring-2 ring-blue-200'
+                  ? 'bg-[#000083] text-white border-[#000083] shadow-sm ring-2 ring-blue-200'
                   : 'bg-white text-slate-800 border-slate-300 hover:bg-slate-50 hover:text-black'
               }`}
             >
@@ -135,7 +135,7 @@ export default function CoursesView() {
         })}
       </div>
 
-      {/* 3 CORE LANGUAGE SUBJECT CARDS (Crisp White with High-Contrast Typography) */}
+      {/* 3 CORE LANGUAGE SUBJECT CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredTextbooks.map((tb) => {
           const totalCh = tb.chapters ? tb.chapters.length : tb.totalChapters || 4;
@@ -145,9 +145,9 @@ export default function CoursesView() {
               key={tb.id}
               className="bg-white rounded-2xl sm:rounded-3xl border border-slate-300 shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col justify-between overflow-hidden group hover:border-brand-500"
             >
-              {/* Card Header (Deep Navy Banner with Yellow Badge) */}
+              {/* Card Header (Midnight Navy Banner with Electric Yellow Badge) */}
               <div>
-                <div className="p-6 bg-[#0A192F] text-white relative">
+                <div className="p-6 bg-[#000083] text-white relative">
                   <div className="flex items-start justify-between gap-2">
                     <span className="text-[10px] font-black uppercase tracking-wider bg-gold-500 text-navy-950 px-2.5 py-0.5 rounded-full font-mono shadow-xs">
                       {tb.badge || 'Maharashtra Board'}

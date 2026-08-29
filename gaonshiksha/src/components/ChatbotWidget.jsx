@@ -185,12 +185,12 @@ export default function ChatbotWidget() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-50 p-3.5 sm:p-4 rounded-full bg-brand-600 text-white shadow-2xl hover:scale-105 transition-all flex items-center space-x-2 border-2 border-gold-400 group animate-bounce cursor-pointer"
+          className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-50 p-3.5 sm:p-4 rounded-full bg-[#002EAF] text-white shadow-2xl hover:scale-105 transition-all flex items-center space-x-2 border-2 border-[#FFEB01] group animate-bounce cursor-pointer"
           title="Open AI Assistant"
         >
           <div className="relative">
-            <Bot className="w-6 h-6 text-gold-400" />
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-gold-400 border border-white animate-ping" />
+            <Bot className="w-6 h-6 text-[#FFEB01]" />
+            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#FFEB01] border border-white animate-ping" />
           </div>
           <span className="hidden md:inline font-black text-xs text-white pr-1">
             {lang === 'mr' ? 'AI मित्र' : lang === 'hi' ? 'AI सहायक' : 'AI Assistant'}
@@ -202,22 +202,22 @@ export default function ChatbotWidget() {
       {isOpen && (
         <div className="fixed bottom-16 right-3 sm:bottom-6 sm:right-6 z-50 w-[92vw] sm:w-96 h-[500px] sm:h-[540px] bg-white rounded-3xl shadow-2xl border border-slate-300 flex flex-col overflow-hidden animate-fadeIn">
           
-          {/* Header (Deep Navy with Gold Accents) */}
-          <div className="bg-[#0A192F] text-white p-4 flex items-center justify-between border-b border-slate-800">
+          {/* Header (Midnight Dark Navy with Yellow Badges) */}
+          <div className="bg-[#000083] text-white p-4 flex items-center justify-between border-b border-blue-900">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-black shadow-md border border-brand-400">
-                <Bot className="w-5 h-5 text-gold-400" />
+              <div className="w-10 h-10 rounded-2xl bg-[#002EAF] flex items-center justify-center text-white font-black shadow-md border border-blue-400">
+                <Bot className="w-5 h-5 text-[#FFEB01]" />
               </div>
               <div>
                 <div className="flex items-center space-x-2">
                   <h3 className="font-bold text-sm text-white">
                     {lang === 'mr' ? 'ग्रामशिक्षा AI सहाय्यक' : lang === 'hi' ? 'ग्रामशिक्षा AI सहायक' : 'GaonShiksha AI Assistant'}
                   </h3>
-                  <span className="text-[10px] font-black bg-gold-500 text-navy-950 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-black bg-[#FFEB01] text-[#000083] px-2 py-0.5 rounded-full">
                     Offline AI
                   </span>
                 </div>
-                <p className="text-[10px] text-slate-300 flex items-center space-x-1 mt-0.5">
+                <p className="text-[10px] text-blue-200 flex items-center space-x-1 mt-0.5">
                   <Zap className="w-3 h-3 text-gold-400" />
                   <span>{isOnline ? 'Online Synced' : '100% Offline Mode'}</span>
                 </p>

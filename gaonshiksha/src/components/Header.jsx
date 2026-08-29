@@ -89,7 +89,7 @@ export default function Header() {
               <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white shadow-xs">
                 <Shield className="w-5 h-5 text-gold-400 fill-gold-400/20" />
               </div>
-              <span className="font-black text-base tracking-tight text-[#0A192F]">
+              <span className="font-black text-base tracking-tight text-[#000083]">
                 INVICTUS
               </span>
             </div>
@@ -98,9 +98,9 @@ export default function Header() {
           {/* Desktop Left: Breadcrumb / Active Screen Title */}
           <div className="hidden lg:flex items-center space-x-3">
             <div className="flex items-center space-x-2 text-xs font-bold text-slate-500">
-              <span className="text-brand-700">Invictus Learning</span>
+              <span className="text-[#002EAF]">Invictus Learning</span>
               <span>/</span>
-              <span className="text-slate-900 capitalize">
+              <span className="text-[#000083] capitalize">
                 {activeView === 'courses' ? t('nav.courses') : activeView === 'exams' ? t('nav.exams') : activeView === 'certificates' ? t('nav.certificates') : activeView === 'opportunities' ? t('nav.opportunities') : t('nav.profile')}
               </span>
             </div>
@@ -113,10 +113,10 @@ export default function Header() {
             {pendingSyncCount > 0 && (
               <button
                 onClick={triggerSync}
-                className="flex items-center space-x-1 text-xs font-bold bg-amber-50 text-amber-800 border border-amber-300 px-3 py-1.5 rounded-xl hover:bg-amber-100 transition-colors"
+                className="flex items-center space-x-1 text-xs font-bold bg-[#FFEB01]/20 text-[#000083] border border-[#FFEB01] px-3 py-1.5 rounded-xl hover:bg-[#FFEB01]/30 transition-colors"
                 title="Sync offline changes"
               >
-                <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                <RefreshCw className="w-3.5 h-3.5 animate-spin text-[#002EAF]" />
                 <span>Sync ({pendingSyncCount})</span>
               </button>
             )}
@@ -126,7 +126,7 @@ export default function Header() {
               {isOnline ? (
                 <Wifi className="w-3.5 h-3.5 text-emerald-600" />
               ) : (
-                <WifiOff className="w-3.5 h-3.5 text-gold-600" />
+                <WifiOff className="w-3.5 h-3.5 text-amber-600" />
               )}
               <span>{isOnline ? 'Online' : 'Offline'}</span>
             </div>
@@ -137,7 +137,7 @@ export default function Header() {
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                 className="flex items-center space-x-1.5 bg-slate-50 hover:bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-xl border border-slate-200 transition-colors cursor-pointer"
               >
-                <Globe className="w-3.5 h-3.5 text-brand-600" />
+                <Globe className="w-3.5 h-3.5 text-[#002EAF]" />
                 <span>{currentLangObj.label}</span>
                 <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
               </button>
@@ -152,11 +152,11 @@ export default function Header() {
                         setIsLangMenuOpen(false);
                       }}
                       className={`w-full text-left px-3 py-2 text-xs font-semibold flex items-center justify-between hover:bg-blue-50 transition-colors ${
-                        lang === l.code ? 'text-brand-700 font-bold bg-blue-50/50' : 'text-slate-700'
+                        lang === l.code ? 'text-[#002EAF] font-bold bg-blue-50/50' : 'text-slate-700'
                       }`}
                     >
                       <span>{l.label}</span>
-                      {lang === l.code && <span className="text-gold-600">✓</span>}
+                      {lang === l.code && <span className="text-[#002EAF]">✓</span>}
                     </button>
                   ))}
                 </div>
@@ -168,10 +168,10 @@ export default function Header() {
               onClick={() => setActiveView('profile')}
               className="flex items-center space-x-2 pl-2 pr-3 py-1 bg-slate-50 hover:bg-slate-100 rounded-xl border border-slate-200 transition-colors cursor-pointer"
             >
-              <div className="w-6 h-6 rounded-lg bg-[#0A192F] text-gold-400 font-black text-xs flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-[#000083] text-[#FFEB01] font-black text-xs flex items-center justify-center">
                 {userProfile?.name?.charAt(0) || 'V'}
               </div>
-              <span className="text-xs font-bold text-slate-800 hidden sm:inline max-w-[120px] truncate">
+              <span className="text-xs font-bold text-[#000083] hidden sm:inline max-w-[120px] truncate">
                 {userProfile?.name || 'Student'}
               </span>
             </button>

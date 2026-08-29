@@ -80,26 +80,26 @@ export default function AuthView() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A192F] text-slate-100 flex flex-col justify-between selection:bg-gold-500 selection:text-navy-950 font-sans">
+    <div className="min-h-screen bg-[#000083] text-white flex flex-col justify-between selection:bg-[#FFEB01] selection:text-[#000083] font-sans">
       
-      {/* 1. Top Navigation Bar (Deep Navy with Crisp High Contrast) */}
-      <header className="w-full bg-[#0A192F] border-b border-slate-700/80 sticky top-0 z-40 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-md">
+      {/* 1. Top Navigation Bar */}
+      <header className="w-full bg-[#000083] border-b border-blue-900/80 sticky top-0 z-40 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-md">
         
         {/* Left: Shield Logo & Branding */}
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-md border border-brand-400">
-            <Shield className="w-6 h-6 text-gold-400 fill-gold-400/20" />
+          <div className="w-10 h-10 rounded-xl bg-[#002EAF] flex items-center justify-center text-white shadow-md border border-blue-400">
+            <Shield className="w-6 h-6 text-[#FFEB01] fill-[#FFEB01]/20" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
               <span className="font-black text-lg sm:text-xl tracking-tight text-white">
                 INVICTUS
               </span>
-              <span className="text-[10px] uppercase font-black bg-gold-500 text-navy-950 px-2 py-0.5 rounded-full font-mono">
+              <span className="text-[10px] uppercase font-black bg-[#FFEB01] text-[#000083] px-2 py-0.5 rounded-full font-mono">
                 Learning
               </span>
             </div>
-            <p className="text-[11px] text-slate-300 font-semibold hidden sm:block">
+            <p className="text-[11px] text-blue-200 font-semibold hidden sm:block">
               Bridging Talent with Real-World Challenges
             </p>
           </div>

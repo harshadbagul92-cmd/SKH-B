@@ -124,20 +124,20 @@ export default function EditProfileDrawer({ isOpen, onClose }) {
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
         <div className="w-screen max-w-lg bg-white shadow-2xl flex flex-col transform transition-transform ease-in-out duration-300">
           
-          {/* Header */}
-          <div className="px-6 py-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+          {/* Header (Midnight Dark Navy) */}
+          <div className="px-6 py-4 bg-[#000083] text-white flex items-center justify-between border-b border-blue-900">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">
-                <User className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-lg bg-[#002EAF] flex items-center justify-center text-white font-bold border border-blue-400">
+                <User className="w-4 h-4 text-[#FFEB01]" />
               </div>
-              <h2 className="text-base font-bold">
+              <h2 className="text-base font-bold text-white">
                 {t('profile.edit_btn') || 'Edit Profile'}
               </h2>
             </div>
             <button
               type="button"
               onClick={onClose}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 rounded-lg text-blue-200 hover:text-white hover:bg-blue-900 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
