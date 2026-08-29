@@ -227,18 +227,29 @@ export default function EditProfileDrawer({ isOpen, onClose }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
-                      Learner Category
+                    <label className="block text-xs font-bold text-slate-700 mb-2">
+                      Learner Category & Specialization
                     </label>
-                    <select
-                      value={formData.category}
-                      onChange={(e) => handleInputChange('category', e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white text-slate-900"
-                    >
-                      {categories.map(c => (
-                        <option key={c.id} value={c.id}>{c.label}</option>
-                      ))}
-                    </select>
+                    <div className="flex flex-wrap gap-2">
+                      {categories.map((cat) => {
+                        const isSelected = formData.category === cat.id;
+                        return (
+                          <button
+                            key={cat.id}
+                            type="button"
+                            onClick={() => handleInputChange('category', cat.id)}
+                            className={`px-3 py-2 rounded-xl text-xs font-semibold border transition-all flex items-center space-x-1.5 cursor-pointer ${
+                              isSelected
+                                ? 'bg-blue-50 border-brand-600 text-brand-800 font-black ring-2 ring-blue-200 shadow-xs'
+                                : 'bg-white border-slate-300 text-slate-700 hover:bg-slate-50'
+                            }`}
+                          >
+                            {isSelected && <Check className="w-3.5 h-3.5 text-brand-600 font-bold" />}
+                            <span>{cat.label}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
 
