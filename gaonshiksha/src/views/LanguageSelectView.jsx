@@ -64,7 +64,7 @@ export default function LanguageSelectView() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0077FF] text-white flex flex-col justify-between p-4 sm:p-8 relative overflow-hidden font-sans selection:bg-[#FFEB01] selection:text-[#0077FF]">
+    <div className="min-h-screen bg-[#0097A7] text-white flex flex-col justify-between p-4 sm:p-8 relative overflow-hidden font-sans selection:bg-[#FFEB01] selection:text-[#0097A7]">
       {/* Background Ambient Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-600/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />

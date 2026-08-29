@@ -202,8 +202,8 @@ export default function ChatbotWidget() {
       {isOpen && (
         <div className="fixed bottom-16 right-3 sm:bottom-6 sm:right-6 z-50 w-[92vw] sm:w-96 h-[500px] sm:h-[540px] bg-white rounded-3xl shadow-2xl border border-slate-300 flex flex-col overflow-hidden animate-fadeIn">
           
-          {/* Header (#0077FF with Yellow Badges) */}
-          <div className="bg-[#0077FF] text-white p-4 flex items-center justify-between border-b border-blue-400">
+          {/* Header (#0097A7 with Yellow Badges) */}
+          <div className="bg-[#0097A7] text-white p-4 flex items-center justify-between border-b border-blue-400">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center text-white font-black shadow-md border border-white/30">
                 <Bot className="w-5 h-5 text-[#FFEB01]" />
@@ -213,7 +213,7 @@ export default function ChatbotWidget() {
                   <h3 className="font-bold text-sm text-white">
                     {lang === 'mr' ? 'ग्रामशिक्षा AI सहाय्यक' : lang === 'hi' ? 'ग्रामशिक्षा AI सहायक' : 'GaonShiksha AI Assistant'}
                   </h3>
-                  <span className="text-[10px] font-black bg-[#FFEB01] text-[#0077FF] px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-black bg-[#FFEB01] text-[#0097A7] px-2 py-0.5 rounded-full">
                     Offline AI
                   </span>
                 </div>

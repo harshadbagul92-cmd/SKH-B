@@ -158,15 +158,15 @@ export default function ProfileView() {
         </button>
       </div>
 
-      {/* Main Profile Summary Card (#0077FF with High-Contrast Text & Yellow Badges) */}
-      <div className="bg-[#0077FF] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden border border-blue-400">
+      {/* Main Profile Summary Card (#0097A7 with High-Contrast Text & Yellow Badges) */}
+      <div className="bg-[#0097A7] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden border border-blue-400">
         <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-white/20 blur-2xl pointer-events-none" />
         
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           
           <div className="flex items-start space-x-4">
             {/* Avatar Badge */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white text-[#0077FF] flex items-center justify-center text-2xl font-black shadow-lg shrink-0 border-2 border-[#FFEB01]">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white text-[#0097A7] flex items-center justify-center text-2xl font-black shadow-lg shrink-0 border-2 border-[#FFEB01]">
               {userProfile?.name ? userProfile.name.charAt(0).toUpperCase() : 'S'}
             </div>
 

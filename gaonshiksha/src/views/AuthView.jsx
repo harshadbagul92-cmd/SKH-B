@@ -95,10 +95,10 @@ export default function AuthView() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0077FF] text-white flex flex-col justify-between selection:bg-[#FFEB01] selection:text-[#0077FF] font-sans">
+    <div className="min-h-screen bg-[#0097A7] text-white flex flex-col justify-between selection:bg-[#FFEB01] selection:text-[#0097A7] font-sans">
       
       {/* 1. Top Navigation Bar */}
-      <header className="w-full bg-[#0077FF] border-b border-white/20 sticky top-0 z-40 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-md">
+      <header className="w-full bg-[#0097A7] border-b border-white/20 sticky top-0 z-40 px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-md">
         
         {/* Left: Shield Logo & Branding */}
         <div className="flex items-center space-x-3">
@@ -110,7 +110,7 @@ export default function AuthView() {
               <span className="font-black text-lg sm:text-xl tracking-tight text-white">
                 INVICTUS
               </span>
-              <span className="text-[10px] uppercase font-black bg-[#FFEB01] text-[#0077FF] px-2 py-0.5 rounded-full font-mono">
+              <span className="text-[10px] uppercase font-black bg-[#FFEB01] text-[#0097A7] px-2 py-0.5 rounded-full font-mono">
                 Learning
               </span>
             </div>
@@ -145,7 +145,7 @@ export default function AuthView() {
               type="button"
               onClick={() => setLang('mr')}
               className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                lang === 'mr' ? 'bg-[#FFEB01] text-[#0077FF] font-black' : 'text-white hover:text-yellow-200'
+                lang === 'mr' ? 'bg-[#FFEB01] text-[#0097A7] font-black' : 'text-white hover:text-yellow-200'
               }`}
             >
               मराठी
@@ -154,7 +154,7 @@ export default function AuthView() {
               type="button"
               onClick={() => setLang('hi')}
               className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                lang === 'hi' ? 'bg-[#FFEB01] text-[#0077FF] font-black' : 'text-white hover:text-yellow-200'
+                lang === 'hi' ? 'bg-[#FFEB01] text-[#0097A7] font-black' : 'text-white hover:text-yellow-200'
               }`}
             >
               हिंदी
@@ -163,7 +163,7 @@ export default function AuthView() {
               type="button"
               onClick={() => setLang('en')}
               className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                lang === 'en' ? 'bg-[#FFEB01] text-[#0077FF] font-black' : 'text-white hover:text-yellow-200'
+                lang === 'en' ? 'bg-[#FFEB01] text-[#0097A7] font-black' : 'text-white hover:text-yellow-200'
               }`}
             >
               EN
@@ -174,7 +174,7 @@ export default function AuthView() {
           <button
             type="button"
             onClick={() => setMode(mode === 'signin' ? 'signup' : 'signin')}
-            className="text-xs font-black bg-[#FFEB01] hover:bg-yellow-300 text-[#0077FF] px-4 py-2 rounded-xl transition-all shadow-md flex items-center space-x-1.5 cursor-pointer border border-yellow-200"
+            className="text-xs font-black bg-[#FFEB01] hover:bg-yellow-300 text-[#0097A7] px-4 py-2 rounded-xl transition-all shadow-md flex items-center space-x-1.5 cursor-pointer border border-yellow-200"
           >
             <span>
               {mode === 'signin'
@@ -198,7 +198,7 @@ export default function AuthView() {
             
             {/* Header: Shield Badge + Title */}
             <div className="text-center space-y-2 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-[#0077FF] text-white flex items-center justify-center shadow-lg mx-auto border-2 border-blue-400">
+              <div className="w-14 h-14 rounded-2xl bg-[#0097A7] text-white flex items-center justify-center shadow-lg mx-auto border-2 border-blue-400">
                 <Shield className="w-8 h-8 text-[#FFEB01] fill-[#FFEB01]/20" />
               </div>
               <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-[#0F172A]">
@@ -214,7 +214,7 @@ export default function AuthView() {
               <button
                 type="button"
                 onClick={handleQuickFill}
-                className="text-[11px] font-bold text-[#0077FF] bg-blue-50 hover:bg-blue-100 border border-blue-200 px-3 py-1.5 rounded-xl transition-colors cursor-pointer flex items-center space-x-1.5 shadow-xs"
+                className="text-[11px] font-bold text-[#0097A7] bg-blue-50 hover:bg-blue-100 border border-blue-200 px-3 py-1.5 rounded-xl transition-colors cursor-pointer flex items-center space-x-1.5 shadow-xs"
               >
                 <Zap className="w-3.5 h-3.5 text-[#FFEB01] fill-[#FFEB01]" />
                 <span>Fill Demo Student Credentials</span>
@@ -245,7 +245,7 @@ export default function AuthView() {
                       placeholder={t('auth.fullname_placeholder')}
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
-                      className="w-full bg-white border border-slate-300 focus:border-[#0077FF] focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                      className="w-full bg-white border border-slate-300 focus:border-[#0097A7] focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
                     />
                   </div>
                 </div>
@@ -264,7 +264,7 @@ export default function AuthView() {
                     placeholder={t('auth.gmail_placeholder')}
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="w-full bg-white border border-slate-300 focus:border-[#0077FF] focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                    className="w-full bg-white border border-slate-300 focus:border-[#0097A7] focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
                   />
                 </div>
               </div>
@@ -282,7 +282,7 @@ export default function AuthView() {
                     placeholder={t('auth.password_placeholder')}
                     value={formData.password}
                     onChange={(e) => handleInputChange('password', e.target.value)}
-                    className="w-full bg-white border border-slate-300 focus:border-[#0077FF] focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-10 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                    className="w-full bg-white border border-slate-300 focus:border-[#0097A7] focus:ring-2 focus:ring-blue-100 rounded-xl pl-10 pr-10 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
                   />
                   <button
                     type="button"
@@ -308,7 +308,7 @@ export default function AuthView() {
                         placeholder="Mobile"
                         value={formData.mobile}
                         onChange={(e) => handleInputChange('mobile', e.target.value)}
-                        className="w-full bg-white border border-slate-300 focus:border-[#0077FF] focus:ring-2 focus:ring-blue-100 rounded-xl pl-8 pr-2.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                        className="w-full bg-white border border-slate-300 focus:border-[#0097A7] focus:ring-2 focus:ring-blue-100 rounded-xl pl-8 pr-2.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
                       />
                     </div>
                   </div>
@@ -324,19 +324,19 @@ export default function AuthView() {
                         placeholder="City"
                         value={formData.city}
                         onChange={(e) => handleInputChange('city', e.target.value)}
-                        className="w-full bg-white border border-slate-300 focus:border-[#0077FF] focus:ring-2 focus:ring-blue-100 rounded-xl pl-8 pr-2.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
+                        className="w-full bg-white border border-slate-300 focus:border-[#0097A7] focus:ring-2 focus:ring-blue-100 rounded-xl pl-8 pr-2.5 py-2.5 text-xs text-slate-900 font-semibold placeholder-slate-400 transition-all focus:outline-none"
                       />
                     </div>
                   </div>
                 </div>
               )}
 
-              {/* Primary Action Button (#0077FF with Gold Arrow) */}
+              {/* Primary Action Button (#0097A7 with Gold Arrow) */}
               <div className="pt-2">
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-4 bg-[#0077FF] hover:bg-blue-600 active:scale-[0.99] text-white font-black text-sm rounded-xl transition-all shadow-lg flex items-center justify-center space-x-2 border border-blue-400 cursor-pointer"
+                  className="w-full py-3.5 px-4 bg-[#0097A7] hover:bg-blue-600 active:scale-[0.99] text-white font-black text-sm rounded-xl transition-all shadow-lg flex items-center justify-center space-x-2 border border-blue-400 cursor-pointer"
                 >
                   <span>
                     {loading

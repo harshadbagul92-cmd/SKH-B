@@ -74,7 +74,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-64 bg-[#0077FF] text-white min-h-screen flex flex-col justify-between border-r border-blue-400/40 shrink-0 sticky top-0 h-screen z-30 select-none shadow-xl">
+    <aside className="w-64 bg-[#0097A7] text-white min-h-screen flex flex-col justify-between border-r border-blue-400/40 shrink-0 sticky top-0 h-screen z-30 select-none shadow-xl">
       
       {/* Top: Branding Header */}
       <div>
@@ -87,7 +87,7 @@ export default function Sidebar() {
               <span className="font-black text-base tracking-tight text-white">
                 INVICTUS
               </span>
-              <span className="text-[9px] uppercase font-black bg-[#FFEB01] text-[#0077FF] px-1.5 py-0.2 rounded font-mono">
+              <span className="text-[9px] uppercase font-black bg-[#FFEB01] text-[#0097A7] px-1.5 py-0.2 rounded font-mono">
                 EdTech
               </span>
             </div>
@@ -140,12 +140,12 @@ export default function Sidebar() {
                 onClick={() => setActiveView(item.id)}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-white text-[#0077FF] shadow-lg font-black'
+                    ? 'bg-white text-[#0097A7] shadow-lg font-black'
                     : 'text-white/90 hover:bg-white/15 hover:text-white'
                 }`}
               >
                 <div className="flex items-center space-x-3">
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#0077FF]' : 'text-white'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#0097A7]' : 'text-white'}`} />
                   <span>{item.label}</span>
                 </div>
 
