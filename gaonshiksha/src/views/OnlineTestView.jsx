@@ -583,9 +583,9 @@ export default function OnlineTestView() {
           <div className="bg-white rounded-3xl border border-slate-300 shadow-xl overflow-hidden">
             
             <div className={`p-6 sm:p-8 text-white text-center space-y-3 ${
-              savedResult.passed ? 'bg-[#000083]' : 'bg-[#0A192F]'
+              savedResult.passed ? 'bg-[#0077FF]' : 'bg-[#0F172A]'
             }`}>
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-white text-[#000083] flex items-center justify-center text-3xl font-black shadow-lg border-2 border-gold-500">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-white text-[#0077FF] flex items-center justify-center text-3xl font-black shadow-lg border-2 border-gold-500">
                 {savedResult.passed ? '🏆' : '📋'}
               </div>
               <div className="inline-block bg-gold-500 text-navy-950 font-black text-xs px-3 py-0.5 rounded-full font-mono uppercase tracking-wider">

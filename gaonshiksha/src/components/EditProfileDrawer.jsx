@@ -124,10 +124,10 @@ export default function EditProfileDrawer({ isOpen, onClose }) {
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
         <div className="w-screen max-w-lg bg-white shadow-2xl flex flex-col transform transition-transform ease-in-out duration-300">
           
-          {/* Header (Midnight Dark Navy) */}
-          <div className="px-6 py-4 bg-[#000083] text-white flex items-center justify-between border-b border-blue-900">
+          {/* Header (#0077FF) */}
+          <div className="px-6 py-4 bg-[#0077FF] text-white flex items-center justify-between border-b border-blue-400">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg bg-[#002EAF] flex items-center justify-center text-white font-bold border border-blue-400">
+              <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white font-bold border border-white/30">
                 <User className="w-4 h-4 text-[#FFEB01]" />
               </div>
               <h2 className="text-base font-bold text-white">

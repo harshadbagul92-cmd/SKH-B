@@ -149,12 +149,12 @@ export default function CoursesView() {
             >
               {/* Card Header (Midnight Navy Banner with Electric Yellow Badge) */}
               <div>
-                <div className="p-6 bg-[#000083] text-white relative">
+                <div className="p-6 bg-[#0077FF] text-white relative">
                   <div className="flex items-start justify-between gap-2">
                     <span className="text-[10px] font-black uppercase tracking-wider bg-gold-500 text-navy-950 px-2.5 py-0.5 rounded-full font-mono shadow-xs">
                       {tb.badge || 'Maharashtra Board'}
                     </span>
-                    <span className="text-[11px] font-bold text-slate-200 bg-slate-800 px-2.5 py-0.5 rounded-md border border-slate-700">
+                    <span className="text-[11px] font-bold text-blue-100 bg-white/20 px-2.5 py-0.5 rounded-md border border-white/30">
                       {totalCh} {t('course.chapters_count') || 'Chapters'}
                     </span>
                   </div>
@@ -203,7 +203,7 @@ export default function CoursesView() {
                     e.preventDefault();
                     openTextbook(tb, 'ebook');
                   }}
-                  className="py-3 px-3 bg-[#000083] hover:bg-[#1D4ED8] active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-slate-700 cursor-pointer group"
+                  className="py-3 px-3 bg-[#0077FF] hover:bg-blue-600 active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-blue-400 cursor-pointer group"
                 >
                   <BookOpen className="w-4 h-4 text-gold-400" />
                   <span>{t('course.open_ebook') || 'Open E-Textbook'}</span>

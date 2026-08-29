@@ -74,12 +74,12 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="w-64 bg-[#000083] text-white min-h-screen flex flex-col justify-between border-r border-[#002EAF]/40 shrink-0 sticky top-0 h-screen z-30 select-none shadow-xl">
+    <aside className="w-64 bg-[#0077FF] text-white min-h-screen flex flex-col justify-between border-r border-blue-400/40 shrink-0 sticky top-0 h-screen z-30 select-none shadow-xl">
       
       {/* Top: Branding Header */}
       <div>
-        <div className="p-5 border-b border-blue-900/80 flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-[#002EAF] flex items-center justify-center text-white shadow-md border border-blue-400">
+        <div className="p-5 border-b border-white/20 flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-white shadow-md border border-white/30">
             <Shield className="w-6 h-6 text-[#FFEB01] fill-[#FFEB01]/20" />
           </div>
           <div>
@@ -87,20 +87,20 @@ export default function Sidebar() {
               <span className="font-black text-base tracking-tight text-white">
                 INVICTUS
               </span>
-              <span className="text-[9px] uppercase font-black bg-[#FFEB01] text-[#000083] px-1.5 py-0.2 rounded font-mono">
+              <span className="text-[9px] uppercase font-black bg-[#FFEB01] text-[#0077FF] px-1.5 py-0.2 rounded font-mono">
                 EdTech
               </span>
             </div>
-            <p className="text-[10px] text-blue-200 font-semibold line-clamp-1">
+            <p className="text-[10px] text-blue-100 font-semibold line-clamp-1">
               Class 10 & Govt Exam Hub
             </p>
           </div>
         </div>
 
         {/* User Card in Sidebar */}
-        <div className="px-4 py-3 border-b border-blue-900/60 bg-[#000066] flex items-center justify-between">
+        <div className="px-4 py-3 border-b border-white/20 bg-black/10 flex items-center justify-between">
           <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#002EAF] text-white font-black text-xs flex items-center justify-center border border-[#FFEB01]">
+            <div className="w-8 h-8 rounded-lg bg-white/20 text-white font-black text-xs flex items-center justify-center border border-[#FFEB01]">
               {userProfile?.name?.charAt(0) || 'S'}
             </div>
             <div className="text-left">
@@ -116,7 +116,7 @@ export default function Sidebar() {
           <button
             type="button"
             onClick={() => setActiveView('profile')}
-            className="p-1 rounded-md text-blue-200 hover:text-white hover:bg-blue-900 transition-colors cursor-pointer"
+            className="p-1 rounded-md text-white/80 hover:text-white hover:bg-white/20 transition-colors cursor-pointer"
             title="Profile"
           >
             <ChevronRight className="w-4 h-4" />
@@ -125,7 +125,7 @@ export default function Sidebar() {
 
         {/* Navigation Menu Links */}
         <nav className="p-3 space-y-1.5">
-          <div className="px-3 pt-2 pb-1 text-[10px] uppercase tracking-wider font-black text-blue-300">
+          <div className="px-3 pt-2 pb-1 text-[10px] uppercase tracking-wider font-black text-blue-100">
             Main Menu
           </div>
 
@@ -140,12 +140,12 @@ export default function Sidebar() {
                 onClick={() => setActiveView(item.id)}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-[#002EAF] text-white shadow-md border border-[#FFEB01]/50'
-                    : 'text-blue-100 hover:bg-[#002EAF]/40 hover:text-white'
+                    ? 'bg-white text-[#0077FF] shadow-lg font-black'
+                    : 'text-white/90 hover:bg-white/15 hover:text-white'
                 }`}
               >
                 <div className="flex items-center space-x-3">
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#FFEB01]' : 'text-blue-300'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#0077FF]' : 'text-white'}`} />
                   <span>{item.label}</span>
                 </div>
 
