@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Background with rounded corners -->
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+  
+  <!-- Outer Glow Circle -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#ffffff" stroke-width="6" stroke-opacity="0.3" stroke-dasharray="16 12"/>
+  
+  <!-- Book and Sun Icon -->
+  <g filter="url(#shadow)">
+    <!-- Sun of Knowledge -->
+    <circle cx="256" cy="150" r="42" fill="#fef08a"/>
+    <path d="M256 90 V70 M256 230 V210 M196 150 H176 M336 150 H316 M213 107 L199 93 M299 193 L285 179 M213 193 L199 207 M299 107 L285 93" stroke="#fef08a" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- Open Book -->
+    <path d="M256 260 C210 230 140 235 90 260 V400 C140 375 210 370 256 400 C302 370 372 375 422 400 V260 C372 235 302 230 256 260 Z" fill="#ffffff"/>
+    <path d="M256 260 V400" stroke="#d97706" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- Page lines -->
+    <path d="M120 290 Q170 275 230 290 M120 325 Q170 310 230 325 M120 360 Q170 345 230 360" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+    <path d="M392 290 Q342 275 282 290 M392 325 Q342 310 282 325 M392 360 Q342 345 282 360" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Sprout / Growth leaf -->
+    <path d="M256 235 C240 200 210 205 220 230 C230 255 256 245 256 235 Z" fill="#10b981"/>
+    <path d="M256 235 C272 200 302 205 292 230 C282 255 256 245 256 235 Z" fill="#34d399"/>
+  </g>
+</svg>

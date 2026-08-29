@@ -1,0 +1,428 @@
+[
+  {
+    "id": "course-computer-01",
+    "slug": "basic-computer-digital-skills",
+    "category": "Digital Skills",
+    "durationHours": 12,
+    "icon": "Monitor",
+    "color": "from-blue-600 to-indigo-700",
+    "badge": "डिजिटल साक्षरता / Digital Literacy",
+    "title": {
+      "mr": "संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये",
+      "en": "Basic Computer, Digital Literacy & MahaOnline Skills"
+    },
+    "description": {
+      "mr": "संगणक, मराठी टायपिंग, एमएस ऑफिस, शासकीय योजना (महाडीबीटी), डीजीलॉकर आणि ऑनलाइन अर्जांचे व्यावहारिक प्रशिक्षण.",
+      "en": "Practical training in computer basics, Marathi typing, MS Office, DigiLocker, MahaDBT government schemes, and cyber safety."
+    },
+    "lessons": [
+      {
+        "id": "comp-l1",
+        "order": 1,
+        "title": {
+          "mr": "धडा १: संगणकाची ओळख, विंडोज आणि मराठी टायपिंग",
+          "en": "Lesson 1: Computer Fundamentals, Windows OS & Marathi Typing"
+        },
+        "audioScript": {
+          "mr": "नमस्कार मित्रांनो! या पहिल्या धड्यात आपण संगणकाचे मुख्य भाग - मॉनिटर, सीपीयू, कीबोर्ड आणि माउस यांची ओळख करून घेणार आहोत. तसेच गुगल इनपुट किंवा इन्स्क्रिप्ट द्वारे सोप्या पद्धतीने मराठी टायपिंग कसे करावे हे शिकणार आहोत.",
+          "en": "Welcome to Lesson 1! Today we will learn about core computer hardware, file navigation, keyboard shortcuts, and typing fluently in Marathi and English."
+        },
+        "content": {
+          "mr": "### १. संगणकाचे मूलभूत घटक (Computer Hardware Basics)\n- **मॉनिटर (Monitor)**: स्क्रीन ज्यावर आपण काम पाहतो.\n- **सी.पी.यू. (CPU)**: संगणकाचा मेंदू. सर्व प्रक्रिया येथे होतात.\n- **कीबोर्ड आणि माउस (Keyboard & Mouse)**: माहिती भरण्यासाठी व आदेश देण्यासाठी मुख्य साधने.\n- **पेनड्राईव्ह / मेमरी कार्ड**: डेटा साठवण्यासाठी पोर्टेबल स्टोरेज.\n\n### २. फायली आणि फोल्डर्सचे व्यवस्थापन (File Management)\nगावातील दुकानाचे किंवा शेतीचे हिशोब ठेवताना योग्य फोल्डर बनवणे आवश्यक आहे:\n- **नवीन फोल्डर बनवणे**: स्क्रीनवर राईट क्लिक करा -> 'New' -> 'Folder' निवडा.\n- **फायली सेव्ह करणे**: `Ctrl + S` दाबून फाइल योग्य नावाखाली जतन करा.\n\n### ३. मराठी टायपिंग कसे करावे? (Marathi Typing Tips)\n- **Google Input Tools / ISM Keyboard**: इंग्रजी स्पेलिंग (उदा. 'Kopargaon' किंवा 'Shetkari') टाईप केल्यावर स्क्रीनवर 'कोपरगाव' किंवा 'शेतकरी' असा मराठी शब्द तयार होतो.\n- **शॉर्टकट्स**: `Ctrl + C` (कॉपी), `Ctrl + V` (पेस्ट), `Ctrl + Z` (मागे जाणे / Undo).",
+          "en": "### 1. Fundamental Hardware Components\n- **Monitor**: Display screen for visual output.\n- **CPU (Central Processing Unit)**: The brain of the computer that handles computations.\n- **Keyboard & Mouse**: Primary input devices.\n- **USB Storage (Pen Drive)**: Portable storage for village documents and forms.\n\n### 2. Practical File Management\nOrganizing files properly is essential for local shopkeeping, panchayat records, and agriculture:\n- **Creating Folders**: Right click on Desktop -> 'New' -> 'Folder'. Name it clearly (e.g., 'Kopargaon_Crop_Records_2026').\n- **Saving Work**: Use `Ctrl + S` frequently to prevent data loss during power outages.\n\n### 3. Marathi Phonetic Typing\n- **Google Input / InScript**: Type phonetically in English (e.g. typing 'Sheti' produces 'शेती').\n- **Crucial Shortcuts**: `Ctrl + C` (Copy), `Ctrl + V` (Paste), `Ctrl + Z` (Undo)."
+        },
+        "diagram": "computer_parts",
+        "keyTakeaways": {
+          "mr": [
+            "संगणकावर नियमितपणे Ctrl + S दाबून डेटा सेव्ह करा.",
+            "मराठी टायपिंगसाठी फोनेटिक कीबोर्ड वापरा जेणेकरून वेगाने अर्ज भरता येतील.",
+            "फायलींचे वर्गीकरण करण्यासाठी विषयवार फोल्डर बनवा."
+          ],
+          "en": [
+            "Always save work regularly using Ctrl + S in areas with frequent power cuts.",
+            "Use phonetic Marathi typing tools to fill online forms quickly.",
+            "Maintain distinct named folders for agriculture receipts, customer bills, and certificates."
+          ]
+        },
+        "practicalTip": {
+          "mr": "कोपरगाव परिसरात विजेचा लोडशेडिंग असू शकतो, म्हणून लॅपटॉप किंवा यूपीएस बॅटरी ५०% वर असतानाच महत्त्वाचे दस्तऐवज सेव्ह करून ठेवा.",
+          "en": "Due to load shedding in rural Kopargaon, always keep your computer connected to a UPS and enable Auto-Save in document editors."
+        }
+      },
+      {
+        "id": "comp-l2",
+        "order": 2,
+        "title": {
+          "mr": "धडा २: एमएस वर्ड, एक्सेल आणि हिशोब व्यवस्थापन",
+          "en": "Lesson 2: MS Word, Excel & Rural Business Record Keeping"
+        },
+        "audioScript": {
+          "mr": "या धड्यात आपण एमएस वर्ड मध्ये अर्ज किंवा पत्र कसे तयार करायचे आणि एक्सेल मध्ये दुकानाचे किंवा शेतीमालाचे हिशोब, बिले आणि नफा-तोटा कसा काढायचा ते शिकणार आहोत.",
+          "en": "In this lesson, we will explore creating official applications in MS Word and calculating profits, bills, and crop expenses using MS Excel formulas."
+        },
+        "content": {
+          "mr": "### १. एमएस वर्ड मध्ये अर्ज तयार करणे (Official Applications in Word)\n- ग्रामपंचायत, बँक किंवा शासकीय कार्यालयासाठी अर्ज तयार करताना वरील बाजूला दिनांक व पत्ता लिहा.\n- अक्षरांचा आकार (Font Size) शीर्षकासाठी १४ आणि मजकुरासाठी १२ ठेवा.\n- दस्तऐवज सुरक्षित ठेवण्यासाठी **PDF स्वरूपात Export** करा.\n\n### २. एमएस एक्सेल मध्ये शेती व दुकानाचे हिशोब (Spreadsheets & Accounts)\n- **स्तंभ (Columns - A, B, C)** आणि **ओळी (Rows - 1, 2, 3)** मिळून सेल (Cell) बनतो.\n- **महत्त्वाचे सूत्र (Formulas)**:\n  - बेरीज करण्यासाठी: `=SUM(B2:B10)`\n  - सरासरी काढण्यासाठी: `=AVERAGE(B2:B10)`\n  - नफा/शिल्लक काढण्यासाठी: `=B2-C2` (उत्पन्न उणे खर्च)\n\n### ३. छापाई (Printing) आणि स्थानिक कामासाठी वापर\n- खत, बियाणे दुकान किंवा टेलरिंग ऑर्डरची बिले एक्सेल मध्ये तयार करून तात्काळ प्रिंट करता येतात.",
+          "en": "### 1. Crafting Official Applications in MS Word\n- Format letters to Gram Panchayats, Banks, or Cooperatives with clear date and subject line.\n- Standard font size: 14pt for headings, 12pt for body.\n- Always export final files as PDF so formatting remains intact on any smartphone.\n\n### 2. Managing Shop & Crop Accounts in Excel\n- **Columns (A, B, C)** and **Rows (1, 2, 3)** form discrete Cells (e.g., A1, B2).\n- **Essential Formulas**:\n  - Sum of sales: `=SUM(B2:B10)`\n  - Average income: `=AVERAGE(B2:B10)`\n  - Net Balance: `=B2-C2` (Income minus Expenses)\n\n### 3. Printing Invoices & Summaries\n- Format tables with clear borders and export bill templates for local tailoring or retail shops."
+        },
+        "diagram": "excel_sheet",
+        "keyTakeaways": {
+          "mr": [
+            "कागदपत्रांचा मसुदा तयार झाल्यावर नेहमी PDF स्वरूपात सेव्ह करा.",
+            "एक्सेल मधील '=SUM' सूत्र वापरून हिशोबातील मानवी चुका टाळता येतात.",
+            "ग्राहकांची किंवा शेतकरी सदस्यांची माहिती टेबल स्वरूपात नोंदवा."
+          ],
+          "en": [
+            "Save official correspondence as PDF files for universal mobile readability.",
+            "Use '=SUM' and cell subtraction to eliminate manual bookkeeping errors.",
+            "Format tables with clear headings for dates, customer names, items, and payments."
+          ]
+        },
+        "practicalTip": {
+          "mr": "स्थानिक सेतू केंद्र किंवा महा ई-सेवा केंद्रात काम मिळवण्यासाठी वर्ड व एक्सेल मधील मराठी टायपिंग सर्वात जास्त फायदेशीर ठरते.",
+          "en": "Proficiency in Marathi typing in MS Word & Excel is the #1 requested skill for Maha e-Seva Kendras and Setu Centres across rural Maharashtra."
+        }
+      },
+      {
+        "id": "comp-l3",
+        "order": 3,
+        "title": {
+          "mr": "धडा ३: महाडीबीटी, डीजीलॉकर आणि ऑनलाइन सायबर सुरक्षा",
+          "en": "Lesson 3: MahaDBT, DigiLocker & Cyber Security"
+        },
+        "audioScript": {
+          "mr": "या तिसऱ्या धड्यात आपण महाराष्ट्र शासनाचे महाडीबीटी पोर्टल, ७/१२ उतारा डाऊनलोड करणे, डीजीलॉकर मध्ये प्रमाणपत्रे साठवणे आणि ऑनलाइन फसवणुकीपासून स्वतःला कसे वाचवायचे हे पाहणार आहोत.",
+          "en": "In this lesson, we will explore MahaDBT government schemes, digital 7/12 land records, storing certificates in DigiLocker, and protecting against online fraud."
+        },
+        "content": {
+          "mr": "### १. महाडीबीटी व शासकीय योजना पोर्टल (MahaDBT & Agri Portals)\n- शेतकरी योजना (उदा. ठिबक सिंचन, कृषी यांत्रिकीकरण) आणि विद्यार्थ्यांची शिष्यवृत्ती महाडीबीटी पोर्टलद्वारे मिळते.\n- अर्ज करताना **आधार कार्ड, बँक खाते आणि मोबाईल नंबर** लिंक असणे आवश्यक आहे.\n- **डिजिटल ७/१२ व ८-अ उतारा**: 'Mahabhumi' पोर्टलवरून डिजिटल स्वाक्षरी असलेला उतारा विना-रांगेत मिळवता येतो.\n\n### २. डीजीलॉकर (DigiLocker) चा वापर\n- आधार कार्ड, १०वी/१२वी गुणपत्रिका, ड्रायव्हिंग लायसन्स आणि जातीचे दाखले डीजीलॉकर मध्ये डिजिटल स्वरूपात सुरक्षित राहतात.\n- हे दस्तऐवज सर्व सरकारी कार्यालयांमध्ये मूळ प्रतीप्रमाणे कायदेशीररीत्या ग्राह्य धरले जातात.\n\n### ३. सायबर सुरक्षा व ऑनलाइन फसवणुकीपासून संरक्षण (Cyber Safety)\n- **ओटीपी (OTP)** किंवा **बँक पासवर्ड** कधीही कोणालाही फोनवर सांगू नका.\n- अनोळखी लिंकवर (उदा. 'लॉटरी लागली' किंवा 'मोफत रिचार्ज') क्लिक करू नका.\n- सार्वजनिक संगणकावर काम संपल्यावर नेहमी **Logout** करा.",
+          "en": "### 1. MahaDBT & Maharashtra Government Portals\n- Farmers apply for subsidies (Drip irrigation, tractors) and students apply for scholarships via MahaDBT.\n- Prerequisites: Aadhaar linked with active mobile number and bank account.\n- **Digital 7/12 & 8-A Land Records**: Download digitally signed land extracts directly via the Mahabhumi portal.\n\n### 2. Leveraging DigiLocker\n- Cloud storage for official documents: Aadhaar, 10th/12th marksheets, caste certificates, and driving licenses.\n- Legally valid under the IT Act at par with original physical documents.\n\n### 3. Cyber Safety for Rural Communities\n- Never share your One-Time Password (OTP), UPI PIN, or bank passwords with anyone over phone.\n- Beware of fraudulent WhatsApp links promising free recharges or lottery wins.\n- Always click 'Log Out' when accessing accounts on shared cyber café computers."
+        },
+        "diagram": "cyber_safety",
+        "keyTakeaways": {
+          "mr": [
+            "डीजीलॉकर मधील कागदपत्रे सर्वत्र अधिकृत मानली जातात.",
+            "महाडीबीटी अर्जासाठी आधार-बँक लिंकिंग वेळेत पूर्ण ठेवा.",
+            "ओटीपी हा वैयक्तिक असतो, तो कधीही दुसऱ्याला देऊ नका."
+          ],
+          "en": [
+            "DigiLocker documents are legally recognized across all government bodies.",
+            "Maintain updated Aadhaar-Bank seedings for seamless subsidy transfers.",
+            "Never share OTPs or click unverified links claiming instant financial rewards."
+          ]
+        },
+        "practicalTip": {
+          "mr": "गावातील ज्येष्ठ नागरिकांना ऑनलाइन पेन्शन किंवा शेती योजनांचे अर्ज भरून देऊन विद्यार्थी स्वतःचा स्वयंरोजगार सुरू करू शकतात.",
+          "en": "By helping village elders fill out pension and crop subsidy forms correctly, certified students can easily start their own local micro-enterprise."
+        }
+      }
+    ],
+    "quiz": {
+      "passingPercentage": 60,
+      "questions": [
+        {
+          "id": "q-comp-1",
+          "question": {
+            "mr": "संगणकामध्ये चालू असलेली फाइल तात्काळ सेव्ह करण्यासाठी कोणता कीबोर्ड शॉर्टकट वापरला जातो?",
+            "en": "Which keyboard shortcut is used to quickly save a file in most computer applications?"
+          },
+          "options": {
+            "mr": ["Ctrl + S", "Ctrl + P", "Ctrl + Z", "Alt + F4"],
+            "en": ["Ctrl + S", "Ctrl + P", "Ctrl + Z", "Alt + F4"]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "Ctrl + S दाबल्याने चालू काम त्वरित सुरक्षितपणे सेव्ह होते. वीज गेल्यास डेटा सुरक्षित राहतो.",
+            "en": "Ctrl + S immediately saves your current document, preventing data loss during sudden power outages."
+          }
+        },
+        {
+          "id": "q-comp-2",
+          "question": {
+            "mr": "एमएस एक्सेल मध्ये अनेक संख्यांची बेरीज करण्यासाठी कोणते योग्य सूत्र वापरले जाते?",
+            "en": "Which formula is used in MS Excel to calculate the sum of numbers in cells B2 to B10?"
+          },
+          "options": {
+            "mr": ["=SUM(B2:B10)", "=TOTAL(B2:B10)", "=ADD(B2:B10)", "=PLUS(B2:B10)"],
+            "en": ["=SUM(B2:B10)", "=TOTAL(B2:B10)", "=ADD(B2:B10)", "=PLUS(B2:B10)"]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "एक्सेलमध्ये बेरीज करण्यासाठी नेहमी '=SUM()' हे फंक्शन वापरले जाते.",
+            "en": "The '=SUM()' formula is the standard function used in Excel for adding values in a range."
+          }
+        },
+        {
+          "id": "q-comp-3",
+          "question": {
+            "mr": "शासकीय शिष्यवृत्ती व शेतकरी योजनांसाठी महाराष्ट्रात कोणते मुख्य पोर्टल वापरले जाते?",
+            "en": "Which main online portal is used in Maharashtra for government scholarships and farmer schemes?"
+          },
+          "options": {
+            "mr": ["MahaDBT (महाडीबीटी)", "YouTube", "Facebook", "Wikipedia"],
+            "en": ["MahaDBT Portal", "YouTube", "Facebook", "Wikipedia"]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "महाडीबीटी (MahaDBT) हे महाराष्ट्र शासनाचे थेट लाभ हस्तांतरणाचे अधिकृत पोर्टल आहे.",
+            "en": "MahaDBT is the official Direct Benefit Transfer portal of the Government of Maharashtra."
+          }
+        },
+        {
+          "id": "q-comp-4",
+          "question": {
+            "mr": "ऑनलाइन व्यवहार किंवा बँक खात्याबाबत कोणती गोष्ट कधीही कोणाशी शेअर करू नये?",
+            "en": "What sensitive information should NEVER be shared with anyone regarding online transactions?"
+          },
+          "options": {
+            "mr": ["ओटीपी (OTP) आणि यूपीआय पिन (UPI PIN)", "आपले नाव", "गावाचे नाव", "तारीख"],
+            "en": ["OTP and UPI PIN", "Your full name", "Village name", "Today's date"]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "ओटीपी व पिन शेअर केल्यास बँक खात्यातून पैसे चोरी होण्याची शक्यता असते.",
+            "en": "Sharing OTP or UPI PINs exposes your bank account to unauthorized theft and cyber fraud."
+          }
+        },
+        {
+          "id": "q-comp-5",
+          "question": {
+            "mr": "डीजीलॉकर (DigiLocker) मधील डिजिटल प्रमाणपत्रांचे कायदेशीर महत्त्व काय आहे?",
+            "en": "What is the legal standing of digital documents stored in DigiLocker?"
+          },
+          "options": {
+            "mr": [
+              "ते मूळ कागदपत्रांप्रमाणेच कायदेशीररीत्या सर्वत्र ग्राह्य धरले जातात",
+              "त्यांना कोणतेही कायदेशीर महत्त्व नसते",
+              "ते फक्त फोटो म्हणून वापरले जातात",
+              "ते फक्त १ महिन्यासाठी वैध असतात"
+            ],
+            "en": [
+              "They are legally valid and recognized on par with original physical documents",
+              "They have zero legal validity",
+              "They can only be viewed as casual photos",
+              "They expire in 30 days"
+            ]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "माहिती तंत्रज्ञान कायद्यानुसार डीजीलॉकरमधील कागदपत्रे मूळ प्रतीप्रमाणे अधिकृत असतात.",
+            "en": "Under the IT Act, digital records issued via DigiLocker are treated at par with original physical documents."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-tailoring-02",
+    "slug": "modern-tailoring-garment-craft",
+    "category": "Vocational Craft",
+    "durationHours": 18,
+    "icon": "Scissors",
+    "color": "from-emerald-600 to-teal-700",
+    "badge": "व्यावसायिक कौशल्य / Vocational Skills",
+    "title": {
+      "mr": "आधुनिक शिलाई, कपडे कटिंग व बुटीक व्यवसाय",
+      "en": "Modern Tailoring, Garment Drafting & Local Boutique Business"
+    },
+    "description": {
+      "mr": "शिलाई यंत्राची देखभाल, अचूक मापे, ब्लाउज व कुर्ती पॅटर्न कटिंग, दर्जेदार फिनिशिंग आणि गावात स्वतःचा शिलाई व्यवसाय सुरू करण्याचे मार्गदर्शन.",
+      "en": "Master sewing machine maintenance, body measurement standards, blouse/kurti drafting, finishing techniques, and running a profitable village tailoring enterprise."
+    },
+    "lessons": [
+      {
+        "id": "tailor-l1",
+        "order": 1,
+        "title": {
+          "mr": "धडा १: शिलाई यंत्राचे भाग, तेल घालणे व प्राथमिक टाके",
+          "en": "Lesson 1: Sewing Machine Anatomy, Maintenance & Basic Stitches"
+        },
+        "audioScript": {
+          "mr": "शिलाई काम शिकताना सर्वात पहिली पायरी म्हणजे शिलाई मशीनचे मुख्य भाग समजून घेणे, सुई योग्य बसवणे आणि मशीनला नियमित तेल देऊन आवाज न करता सुरळीत चालवणे.",
+          "en": "In Lesson 1, we will explore the essential components of a sewing machine, proper needle alignment, bobbin tension, and regular oiling to ensure smooth stitching."
+        },
+        "content": {
+          "mr": "### १. शिलाई यंत्राचे मुख्य भाग (Sewing Machine Components)\n- **सुई (Needle)**: १६ किंवा १८ क्रमांकाची सुई सामान्य कापडासाठी योग्य असते.\n- **बॉबिन आणि बॉबिन केस (Bobbin & Shuttle Case)**: खालच्या धाग्यासाठी अत्यंत महत्त्वाचा भाग.\n- **दाबक (Presser Foot)**: कापड घट्ट धरून ठेवतो.\n- **टेन्शन डिस्क (Thread Tension Disc)**: वरच्या धाग्याचा ताण नियंत्रित करतो.\n\n### २. मशीनची दैनंदिन देखभाल व ऑइलिंग (Daily Maintenance)\n- कामाला सुरुवात करण्यापूर्वी बॉबिन केस मधील धूळ व धाग्याचे तुकडे ब्रशनी स्वच्छ करा.\n- हलके शिलाई मशीन तेल (Sewing Machine Oil) आठवड्यातून किमान दोनदा सर्व हलणाऱ्या भागांवर २-२ थेंब टाका.\n- **टीप**: खाद्यतेल किंवा ग्रीस कधीही वापरू नका!\n\n### ३. टाके सैल किंवा तुटण्याची कारणे व उपाय\n- **टाका सैल येणे**: टेन्शन स्क्रू किंचित घट्ट करा.\n- **धागा वारंवार तुटणे**: सुई वाकलेली असू शकते किंवा धागा चुकीच्या पद्धतीने ओवला गेला असेल.\n- **कापड गोळा होणे**: बॉबिनचा ताण खूप घट्ट असणे.",
+          "en": "### 1. Essential Components of a Sewing Machine\n- **Machine Needle**: No. 16 needle is ideal for standard cotton, silk, and synthetic fabrics.\n- **Bobbin & Shuttle Case**: Houses the bottom thread loop.\n- **Presser Foot**: Holds fabric flat against the feed dog.\n- **Tension Regulator**: Balances top thread tension for uniform stitches.\n\n### 2. Cleaning & Lubrication Protocol\n- Use a soft brush to remove lint and thread residue from the shuttle race daily.\n- Apply 2 drops of dedicated light sewing machine oil to all moving joints twice weekly.\n- **Important**: Never use cooking oil or automotive grease!\n\n### 3. Troubleshooting Stitch Defects\n- **Loose Bottom Stitches**: Tighten the upper tension dial slightly.\n- **Thread Breaking Frequently**: Check for a blunt/bent needle or incorrect threading sequence.\n- **Fabric Gathering / Puckering**: Loosen the bobbin tension screw."
+        },
+        "diagram": "sewing_machine",
+        "keyTakeaways": {
+          "mr": [
+            "कापडानुसार योग्य क्रमांकाची सुई निवडा (उदा. सुती कापडासाठी १६ नं. सुई).",
+            "मशीनला नियमितपणे केवळ शिलाई मशीनचेच तेल घाला.",
+            "वरचा व खालचा धागा समान ताणात असेल तरच टाका पक्का येतो."
+          ],
+          "en": [
+            "Select needle size according to fabric thickness (No. 16 for standard cotton).",
+            "Always use dedicated machine lubricant to prevent jamming and rust.",
+            "Balance upper and lower thread tensions for strong, neat stitches."
+          ]
+        },
+        "practicalTip": {
+          "mr": "नवीन कापडावर शिलाई करण्यापूर्वी नेहमी रद्दी कापडाच्या तुकड्यावर टाका तपासून पहा.",
+          "en": "Always test stitch tension on a scrap piece of the same fabric before beginning work on a customer's garment."
+        }
+      },
+      {
+        "id": "tailor-l2",
+        "order": 2,
+        "title": {
+          "mr": "धडा २: अचूक मापे, पेपर पॅटर्न आणि ब्लाउज/कुर्ती कटिंग",
+          "en": "Lesson 2: Accurate Measurements, Pattern Drafting & Garment Cutting"
+        },
+        "audioScript": {
+          "mr": "कापड शिवताना माप अचूक असणे ही यशाची गुरुकिल्ली आहे. या धड्यात आपण छाती, कंबर, शोल्डर आणि बाहीचे माप कसे घ्यावे आणि पेपर पॅटर्न बनवून कापड वाया न घालवता कटिंग कशी करावी हे शिकणार आहोत.",
+          "en": "Accurate measurement is the foundation of perfect tailoring. In this lesson, we master taking body measurements, drafting reusable paper patterns, and fabric cutting."
+        },
+        "content": {
+          "mr": "### १. मानवी शरीराची अचूक मापे घेणे (Body Measurements)\n- **पूर्ण उंची (Full Length)**: खांद्यापासून खाली हव्या त्या लांबीपर्यंत.\n- **छातीचे माप (Chest / Bust)**: टेप सैल ठेवून छातीच्या सर्वात रुंद भागावर माप घ्या.\n- **कंबर आणि सीट (Waist & Hip)**: नैसर्गिक कंबर रेषेवर माप घ्या.\n- **शोल्डर (Shoulder)**: एका खांद्याच्या हाडापासून दुसऱ्या खांद्यापर्यंत.\n- **बाही लांबी व दंडघेर (Sleeve Length & Arm Round)**.\n\n### २. पेपर पॅटर्नचे महत्त्व (Paper Pattern Drafting)\n- थेट कापडावर कटिंग करण्याऐवजी जुन्या वर्तमानपत्रावर किंवा खाकी कागदावर आधी पॅटर्न काढा.\n- **शिलाई मार्जिन (Seam Allowance)**: नेहमी दीड (१.५) इंच जास्तीचे कापड मार्जिनसाठी ठेवा.\n- घडीचे कापड व्यवस्थित जुळवून ठेवा.\n\n### ३. साध्या ब्लाउजचे मुख्य भाग\n- पुढील भाग (Front Part) + डाट्स/टक्स (Darts)\n- मागील भाग (Back Part)\n- क्रॉस पट्टी / योग पट्टी (Yoke Belt)\n- बाही (Sleeves) आणि गळा पट्टी (Neck Piping)",
+          "en": "### 1. Standard Body Measurement Technique\n- **Full Garment Length**: Measured from the highest shoulder point downwards.\n- **Bust/Chest**: Measured comfortably around the fullest part of the chest.\n- **Waist & Hip**: Measured around the natural waistline.\n- **Shoulder Width**: Measured from one shoulder bone to the other across the back.\n- **Sleeve Length & Bicep Circumference**.\n\n### 2. Paper Pattern Drafting\n- Always draft patterns on brown paper or newspaper before cutting expensive client cloth.\n- **Seam Allowance**: Always leave 1.5 inches of extra fabric margin inside for alterations.\n- Align grain lines parallel to fabric selvedge to avoid garment twisting.\n\n### 3. Key Blouse Components\n- Front Bodice with precision darts (Tucks)\n- Back Bodice with neck depth\n- Cross Belt / Yoke Band\n- Sleeves and Bias Piping Strips for neckline finishing"
+        },
+        "diagram": "blouse_pattern",
+        "keyTakeaways": {
+          "mr": [
+            "कापड कापण्यापूर्वी नेहमी १.५ इंच शिलाई मार्जिन सोडा.",
+            "पेपर पॅटर्न वापरल्याने कापड वाया जाण्याचा धोका टळतो.",
+            "गळ्याची पट्टी नेहमी तिरप्या (बायस) कापडात कापावी."
+          ],
+          "en": [
+            "Always include a 1.5-inch seam allowance inside every garment seam.",
+            "Drafting paper patterns saves costly customer fabric from accidental cutting errors.",
+            "Cut neckline piping strips on a 45-degree true bias for smooth curves."
+          ]
+        },
+        "practicalTip": {
+          "mr": "सणासुदीच्या काळात (उदा. दिवाळी किंवा लग्नसराई) तयार ठेवलेले स्टँडर्ड पेपर पॅटर्न तुमचा वेळ ५०% वाचवतात.",
+          "en": "Keeping ready-made master paper patterns for sizes 32, 34, 36, and 38 cuts your work time in half during peak wedding and festival seasons in Kopargaon."
+        }
+      },
+      {
+        "id": "tailor-l3",
+        "order": 3,
+        "title": {
+          "mr": "धडा ३: फिनिशिंग, शिलाई दर ठरवणे आणि स्थानिक बुटीक व्यवसाय",
+          "en": "Lesson 3: Professional Finishing, Pricing & Local Boutique Business"
+        },
+        "audioScript": {
+          "mr": "छान शिलाई झाली तरी फिनिशिंग आणि इस्त्री उत्तम असल्याशिवाय कपड्याला बाजारात चांगला भाव मिळत नाही. या धड्यात आपण हुक-लुक, पिको-फॉल, योग्य दर ठरवणे आणि गावात शिलाई युनिट कसे चालवायचे हे पाहणार आहोत.",
+          "en": "Great finishing and fair pricing turn casual stitching into a thriving local business. In this lesson, we cover hooks, hem finishing, calculating profit margins, and marketing your tailoring services."
+        },
+        "content": {
+          "mr": "### १. व्यावसायिक फिनिशिंग (Professional Finishing Steps)\n- **हुक आणि लूक (Hooks & Eyes)**: मजबूत सुती धाग्याने ५ टाके घालून घट्ट बसवा.\n- **काज आणि बटणे**: योग्य अंतरावर समान रेषेत लावा.\n- **ओव्हरलॉकिंग / इंटरलॉकिंग**: कपड्याचे धागे निघू नयेत म्हणून कडा लॉक करा.\n- **इस्त्री (Pressing & Ironing)**: शिवण पूर्ण झाल्यावर प्रत्येक शिवणीवर स्टीम किंवा गरम इस्त्री फिरवा.\n\n### २. शिलाईचा योग्य दर कसा ठरवावा? (Pricing & Costing)\n- **खर्च**: अस्तर + धागा + बटणे/हुक + वीज बिल.\n- **श्रम मूल्य (Labor Cost)**: ब्लाउज शिवण्यासाठी लागणारा वेळ (उदा. २ तास).\n- **उदा. हिशोब**: साधा ब्लाउज ₹२०० ते ₹३००, अस्तर ब्लाउज ₹३५० ते ₹५००, डिझाईनर ब्लाउज/ड्रेस ₹६०० ते ₹१,२००.\n\n### ३. महिला बचत गट व स्थानिक बुटीक व्यवसाय (Local Enterprise & SHGs)\n- कोपरगाव व आसपासच्या गावांमध्ये महिला बचत गटांसोबत मिळून शालेय गणवेश किंवा कापडी पिशव्यांचे मोठे काम मिळवता येते.\n- सोशल मीडिया (WhatsApp Status) वर आपल्या डिझाइन्सचे फोटो टाकून नवीन ग्राहक मिळवा.\n- वेळेवर कपडे शिवून देणे हा व्यवसायातील सर्वात मोठा नियम आहे!",
+          "en": "### 1. Professional Finishing Standards\n- **Hooks & Eyes**: Stitch with double thread, anchoring at 5 distinct points for durability.\n- **Overlocking**: Seal raw fabric edges to prevent fraying.\n- **Steam Pressing**: Iron every seam as you sew; pressing gives the garment a high-end boutique finish.\n\n### 2. Fair Pricing & Margin Calculation\n- **Direct Material Cost**: Lining fabric + thread + canvas + hooks/zipper + electricity.\n- **Labor & Skill Rate**: Base hourly rate multiplied by stitching time.\n- **Market Benchmarks**: Plain Blouse ₹200–₹300, Lined Blouse ₹350–₹500, Designer Kurti/Dress ₹600–₹1,200.\n\n### 3. Partnering with Self-Help Groups (Bachat Gats) & Local Schools\n- Team up with local Women Self-Help Groups in Kopargaon to secure bulk orders for school uniforms and eco-friendly cotton bags.\n- Showcase finished garments on WhatsApp Status and local weekly markets (Aathvadi Bazaar).\n- Punctual delivery builds unshakable customer trust in village communities."
+        },
+        "diagram": "finishing_boutique",
+        "keyTakeaways": {
+          "mr": [
+            "उत्कृष्ट फिनिशिंग आणि इस्त्रीमुळे कपड्याला ग्राहकांकडून जास्त किंमत मिळते.",
+            "अस्तर व साहित्याचा हिशोब जोडूनच शिलाई दर ठरवावा.",
+            "वेळेवर काम देणे ही स्थानिक व्यवसायातील सर्वात मोठी ताकद आहे."
+          ],
+          "en": [
+            "Neat finishing and pressing command premium tailoring prices from clients.",
+            "Always include lining, accessories, and electricity in your price quote.",
+            "On-time delivery is your greatest competitive advantage in village markets."
+          ]
+        },
+        "practicalTip": {
+          "mr": "शिवलेल्या प्रत्येक कपड्यावर ग्राहकाचे नाव व मापाची नोंद वहीत ठेवा, जेणेकरून पुढील वेळी पुन्हा माप घेण्याची गरज पडत नाही.",
+          "en": "Maintain a client register with each customer's measurement history to provide instant, hassle-free repeat orders."
+        }
+      }
+    ],
+    "quiz": {
+      "passingPercentage": 60,
+      "questions": [
+        {
+          "id": "q-tail-1",
+          "question": {
+            "mr": "सामान्य सुती (कॉटन) कापड शिवण्यासाठी सर्वसाधारणपणे कोणत्या क्रमांकाची सुई योग्य मानली जाते?",
+            "en": "Which needle size is standard and most suitable for stitching regular cotton fabrics?"
+          },
+          "options": {
+            "mr": ["१६ नंबर सुई (No. 16)", "८ नंबर सुई", "२४ नंबर सुई", "सुईचा नंबर महत्त्वाचा नसतो"],
+            "en": ["Size 16 Needle", "Size 8 Needle", "Size 24 Needle", "Needle size doesn't matter"]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "१६ नंबर सुई ही सुती व सर्वसामान्य कपड्यांसाठी योग्य असते. ती कापड फाटत नाही व टाका स्वच्छ येतो.",
+            "en": "A No. 16 needle is the universal industry standard for regular cotton and mixed fabrics."
+          }
+        },
+        {
+          "id": "q-tail-2",
+          "question": {
+            "mr": "शिलाई यंत्राला ऑइलिंग करताना कोणते तेल वापरणे पूर्णपणे चुकीचे आणि घातक आहे?",
+            "en": "Which type of oil should NEVER be used to lubricate a sewing machine?"
+          },
+          "options": {
+            "mr": ["खाद्यतेल / स्वयंपाकाचे तेल", "शिलाई यंत्राचे हलके तेल", "पांढरे मशीन तेल", "सर्विसिंग ऑइल"],
+            "en": ["Cooking / Edible Oil", "Light Sewing Machine Oil", "White Machine Lubricant", "Servicing Oil"]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "खाद्यतेलामुळे मशीनचे भाग चिकट होतात, धूळ जमा होते आणि मशीन जाम होते. केवळ मशीन ऑइल वापरावे.",
+            "en": "Cooking oil gums up internal mechanisms, attracts dirt, and ruins the sewing machine."
+          }
+        },
+        {
+          "id": "q-tail-3",
+          "question": {
+            "mr": "कापड कटिंग करताना आतमध्ये किमान किती इंच शिलाई मार्जिन (Seam Allowance) सोडणे गरजेचे असते?",
+            "en": "How much seam allowance should ideally be kept inside a garment during pattern cutting?"
+          },
+          "options": {
+            "mr": ["१.५ इंच (1.5 inches)", "शून्य इंच", "५ इंच", "१० इंच"],
+            "en": ["1.5 inches", "Zero inches", "5 inches", "10 inches"]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "१.५ इंच मार्जिन ठेवल्यास भविष्यात कपडा सैल किंवा घट्ट करण्यासाठी जागा शिल्लक राहते.",
+            "en": "A 1.5-inch margin allows room for alterations and comfortable breathing fit."
+          }
+        },
+        {
+          "id": "q-tail-4",
+          "question": {
+            "mr": "गळ्याची फिनिशिंग करण्यासाठी पायपिंग पट्टी कापडाच्या कोणत्या दिशेने कापावी?",
+            "en": "In which direction should piping strips be cut to achieve a smooth curved neckline?"
+          },
+          "options": {
+            "mr": ["तिरपी / बायस (४५ अंश कोनात)", "उभी सरळ", "आडवी सरळ", "कशाही पद्धतीने"],
+            "en": ["True Bias (45-degree angle)", "Straight grain", "Horizontal grain", "Any random direction"]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "तिरप्या कापडात लवचिकता (Stretch) असते, ज्यामुळे गळ्याचा आकार सुरकुत्या न पडता गोलाकार बसतो.",
+            "en": "Bias cut strips provide natural stretch, allowing smooth curving around the neckline without puckering."
+          }
+        },
+        {
+          "id": "q-tail-5",
+          "question": {
+            "mr": "शिलाई व्यवसायात ग्राहकांचा कायमस्वरूपी विश्वास संपादन करण्यासाठी सर्वात महत्त्वाची गोष्ट कोणती?",
+            "en": "What is the most crucial factor for building lasting customer trust in a village tailoring business?"
+          },
+          "options": {
+            "mr": [
+              "वेळेवर दर्जेदार शिलाई देणे आणि अचूक माप ठेवणे",
+              "कपडे वेळेवर न देणे",
+              "अनावश्यक जास्त दर आकारणे",
+              "इस्त्री न करता कपडे देणे"
+            ],
+            "en": [
+              "Delivering quality stitching on time and maintaining accurate client measurements",
+              "Delaying garment delivery",
+              "Charging unpredictable arbitrary fees",
+              "Delivering unironed wrinkled garments"
+            ]
+          },
+          "correctIndex": 0,
+          "explanation": {
+            "mr": "वेळेवर काम पूर्ण करणे आणि चांगली फिनिशिंग देणे हेच स्थानिक व्यवसायाच्या यशाचे मूळ आहे.",
+            "en": "Punctual delivery combined with neat finishing forms the bedrock of customer retention in rural markets."
+          }
+        }
+      ]
+    }
+  }
+]

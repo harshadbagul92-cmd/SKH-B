@@ -1,0 +1,147 @@
+[
+  {
+    "id": "opp-01",
+    "title": {
+      "mr": "डेटा एंट्री ऑपरेटर व महा ई-सेवा सहाय्यक",
+      "en": "Data Entry Operator & Maha e-Seva Assistant"
+    },
+    "organization": {
+      "mr": "गोदावरी बायोरिफायनरीज् व सेतू सुविधा केंद्र, कोपरगाव",
+      "en": "Godavari Biorefineries & Setu Suvidha Kendra, Kopargaon"
+    },
+    "requiredCourseId": "course-computer-01",
+    "requiredCourseTitle": {
+      "mr": "संगणक व डिजिटल साक्षरता",
+      "en": "Basic Computer & Digital Skills"
+    },
+    "location": {
+      "mr": "कोपरगाव शहर व संवत्सर (तालुका कोपरगाव)",
+      "en": "Kopargaon Town & Sanvatsar, Ahmednagar"
+    },
+    "type": "Full-Time / शिकाऊ उमेदवार (Apprentice)",
+    "stipend": "₹९,५०० - ₹१२,००० / महिना",
+    "openings": 3,
+    "deadline": "२०२६-०९-३०",
+    "description": {
+      "mr": "शासकीय महाडीबीटी योजनांचे अर्ज भरणे, शेतकरी याद्या संगणकीकृत करणे आणि एमएस एक्सेल मध्ये बिले तयार करणे.",
+      "en": "Assist with MahaDBT farmer application processing, computerized ledger entry, and MS Excel billing."
+    },
+    "contactPerson": "श्री. राहुल कुलकर्णी (व्यवस्थापक - सेतू केंद्र, कोपरगाव)"
+  },
+  {
+    "id": "opp-02",
+    "title": {
+      "mr": "सोलर प्रकल्प डेटा नोंदणी व मॉनिटरिंग सहाय्यक",
+      "en": "Solar Project Data Registry & Monitoring Assistant"
+    },
+    "organization": {
+      "mr": "श्री साईबाबा ग्रामीण ऊर्जा प्रकल्प, शिर्डी-कोपरगाव परिसर",
+      "en": "Shree Saibaba Rural Energy Project, Shirdi-Kopargaon"
+    },
+    "requiredCourseId": "course-computer-01",
+    "requiredCourseTitle": {
+      "mr": "संगणक व डिजिटल साक्षरता",
+      "en": "Basic Computer & Digital Skills"
+    },
+    "location": {
+      "mr": "शिर्डी / राहाता / कोपरगाव मार्ग",
+      "en": "Shirdi / Rahata / Kopargaon Link Road"
+    },
+    "type": "Apprenticeship (प्रशिक्षणार्थी)",
+    "stipend": "₹१०,५०० / महिना + प्रवास भत्ता",
+    "openings": 2,
+    "deadline": "२०२६-१०-१५",
+    "description": {
+      "mr": "सौर ऊर्जा निर्मिती नोंदी संगणकात भरणे, दैनंदिन अहवाल तयार करणे आणि ईमेलद्वारे पाठवणे.",
+      "en": "Log daily solar generation metrics in digital spreadsheets, generate automated weekly reports, and dispatch summaries."
+    },
+    "contactPerson": "अभियांत्रिकी विभाग, ग्रामीण ऊर्जा केंद्र"
+  },
+  {
+    "id": "opp-03",
+    "title": {
+      "mr": "महिला बचत गट शिलाई युनिट - मास्टर टेलर व ट्रेनर",
+      "en": "Women SHG Stitching Unit - Master Tailor & Trainer"
+    },
+    "organization": {
+      "mr": "कोपरगाव महिला समृद्धी फेडरेशन व बचत गट",
+      "en": "Kopargaon Mahila Samruddhi Federation"
+    },
+    "requiredCourseId": "course-tailoring-02",
+    "requiredCourseTitle": {
+      "mr": "आधुनिक शिलाई व बुटीक व्यवसाय",
+      "en": "Modern Tailoring & Garment Craft"
+    },
+    "location": {
+      "mr": "कोपरगाव ग्रामीण (येऊर, टाकळी, काकडी परिसर)",
+      "en": "Kopargaon Rural (Takali, Yeur, Kakdi Belt)"
+    },
+    "type": "Contract / व्यवसाय भागीदारी (Self-Employment Partner)",
+    "stipend": "₹८,००० - ₹१५,००० (ऑर्डरनुसार मोबदला)",
+    "openings": 4,
+    "deadline": "२०२६-०९-२५",
+    "description": {
+      "mr": "शालेय गणवेश शिलाई आणि सणासुदीच्या कपड्यांचे कटिंग व फिनिशिंग देखरेख करणे.",
+      "en": "Lead mass cutting of school uniforms, supervise blouse finishes, and coordinate delivery with local institutions."
+    },
+    "contactPerson": "सौ. सुरेखाताई शिंदे (अध्यक्षा - समृद्धी बचत गट)"
+  },
+  {
+    "id": "opp-04",
+    "title": {
+      "mr": "स्थानिक बुटीक व फॅशन स्टोअर असिस्टंट",
+      "en": "Local Designer Boutique & Alteration Associate"
+    },
+    "organization": {
+      "mr": "महालक्ष्मी फॅशन्स व लेडीज बुटीक, मेन रोड, कोपरगाव",
+      "en": "Mahalaxmi Fashions & Ladies Boutique, Main Road, Kopargaon"
+    },
+    "requiredCourseId": "course-tailoring-02",
+    "requiredCourseTitle": {
+      "mr": "आधुनिक शिलाई व बुटीक व्यवसाय",
+      "en": "Modern Tailoring & Garment Craft"
+    },
+    "location": {
+      "mr": "छत्रपती शिवाजी महाराज चौक, कोपरगाव",
+      "en": "Shivaji Maharaj Chowk, Kopargaon"
+    },
+    "type": "Part-Time / Full-Time",
+    "stipend": "₹७,५०० - ₹१०,००० / महिना + कमिशन",
+    "openings": 2,
+    "deadline": "२०२६-१०-०५",
+    "description": {
+      "mr": "ग्राहकांचे माप घेणे, डिझाईनर ब्लाउजचे टक्स व फिनिशिंग करणे आणि ग्राहकांशी सौजन्याने संवाद साधणे.",
+      "en": "Take customer measurements, handle designer blouse alterations, and assist boutique patrons."
+    },
+    "contactPerson": "सौ. अनिता वाणी (संचालिका)"
+  },
+  {
+    "id": "opp-05",
+    "title": {
+      "mr": "शेतकरी उत्पादक कंपनी (FPC) डिजिटल अकाउंट्स सहाय्यक",
+      "en": "Farmer Producer Co-op (FPC) Digital Accounts Assistant"
+    },
+    "organization": {
+      "mr": "गोदावरी व्हॅली शेतकरी उत्पादक कंपनी लि., कोपरगाव",
+      "en": "Godavari Valley Farmer Producer Co. Ltd., Kopargaon"
+    },
+    "requiredCourseId": "course-computer-01",
+    "requiredCourseTitle": {
+      "mr": "संगणक व डिजिटल साक्षरता",
+      "en": "Basic Computer & Digital Skills"
+    },
+    "location": {
+      "mr": "कोपरगाव मार्केट यार्ड परिसर",
+      "en": "Kopargaon APMC Market Yard"
+    },
+    "type": "Full-Time",
+    "stipend": "₹११,००० - ₹१४,००० / महिना",
+    "openings": 2,
+    "deadline": "२०२६-१०-२०",
+    "description": {
+      "mr": "शेतकऱ्यांच्या शेतमालाची आवक-जावक नोंद, वजन पावती व पेमेंट नोंदी कॉम्प्युटरमध्ये ठेवणे.",
+      "en": "Record APMC grain receipts, maintain weighbridge digital slips, and reconcile member farmer payouts in Excel."
+    },
+    "contactPerson": "श्री. सचिन कदम (मुख्य कार्यकारी अधिकारी - FPC)"
+  }
+]
