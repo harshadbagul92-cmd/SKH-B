@@ -44,6 +44,7 @@ export function AppProvider({ children }) {
   // E-Textbook State
   const [allTextbooks, setAllTextbooks] = useState([]);
   const [selectedTextbook, setSelectedTextbook] = useState(null);
+  const [textbookInitialMode, setTextbookInitialMode] = useState('ebook');
   const [activeSubjectFilter, setActiveSubjectFilter] = useState('all');
 
   // Government Exams State
@@ -374,12 +375,14 @@ export function AppProvider({ children }) {
   };
 
   // E-Textbook Actions
-  const openTextbook = (textbook) => {
+  const openTextbook = (textbook, mode = 'ebook') => {
     setSelectedTextbook(textbook);
+    setTextbookInitialMode(mode);
   };
 
   const closeTextbook = () => {
     setSelectedTextbook(null);
+    setTextbookInitialMode('ebook');
   };
 
   // Record Lesson Completion
@@ -527,6 +530,7 @@ export function AppProvider({ children }) {
         allTextbooks,
         allGovExams,
         selectedTextbook,
+        textbookInitialMode,
         openTextbook,
         closeTextbook,
         activeSubjectFilter,

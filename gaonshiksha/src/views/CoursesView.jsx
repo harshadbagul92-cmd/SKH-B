@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import TextbookReaderModal from '../components/TextbookReaderModal';
-import PdfViewerModal from '../components/PdfViewerModal';
 import {
   BookOpen,
   CheckCircle2,
@@ -21,7 +20,6 @@ import {
 } from 'lucide-react';
 
 export default function CoursesView() {
-  const [pdfViewingTextbook, setPdfViewingTextbook] = useState(null);
   const {
     lang,
     t,
@@ -36,6 +34,7 @@ export default function CoursesView() {
     currentUser,
     userProfile,
     selectedTextbook,
+    textbookInitialMode,
     openTextbook,
     closeTextbook,
     activeSubjectFilter,
@@ -81,6 +80,7 @@ export default function CoursesView() {
       {selectedTextbook && (
         <TextbookReaderModal
           textbook={selectedTextbook}
+          initialMode={textbookInitialMode || 'ebook'}
           onClose={closeTextbook}
         />
       )}
@@ -98,54 +98,54 @@ export default function CoursesView() {
               ? 'इयत्ता १० वी भाषा पाठ्यपुस्तके व अभ्यासक्रम'
               : lang === 'hi'
               ? 'कक्षा १०वीं भाषा पाठ्यपुस्तकें एवं अध्ययन सामग्री'
-              : 'Class 10th Core Language E-Textbooks & Curriculum'}
+              : 'Class 10th Core Language Curriculum'}
           </h1>
           <p className="text-xs text-slate-600 font-semibold mt-0.5">
             {lang === 'mr'
-              ? 'ऑफलाइन डिजिटल वाचन, संतसाहित्य, व्याकरण, शब्दसंग्रह व स्वाध्याय'
+              ? 'मराठी, हिंदी व इंग्रजी - पूर्ण ई-पाठ्यपुस्तके, नोट्स, व्याकरण व स्वाध्याय (१००% ऑफलाइन)'
               : lang === 'hi'
-              ? 'ऑफलाइन डिजिटल अध्ययन, व्याकरण, पद्य-गद्य एवं प्रश्नोत्तर'
-              : 'Digital text reader with poems, summaries, grammar notes, and offline access'}
+              ? 'मराठी, हिंदी एवं अंग्रेजी - संपूर्ण ई-पाठ्यपुस्तकें, नोट्स, व्याकरण एवं स्वाध्याय'
+              : 'Marathi, Hindi & English Kumarbharati E-Textbooks with In-App PDF & Exercise Viewer'}
           </p>
         </div>
 
+        {/* Offline Badge */}
         <div className="flex items-center space-x-2">
           <span className="text-xs font-bold text-slate-700 bg-slate-100 border border-slate-300 px-3 py-1.5 rounded-xl flex items-center space-x-1.5 shadow-xs">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>100% Offline Ready</span>
+            <ShieldCheck className="w-4 h-4 text-gold-600" />
+            <span>Maharashtra State Board Verified</span>
           </span>
         </div>
       </div>
 
-      {/* 3 Core Language Filter Pills with Sharp Contrast */}
-      <div className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
-        {subjectsList.map((subj) => {
-          const isActive = activeSubjectFilter === subj.id;
+      {/* Language Subject Filter Bar */}
+      <div className="flex items-center space-x-2 overflow-x-auto pb-1">
+        {subjectsList.map((sub) => {
+          const isActive = activeSubjectFilter === sub.id;
           return (
             <button
-              key={subj.id}
-              onClick={() => setActiveSubjectFilter(subj.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-black whitespace-nowrap transition-all border cursor-pointer ${
+              key={sub.id}
+              onClick={() => setActiveSubjectFilter(sub.id)}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black whitespace-nowrap transition-all border cursor-pointer ${
                 isActive
-                  ? 'bg-[#000083] text-white border-[#000083] shadow-sm ring-2 ring-blue-200'
-                  : 'bg-white text-slate-800 border-slate-300 hover:bg-slate-50 hover:text-black'
+                  ? 'bg-[#0A192F] text-white border-slate-800 shadow-sm'
+                  : 'bg-white hover:bg-slate-100 text-slate-800 border-slate-300'
               }`}
             >
-              <span>{subj.label}</span>
+              {sub.label}
             </button>
           );
         })}
       </div>
 
-      {/* 3 CORE LANGUAGE SUBJECT CARDS */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* 3 Core E-Textbooks Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {filteredTextbooks.map((tb) => {
-          const totalCh = tb.chapters ? tb.chapters.length : tb.totalChapters || 4;
-
+          const totalCh = tb.chapters ? tb.chapters.length : tb.totalChapters;
           return (
             <div
               key={tb.id}
-              className="bg-white rounded-2xl sm:rounded-3xl border border-slate-300 shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col justify-between overflow-hidden group hover:border-brand-500"
+              className="bg-white rounded-2xl border border-slate-300 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between overflow-hidden group hover:border-brand-500"
             >
               {/* Card Header (Midnight Navy Banner with Electric Yellow Badge) */}
               <div>
@@ -194,32 +194,33 @@ export default function CoursesView() {
                 </div>
               </div>
 
-              {/* Card Footer: "Open E-Textbook" and "View PDF" Action Buttons */}
+              {/* Card Footer: In-App E-Textbook and PDF Action Buttons */}
               <div className="p-6 pt-0 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
                     e.preventDefault();
-                    openTextbook(tb);
+                    openTextbook(tb, 'ebook');
                   }}
-                  className="py-3 px-3 bg-sky-600 hover:bg-sky-700 active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-sky-300 cursor-pointer group"
+                  className="py-3 px-3 bg-[#000083] hover:bg-[#1D4ED8] active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-slate-700 cursor-pointer group"
                 >
-                  <BookOpen className="w-4 h-4 text-[#FFEB01]" />
+                  <BookOpen className="w-4 h-4 text-gold-400" />
                   <span>{t('course.open_ebook') || 'Open E-Textbook'}</span>
                 </button>
-                <a
-                  href={tb.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+
+                <button
+                  type="button"
                   onClick={(e) => {
                     e.stopPropagation();
+                    e.preventDefault();
+                    openTextbook(tb, 'pdf');
                   }}
-                  className="py-3 px-3 bg-sky-500 hover:bg-sky-600 active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-sky-200 cursor-pointer no-underline"
+                  className="py-3 px-3 bg-brand-600 hover:bg-brand-500 active:scale-[0.99] text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-1.5 border border-brand-400 cursor-pointer"
                 >
-                  <FileText className="w-4 h-4 text-[#FFEB01]" />
+                  <FileText className="w-4 h-4 text-gold-400" />
                   <span>{lang === 'mr' ? 'PDF पहा (View PDF)' : lang === 'hi' ? 'PDF देखें' : 'View PDF'}</span>
-                </a>
+                </button>
               </div>
 
             </div>
@@ -251,19 +252,24 @@ export default function CoursesView() {
               return (
                 <div
                   key={course.id}
-                  className="bg-white rounded-2xl p-5 border border-slate-200 shadow-xs flex items-center justify-between hover:border-slate-300 transition-colors"
+                  className="bg-white p-5 rounded-2xl border border-slate-300 shadow-xs flex items-center justify-between gap-4"
                 >
                   <div className="flex items-center space-x-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center shrink-0">
+                    <div className="w-11 h-11 rounded-xl bg-[#0A192F] flex items-center justify-center shrink-0 border border-slate-700">
                       {getCourseIcon(course.icon)}
                     </div>
                     <div>
-                      <h4 className="text-xs sm:text-sm font-black text-slate-900">
+                      <h4 className="text-sm font-black text-slate-900">
                         {tObj(course.title)}
                       </h4>
-                      <p className="text-[11px] text-slate-600 font-semibold line-clamp-1">
-                        {totalCourseLessons} lessons • {percent}% completed
+                      <p className="text-xs text-slate-500 font-medium line-clamp-1">
+                        {tObj(course.description)}
                       </p>
+                      <div className="flex items-center space-x-3 mt-1.5 text-[11px] font-bold">
+                        <span className="text-brand-700">{completedCount}/{totalCourseLessons} Lessons</span>
+                        <span className="text-slate-400">•</span>
+                        <span className="text-gold-600">{percent}% Done</span>
+                      </div>
                     </div>
                   </div>
 
@@ -278,15 +284,6 @@ export default function CoursesView() {
             })}
           </div>
         </div>
-      )}
-
-      {/* Modal Viewers */}
-      {selectedTextbook && (
-        <TextbookReaderModal textbook={selectedTextbook} onClose={closeTextbook} />
-      )}
-
-      {pdfViewingTextbook && (
-        <PdfViewerModal textbook={pdfViewingTextbook} onClose={() => setPdfViewingTextbook(null)} />
       )}
 
     </div>
