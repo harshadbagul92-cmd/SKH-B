@@ -27,12 +27,12 @@ export default function AuthView() {
   const [showPassword, setShowPassword] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: userProfile?.name || 'Vikas Tambade',
-    email: userProfile?.email || 'vikas.student@gmail.com',
-    password: 'password123',
-    mobile: userProfile?.mobile || '9876543210',
-    city: userProfile?.city || 'Kopargaon',
-    grade: '10th'
+    name: userProfile?.name || '',
+    email: userProfile?.email || '',
+    password: '',
+    mobile: userProfile?.mobile || '',
+    city: userProfile?.city || '',
+    grade: userProfile?.grade || '10th'
   });
 
   const [errorMsg, setErrorMsg] = useState('');
@@ -46,27 +46,14 @@ export default function AuthView() {
   const handleRoleChange = (newRole) => {
     setRole(newRole);
     if (errorMsg) setErrorMsg('');
-    if (newRole === 'mentor') {
-      setFormData(prev => ({
-        ...prev,
-        name: prev.name === 'Vikas Tambade' ? 'Dr. S. K. Bagul' : prev.name,
-        email: prev.email === 'vikas.student@gmail.com' ? 'mentor.bagul@invictus.edu' : prev.email
-      }));
-    } else {
-      setFormData(prev => ({
-        ...prev,
-        name: prev.name === 'Dr. S. K. Bagul' ? 'Vikas Tambade' : prev.name,
-        email: prev.email === 'mentor.bagul@invictus.edu' ? 'vikas.student@gmail.com' : prev.email
-      }));
-    }
   };
 
   const handleQuickFill = (targetRole) => {
     if (targetRole === 'student') {
       setRole('student');
       setFormData({
-        name: 'Vikas Tambade',
-        email: 'vikas.student@gmail.com',
+        name: 'Scholar Student',
+        email: 'student@invictus.edu',
         password: 'password123',
         mobile: '9822012345',
         city: 'Kopargaon',
@@ -280,7 +267,7 @@ export default function AuthView() {
                 className="text-[11px] font-bold text-brand-800 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-2.5 py-1 rounded-lg transition-colors cursor-pointer flex items-center space-x-1"
               >
                 <Zap className="w-3 h-3 text-gold-500" />
-                <span>Demo Student (Vikas)</span>
+                <span>Demo Student Account</span>
               </button>
               <button
                 type="button"

@@ -167,13 +167,13 @@ export default function ProfileView() {
           <div className="flex items-start space-x-4">
             {/* Avatar Badge */}
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white text-[#000083] flex items-center justify-center text-2xl font-black shadow-lg shrink-0 border-2 border-[#FFEB01]">
-              {userProfile?.name ? userProfile.name.charAt(0).toUpperCase() : 'V'}
+              {userProfile?.name ? userProfile.name.charAt(0).toUpperCase() : 'S'}
             </div>
 
             <div className="space-y-1.5">
               <div className="flex flex-wrap items-center gap-2">
                 <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white">
-                  {userProfile?.name || 'Vikas Tambade'}
+                  {userProfile?.name || 'Student'}
                 </h2>
                 <span className="text-[11px] font-black px-2.5 py-0.5 rounded-full bg-gold-500 text-navy-950 font-mono shadow-xs">
                   {categoryLabels[userProfile?.category] || '10th Standard Student'}

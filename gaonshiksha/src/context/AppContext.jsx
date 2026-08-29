@@ -309,7 +309,7 @@ export function AppProvider({ children }) {
       if (!user) {
         // Automatically register user locally for seamless offline access
         user = {
-          name: name || 'Vikas Tambade',
+          name: name || (email.includes('@') ? email.split('@')[0] : 'Student'),
           email: email,
           password: pwd,
           mobile: mobile,
@@ -434,7 +434,7 @@ export function AppProvider({ children }) {
       });
 
       if (passed) {
-        const studentName = currentUser?.name || 'Vikas Tambade';
+        const studentName = currentUser?.name || 'Student';
         const village = currentUser?.city || 'Kopargaon';
         const randNum = Math.floor(1000 + Math.random() * 9000);
         const verificationCode = `IL-${village.substring(0, 3).toUpperCase()}-2026-${randNum}`;
