@@ -1,0 +1,33 @@
+services:
+  # 1. Backend Web Service (Node.js + Express + DB + Gemini AI)
+  - type: web
+    name: gaonshiksha-server
+    runtime: node
+    rootDir: gaonshiksha
+    buildCommand: npm install
+    startCommand: node server/index.js
+    plan: free
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: GEMINI_API_KEY
+        sync: false # Set your Gemini API key in Render dashboard
+
+  # 2. Frontend Static Site (React + Vite + PWA)
+  - type: web
+    name: gaonshiksha-app
+    runtime: static
+    rootDir: gaonshiksha
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    plan: free
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: gaonshiksha-server
+          property: host
