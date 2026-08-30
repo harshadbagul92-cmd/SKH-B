@@ -11,16 +11,14 @@ services:
       - key: PORT
         value: 5000
       - key: GEMINI_API_KEY
-        sync: false # Set your Gemini API key in Render dashboard
+        sync: false
 
   # 2. Frontend Static Site (React + Vite + PWA)
-  - type: web
+  - type: static_site
     name: gaonshiksha-app
-    runtime: static
     rootDir: gaonshiksha
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    plan: free
+    publishPath: dist
     routes:
       - type: rewrite
         source: /*
