@@ -1,0 +1,371 @@
+{
+  "syncedItems": [
+    {
+      "type": "CERTIFICATE_ISSUED",
+      "payload": {
+        "id": "test-cert-101",
+        "grade": "A+",
+        "verificationCode": "GS-KPG-2026-9999",
+        "courseTitle": "????? ? ?????? ????????",
+        "issueDate": "29 August 2026",
+        "village": "???????",
+        "score": "5/5",
+        "studentName": "?????????? ????? (Dnyaneshwar Shinde)"
+      },
+      "serverReceivedAt": "2026-08-29T12:22:15.304Z"
+    },
+    {
+      "type": "JOB_APPLICATION",
+      "payload": {
+        "studentName": "?????????? ?????",
+        "oppTitle": "???? ??????? ???? ??????",
+        "phone": "9822011111",
+        "organization": "???? ??????? ??????? ????? ???????"
+      },
+      "serverReceivedAt": "2026-08-29T12:22:15.304Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-computer-01",
+        "lessonId": "comp-l1",
+        "completedLessons": [
+          "comp-l1"
+        ],
+        "timestamp": "2026-08-29T12:37:20.181Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:37:20.181Z",
+      "retryCount": 0,
+      "id": 1,
+      "serverReceivedAt": "2026-08-29T12:43:36.268Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-computer-01",
+        "lessonId": "comp-l1",
+        "completedLessons": [
+          "comp-l1"
+        ],
+        "timestamp": "2026-08-29T12:44:01.934Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:44:01.934Z",
+      "retryCount": 0,
+      "id": 2,
+      "serverReceivedAt": "2026-08-29T12:44:52.870Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-computer-01",
+        "lessonId": "comp-l2",
+        "completedLessons": [
+          "comp-l1",
+          "comp-l2"
+        ],
+        "timestamp": "2026-08-29T12:44:04.283Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:44:04.283Z",
+      "retryCount": 0,
+      "id": 3,
+      "serverReceivedAt": "2026-08-29T12:44:52.870Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-computer-01",
+        "lessonId": "comp-l2",
+        "completedLessons": [
+          "comp-l1",
+          "comp-l2"
+        ],
+        "timestamp": "2026-08-29T12:44:06.262Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:44:06.262Z",
+      "retryCount": 0,
+      "id": 4,
+      "serverReceivedAt": "2026-08-29T12:44:52.870Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-computer-01",
+        "lessonId": "comp-l3",
+        "completedLessons": [
+          "comp-l1",
+          "comp-l2",
+          "comp-l3"
+        ],
+        "timestamp": "2026-08-29T12:44:08.845Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:44:08.845Z",
+      "retryCount": 0,
+      "id": 5,
+      "serverReceivedAt": "2026-08-29T12:44:52.870Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-computer-01",
+        "lessonId": "comp-l3",
+        "completedLessons": [
+          "comp-l1",
+          "comp-l2",
+          "comp-l3"
+        ],
+        "timestamp": "2026-08-29T12:44:10.144Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:44:10.144Z",
+      "retryCount": 0,
+      "id": 6,
+      "serverReceivedAt": "2026-08-29T12:44:52.870Z"
+    },
+    {
+      "type": "CERTIFICATE_ISSUED",
+      "payload": {
+        "id": "cert-course-computer-01-1788007526535",
+        "verificationCode": "GS-KPG-2026-9292",
+        "courseId": "course-computer-01",
+        "courseTitle": {
+          "mr": "संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये",
+          "en": "Basic Computer, Digital Literacy & MahaOnline Skills"
+        },
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "village": "संवत्सर, तालुका कोपरगाव (Sanvatsar, Kopargaon)",
+        "score": "4/5 (80%)",
+        "grade": "A (प्रथम श्रेणी)",
+        "issueDate": "29 August 2026",
+        "synced": false
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:45:26.596Z",
+      "retryCount": 0,
+      "id": 7,
+      "serverReceivedAt": "2026-08-29T12:49:38.426Z"
+    },
+    {
+      "type": "QUIZ_RESULT",
+      "payload": {
+        "courseId": "course-computer-01",
+        "score": 4,
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "passed": true,
+        "verificationCode": "GS-KPG-2026-9292",
+        "timestamp": "2026-08-29T12:45:26.623Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:45:26.623Z",
+      "retryCount": 0,
+      "id": 8,
+      "serverReceivedAt": "2026-08-29T12:49:38.426Z"
+    },
+    {
+      "type": "CERTIFICATE_ISSUED",
+      "payload": {
+        "id": "cert-course-computer-01-1788007591654",
+        "verificationCode": "GS-KPG-2026-6276",
+        "courseId": "course-computer-01",
+        "courseTitle": {
+          "mr": "संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये",
+          "en": "Basic Computer, Digital Literacy & MahaOnline Skills"
+        },
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "village": "संवत्सर, तालुका कोपरगाव (Sanvatsar, Kopargaon)",
+        "score": "3/5 (60%)",
+        "grade": "B (उत्तीर्ण)",
+        "issueDate": "29 August 2026",
+        "synced": false
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:46:31.690Z",
+      "retryCount": 0,
+      "id": 9,
+      "serverReceivedAt": "2026-08-29T12:49:38.426Z"
+    },
+    {
+      "type": "QUIZ_RESULT",
+      "payload": {
+        "courseId": "course-computer-01",
+        "score": 3,
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "passed": true,
+        "verificationCode": "GS-KPG-2026-6276",
+        "timestamp": "2026-08-29T12:46:31.701Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:46:31.701Z",
+      "retryCount": 0,
+      "id": 10,
+      "serverReceivedAt": "2026-08-29T12:49:38.426Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-tailoring-02",
+        "lessonId": "tailor-l1",
+        "completedLessons": [
+          "tailor-l1"
+        ],
+        "timestamp": "2026-08-29T12:47:09.147Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:47:09.147Z",
+      "retryCount": 0,
+      "id": 11,
+      "serverReceivedAt": "2026-08-29T12:49:38.426Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-tailoring-02",
+        "lessonId": "tailor-l1",
+        "completedLessons": [
+          "tailor-l1"
+        ],
+        "timestamp": "2026-08-29T12:47:10.236Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:47:10.236Z",
+      "retryCount": 0,
+      "id": 12,
+      "serverReceivedAt": "2026-08-29T12:49:38.426Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-tailoring-02",
+        "lessonId": "tailor-l2",
+        "completedLessons": [
+          "tailor-l1",
+          "tailor-l2"
+        ],
+        "timestamp": "2026-08-29T12:47:14.613Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:47:14.613Z",
+      "retryCount": 0,
+      "id": 13,
+      "serverReceivedAt": "2026-08-29T12:49:38.426Z"
+    },
+    {
+      "type": "PROGRESS_UPDATE",
+      "payload": {
+        "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+        "courseId": "course-tailoring-02",
+        "lessonId": "tailor-l3",
+        "completedLessons": [
+          "tailor-l1",
+          "tailor-l2",
+          "tailor-l3"
+        ],
+        "timestamp": "2026-08-29T12:47:22.237Z"
+      },
+      "status": "pending",
+      "createdAt": "2026-08-29T12:47:22.237Z",
+      "retryCount": 0,
+      "id": 14,
+      "serverReceivedAt": "2026-08-29T12:49:38.426Z"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "cert-sample-1",
+      "verificationCode": "GS-KPG-2026-8419",
+      "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+      "village": "संवत्सर, कोपरगाव",
+      "courseTitle": "संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये",
+      "score": "5/5 (100%)",
+      "grade": "A+ (उत्कृष्ट)",
+      "issueDate": "२९ ऑगस्ट २०२६",
+      "syncedAt": "2026-08-29T12:19:48.815Z"
+    },
+    {
+      "id": "cert-sample-2",
+      "verificationCode": "GS-KPG-2026-9124",
+      "studentName": "पूजा रमेश वाघमारे (Pooja Waghmare)",
+      "village": "टाकळी, कोपरगाव",
+      "courseTitle": "आधुनिक शिलाई, कपडे कटिंग व बुटीक व्यवसाय",
+      "score": "5/5 (100%)",
+      "grade": "A+ (उत्कृष्ट)",
+      "issueDate": "२८ ऑगस्ट २०२६",
+      "syncedAt": "2026-08-29T12:19:48.816Z"
+    },
+    {
+      "id": "test-cert-101",
+      "grade": "A+",
+      "verificationCode": "GS-KPG-2026-9999",
+      "courseTitle": "????? ? ?????? ????????",
+      "issueDate": "29 August 2026",
+      "village": "???????",
+      "score": "5/5",
+      "studentName": "?????????? ????? (Dnyaneshwar Shinde)",
+      "syncedAt": "2026-08-29T12:22:15.304Z"
+    },
+    {
+      "id": "cert-course-computer-01-1788007526535",
+      "verificationCode": "GS-KPG-2026-9292",
+      "courseId": "course-computer-01",
+      "courseTitle": {
+        "mr": "संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये",
+        "en": "Basic Computer, Digital Literacy & MahaOnline Skills"
+      },
+      "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+      "village": "संवत्सर, तालुका कोपरगाव (Sanvatsar, Kopargaon)",
+      "score": "4/5 (80%)",
+      "grade": "A (प्रथम श्रेणी)",
+      "issueDate": "29 August 2026",
+      "synced": false,
+      "syncedAt": "2026-08-29T12:49:38.426Z"
+    },
+    {
+      "id": "cert-course-computer-01-1788007591654",
+      "verificationCode": "GS-KPG-2026-6276",
+      "courseId": "course-computer-01",
+      "courseTitle": {
+        "mr": "संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये",
+        "en": "Basic Computer, Digital Literacy & MahaOnline Skills"
+      },
+      "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+      "village": "संवत्सर, तालुका कोपरगाव (Sanvatsar, Kopargaon)",
+      "score": "3/5 (60%)",
+      "grade": "B (उत्तीर्ण)",
+      "issueDate": "29 August 2026",
+      "synced": false,
+      "syncedAt": "2026-08-29T12:49:38.426Z"
+    }
+  ],
+  "applications": [
+    {
+      "appId": "app-sample-1",
+      "studentName": "विकास एकनाथ तांबडे (Vikas Tambade)",
+      "village": "संवत्सर, कोपरगाव",
+      "phone": "98220XXXXX",
+      "oppTitle": "डेटा एंट्री ऑपरेटर व महा ई-सेवा सहाय्यक",
+      "organization": "गोदावरी बायोरिफायनरीज् व सेतू सुविधा केंद्र, कोपरगाव",
+      "notes": "मी संगणक कोर्स पूर्ण केला आहे.",
+      "syncedAt": "2026-08-29T12:19:48.816Z"
+    },
+    {
+      "studentName": "?????????? ?????",
+      "oppTitle": "???? ??????? ???? ??????",
+      "phone": "9822011111",
+      "organization": "???? ??????? ??????? ????? ???????",
+      "syncedAt": "2026-08-29T12:22:15.304Z"
+    }
+  ]
+}

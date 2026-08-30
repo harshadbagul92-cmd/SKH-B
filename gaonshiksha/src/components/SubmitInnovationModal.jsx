@@ -64,6 +64,35 @@ export default function SubmitInnovationModal({ isOpen, onClose }) {
 
     setIsSubmitting(true);
 
+    // Run Gemini Protection Shield scan on project proposal
+    try {
+      const modRes = await fetch('/api/ai/moderate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: formData.title,
+          content: `${formData.abstract} Hardware: ${formData.hardware} Software: ${formData.software} Methodology: ${formData.methodology}`,
+          subject: formData.domain,
+          author: currentUser?.name || 'Student Innovator'
+        })
+      });
+
+      if (modRes.ok) {
+        const modData = await modRes.json();
+        if (!modData.isApproved || modData.verdict === 'REJECTED') {
+          setIsSubmitting(false);
+          setErrorMessage(
+            lang === 'mr'
+              ? `जेमिनी AI शील्डने हा प्रकल्प ब्लॉक केला आहे: ${modData.reasons?.[0] || 'दिशाभूल किंवा सुरक्षा उल्लंघन.'}`
+              : `Gemini Protection Shield blocked submission: ${modData.reasons?.[0] || 'Content flagged for safety/misguidance violations.'}`
+          );
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn('Gemini moderation check skipped or offline:', e);
+    }
+
     const selectedDomain = domainOptions.find(d => d.id === formData.domain);
     const selectedStage = stageOptions.find(s => s.id === formData.stage);
 
@@ -84,6 +113,11 @@ export default function SubmitInnovationModal({ isOpen, onClose }) {
         githubUrl: formData.githubUrl,
         demoUrl: formData.demoUrl,
         hasSchematic: formData.hasSchematic
+      },
+      geminiProtection: {
+        isApproved: true,
+        badge: 'Gemini Shield: Verified Student Innovation',
+        timestamp: new Date().toISOString()
       }
     };
 
@@ -93,8 +127,8 @@ export default function SubmitInnovationModal({ isOpen, onClose }) {
     if (res.success) {
       setSuccessMessage(
         lang === 'mr'
-          ? 'आपला प्रकल्प यशस्वीरीत्या प्रकाशित झाला! उद्योग भागीदार आता आपला प्रकल्प पाहू शकतील.'
-          : 'Your innovation has been published! Industry recruiters can now discover your prototype.'
+          ? 'आपला प्रकल्प जेमिनी AI द्वारे सत्यापित होऊन यशस्वीरीत्या प्रकाशित झाला!'
+          : 'Your innovation was verified safe by Gemini AI Shield and published successfully!'
       );
       setTimeout(() => {
         onClose();

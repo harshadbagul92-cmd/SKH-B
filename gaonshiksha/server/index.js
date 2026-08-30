@@ -3,6 +3,19 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+  checkIntegrity,
+  backupDatabase,
+  restoreFromBackup,
+  onAppStart,
+  saveServerData,
+  listBackups,
+  MAX_BACKUPS
+} from './dbManager.js';
+import {
+  askGeminiChat,
+  verifyAndModerateStudyMaterial
+} from './geminiService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,70 +26,132 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Persistent Server Data File
-const DATA_DIR = path.join(__dirname, 'data');
-const DB_FILE = path.join(DATA_DIR, 'server_sync_records.json');
+// 2. Har app start pe check karo & initialize database
+let serverDb = onAppStart();
 
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-}
-
-function loadServerData() {
-  if (fs.existsSync(DB_FILE)) {
-    try {
-      return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
-    } catch (e) {
-      console.error('Error reading DB_FILE, creating fresh database');
-    }
-  }
-  return {
-    syncedItems: [],
-    certificates: [
-      {
-        id: 'cert-sample-1',
-        verificationCode: 'IL-KPG-2026-8419',
-        studentName: 'विकास एकनाथ तांबडे (Vikas Tambade)',
-        village: 'संवत्सर, कोपरगाव',
-        courseTitle: 'संगणक व डिजिटल साक्षरता आणि महाऑनलाईन कौशल्ये',
-        score: '5/5 (100%)',
-        grade: 'A+ (उत्कृष्ट)',
-        issueDate: '२९ ऑगस्ट २०२६',
-        syncedAt: new Date().toISOString()
+// Ensure studyMaterials array exists in database
+if (!serverDb.studyMaterials) {
+  serverDb.studyMaterials = [
+    {
+      id: 'sm-sample-1',
+      title: 'Class 10 Science: Periodic Table & Chemical Reactions Simplified Guide',
+      subject: 'Science',
+      standard: 'Class 10',
+      description: 'Handcrafted revision notes explaining Mendeleev vs Modern Periodic table, oxidation, and reduction with practical village examples.',
+      content: 'Chapter 1 & 2 comprehensive summary with solved board questions.',
+      author: 'Dr. V. Patil (Z.P. High School Mentor)',
+      geminiProtection: {
+        isApproved: true,
+        verdict: 'APPROVED',
+        score: 98,
+        safetyRating: 'SAFE',
+        protectionBadge: 'Gemini Shield: Verified Safe & Educational',
+        moderatedBy: 'Gemini-1.5-Flash-Shield',
+        timestamp: new Date().toISOString()
       },
-      {
-        id: 'cert-sample-2',
-        verificationCode: 'IL-KPG-2026-9124',
-        studentName: 'पूजा रमेश वाघमारे (Pooja Waghmare)',
-        village: 'टाकळी, कोपरगाव',
-        courseTitle: 'आधुनिक शिलाई, कपडे कटिंग व बुटीक व्यवसाय',
-        score: '5/5 (100%)',
-        grade: 'A+ (उत्कृष्ट)',
-        issueDate: '२८ ऑगस्ट २०२६',
-        syncedAt: new Date().toISOString()
-      }
-    ],
-    applications: [
-      {
-        appId: 'app-sample-1',
-        studentName: 'विकास एकनाथ तांबडे (Vikas Tambade)',
-        village: 'संवत्सर, कोपरगाव',
-        phone: '9822012345',
-        oppTitle: 'डेटा एंट्री ऑपरेटर व महा ई-सेवा सहाय्यक',
-        organization: 'गोदावरी बायोरिफायनरीज् व सेतू सुविधा केंद्र, कोपरगाव',
-        notes: 'मी संगणक कोर्स पूर्ण केला आहे.',
-        syncedAt: new Date().toISOString()
-      }
-    ]
+      createdAt: '2026-08-28T10:00:00.000Z'
+    }
+  ];
+  saveServerData(serverDb);
+}
+
+// Setup daily periodic backup (every 24 hours)
+setInterval(() => {
+  console.log('[SCHEDULED BACKUP] Running scheduled 24h database backup...');
+  backupDatabase(serverDb);
+}, 24 * 60 * 60 * 1000);
+
+// --- GEMINI AI & PROTECTION SHIELD ROUTES ---
+
+// 1. Intelligent Gemini AI Chatbot Route (with fallback)
+app.post('/api/ai/chat', async (req, res) => {
+  const { message, history, lang } = req.body;
+  if (!message || typeof message !== 'string') {
+    return res.status(400).json({ error: 'Message string is required' });
+  }
+
+  const result = await askGeminiChat({ message, history, lang: lang || 'mr' });
+  res.json(result);
+});
+
+// 2. Gemini Protection Shield Pre-check Route
+app.post('/api/ai/moderate', async (req, res) => {
+  const material = req.body;
+  if (!material || !material.title || (!material.content && !material.description)) {
+    return res.status(400).json({ error: 'Title and content/description are required for verification' });
+  }
+
+  console.log(`[GEMINI SHIELD] Scanning material: "${material.title}" submitted by ${material.author || 'Anonymous'}...`);
+  const moderationResult = await verifyAndModerateStudyMaterial(material);
+  console.log(`[GEMINI SHIELD VERDICT] ${moderationResult.verdict} (Score: ${moderationResult.score}/100)`);
+
+  res.json(moderationResult);
+});
+
+// 3. Upload Study Material (Protected by Gemini AI Shield)
+app.post('/api/study-materials/upload', async (req, res) => {
+  const { title, subject, standard, description, content, author, role } = req.body;
+
+  if (!title || (!description && !content)) {
+    return res.status(400).json({
+      success: false,
+      error: 'Please provide a valid Title and Content/Description.'
+    });
+  }
+
+  // Mandatory Gemini Protection Scan before accepting upload
+  const moderation = await verifyAndModerateStudyMaterial({
+    title,
+    subject,
+    standard,
+    description,
+    content,
+    author
+  });
+
+  if (!moderation.isApproved || moderation.verdict === 'REJECTED') {
+    return res.status(422).json({
+      success: false,
+      blocked: true,
+      error: 'Upload Blocked by Gemini Protection Shield: Content violates student safety or academic guidelines.',
+      moderation
+    });
+  }
+
+  const newMaterial = {
+    id: `sm-${Date.now()}`,
+    title: title.trim(),
+    subject: subject || 'General Education',
+    standard: standard || 'General',
+    description: description ? description.trim() : '',
+    content: content ? content.trim() : '',
+    author: author ? author.trim() : 'Verified Educator',
+    role: role || 'Mentor',
+    geminiProtection: moderation,
+    createdAt: new Date().toISOString()
   };
-}
 
-function saveServerData(data) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
-}
+  if (!serverDb.studyMaterials) serverDb.studyMaterials = [];
+  serverDb.studyMaterials.unshift(newMaterial);
+  saveServerData(serverDb);
 
-let serverDb = loadServerData();
+  res.status(201).json({
+    success: true,
+    message: 'Study material successfully verified and published by Gemini Protection Shield!',
+    material: newMaterial,
+    moderation
+  });
+});
 
-// 1. Sync Batch Endpoint (Offline-First Sink)
+// 4. List All Verified Study Materials
+app.get('/api/study-materials', (req, res) => {
+  const materials = serverDb.studyMaterials || [];
+  res.json(materials);
+});
+
+// --- CORE SYNC & DATA ROUTES ---
+
+// 1. Sync Batch Endpoint (Offline-First Sink with Auto-Backup)
 app.post('/api/sync', (req, res) => {
   const { items } = req.body;
   if (!items || !Array.isArray(items)) {
@@ -119,13 +194,14 @@ app.post('/api/sync', (req, res) => {
     }
   });
 
+  // 3. Auto-backup — har successful write ke baad
   saveServerData(serverDb);
 
   res.json({
     status: 'success',
     receivedCount: items.length,
     timestamp: new Date().toISOString(),
-    serverMessage: 'All offline progress, certificates, and exam data committed to Invictus Learning Server.'
+    serverMessage: 'All offline progress, certificates, and exam data committed and backed up on Invictus Learning Server.'
   });
 });
 
@@ -176,6 +252,7 @@ app.get('/api/admin/stats', (req, res) => {
     syncedBatches: serverDb.syncedItems.length,
     certificatesIssued: serverDb.certificates.length,
     applicationsReceived: serverDb.applications.length,
+    studyMaterialsVerified: (serverDb.studyMaterials || []).length,
     activeRegion: 'Invictus Academic Division'
   });
 });
@@ -185,11 +262,50 @@ app.get('/api/admin/submissions', (req, res) => {
   res.json({
     certificates: serverDb.certificates,
     applications: serverDb.applications,
+    studyMaterials: serverDb.studyMaterials || [],
     rawSyncLogs: serverDb.syncedItems.slice(-20)
   });
 });
 
-// 8. Public Certificate Verification Endpoint
+// 8. Database Integrity Check Endpoint
+app.get('/api/admin/db/integrity', (req, res) => {
+  const status = checkIntegrity();
+  res.json({
+    status: status.ok ? 'healthy' : 'corrupted',
+    ...status
+  });
+});
+
+// 9. Manual DB Backup Endpoint
+app.post('/api/admin/db/backup', (req, res) => {
+  const result = backupDatabase(serverDb);
+  res.json({
+    message: result.success ? 'Backup generated successfully' : 'Backup failed',
+    ...result,
+    backups: listBackups()
+  });
+});
+
+// 10. Manual DB Restore Endpoint
+app.post('/api/admin/db/restore', (req, res) => {
+  const result = restoreFromBackup();
+  serverDb = result.data;
+  res.json({
+    message: 'Database restored from backup successfully',
+    restoredFrom: result.restoredFrom,
+    integrity: checkIntegrity(serverDb)
+  });
+});
+
+// 11. List All Backups Endpoint
+app.get('/api/admin/db/backups', (req, res) => {
+  res.json({
+    maxBackupsConfigured: MAX_BACKUPS,
+    backups: listBackups()
+  });
+});
+
+// 12. Public Certificate Verification Endpoint
 app.get('/api/verify/:code', (req, res) => {
   const code = req.params.code.trim().toUpperCase();
   const cert = serverDb.certificates.find(c => c.verificationCode?.toUpperCase() === code);
@@ -216,9 +332,17 @@ app.get('/api/verify/:code', (req, res) => {
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString(), server: 'Invictus-Learning-Sync-Server-v2' });
+  const dbHealth = checkIntegrity();
+  res.json({
+    status: 'ok',
+    dbHealth: dbHealth.ok ? 'healthy' : 'corrupted',
+    geminiProtectionActive: true,
+    time: new Date().toISOString(),
+    server: 'Invictus-Learning-Sync-Server-v2'
+  });
 });
 
 app.listen(PORT, () => {
   console.log(`Invictus Learning Sync Server running on http://localhost:${PORT}`);
+  console.log(`Gemini AI & Protection Shield activated on /api/ai/chat and /api/study-materials/upload`);
 });
