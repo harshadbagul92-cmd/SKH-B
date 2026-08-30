@@ -14,11 +14,11 @@ services:
         sync: false
 
   # 2. Frontend Static Site (React + Vite + PWA)
-  - type: static_site
+  - type: static
     name: invictus-app
     rootDir: gaonshiksha
     buildCommand: npm install && npm run build
-    publishPath: dist
+    staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
