@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icons/*.svg'],
       manifest: {
-        name: 'SATHI - Rural Learning & Skill Companion (साथी)',
-        short_name: 'SATHI',
+        name: 'INVICTUS - Rural Learning & Skill Certification Platform (इन्व्हिक्टस)',
+        short_name: 'INVICTUS',
         description: 'Offline-First Bilingual Rural Learning & Skill Certification Companion',
         theme_color: '#ea580c',
         background_color: '#fffbeb',

@@ -1,7 +1,7 @@
 services:
   # 1. Backend Web Service (Node.js + Express + DB + Gemini AI)
   - type: web
-    name: gaonshiksha-server
+    name: invictus-server
     runtime: node
     rootDir: gaonshiksha
     buildCommand: npm install
@@ -15,7 +15,7 @@ services:
 
   # 2. Frontend Static Site (React + Vite + PWA)
   - type: static_site
-    name: gaonshiksha-app
+    name: invictus-app
     rootDir: gaonshiksha
     buildCommand: npm install && npm run build
     publishPath: dist
@@ -27,5 +27,5 @@ services:
       - key: VITE_API_URL
         fromService:
           type: web
-          name: gaonshiksha-server
+          name: invictus-server
           property: host
