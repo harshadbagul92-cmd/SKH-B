@@ -3,6 +3,12 @@ import coursesData from '../data/courses.json';
 import opportunitiesData from '../data/opportunities.json';
 import textbooksData from '../data/textbooks.json';
 import govExamsData from '../data/govExams.json';
+import {
+  initialInnovations,
+  initialSponsoredBounties,
+  initialCollaborationOffers,
+  initialCompanies
+} from './seedInnovations';
 
 export async function initializeLocalDB() {
   try {
@@ -31,6 +37,31 @@ export async function initializeLocalDB() {
     if (oppCount === 0) {
       await db.opportunities.bulkPut(opportunitiesData);
       console.log('Seeded initial opportunities into Dexie IndexedDB');
+    }
+
+    // Seed Innovation Hub data
+    const innovCount = await db.innovations.count();
+    if (innovCount === 0) {
+      await db.innovations.bulkPut(initialInnovations);
+      console.log('Seeded initial student innovations');
+    }
+
+    const bountyCount = await db.sponsoredBounties.count();
+    if (bountyCount === 0) {
+      await db.sponsoredBounties.bulkPut(initialSponsoredBounties);
+      console.log('Seeded initial sponsored problem statement bounties');
+    }
+
+    const offerCount = await db.collaborationOffers.count();
+    if (offerCount === 0) {
+      await db.collaborationOffers.bulkPut(initialCollaborationOffers);
+      console.log('Seeded initial collaboration offers');
+    }
+
+    const compCount = await db.companies.count();
+    if (compCount === 0) {
+      await db.companies.bulkPut(initialCompanies);
+      console.log('Seeded initial verified partner companies');
     }
 
     // Default Demo Users

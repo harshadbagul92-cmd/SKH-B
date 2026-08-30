@@ -4,6 +4,7 @@ import {
   Shield,
   BookOpen,
   FileQuestion,
+  Lightbulb,
   Landmark,
   Award,
   Briefcase,
@@ -50,6 +51,13 @@ export default function Sidebar() {
       label: t('nav.exams') || 'Exam Notifications',
       icon: Landmark,
       badge: `${allGovExams?.length || 36} NEW`,
+      badgeColor: 'bg-gold-500 text-navy-950 font-black shadow-xs'
+    },
+    {
+      id: 'innovations',
+      label: lang === 'mr' ? 'इनोव्हेशन हब (Innovation)' : lang === 'hi' ? 'इनोवेशन हब (Innovation)' : 'Innovation Hub',
+      icon: Lightbulb,
+      badge: 'OPEN',
       badgeColor: 'bg-gold-500 text-navy-950 font-black shadow-xs'
     },
     {

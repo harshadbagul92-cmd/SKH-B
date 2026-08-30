@@ -51,6 +51,21 @@ export function AppProvider({ children }) {
   const [allGovExams, setAllGovExams] = useState([]);
   const [selectedGovExam, setSelectedGovExam] = useState(null);
 
+  // Innovation & Talent Matchmaking Hub State
+  const [allInnovations, setAllInnovations] = useState([]);
+  const [allCollaborationOffers, setAllCollaborationOffers] = useState([]);
+  const [allSponsoredBounties, setAllSponsoredBounties] = useState([]);
+  const [allCompanies, setAllCompanies] = useState([]);
+  const [activeCompanyUser, setActiveCompanyUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('invictus_company_auth');
+      return saved ? JSON.parse(saved) : null;
+    } catch (e) {
+      return null;
+    }
+  });
+  const [isRecruiterMode, setIsRecruiterMode] = useState(false);
+
   const [isPackDownloaded, setIsPackDownloaded] = useState(false);
   const [allCourses, setAllCourses] = useState([]);
   const [userProgressMap, setUserProgressMap] = useState({});
@@ -116,6 +131,18 @@ export function AppProvider({ children }) {
       const exams = await db.govExams.toArray();
       setAllGovExams(exams || []);
 
+      const innovations = await db.innovations.toArray();
+      setAllInnovations(innovations || []);
+
+      const bounties = await db.sponsoredBounties.toArray();
+      setAllSponsoredBounties(bounties || []);
+
+      const offers = await db.collaborationOffers.toArray();
+      setAllCollaborationOffers(offers || []);
+
+      const companies = await db.companies.toArray();
+      setAllCompanies(companies || []);
+
       const progressArr = await db.progress.toArray();
       const pMap = {};
       progressArr.forEach((p) => {
@@ -140,6 +167,191 @@ export function AppProvider({ children }) {
     } catch (err) {
       console.error('Error refreshing local data:', err);
     }
+  };
+
+  // Innovation Submission Handler (Open to All registered students without restrictions)
+  const submitInnovation = async (innovationData) => {
+    try {
+      const newInnov = {
+        id: `innov-${Date.now()}`,
+        studentId: currentUser?.email || 'student@invictus.edu',
+        studentName: currentUser?.name || 'Student Innovator',
+        studentCity: currentUser?.city || 'Maharashtra',
+        studentGrade: currentUser?.grade || '10th Standard',
+        studentEmail: currentUser?.email || 'student@invictus.edu',
+        title: typeof innovationData.title === 'string' ? { en: innovationData.title, hi: innovationData.title, mr: innovationData.title } : innovationData.title,
+        domain: innovationData.domain || 'general',
+        domainLabel: innovationData.domainLabel || { en: innovationData.domain, hi: innovationData.domain, mr: innovationData.domain },
+        stage: innovationData.stage || 'concept',
+        stageLabel: innovationData.stageLabel || { en: 'Concept', hi: 'संकल्पना', mr: 'संकल्पना' },
+        abstract: typeof innovationData.abstract === 'string' ? { en: innovationData.abstract, hi: innovationData.abstract, mr: innovationData.abstract } : innovationData.abstract,
+        technicalSpecs: innovationData.technicalSpecs || { hardware: '', software: '', methodology: '' },
+        fundingNeeded: Number(innovationData.fundingNeeded) || 0,
+        media: innovationData.media || { githubUrl: '', demoUrl: '', hasSchematic: false },
+        featured: false,
+        viewsCount: 1,
+        offersCount: 0,
+        createdAt: new Date().toISOString()
+      };
+
+      await db.innovations.add(newInnov);
+      await refreshData();
+      return { success: true, innovation: newInnov };
+    } catch (err) {
+      console.error('Error submitting innovation:', err);
+      return { success: false, message: err.message };
+    }
+  };
+
+  // Recruiter Matchmaking Collaboration Offer Handler
+  const sendCollaborationOffer = async (offerData) => {
+    try {
+      const newOffer = {
+        id: `offer-${Date.now()}`,
+        innovationId: offerData.innovationId,
+        studentEmail: offerData.studentEmail,
+        studentName: offerData.studentName,
+        companyName: activeCompanyUser?.companyName || offerData.companyName || 'Corporate Partner',
+        recruiterName: activeCompanyUser?.recruiterName || offerData.recruiterName || 'Talent Acquisition Team',
+        recruiterEmail: activeCompanyUser?.email || offerData.recruiterEmail || 'recruiter@company.com',
+        type: offerData.type || 'internship', // 'internship' | 'sponsorship' | 'mentorship'
+        typeLabel: offerData.typeLabel || 'Internship / Job Opportunity',
+        stipend: Number(offerData.stipend) || 0,
+        sponsorshipBudget: Number(offerData.sponsorshipBudget) || 0,
+        duration: offerData.duration || '3 Months',
+        status: 'pending',
+        platformFeeRate: 0.08, // 8% platform facilitation fee
+        message: offerData.message || '',
+        createdAt: new Date().toISOString()
+      };
+
+      await db.collaborationOffers.add(newOffer);
+
+      // Increment offersCount on the innovation
+      const targetInnov = await db.innovations.get(offerData.innovationId);
+      if (targetInnov) {
+        await db.innovations.update(offerData.innovationId, {
+          offersCount: (targetInnov.offersCount || 0) + 1
+        });
+      }
+
+      await refreshData();
+      return { success: true, offer: newOffer };
+    } catch (err) {
+      console.error('Error sending collaboration offer:', err);
+      return { success: false, message: err.message };
+    }
+  };
+
+  // Student Offer Response (Accept / Decline)
+  const respondToCollaborationOffer = async (offerId, responseStatus) => {
+    try {
+      await db.collaborationOffers.update(offerId, {
+        status: responseStatus,
+        respondedAt: new Date().toISOString()
+      });
+      await refreshData();
+      return { success: true };
+    } catch (err) {
+      console.error('Error responding to offer:', err);
+      return { success: false, message: err.message };
+    }
+  };
+
+  // Corporate Sponsored Problem Statement / Bounty Posting
+  const postSponsoredBounty = async (bountyData) => {
+    try {
+      const newBounty = {
+        id: `bounty-${Date.now()}`,
+        companyName: activeCompanyUser?.companyName || bountyData.companyName || 'Corporate Sponsor',
+        companyLogo: '🏢',
+        companyEmail: activeCompanyUser?.email || bountyData.companyEmail || 'recruiter@company.com',
+        isVerified: true,
+        title: typeof bountyData.title === 'string' ? { en: bountyData.title, hi: bountyData.title, mr: bountyData.title } : bountyData.title,
+        domain: bountyData.domain || 'general',
+        bountyAmount: Number(bountyData.bountyAmount) || 25000,
+        stipendOffer: bountyData.stipendOffer || 'Paid Internship + Cash Bounty',
+        deadline: bountyData.deadline || '2026-12-31',
+        submissionsCount: 0,
+        problemDescription: typeof bountyData.problemDescription === 'string' ? { en: bountyData.problemDescription, hi: bountyData.problemDescription, mr: bountyData.problemDescription } : bountyData.problemDescription,
+        deliverables: bountyData.deliverables || 'Working prototype code and hardware schematic demo.',
+        createdAt: new Date().toISOString()
+      };
+
+      await db.sponsoredBounties.add(newBounty);
+      await refreshData();
+      return { success: true, bounty: newBounty };
+    } catch (err) {
+      console.error('Error posting sponsored bounty:', err);
+      return { success: false, message: err.message };
+    }
+  };
+
+  // Company / Recruiter Authentication & Registration
+  const registerCompany = async (companyData) => {
+    try {
+      const cleanEmail = companyData.email.trim().toLowerCase();
+      const newCompany = {
+        email: cleanEmail,
+        companyName: companyData.companyName.trim(),
+        website: companyData.website?.trim() || '',
+        gstin: (companyData.gstin || '27AAACM1234F1Z8').trim().toUpperCase(),
+        cin: companyData.cin?.trim() || '',
+        industry: companyData.industry || 'Technology & Engineering',
+        isVerified: true,
+        hiringRoles: companyData.hiringRoles || ['Intern', 'Apprentice'],
+        createdAt: new Date().toISOString()
+      };
+
+      await db.companies.put(newCompany);
+      setActiveCompanyUser(newCompany);
+      localStorage.setItem('invictus_company_auth', JSON.stringify(newCompany));
+      setIsRecruiterMode(true);
+      await refreshData();
+      return { success: true, company: newCompany };
+    } catch (err) {
+      console.error('Error registering company:', err);
+      return { success: false, message: err.message };
+    }
+  };
+
+  const loginCompany = async (email, password) => {
+    try {
+      const cleanEmail = email.trim().toLowerCase();
+      let comp = await db.companies.get(cleanEmail);
+      if (!comp) {
+        comp = {
+          email: cleanEmail,
+          companyName: cleanEmail.includes('@') ? cleanEmail.split('@')[1].split('.')[0].toUpperCase() + ' Corp' : 'Partner Enterprise',
+          website: 'https://invictus-partner.com',
+          gstin: '27AAACP9876K1Z4',
+          cin: 'U72900MH2026PTC123456',
+          industry: 'Technology & Manufacturing',
+          isVerified: true,
+          hiringRoles: ['R&D Intern', 'Hardware Trainee'],
+          createdAt: new Date().toISOString()
+        };
+        await db.companies.put(comp);
+      }
+      setActiveCompanyUser(comp);
+      localStorage.setItem('invictus_company_auth', JSON.stringify(comp));
+      setIsRecruiterMode(true);
+      await refreshData();
+      return { success: true, company: comp };
+    } catch (err) {
+      console.error('Error logging in company:', err);
+      return { success: false, message: err.message };
+    }
+  };
+
+  const logoutCompany = () => {
+    setActiveCompanyUser(null);
+    localStorage.removeItem('invictus_company_auth');
+    setIsRecruiterMode(false);
+  };
+
+  const toggleRecruiterMode = () => {
+    setIsRecruiterMode(prev => !prev);
   };
 
   // Translation helpers
@@ -529,6 +741,20 @@ export function AppProvider({ children }) {
         allCourses,
         allTextbooks,
         allGovExams,
+        allInnovations,
+        allCollaborationOffers,
+        allSponsoredBounties,
+        allCompanies,
+        activeCompanyUser,
+        isRecruiterMode,
+        toggleRecruiterMode,
+        submitInnovation,
+        sendCollaborationOffer,
+        respondToCollaborationOffer,
+        postSponsoredBounty,
+        registerCompany,
+        loginCompany,
+        logoutCompany,
         selectedTextbook,
         textbookInitialMode,
         openTextbook,

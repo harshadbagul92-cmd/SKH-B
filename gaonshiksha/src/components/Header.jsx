@@ -11,6 +11,7 @@ import {
   ChevronDown,
   BookOpen,
   FileQuestion,
+  Lightbulb,
   Landmark,
   Award,
   Briefcase,
@@ -51,6 +52,7 @@ export default function Header() {
     { id: 'courses', label: t('nav.courses') || 'Courses & E-Books', icon: BookOpen },
     { id: 'test', label: lang === 'mr' ? 'ऑनलाइन परीक्षा' : lang === 'hi' ? 'ऑनलाइन परीक्षा' : 'Online Test', icon: FileQuestion, badge: 'NEW' },
     { id: 'exams', label: t('nav.exams') || 'Exam Notifications', icon: Landmark, badge: `${allGovExams?.length || 36}` },
+    { id: 'innovations', label: lang === 'mr' ? 'इनोव्हेशन हब' : lang === 'hi' ? 'इनोवेशन हब' : 'Innovation Hub', icon: Lightbulb, badge: 'HOT' },
     { id: 'certificates', label: t('nav.certificates') || 'Certificates', icon: Award },
     { id: 'opportunities', label: t('nav.opportunities') || 'Career / Job Hub', icon: Briefcase },
     { id: 'profile', label: t('nav.profile') || 'My Profile', icon: User }

@@ -8,6 +8,7 @@ import OfflineBanner from './components/OfflineBanner';
 import CoursesView from './views/CoursesView';
 import ExamNotificationsView from './views/ExamNotificationsView';
 import OnlineTestView from './views/OnlineTestView';
+import InnovationHubView from './views/InnovationHubView';
 import LessonView from './views/LessonView';
 import QuizView from './views/QuizView';
 import CertificateView from './views/CertificateView';
@@ -53,6 +54,8 @@ function MainAppContent() {
         return <OnlineTestView />;
       case 'exams':
         return <ExamNotificationsView />;
+      case 'innovations':
+        return <InnovationHubView />;
       case 'lesson':
         return <LessonView />;
       case 'quiz':
