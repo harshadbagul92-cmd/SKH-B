@@ -354,6 +354,36 @@ export function AppProvider({ children }) {
     setIsRecruiterMode(prev => !prev);
   };
 
+  // E-Textbook & PDF Viewer Handlers
+  const openTextbook = async (textbookOrId, mode = 'ebook') => {
+    if (!textbookOrId) return;
+    if (typeof textbookOrId === 'object') {
+      setSelectedTextbook(textbookOrId);
+      setTextbookInitialMode(mode);
+      return;
+    }
+    try {
+      const tb = await db.textbooks.get(textbookOrId);
+      if (tb) {
+        setSelectedTextbook(tb);
+      } else {
+        const fallbackTb = allTextbooks.find(t => t.id === textbookOrId);
+        setSelectedTextbook(fallbackTb || null);
+      }
+      setTextbookInitialMode(mode);
+    } catch (err) {
+      console.error('Error opening textbook:', err);
+      const fallbackTb = allTextbooks.find(t => t.id === textbookOrId);
+      setSelectedTextbook(fallbackTb || null);
+      setTextbookInitialMode(mode);
+    }
+  };
+
+  const closeTextbook = () => {
+    setSelectedTextbook(null);
+    setTextbookInitialMode('ebook');
+  };
+
   // Translation helpers
   const translations = lang === 'en' ? enTranslations : lang === 'hi' ? hiTranslations : mrTranslations;
 
@@ -584,17 +614,6 @@ export function AppProvider({ children }) {
   const downloadFullPack = async () => {
     await db.settings.put({ key: 'fullPackDownloaded', value: true });
     setIsPackDownloaded(true);
-  };
-
-  // E-Textbook Actions
-  const openTextbook = (textbook, mode = 'ebook') => {
-    setSelectedTextbook(textbook);
-    setTextbookInitialMode(mode);
-  };
-
-  const closeTextbook = () => {
-    setSelectedTextbook(null);
-    setTextbookInitialMode('ebook');
   };
 
   // Record Lesson Completion

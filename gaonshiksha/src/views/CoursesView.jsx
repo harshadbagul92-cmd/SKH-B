@@ -463,6 +463,15 @@ export default function CoursesView() {
         </div>
       )}
 
+      {/* Official Class 10 Textbook Reader Modal (E-Book, PDF, Swadhyay) */}
+      {selectedTextbook && (
+        <TextbookReaderModal
+          textbook={selectedTextbook}
+          initialMode={textbookInitialMode}
+          onClose={closeTextbook}
+        />
+      )}
+
     </div>
   );
 }
